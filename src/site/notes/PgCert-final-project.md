@@ -4,9 +4,10 @@
 
 Thoughts after finishing the PgCert
 
-**socio-economic factors
+##### Socio-economic factors
 
-**GenAI will change roles
+##### GenAI will change roles
 
-**Research Methods
+##### Autoethnography
+ 
 
