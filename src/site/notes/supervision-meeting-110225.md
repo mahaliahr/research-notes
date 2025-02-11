@@ -7,7 +7,7 @@ Summary:
 Final Project Slides: [final-presentation.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EX0qB3782wtLmhM3vIZPaEoBGtYFeacw85jwp2CqO2hayQ?e=U1YQ3l) 
 
 Link to Ethics forms [MSc-CC-LLM-Study](https://artslondon-my.sharepoint.com/:f:/g/personal/m_henryrichards_arts_ac_uk/EkMs1qbMkTxIuOx030VetukB1785bZFQngINcUSqyt27kQ?e=FRtqrj)
-PgCert Thematic Analysis
+PgCert Thematic Analysis Document: [thematic-analysis.xlsx](https://artslondon-my.sharepoint.com/:x:/g/personal/m_henryrichards_arts_ac_uk/ETIl92-i_wZHioJ89Ddw-QMBdL_ncVp_hOjpfy8hua1Lmg?e=tFxy8M) 
 
 
 Questions:
