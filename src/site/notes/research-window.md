@@ -2,4 +2,8 @@
 {"dg-publish":true,"permalink":"/research-window/","tags":["gardenEntry"]}
 ---
 
-[[supervision-meeting-110225-pre-notes\|supervision-meeting-110225-pre-notes]]
+This is a snapshot of my thinking and research for my PhD. 
+This is in flux as thoughts develop.
+
+---
+[[supervision-meeting-110225\|supervision-meeting-110225]]
