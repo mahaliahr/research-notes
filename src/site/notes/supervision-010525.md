@@ -2,72 +2,58 @@
 {"dg-publish":true,"permalink":"/supervision-010525/"}
 ---
 
-send things through the team a week before:
-
-- draft ethics form(s) 
-- talk through plans for upcoming/in progress design interventions 
-	- plan for [[interviewing-staff-at-CCI\|interviewing-staff-at-CCI]] about AI Literacy and what I hope to learn
-	- next student cohort project
-	- AI supervisor
-- [[annotated-bib-plan-supervision-150425.canvas|annotated-bib-supervision-150425]] (to show thought progress and field beginning to be mapped, also to show relevant sources shaping my new directions)
-- show Gantt chart
+Overview: 
+-  plans for upcoming/in progress design interventions 
+- annotated bibliography and brainstorm of personal motivations for the research
+- two ethics forms in progress
 ---
-Projects:
+## Plans for upcoming / work in progress projects:
 
-**Workshops for incoming new student cohort about AI Literacy**
-	inspired by the podcast episode from IBM about AI in Education [[references/ibm-2024-AI-in-education\|ibm-2024-AI-in-education]] I want to explore how we teach students to critically interact with AI when they use it. I want to encourage a movement away from the large corporations such as OpenAI and empower the student to work with LLM's in a local and more personalised way. 
+##### **Workshops about AI Literacy + Learning Futures**
 
-I also want to engage the students with the idea of actively and imaginative speculating on the future of AI in education. Throughout the workshop I want to offer some visual/narrative prompts that can act as catalysts for discussion or participatory ideation. 
+Inspired by the podcast episode from IBM about AI in Education (_AI in education: Safety, literacy, and predictions_, 2024) I want to explore how we teach students to critically interact with AI when they use it. I want to encourage a movement away from the large corporations such as OpenAI and empower students to work with Large Language Model's in a local and more personalised way. I also want to engage the students with the idea of actively and imaginative speculating on the future of AI in education. Throughout the workshop I want to offer visual/narrative prompts that can act as catalysts for discussion or participatory ideation. 
 
-**CCI Staff interviews**
-In order to prepare for the workshops I would like to have a series of conversations with members of staff across CCI about the concept of AI literacy and how they are conveying this to students. Currently I get a sense (from general comments and casual conversation) that AI use is mostly frowned uponand I would like to get a clearer understanding of this - and specifically dig into what staff think is our responsibility in regards to the ever growing prevalance of AI in industry.
+[These workshops could act as an onboarding to a further research project where students who choose to participate would make their own DIY LLM that they would work with over the duration of the course] I'm not 100% sure on this yet
 
-**AI supervisor 'supervisor bot'**
-I want to lean into the fear of 'AI taking our jobs'. I want to directly experiment with what an AI supervisor could offer to my learning process whilst doing the PhD. In line with ethical concerns regarding mega corporations suach as OpenAI and resultant privacy issues trying to envision alternate ways of interacting with this technology is vital. Currently advising or encouraging use of ChatGPT and similar in this context is problematic. This leads me down the rabbit hole of running local Large Language Models and I have this idea of enabling students (and me) to create custom Large Language Model
+**_Project started: Not yet
+Ethics draft begun: yes - [Post-Registration Ethics Approval Form.docx](https://artslondon-my.sharepoint.com/:w:/g/personal/m_henryrichards_arts_ac_uk/EQFsS-R_RPtBqZBkJ0xRQ_wBZSpjZL5J8jF3MaSinSoBtQ?e=zf8WHQ)
 
+##### **CCI Staff Interviews**
+In order to prepare for the workshops I would like to have a series of conversations with members of staff across CCI about the concept of AI literacy and how they are conveying this to students. Currently I get a sense (from general comments and casual conversation) that AI use is mostly frowned upon and I would like to get a clearer understanding of this - and specifically dig into what staff members think our responsibility is in regards to the ever growing prevalance of AI in industry (and society more broadly).
 
+**_Project started: Not yet
+Ethics draft begun: no - 
 
+##### **AI Supervisor 'Supervisor Bot'**
+Embracing the fear of 'AI taking our jobs,' I aim to directly explore what an 'AI supervisor' could contribute to my PhD learning process. To do this, I'll assess the expected traits of a human supervisor, as per UAL guidance, and evaluate whether a locally hosted Large Language Model can meet these needs. Given ethical concerns surrounding mega corporations like OpenAI and their privacy implications, it's important to imagine alternative ways of interacting with AI technology. Currently, advising or promoting the use of services like ChatGPT in this context raises red flags. This investigation leads me to consider running local Large Language Models, with a vision to empower students (and myself) to create custom models tailored to our specific needs.
 
+Currently I am building a v1 prototype to start testing what is possible with my current hardware and technical provisions. A brief discussion of the prototype:
+	_This prototype explores the potential of a LLM to act as a supervisor, by adopting a 'persona' and listening to conversations between the student (me) and my supervisors, acting as an additional supervisor offering feedback.  
+	It will allow a local LLM to observe conversations and respond with helpful context, using voice (maybe) and text.  It does not aim to have an interface and won't be a fully robust usable application at this stage.
 
+**_Project started: yes, I would like to get v1 done before next meeting
+Ethics draft begun - yes - [Post-Registration Ethics Approval Form.docx](https://artslondon-my.sharepoint.com/:w:/g/personal/m_henryrichards_arts_ac_uk/ETHO3OK4_rhHibgo1aCSRx0BlEbWId8K5tBCbi9E1KlTeg?e=Dd1Brt)
 
+##### **DIY bot**
+As an extrapolation from the 'Supervisor Bot' I am thinking about how to extend this project in a sense, by taking what I will have learnt and designing a framework and workshop that I can give my students around how they can build their own custom LLM bots. Within this context, the students would have agency in building their supervisor/tutor and the characteristics that would embody. In this sense it will be personal to the student and due to them customising it, they would need to have a deeper level of understanding about it, which will hopefully lead to a more critically engaged utilisation of the tool.
 
+**_Project started: Not yet - project needs more work done to the AI supervisor bot beforehand
+Ethics draft begun - no
 
+---
+- Here is the link to the annotated bibliography of books (and other content) that I have engaged with recently: [annotated-bib-150425.docx](https://artslondon-my.sharepoint.com/:w:/g/personal/m_henryrichards_arts_ac_uk/EcKOdFtIXCROgx_lwNNEKcQB7too-VKuIlSpJuuIPx1NMQ?e=HL5i1q)
 
-
-
-
-
-
-
-
-
-s ([[supervisor-bot\|supervisor-bot]] + [[diy-bot-creation\|diy-bot-creation]])
-
-*in the realm of the more absurd/unhinged, I am also thinking about virtual pets as an inspiration, but also more generally how virtual / AI companionship has evolved over time. What is are the use cases that could be important beyond just 'information exchange' and traditional ideas of education purposes* 
-
-From my research currently there are a number of implementations of similar projects that I draw inspiration from 
-- Shell Game - Evan Ratcliff
-- Illinois Chat 
-- Open AI and Anthropic's work with Academic institutions 
-- Roby 'Creative Director' Bot
-Currently I am building a V1 prototype to start testing what is possible with my current hardware and technical provisions.
-A brief discussion of the prototype:
-	This prototype explores the potential of a LLM to act as a supervisor, by adopting a 'persona' and listening to conversations between the student (me) and my supervisors, acting as an additional supervisor offering feedback.  
-	It will allow a local LLM to observe conversations and respond with helpful context, using voice (maybe) and text.  
-	It does not aim to have an interface and won't be a fully robust usable application at this stage.
-
-
-add annotated bib link
-add link to personal motivations 
-add link to ethics
+- I have begun to try to express some of the underlying motivations and drive behind this research and try to start linking it to my positionality. Here is a link to a very rough draft of me collating ideas and thoughts together (might not be that legible at the moment). add link to personal motivations: [personal-motivation-brainstorm.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EVSx9DNFiZJIsHu-fT9ELzwByNgXs0NEc_aZFMRC-kuXPg?e=1dtBpr) The following summary of a pgcert reading is also connected to these thoughts [[references/garrett-2024-imagined-futures-of-racialised-phds\|garrett-2024-imagined-futures-of-racialised-phds]]
 
 ---
 
-**Questions
+<!-- **Questions / Topics to discuss 
 
-1. student support fund (there seems to be a sperate one for CCI - what does this mean?) Can I apply to go to conferences if I am not presenting (main SSF seems to state this, but CCI one doesn't)
+1. Student support fund (there seems to be a sperate one for CCI - what does this mean?) Can I apply to go to conferences if I am not presenting (main SSF seems to state this, but CCI one doesn't)
 
 ![cci ssf screenshot](/img/user/images/cci-ssf.png)
 
-2. does the post-registration ethics form cover everything - like an umbrella ethics? For each study would I need to fill in a seperate ethics form 
-
+2. ~~does the post-registration ethics form cover everything - like an umbrella ethics? For each study would I need to fill in a seperate ethics form 
+3. advice about how to conduct or do the staff interviews as everyone is super busy. I don;t want to do a quesitonaire that might be easier and more time constraint beneficial. I want it to be more personable
+4. I am away 15th June to 13th July
+5. is it beneficial to keep the workshops and bot making restricted to just MSc students? -->
