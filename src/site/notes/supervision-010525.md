@@ -58,32 +58,39 @@ Ethics draft begun - no
 4. ~~I am away 15th June to 13th July
 5. is it beneficial to keep the workshops and bot making restricted to just MSc students? -->
 
-Notes from meeting: 
+#### Notes from meeting
 
-**staff interviews** - more broadly in UAL. Disciplinary differences 
-research design - surveys first to lead to interviews - to get some early insight 
+**staff interviews** - 
+consider doing interviews more broadly in UAL -- Disciplinary differences 
+research design - surveys first, then to lead to interviews - to get some early insight 
 conversations rather than interviews?
+surveys can inform discussion guides to scafold interview/conversation
 
-discussion guides 
+Do I highlight participants positionality? is it important for my research? How do I deal with this ethically
 
-Research Design for next meeting 
-
-do i higlight positionality, how do I extract that from them in the ethics form
+->
 
 **Ethics**
-main - when will I need to move out of UAL infrastructure to others
-zoom out a little bit from project based to more broad research desig 
-Speak with Tom Lynch
+for main ethics doc - when will I need to move out of UAL infrastructure to others
+zoom out a little bit from project based to more broad research design
+Speak with Tom Lynch?
 
-one ethics form and more than one consent form 
+one main ethics form - then more than one consent form for each project 
 
-Check with Tim: 
-is there a break before summer
+
 Deadline September
 
-Atomic Human
+->
 
-The near future lab
+**Things to look at
+- Atomic Human
+- The near future lab
 
-Admin
+->
+
+**Admin & ToDos
 - supervision form meeting -> send to Silke and Eva
+To do for next meeting:
+- Research Design for next meeting 
+- Ethics form complete for review
+- Check with Tim - is there a break in the ethics review before summer
