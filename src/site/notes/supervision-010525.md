@@ -49,11 +49,41 @@ Ethics draft begun - no
 
 <!-- **Questions / Topics to discuss 
 
-1. Student support fund (there seems to be a sperate one for CCI - what does this mean?) Can I apply to go to conferences if I am not presenting (main SSF seems to state this, but CCI one doesn't)
+ 1. Student support fund (there seems to be a sperate one for CCI - what does this mean?) Can I apply to go to conferences if I am not presenting (main SSF seems to state this, but CCI one doesn't)
 
 ![cci ssf screenshot](/img/user/images/cci-ssf.png)
 
-2. ~~does the post-registration ethics form cover everything - like an umbrella ethics? For each study would I need to fill in a seperate ethics form 
-3. advice about how to conduct or do the staff interviews as everyone is super busy. I don;t want to do a quesitonaire that might be easier and more time constraint beneficial. I want it to be more personable
-4. I am away 15th June to 13th July
+2. ~~does the post-registration ethics form cover everything - like an umbrella ethics? For each study would I need to fill in a seperate ethics form **YES
+3. ~~advice about how to conduct or do the staff interviews as everyone is super busy. I don;t want to do a quesitonaire that might be easier and more time constraint beneficial. I want it to be more personable
+4. ~~I am away 15th June to 13th July
 5. is it beneficial to keep the workshops and bot making restricted to just MSc students? -->
+
+Notes from meeting: 
+
+**staff interviews** - more broadly in UAL. Disciplinary differences 
+research design - surveys first to lead to interviews - to get some early insight 
+conversations rather than interviews?
+
+discussion guides 
+
+Research Design for next meeting 
+
+do i higlight positionality, how do I extract that from them in the ethics form
+
+**Ethics**
+main - when will I need to move out of UAL infrastructure to others
+zoom out a little bit from project based to more broad research desig 
+Speak with Tom Lynch
+
+one ethics form and more than one consent form 
+
+Check with Tim: 
+is there a break before summer
+Deadline September
+
+Atomic Human
+
+The near future lab
+
+Admin
+- supervision form meeting -> send to Silke and Eva
