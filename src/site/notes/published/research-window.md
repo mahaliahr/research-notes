@@ -1,0 +1,10 @@
+---
+{"dg-publish":true,"permalink":"/published/research-window/","tags":["gardenEntry"]}
+---
+
+This is a snapshot of my thinking and research for my PhD. 
+This is in flux as thoughts develop.
+
+---
+[[published/supervision-110225\|supervision-110225]]
+[[published/supervision-010525\|supervision-010525]]

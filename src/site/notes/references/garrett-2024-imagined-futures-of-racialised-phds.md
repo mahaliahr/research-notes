@@ -52,9 +52,9 @@ How might these changes be compounded to worsen the above stated elitism, racism
 
 These thoughts tie deeply into my positionality
 
-[[LLM-in-academia\|LLM-in-academia]]
+[[published/LLM-in-academia\|LLM-in-academia]]
 
-[[GenAI-catalysing-change\|GenAI-catalysing-change]]
+[[published/GenAI-catalysing-change\|GenAI-catalysing-change]]
 
-[[LLMs disrupting formalities\|LLMs disrupting formalities]]
+[[published/LLMs disrupting formalities\|LLMs disrupting formalities]]
 

@@ -1,0 +1,9 @@
+---
+{"dg-publish":true,"permalink":"/published/play-and-imagination-relationship/"}
+---
+
+11-07-2024
+
+what is the relationship between **play and imagination?**
+
+how can I apply this in a coherent way to my PhD? Aligning with  [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]]
