@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/traditional-design-vs-speculative-design-diagram/"}
+{"dg-publish":true,"permalink":"/published/traditional-design-vs-speculative-design-diagram/","noteIcon":""}
 ---
 
 ![alt text](/img/user/images/traditional-vs-speculative.png)

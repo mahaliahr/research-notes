@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/hands-on-research/"}
+{"dg-publish":true,"permalink":"/published/hands-on-research/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

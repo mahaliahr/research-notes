@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/focus-on-process/"}
+{"dg-publish":true,"permalink":"/published/focus-on-process/","noteIcon":""}
 ---
 
 now that we are in a time where generative AI can produce 'results' with 'ease'. It becomes all about the process of what we do. This I hope will be a strong undercurrent of my research 

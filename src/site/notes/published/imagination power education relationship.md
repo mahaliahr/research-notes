@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/imagination-power-education-relationship/"}
+{"dg-publish":true,"permalink":"/published/imagination-power-education-relationship/","noteIcon":""}
 ---
 
 imagination/dreaming -> power <- education/learning 

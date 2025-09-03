@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/khasnabish-haiven-radical-imagination/"}
+{"dg-publish":true,"permalink":"/published/khasnabish-haiven-radical-imagination/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

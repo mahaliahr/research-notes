@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/bibliography/"}
+{"dg-publish":true,"permalink":"/references/bibliography/","noteIcon":""}
 ---
 
 group based on research areas?

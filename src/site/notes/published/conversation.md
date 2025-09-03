@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/conversation/"}
+{"dg-publish":true,"permalink":"/published/conversation/","noteIcon":""}
 ---
 
 1. input capture

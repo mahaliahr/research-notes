@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/de-koven-2020-the-infinite-playground/"}
+{"dg-publish":true,"permalink":"/references/de-koven-2020-the-infinite-playground/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

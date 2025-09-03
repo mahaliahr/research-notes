@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/hooks-1994-teaching-to-trangress/"}
+{"dg-publish":true,"permalink":"/references/hooks-1994-teaching-to-trangress/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

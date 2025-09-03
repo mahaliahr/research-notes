@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/sicart-play-matters/"}
+{"dg-publish":true,"permalink":"/references/sicart-play-matters/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

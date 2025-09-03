@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/large-language-models/"}
+{"dg-publish":true,"permalink":"/published/large-language-models/","noteIcon":""}
 ---
 
 #structure-note 

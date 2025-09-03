@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/bogost-2016-play-anything/"}
+{"dg-publish":true,"permalink":"/references/bogost-2016-play-anything/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

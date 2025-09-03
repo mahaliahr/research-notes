@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/le-guin-1982-non-euclidean-view/"}
+{"dg-publish":true,"permalink":"/published/le-guin-1982-non-euclidean-view/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

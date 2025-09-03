@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/banking-system/"}
+{"dg-publish":true,"permalink":"/published/banking-system/","noteIcon":""}
 ---
 
 Paulo Freire’s “banking” concept of education, where students are treated as passive receptacles into which information is deposited.

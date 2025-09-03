@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/llm-as-phd-supervisor/"}
+{"dg-publish":true,"permalink":"/published/llm-as-phd-supervisor/","noteIcon":""}
 ---
 
 #structure-note 

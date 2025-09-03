@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/reflecting-on-research/"}
+{"dg-publish":true,"permalink":"/published/reflecting-on-research/","noteIcon":""}
 ---
 
 schedule in regular moments for _articulated_ reflection

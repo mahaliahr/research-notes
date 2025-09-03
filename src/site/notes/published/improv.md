@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/improv/"}
+{"dg-publish":true,"permalink":"/published/improv/","noteIcon":""}
 ---
 
 160924 thoughts: 

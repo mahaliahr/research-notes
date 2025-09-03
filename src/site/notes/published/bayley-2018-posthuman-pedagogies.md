@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/bayley-2018-posthuman-pedagogies/"}
+{"dg-publish":true,"permalink":"/published/bayley-2018-posthuman-pedagogies/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

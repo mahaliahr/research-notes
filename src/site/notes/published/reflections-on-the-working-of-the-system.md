@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/reflections-on-the-working-of-the-system/"}
+{"dg-publish":true,"permalink":"/published/reflections-on-the-working-of-the-system/","noteIcon":""}
 ---
 
 

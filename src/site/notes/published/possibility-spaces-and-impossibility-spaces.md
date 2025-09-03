@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/possibility-spaces-and-impossibility-spaces/"}
+{"dg-publish":true,"permalink":"/published/possibility-spaces-and-impossibility-spaces/","noteIcon":""}
 ---
 
 

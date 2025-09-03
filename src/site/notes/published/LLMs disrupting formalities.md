@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ll-ms-disrupting-formalities/"}
+{"dg-publish":true,"permalink":"/published/ll-ms-disrupting-formalities/","noteIcon":""}
 ---
 
 

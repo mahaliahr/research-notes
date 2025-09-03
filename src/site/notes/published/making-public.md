@@ -1,4 +1,4 @@
 ---
-{"dg-publish":true,"permalink":"/published/making-public/"}
+{"dg-publish":true,"permalink":"/published/making-public/","noteIcon":""}
 ---
 

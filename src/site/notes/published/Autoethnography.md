@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/autoethnography/"}
+{"dg-publish":true,"permalink":"/published/autoethnography/","noteIcon":""}
 ---
 
 General thoughts:

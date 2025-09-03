@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/manning-2018-me-lo-dijo/"}
+{"dg-publish":true,"permalink":"/published/manning-2018-me-lo-dijo/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

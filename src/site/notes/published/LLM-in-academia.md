@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/llm-in-academia/"}
+{"dg-publish":true,"permalink":"/published/llm-in-academia/","noteIcon":""}
 ---
 
 

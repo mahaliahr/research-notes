@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/my-new-ph-d-thoughts-chat-gpt-12042023/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/my-new-ph-d-thoughts-chat-gpt-12042023/","noteIcon":""}
 ---
 
 

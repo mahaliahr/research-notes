@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/notes-after-first-supervision-discussions/"}
+{"dg-publish":true,"permalink":"/published/notes-after-first-supervision-discussions/","noteIcon":""}
 ---
 
 Winnie:

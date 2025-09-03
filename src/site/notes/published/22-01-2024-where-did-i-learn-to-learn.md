@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/22-01-2024-where-did-i-learn-to-learn/"}
+{"dg-publish":true,"permalink":"/published/22-01-2024-where-did-i-learn-to-learn/","noteIcon":""}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ai-eroding-trust-between-student-and-teacher/"}
+{"dg-publish":true,"permalink":"/published/ai-eroding-trust-between-student-and-teacher/","noteIcon":""}
 ---
 
 there seem to be a lot of panic and/or exasperation at students use of AI [[published/complaints-about-LLM-use\|complaints-about-LLM-use]]. With a lot of focus on trying to see if the student used it. This seems to me the wrong way to approach it, but the use of AI is very much changing the learning process so it does need to be addressed in some way. 

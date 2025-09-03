@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ideas-for-possible-futures/"}
+{"dg-publish":true,"permalink":"/published/ideas-for-possible-futures/","noteIcon":""}
 ---
 
 11-04-2024- 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/benjamin-noah-2025-rip-dei/"}
+{"dg-publish":true,"permalink":"/references/benjamin-noah-2025-rip-dei/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

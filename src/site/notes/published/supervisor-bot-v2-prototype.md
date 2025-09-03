@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervisor-bot-v2-prototype/"}
+{"dg-publish":true,"permalink":"/published/supervisor-bot-v2-prototype/","noteIcon":""}
 ---
 
 speaker diarization 

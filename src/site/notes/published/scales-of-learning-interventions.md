@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/scales-of-learning-interventions/"}
+{"dg-publish":true,"permalink":"/published/scales-of-learning-interventions/","noteIcon":""}
 ---
 
 24/01/25

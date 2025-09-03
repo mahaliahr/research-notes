@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/digital-gardens/"}
+{"dg-publish":true,"permalink":"/published/digital-gardens/","noteIcon":""}
 ---
 
 https://maggieappleton.com/garden-history

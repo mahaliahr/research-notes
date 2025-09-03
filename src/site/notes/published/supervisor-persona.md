@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervisor-persona/"}
+{"dg-publish":true,"permalink":"/published/supervisor-persona/","noteIcon":""}
 ---
 
 in order to craft my LLM supervisor (v1) I need to give it an appropriate persona

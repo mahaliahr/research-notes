@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/utopia-in-the-margins/"}
+{"dg-publish":true,"permalink":"/published/utopia-in-the-margins/","noteIcon":""}
 ---
 
 Le Guin has a very evocative quote:

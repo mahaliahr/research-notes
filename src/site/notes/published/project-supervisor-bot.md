@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/project-supervisor-bot/"}
+{"dg-publish":true,"permalink":"/published/project-supervisor-bot/","noteIcon":""}
 ---
 
 Developing plan of [[published/functionality-and-behaviour\|functionality-and-behaviour]]

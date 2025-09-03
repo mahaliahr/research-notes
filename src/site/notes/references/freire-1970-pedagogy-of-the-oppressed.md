@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/freire-1970-pedagogy-of-the-oppressed/"}
+{"dg-publish":true,"permalink":"/references/freire-1970-pedagogy-of-the-oppressed/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

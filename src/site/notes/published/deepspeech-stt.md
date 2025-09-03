@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/deepspeech-stt/"}
+{"dg-publish":true,"permalink":"/published/deepspeech-stt/","noteIcon":""}
 ---
 
 https://github.com/mozilla/DeepSpeech

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-education-for/"}
+{"dg-publish":true,"permalink":"/published/what-is-education-for/","noteIcon":""}
 ---
 
 11-06-2024-

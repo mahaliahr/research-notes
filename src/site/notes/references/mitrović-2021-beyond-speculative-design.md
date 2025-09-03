@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/mitrovic-2021-beyond-speculative-design/"}
+{"dg-publish":true,"permalink":"/references/mitrovic-2021-beyond-speculative-design/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

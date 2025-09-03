@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/annotated-bib-guidance/"}
+{"dg-publish":true,"permalink":"/published/annotated-bib-guidance/","noteIcon":""}
 ---
 
 this is simply bibliography list with some notes.

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/ibm-2024-ai-in-education/"}
+{"dg-publish":true,"permalink":"/references/ibm-2024-ai-in-education/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

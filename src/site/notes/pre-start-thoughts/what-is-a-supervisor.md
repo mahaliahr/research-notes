@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/what-is-a-supervisor/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/what-is-a-supervisor/","noteIcon":""}
 ---
 
 

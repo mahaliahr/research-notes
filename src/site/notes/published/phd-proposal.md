@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/phd-proposal/"}
+{"dg-publish":true,"permalink":"/published/phd-proposal/","noteIcon":""}
 ---
 
 as of June 2024 for the AfR (Application for Registration)

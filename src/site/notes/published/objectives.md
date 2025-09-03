@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/objectives/"}
+{"dg-publish":true,"permalink":"/published/objectives/","noteIcon":""}
 ---
 
 Critically examine the potential implications of AI on teaching and learning. 

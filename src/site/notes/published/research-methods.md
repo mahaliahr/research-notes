@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-methods/"}
+{"dg-publish":true,"permalink":"/published/research-methods/","noteIcon":""}
 ---
 
 I believe I need to research more about research methods in education and non-coventional artistic research methods.

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ual-description-of-a-supervisor/"}
+{"dg-publish":true,"permalink":"/published/ual-description-of-a-supervisor/","noteIcon":""}
 ---
 
 

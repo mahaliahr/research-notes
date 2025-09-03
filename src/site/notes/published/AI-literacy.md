@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ai-literacy/"}
+{"dg-publish":true,"permalink":"/published/ai-literacy/","noteIcon":""}
 ---
 
 this is a growing area that will be as important as the technological developments of [[published/generative-AI\|generative-AI]]. 

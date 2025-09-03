@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ai-access-libraries-speculation/"}
+{"dg-publish":true,"permalink":"/published/ai-access-libraries-speculation/","noteIcon":""}
 ---
 
 13-08-2024

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/case-study-illinois-chat/"}
+{"dg-publish":true,"permalink":"/references/case-study-illinois-chat/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

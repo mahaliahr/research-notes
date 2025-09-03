@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/project-cci-ual-staff-interviews/"}
+{"dg-publish":true,"permalink":"/published/project-cci-ual-staff-interviews/","noteIcon":""}
 ---
 
 what type of interview is best? everyone is busy

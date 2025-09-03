@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/manning-bozalek-2024-refusal-of-neurotypicality/"}
+{"dg-publish":true,"permalink":"/references/manning-bozalek-2024-refusal-of-neurotypicality/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

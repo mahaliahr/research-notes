@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/m-sc-cc-ai-literacy-workshop/"}
+{"dg-publish":true,"permalink":"/published/m-sc-cc-ai-literacy-workshop/","noteIcon":""}
 ---
 
 First in orientation week (general)

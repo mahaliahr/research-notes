@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/filliou-1970-teaching-and-learning-as-performance-arts/"}
+{"dg-publish":true,"permalink":"/references/filliou-1970-teaching-and-learning-as-performance-arts/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

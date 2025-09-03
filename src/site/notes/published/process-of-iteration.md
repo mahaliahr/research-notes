@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/process-of-iteration/"}
+{"dg-publish":true,"permalink":"/published/process-of-iteration/","noteIcon":""}
 ---
 
 'research in art and design is characterised by iteration' p13

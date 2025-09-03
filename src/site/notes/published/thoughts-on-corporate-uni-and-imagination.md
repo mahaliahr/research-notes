@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/thoughts-on-corporate-uni-and-imagination/"}
+{"dg-publish":true,"permalink":"/published/thoughts-on-corporate-uni-and-imagination/","noteIcon":""}
 ---
 
 02-08-2024

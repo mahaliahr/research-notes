@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/generative-ai/"}
+{"dg-publish":true,"permalink":"/published/generative-ai/","noteIcon":""}
 ---
 
 Generative AI or GenAI is... (add definition in my own words)

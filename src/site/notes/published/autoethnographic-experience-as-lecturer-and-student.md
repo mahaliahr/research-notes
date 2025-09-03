@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/autoethnographic-experience-as-lecturer-and-student/"}
+{"dg-publish":true,"permalink":"/published/autoethnographic-experience-as-lecturer-and-student/","noteIcon":""}
 ---
 
 The process of learning and teaching at the same time. How they **simultaneously** work towards my goals (whilst also feeding into each other)

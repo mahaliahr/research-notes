@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ethics/"}
+{"dg-publish":true,"permalink":"/published/ethics/","noteIcon":""}
 ---
 
 Ethical considerations 

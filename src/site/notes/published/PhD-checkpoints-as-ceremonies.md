@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ph-d-checkpoints-as-ceremonies/"}
+{"dg-publish":true,"permalink":"/published/ph-d-checkpoints-as-ceremonies/","noteIcon":""}
 ---
 
 

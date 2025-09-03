@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/design-interventions/"}
+{"dg-publish":true,"permalink":"/published/design-interventions/","noteIcon":""}
 ---
 
 [[published/project-supervisor-bot\|project-supervisor-bot]]

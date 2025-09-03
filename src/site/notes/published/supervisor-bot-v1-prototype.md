@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervisor-bot-v1-prototype/"}
+{"dg-publish":true,"permalink":"/published/supervisor-bot-v1-prototype/","noteIcon":""}
 ---
 
 This prototype explores the potential of a LLM to act as a supervisor, by adopting a 'persona' and listening to conversations between the student (me) and my supervisors, acting as an additional supervisor offering feedback.  

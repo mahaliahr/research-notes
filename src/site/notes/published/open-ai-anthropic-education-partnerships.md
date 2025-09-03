@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/open-ai-anthropic-education-partnerships/"}
+{"dg-publish":true,"permalink":"/published/open-ai-anthropic-education-partnerships/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

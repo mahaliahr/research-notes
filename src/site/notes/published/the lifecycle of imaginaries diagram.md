@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/the-lifecycle-of-imaginaries-diagram/"}
+{"dg-publish":true,"permalink":"/published/the-lifecycle-of-imaginaries-diagram/","noteIcon":""}
 ---
 
 ![alt text](/img/user/images/20240814_111440.jpg)

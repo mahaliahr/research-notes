@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/start-with-the-end-of-phd-in-mind/"}
+{"dg-publish":true,"permalink":"/published/start-with-the-end-of-phd-in-mind/","noteIcon":""}
 ---
 
 09-01-2024

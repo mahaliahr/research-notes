@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/czerniewicz-cronin-2023-higher-education-for-good/"}
+{"dg-publish":true,"permalink":"/references/czerniewicz-cronin-2023-higher-education-for-good/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

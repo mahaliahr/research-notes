@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/theories-practices-policies/"}
+{"dg-publish":true,"permalink":"/published/theories-practices-policies/","noteIcon":""}
 ---
 
 # What I asked?

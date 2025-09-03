@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/oreilly-research-identity-threshold-concepts/"}
+{"dg-publish":true,"permalink":"/published/oreilly-research-identity-threshold-concepts/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

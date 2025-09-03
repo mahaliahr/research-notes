@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-of-context/"}
+{"dg-publish":true,"permalink":"/published/research-of-context/","noteIcon":""}
 ---
 
 what is out there?

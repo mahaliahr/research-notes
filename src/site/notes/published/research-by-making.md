@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-by-making/"}
+{"dg-publish":true,"permalink":"/published/research-by-making/","noteIcon":""}
 ---
 
 When does making become research?

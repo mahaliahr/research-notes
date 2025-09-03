@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/ideas-around-phd-noncoherent/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/ideas-around-phd-noncoherent/","noteIcon":""}
 ---
 
 Messy - different ways of communicating / existing

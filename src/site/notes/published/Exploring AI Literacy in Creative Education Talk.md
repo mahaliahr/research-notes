@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/exploring-ai-literacy-in-creative-education-talk/"}
+{"dg-publish":true,"permalink":"/published/exploring-ai-literacy-in-creative-education-talk/","noteIcon":""}
 ---
 
 05-07-2024

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/first-day-phd-thoughts/"}
+{"dg-publish":true,"permalink":"/published/first-day-phd-thoughts/","noteIcon":""}
 ---
 
 04-01-2024

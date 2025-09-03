@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/speculative-design/"}
+{"dg-publish":true,"permalink":"/published/speculative-design/","noteIcon":""}
 ---
 
 #structure-note

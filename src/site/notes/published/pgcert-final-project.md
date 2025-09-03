@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/pgcert-final-project/"}
+{"dg-publish":true,"permalink":"/published/pgcert-final-project/","noteIcon":""}
 ---
 
 

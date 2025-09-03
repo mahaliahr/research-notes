@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/material-constraints-of-ai/"}
+{"dg-publish":true,"permalink":"/published/material-constraints-of-ai/","noteIcon":""}
 ---
 
 

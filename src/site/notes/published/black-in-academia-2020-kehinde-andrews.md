@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/black-in-academia-2020-kehinde-andrews/"}
+{"dg-publish":true,"permalink":"/published/black-in-academia-2020-kehinde-andrews/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

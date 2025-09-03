@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ethical-ai/"}
+{"dg-publish":true,"permalink":"/published/ethical-ai/","noteIcon":""}
 ---
 
 is this even possible?

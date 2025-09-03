@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/play-as-practice-in-new-ways-of-being/"}
+{"dg-publish":true,"permalink":"/published/play-as-practice-in-new-ways-of-being/","noteIcon":""}
 ---
 
 29-10-23-

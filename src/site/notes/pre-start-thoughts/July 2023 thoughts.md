@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/july-2023-thoughts/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/july-2023-thoughts/","noteIcon":""}
 ---
 
 

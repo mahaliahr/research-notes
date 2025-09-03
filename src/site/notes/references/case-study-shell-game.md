@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/case-study-shell-game/"}
+{"dg-publish":true,"permalink":"/references/case-study-shell-game/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

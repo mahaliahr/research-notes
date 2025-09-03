@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/oppression-limiting-situation-to-transform/"}
+{"dg-publish":true,"permalink":"/published/oppression-limiting-situation-to-transform/","noteIcon":""}
 ---
 
 'in order for the oppressed to be able to wage the struggle for their liberation, they must percieve the reality of oppression not as a closed world from which there is no exit, but as a limiting situation which they can transform' p23

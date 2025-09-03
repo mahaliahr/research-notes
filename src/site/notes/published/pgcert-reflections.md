@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/pgcert-reflections/"}
+{"dg-publish":true,"permalink":"/published/pgcert-reflections/","noteIcon":""}
 ---
 
  Using the [[published/the-riddle-for-reflection\|the-riddle-for-reflection]] from 'hands on research'. The following are my reflections on the modules and final progect of the pgcert.

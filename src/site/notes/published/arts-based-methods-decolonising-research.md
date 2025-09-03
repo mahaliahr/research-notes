@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/arts-based-methods-decolonising-research/"}
+{"dg-publish":true,"permalink":"/published/arts-based-methods-decolonising-research/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

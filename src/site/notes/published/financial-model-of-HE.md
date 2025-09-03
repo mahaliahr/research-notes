@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/financial-model-of-he/"}
+{"dg-publish":true,"permalink":"/published/financial-model-of-he/","noteIcon":""}
 ---
 
 I need to understand in more detail the financial model of higher education institutionsin the UK - and how they relate to similar institutions in Europe and the US - this will help me to make more grounded speculations in this regard. 

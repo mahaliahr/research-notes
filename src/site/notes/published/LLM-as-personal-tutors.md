@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/llm-as-personal-tutors/"}
+{"dg-publish":true,"permalink":"/published/llm-as-personal-tutors/","noteIcon":""}
 ---
 
 

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/speculative-design-and-imagination-relationship/"}
+{"dg-publish":true,"permalink":"/published/speculative-design-and-imagination-relationship/","noteIcon":""}
 ---
 
 What is the relationship between speculative design and imagination?

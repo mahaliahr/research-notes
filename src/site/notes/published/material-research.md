@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/material-research/"}
+{"dg-publish":true,"permalink":"/published/material-research/","noteIcon":""}
 ---
 
 teaches you about the affordance of a particular material.

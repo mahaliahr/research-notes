@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/ai-and-digital-poverty/"}
+{"dg-publish":true,"permalink":"/published/ai-and-digital-poverty/","noteIcon":""}
 ---
 
 what is the relevant research in this area?

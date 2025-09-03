@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-a-classroom/"}
+{"dg-publish":true,"permalink":"/published/what-is-a-classroom/","noteIcon":""}
 ---
 
 

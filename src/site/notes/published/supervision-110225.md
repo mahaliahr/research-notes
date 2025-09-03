@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-110225/"}
+{"dg-publish":true,"permalink":"/published/supervision-110225/","noteIcon":""}
 ---
 
 Summary: 

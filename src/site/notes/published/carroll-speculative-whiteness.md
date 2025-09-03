@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/carroll-speculative-whiteness/"}
+{"dg-publish":true,"permalink":"/published/carroll-speculative-whiteness/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

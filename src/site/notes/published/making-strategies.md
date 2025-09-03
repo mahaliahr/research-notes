@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/making-strategies/"}
+{"dg-publish":true,"permalink":"/published/making-strategies/","noteIcon":""}
 ---
 
 Making strategies can help you get started in a concrete and productive way 

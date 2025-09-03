@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/mickel-performance-practice-as-research-learning-teaching/"}
+{"dg-publish":true,"permalink":"/published/mickel-performance-practice-as-research-learning-teaching/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

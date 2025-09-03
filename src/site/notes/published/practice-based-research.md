@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/practice-based-research/"}
+{"dg-publish":true,"permalink":"/published/practice-based-research/","noteIcon":""}
 ---
 
 

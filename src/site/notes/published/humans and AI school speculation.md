@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/humans-and-ai-school-speculation/"}
+{"dg-publish":true,"permalink":"/published/humans-and-ai-school-speculation/","noteIcon":""}
 ---
 
 speculation: humans and 'AI' learning together - what would this look like?

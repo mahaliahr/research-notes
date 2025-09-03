@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/","noteIcon":""}
 ---
 
 [[published/play-is-the-work-of-operating-a-system\|play-is-the-work-of-operating-a-system]]

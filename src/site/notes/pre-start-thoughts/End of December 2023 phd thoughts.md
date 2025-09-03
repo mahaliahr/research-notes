@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/end-of-december-2023-phd-thoughts/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/end-of-december-2023-phd-thoughts/","noteIcon":""}
 ---
 
 _Al and labour_

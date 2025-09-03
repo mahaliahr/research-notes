@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/the-model/"}
+{"dg-publish":true,"permalink":"/published/the-model/","noteIcon":""}
 ---
 
 ![illustrated model of research](/img/user/images/model.jpeg)

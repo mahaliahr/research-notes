@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/designing-practice-based-research/"}
+{"dg-publish":true,"permalink":"/published/designing-practice-based-research/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

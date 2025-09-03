@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/opting-out-of-ai-learning/"}
+{"dg-publish":true,"permalink":"/published/opting-out-of-ai-learning/","noteIcon":""}
 ---
 
 should people be allowed to opt out of using [[published/generative-AI\|generative-AI]] in learning

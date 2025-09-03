@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/references/garrett-2024-imagined-futures-of-racialised-phds/"}
+{"dg-publish":true,"permalink":"/references/garrett-2024-imagined-futures-of-racialised-phds/","noteIcon":""}
 ---
 
 

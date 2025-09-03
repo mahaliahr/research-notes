@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/persona-prompting/"}
+{"dg-publish":true,"permalink":"/published/persona-prompting/","noteIcon":""}
 ---
 
 PersonaPrompting Library

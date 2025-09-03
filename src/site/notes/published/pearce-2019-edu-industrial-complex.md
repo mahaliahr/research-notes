@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/pearce-2019-edu-industrial-complex/"}
+{"dg-publish":true,"permalink":"/published/pearce-2019-edu-industrial-complex/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

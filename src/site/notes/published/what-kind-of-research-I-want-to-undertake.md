@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-kind-of-research-i-want-to-undertake/"}
+{"dg-publish":true,"permalink":"/published/what-kind-of-research-i-want-to-undertake/","noteIcon":""}
 ---
 
 (11-04-2024)

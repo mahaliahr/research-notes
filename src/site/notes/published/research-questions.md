@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-questions/"}
+{"dg-publish":true,"permalink":"/published/research-questions/","noteIcon":""}
 ---
 
 [[published/RQ1-how-will-ai-change-teaching-and-learning\|RQ1-how-will-ai-change-teaching-and-learning]]

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/developing-playful-methodology/"}
+{"dg-publish":true,"permalink":"/published/developing-playful-methodology/","noteIcon":""}
 ---
 
 tying into [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]]

@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/naidoo-2013-students-as-consumers/"}
+{"dg-publish":true,"permalink":"/published/naidoo-2013-students-as-consumers/","noteIcon":""}
 ---
 
 [[references/-bibliography\|-bibliography]]

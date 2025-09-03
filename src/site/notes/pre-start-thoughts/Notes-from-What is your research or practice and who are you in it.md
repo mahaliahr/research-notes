@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/"}
+{"dg-publish":true,"permalink":"/pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/","noteIcon":""}
 ---
 
 
