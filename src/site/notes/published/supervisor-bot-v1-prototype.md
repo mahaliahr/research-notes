@@ -10,6 +10,7 @@ It does not aim to have an interface and won't be a fully robust usable applicat
 
 [[published/llm-supervisor-v1-progress\|llm-supervisor-v1-progress]]
 
+![alt text](/img/user/images/20240814_111440.jpg)
 v1 - basic audio transcription loop
 v1.5 - live mic input
 
