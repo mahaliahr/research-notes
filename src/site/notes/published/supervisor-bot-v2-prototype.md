@@ -4,4 +4,5 @@
 
 speaker diarization 
 simple UI
+memory
 (voice?)
