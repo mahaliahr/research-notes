@@ -17,6 +17,6 @@
 3. user interface
 
 Real time interjections and interactions
-[[voice-activity-detection\|voice-activity-detection]] (VAD)
+[[unpublished/voice-activity-detection\|voice-activity-detection]] (VAD)
 
 [speaker-diarisation]
