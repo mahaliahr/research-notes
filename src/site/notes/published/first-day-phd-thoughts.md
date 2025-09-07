@@ -4,7 +4,7 @@
 
 04-01-2024
 
-[[published/phd-as-privilege\|phd-as-privilege]]
+[[unpublished/phd-as-privilege\|phd-as-privilege]]
 
 [[unpublished/mother\|mother]]
 
