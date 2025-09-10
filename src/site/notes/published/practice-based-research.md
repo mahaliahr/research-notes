@@ -11,6 +11,7 @@ Critically I believe that my practice will take the form of [[published/design-i
 How I am currently (2/4/25) envisioning my PhD research
 
 **Experiments in my teaching & learning
+
 learning experiments - 
 	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
 	'live coding a phd' focus on process
@@ -19,6 +20,7 @@ learning experiments -
 	'diy-bot' framework [[published/diy-bot-creation\|diy-bot-creation]] 
 	AI literacy workshops 
 
+other ideas, not yet very defined: 
 -> <mark style="background: #FFB8EBA6;">speculative prompts</mark> (visual and more?)
 -> to imagine other scenarios 
 **participatory speculation workshop
@@ -29,5 +31,6 @@ I will follow threads from here - informed by this idea of [[published/possibili
 
 work towards a September Deadline to have something ready to show the new cohort / bring to conferences
 
-find communities outside of UAL and Academia (Immediately coming to mind is Huddlecraft)
+~~find communities outside of UAL and Academia (Immediately coming to mind is Huddlecraft)~~
+for now just concentrating on UAL 
 

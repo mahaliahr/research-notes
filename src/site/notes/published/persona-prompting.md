@@ -8,3 +8,5 @@ https://github.com/sockcymbal/enhanced-llm-reasoning-tree-of-thoughts/blob/main/
 
 https://learnprompting.org/docs/advanced/zero_shot/role_prompting 
 
+https://context.addy.ie/
+

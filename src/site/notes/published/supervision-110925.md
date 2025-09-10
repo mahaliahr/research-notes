@@ -4,28 +4,6 @@
 
 research design - 
 
-````
-```mermaid
-
-gantt
-    dateFormat   YYYY-MM-DD
-    axisFormat   %b-%y
-    tickInterval 1month
-    title        Titel
-
-section Section 1
-AP1 : crit, done, AP1, 2024-08-12, 2024-08-16
-AP2 : crit, done, AP2, after AP1, 2w
-AP3 : crit, active, AP3, after AP2, 4w
-
-section Section 2
-AP4 : crit, AP4, after AP3, 12w
-AP5 : crit, AP5, after AP4, 2w
-
-
-```
-````
-
 learning experiments - 
 	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
 	'live coding a phd' focus on process

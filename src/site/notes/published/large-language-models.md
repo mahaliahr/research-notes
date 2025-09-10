@@ -28,5 +28,6 @@ https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s
 [[published/supervisor-persona\|supervisor-persona]]
 
 [[published/open-source-LLMs\|open-source-LLMs]]
+[[unpublished/running-LLMs-locally\|running-LLMs-locally]]
 
 

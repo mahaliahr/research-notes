@@ -3,6 +3,7 @@
 ---
 
 First in orientation week (general)
+
 Topics to potentially cover: 
 - who uses AI
 - opinions and imaginations of AI
