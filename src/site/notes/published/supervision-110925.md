@@ -2,11 +2,11 @@
 {"dg-publish":true,"permalink":"/published/supervision-110925/","noteIcon":""}
 ---
 
-research design - 
+#### Research Design
 
 learning experiments - 
 	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
-	'live coding a phd' focus on process
+	'live coding a phd' [[published/focus-on-process\|focus-on-process]]
 
 [[published/teaching\|teaching]] experiments - 
 	'diy-bot' framework [[published/diy-bot-creation\|diy-bot-creation]] 
@@ -17,10 +17,15 @@ other ideas, not yet very defined:
 -> to imagine other scenarios 
 **participatory speculation workshop
 
-technical build of bot
+#### Supervisor-Bot Prototype
 [[published/supervisor-bot-v1-prototype\|supervisor-bot-v1-prototype]]
 
-staff interview planning and timeline
+#### Staff interview planning and timeline
 [[published/project-cci-ual-staff-interviews\|project-cci-ual-staff-interviews]]
 
+#### AI Literacy sessions for new students
 [[published/MSc-CC-AI-Literacy-Workshop\|MSc-CC-AI-Literacy-Workshop]]
+
+---
+
+Questions
