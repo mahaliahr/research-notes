@@ -8,6 +8,6 @@ Or as another grounding principle I am interested in coming back to the idea of 
 
 Crucially I want to express this in ways beyond traditional modes, particularly visual/moving image as a way to engage people. This is something that I need to research further into in regards to [[published/research-methods\|research-methods]], I wonder if [[published/Autoethnography\|Autoethnography]] will allow me to explore this in some way?
 
-democratisation of knowledge, beyond the borders of the the academy/institutions?
+Democratisation of knowledge, beyond the borders of the the academy/institutions?
 
 

@@ -2,7 +2,7 @@
 {"dg-publish":true,"permalink":"/published/supervision-110925/","noteIcon":""}
 ---
 
-### Research Design
+### Research Design (Developing)
 
 learning experiments - 
 	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
@@ -11,8 +11,6 @@ learning experiments -
 [[published/teaching\|teaching]] experiments - 
 	'diy-bot' framework [[published/diy-bot-creation\|diy-bot-creation]] 
 	AI literacy workshops 
-
-
 
 _other ideas, not yet very defined: 
 -> <mark style="background: #FFB8EBA6;">speculative prompts</mark> (visual and more?)
@@ -30,4 +28,4 @@ _other ideas, not yet very defined:
 
 ---
 
-Questions
+Notes: 
