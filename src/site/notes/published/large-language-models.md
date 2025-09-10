@@ -4,7 +4,7 @@
 
 #structure-note 
 
-probablistic pattern matching
+<!--  probablistic pattern matching
 
 LLM's struggle with logical reasoning due to 'token bias'
 
@@ -13,7 +13,7 @@ better prompting can genrate better results from LLMs 'chain-of-thought' promoti
 
 key differences and functionalities between closed and open source LLMs?
 
-https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s 
+https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s -->
 
 ---
 
@@ -30,4 +30,4 @@ https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s
 [[published/open-source-LLMs\|open-source-LLMs]]
 [[unpublished/running-LLMs-locally\|running-LLMs-locally]]
 
-
+[memory]

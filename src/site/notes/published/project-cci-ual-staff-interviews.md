@@ -2,47 +2,50 @@
 {"dg-publish":true,"permalink":"/published/project-cci-ual-staff-interviews/","noteIcon":""}
 ---
 
-Considerations - everyone is very busy, will people have time to contribute? How to design it so that people feel inclined to do it, rather than being a burden?
+Considerations -> everyone is very busy, will people have time to contribute? 
+How to design it so that people feel inclined to do it, rather than being a burden?
 
-**things to find out:
+### **things to find out:
 
-How are we across CCI, teaching AI literacy? 
-How are we talking about AI? 
+How are we across CCI, teaching AI literacy? What position are we taking?
+How are we talking about AI to students? 
 When do we talk about it first in the pedagogical process?
-Opinions in AI integration in learning - positive or negative, if negative ask why
+Opinions on AI integration in learning - positive or negative, if negative ask why
+As educators do we have a responsibility to prepare students for this landscape
 
 focus groups?
 questionnaire?
 ~~observations~~ ethics form doesn't account for this, so will need to submit another for this/ work out if it's valuable or useful
 
 ---
+### 1 - recruit / scope (questionnaire)
 
-**Main questions**
-1. How is AI literacy taught across CCI?
-2. How and when do staff introduce AI in the learning journey?
-3. What are staff attitudes toward AI in learning (and why, esp. for concerns)?
-4. What support, policies, or conditions enable/limit integration?
+- I'll send a short survey (5–8 Qs) to staff, with the aim to:
+    1. Map teaching roles, engagement, brief opinions re. AI.
+    2. Recruit for interviews.
 
-**Methods:**
+---
 
-- **Short questionnaire (5 questions).** Sent CCI-wide to map “where/when/how” AI shows up and to recruit interviewees.
--
-		- I explicitly address AI literacy in my course / curriculum. _(Never → Often)_
-		- Students are first encouraged to **use/discuss AI** in: _(pre-arrival / induction / early weeks / mid-term / capstone / not at all)_
-		- My overall stance on AI in learning is: _(Very negative → Very positive)_
-		- My biggest concern is: _(free-text, ≤120 chars)_
-		- I’m willing to join a 20-min interview. _(Yes/No + email)_
+- Your role at CCI 
+- What year groups/modules do you primarily work with? (short answer).
+- How often do you discuss or use generative AI tools in your teaching?
+- When (if at all) do you first introduce AI concepts to students in the learning process? 
+- In one or two sentences, how would you describe your current view of AI in education? 
+- What do you see as the main benefits and/or risks of using AI in teaching and learning? 
+- Would you be willing to take part in a 30-45 minute interview?
+- Would you like to receive a short summary of findings?
 
-- **Semi-structured interviews.** 20–30 minutes on Teams
-- 
-		- In your current modules, **where (if at all) do you introduce AI** (LLMs/tools) in the student journey? (week/time, mode)
-		- **Why there?** (learning objectives, framing, risk/benefit balance)
-		- How do you **define or teach “AI literacy”** for your students? (skills, epistemic framing, ethics)
-		- **Talk me through a concrete activity** or assignment that involves AI. What worked/failed?
-		- What **policies/practices** (formal or informal) shape how you use or avoid AI?
-		- **Attitude check:** What’s exciting you? What worries you? _(If negative, gently probe for causes: assessment validity, equity, workload, policy, technical)_
-		- What **support/resources** would meaningfully change your practice?
-		- Are there **differences across cohorts** (UG/PG, disciplines, language backgrounds)?
-		- If you’ve **avoided AI**, what would need to be true to reconsider?
-		- Anything else I haven’t asked that matters here?
+---
 
+### 2 -semi-structured interviews
+
+- 30-45 minute semi-structured interviews 
+- ==can I offer participants _different modes of interview_ to be more accommodating to varying and busy schedules (shorter, online, asynchronous written responses)==
+
+### 3 - analysis
+- **Questionnaire data** -  simple descriptives (counts, word clouds for open comments).
+- **Interviews** - thematic analysis.
+
+Compare the two, to see what emerges
+
+Feedback summary email at the end - for reciprocity
