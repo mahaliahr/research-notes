@@ -13,6 +13,8 @@ It does not aim to have an interface and won't be a fully robust usable applicat
 [^1]see: [[published/supervisor-persona\|supervisor-persona]]
 
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-u7upKWpRsI?si=94iSf2gUuIRT5POU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 Notes from testing:
 
 From initial tests and development work on this, I believe that the persona is too 'formal' at the moment, sounds very much like a bot and I think this might be jarring and weird in my supervisory meeting context (as I don't have that kind of very formal relationship with them, though obviously the context is still formal)
