@@ -5,7 +5,7 @@
 Considerations -> everyone is very busy, will people have time to contribute? 
 How to design it so that people feel inclined to do it, rather than being a burden?
 
-### **things to find out:
+### **things to find out:**
 
 How are we across CCI, teaching AI literacy? What position are we taking?
 How are we talking about AI to students? 
