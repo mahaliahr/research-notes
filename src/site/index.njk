@@ -1,0 +1,35 @@
+---
+layout: "base.njk"
+title: "PhD — Live Research"
+permalink: "/"
+eleventyExcludeFromCollections: true
+---
+
+<section class="hero">
+  <h1>{{ metadata.title or "Your Name — PhD in progress" }}</h1>
+  <p>Exploring generative AI, learning, and live processes in creative practice.</p>
+  <nav class="cta">
+    <a class="btn" href="/notes">Blog / Notes</a>
+    <a class="btn" href="/garden">Digital Garden</a>
+    <a class="btn" href="https://youtube.com/@yourchannel">YouTube</a>
+    <a class="btn" href="/about">About</a>
+  </nav>
+</section>
+
+<section class="dashboard">
+  <h2>Live dashboard</h2>
+  {% include "components/user/common/afterContent/live-widget.njk" %}
+</section>
+
+<section class="highlights">
+  <h2>Highlights</h2>
+  <ul class="cards">
+    {% for post in collections.post | slice(0,6) %}
+      <li class="card">
+        <a href="{{ post.url }}">{{ post.data.title }}</a>
+        <small>{{ post.date | dateDisplay }}</small>
+        <p>{{ post.data.description or post.templateContent | striptags | truncate(120) }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</section>
