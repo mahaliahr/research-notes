@@ -1,12 +1,12 @@
 ---
-layout: "note.njk"
+layout: "layouts/note.njk"
 title: "PhD — Live Research"
 permalink: "/"
 eleventyExcludeFromCollections: true
 ---
 
 <section class="hero">
-  <h1>{{ metadata.title or "Your Name — PhD in progress" }}</h1>
+  <h1>{{ metadata.title or "PhD Live" }}</h1>
   <p>Exploring generative AI, learning, and live processes in creative practice.</p>
   <nav class="cta">
     <a class="btn" href="/notes">Blog / Notes</a>
@@ -18,7 +18,7 @@ eleventyExcludeFromCollections: true
 
 <section class="dashboard">
   <h2>Live dashboard</h2>
-  {% include "components/user/common/afterContent/live-widget.njk" %}
+  {% include "components/live-widget.njk" %}
 </section>
 
 <section class="highlights">
