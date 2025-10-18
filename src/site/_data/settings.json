@@ -1,0 +1,10 @@
+{
+  "dgEnableSearch": false,
+  "dgShowInlineTitle": true,
+  "dgShowTags": true,
+  "dgShowBacklinks": false,
+  "dgShowLocalGraph": false,
+  "dgShowToc": false,
+  "dgShowFileTree": false,
+  "dgLinkPreview": false
+}

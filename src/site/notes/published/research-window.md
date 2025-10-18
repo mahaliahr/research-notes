@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-window/","tags":["gardenEntry"],"noteIcon":""}
+# {"dg-publish":true,"permalink":"/published/research-window/","tags":["gardenEntry"],"noteIcon":""}
 ---
 
 This is a snapshot of my thinking and research for my PhD. 
