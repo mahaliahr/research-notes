@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
 </header>
 
 <section class="live-dashboard">
-  <h2>🔴 Live</h2>
+  <h2>Live</h2>
   <div id="live-widget">
     <div id="live-now"></div>
     <div id="live-next"></div>
@@ -38,7 +38,7 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section class="latest-posts">
-  <h2>🪞 Latest Reflections</h2>
+  <h2>Latest Reflections</h2>
   {% set posts = collections.posts | default([]) %}
   {% if posts | length %}
     <ul class="cards">
@@ -58,7 +58,7 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section class="recent-notes">
-  <h2>🧠 Recently Updated Notes</h2>
+  <h2>Recently Updated Notes</h2>
   {% set z = collections.zettels | default([]) %}
   {% if z | length %}
     <ul class="list">

@@ -1,4 +1,4 @@
-# 🎓 PhD Research Site
+# PhD Research Site
 
 This repository contains the source for my **live PhD research website**, built with [Eleventy](https://www.11ty.dev/) and synced with my [Obsidian](https://obsidian.md/) vault.
 
