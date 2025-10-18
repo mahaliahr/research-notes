@@ -1,5 +1,5 @@
 {
-  "dgEnableSearch": false,
+  "dgEnableSearch": true,
   "dgShowInlineTitle": true,
   "dgShowTags": true,
   "dgShowBacklinks": false,

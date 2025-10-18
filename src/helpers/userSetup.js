@@ -9,20 +9,117 @@ function userEleventySetup(eleventyConfig) {
   // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
 
-  eleventyConfig.addCollection("milestones", (collection) =>
-    collection.getAll().filter(isPublic).filter(p => p.data.type === "milestone")
-      .sort((a,b) => new Date(a.data.due) - new Date(b.data.due))
+  // POSTS: either explicitly type: post OR live in /posts/ (adjust if needed)
+    eleventyConfig.addCollection("post", (c) =>
+    c.getAll()
+      .filter(p => (p.data && p.data.type === "post") || p.inputPath.includes("/notes/published/"))
+      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
+  );
+  
+  // ZETTELS/NOTES: everything under /notes/ that is NOT a post
+  eleventyConfig.addCollection("zettels", (c) =>
+    c.getAll()
+      .filter(p => p.inputPath.includes("/notes/"))
+      .filter(p => !(p.data && p.data.type === "post"))
+      .sort((a,b) => new Date(b.data?.updated || b.date || 0) - new Date(a.data?.updated || a.date || 0))
   );
 
-  eleventyConfig.addCollection("sessions", (collection) =>
-    collection.getAll().filter(isPublic).filter(p => p.data.type === "session")
-      .sort((a,b) => new Date(b.data.start) - new Date(a.data.start))
+  // Entry notes for “start exploring” (tag: gardenEntry or your tag of choice)
+  eleventyConfig.addCollection("entryNotes", (c) =>
+    c.getAll()
+      .filter(p => p.inputPath.includes("/notes/"))
+      .filter(p => (p.data?.tags || []).includes("gardenEntry"))
+      .sort((a,b) => (a.data?.title || a.fileSlug).localeCompare(b.data?.title || b.fileSlug))
   );
 
-  eleventyConfig.addCollection("streamItems", (collection) =>
-    collection.getAll().filter(isPublic).filter(p => p.data.type === "stream")
-      .sort((a,b) => new Date(b.data.date) - new Date(a.data.date))
+  // FEATURED: tag for highlights
+    eleventyConfig.addCollection("featuredPosts", (c) =>
+    c.getFilteredByTag("featured")
+      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
   );
+
+  // Helper: read the raw rendered markdown (not HTML)
+  const getText = (p) => (p.template && p.template.inputContent) || p.templateContent || "";
+
+  // --- MILESTONES ---
+  // Matches: "- [ ] Title #milestone @YYYY-MM-DD" or "- [x] ..."
+  const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+(.+?)\s*(?:@(\d{4}-\d{2}-\d{2}))?(?=\s|$)/gm;
+
+  eleventyConfig.addCollection("milestones", (c) => {
+    const out = [];
+    for (const p of c.getAll()) {
+      const txt = getText(p);
+      if (!/#milestone\b/.test(txt)) continue;
+      let m;
+      while ((m = milestoneRe.exec(txt))) {
+        const [, box, title, due] = m;
+        out.push({
+          title: title.replace(/\s+#milestone\b/i, "").trim(),
+          due: due || null,
+          status: box.trim().toLowerCase() === "x" ? "done" : "planned",
+          area: null,
+          url: p.url,
+        });
+      }
+    }
+    // upcoming first; then done at the end
+    return out.sort((a, b) => {
+      const ad = a.due ? new Date(a.due).getTime() : Infinity;
+      const bd = b.due ? new Date(b.due).getTime() : Infinity;
+      return ad - bd;
+    });
+  });
+
+  // --- SESSIONS ---
+  // Any note in "notes/sessions/" or that contains "start::" is a session.
+  // Extract start/end/topic from inline fields.
+  const inlineField = (src, key) => {
+    const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
+    const m = src.match(re);
+    return m ? m[1].trim() : null;
+  };
+
+  eleventyConfig.addCollection("sessions", (c) => {
+    return c.getAll()
+      .filter(p => p.inputPath.includes("/notes/sessions/") || /(^|\n)\s*start::/i.test(getText(p)))
+      .map(p => {
+        const txt = getText(p);
+        const start = inlineField(txt, "start");
+        const end = inlineField(txt, "end");
+        const topic = inlineField(txt, "topic") || p.data.title || p.fileSlug;
+        return { start, end, topic, url: p.url };
+      })
+      // newest first
+      .sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
+  });
+
+  // --- STREAM ---
+  // From one "stream.md" file (or your daily notes folder), parse "- HH:MM message"
+  const streamLineRe = /^\s*-\s*(\d{1,2}:\d{2})\s+(.+)$/gm;
+
+  eleventyConfig.addCollection("streamItems", (c) => {
+    const out = [];
+    const candidates = c.getAll().filter(p =>
+      /stream\.md$/.test(p.inputPath) || p.inputPath.includes("/notes/daily/")
+    );
+    for (const p of candidates) {
+      const txt = getText(p);
+      const dateField = inlineField(txt, "date");
+      // Try to derive a date from filename if no date:: present
+      const fromName = p.inputPath.match(/(\d{4}-\d{2}-\d{2})/);
+      const day = dateField || (fromName ? fromName[1] : null);
+      let m;
+      while ((m = streamLineRe.exec(txt))) {
+        const [, time, message] = m;
+        out.push({
+          date: day ? `${day} ${time}` : time,
+          text: message.trim(),
+          url: p.url,
+        });
+      }
+    }
+    return out.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+  });
 
   // // Emit lightweight JSON for client-side widgets
   // eleventyConfig.on('afterBuild', async () => {
