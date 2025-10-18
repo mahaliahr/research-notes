@@ -1,21 +1,36 @@
 ---
 permalink: "notes/{{ page.fileSlug | slugify }}/"
 ---
+{% set s = settings | default({}) %}
+{% set d = dynamics | default({}) %}
+{% set d_common = d.common | default({}) %}
+{% set d_notes  = d.notes  | default({}) %}
+
+{# safe meta fallbacks used inline with |default below #}
+
 <!DOCTYPE html>
 <html lang="{{ meta.mainLanguage }}">
   <head>
     <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
     {%include "components/pageheader.njk"%}
-    {% for imp in dynamics.common.head %}
+
+    {# SAFE loops #}
+{% for imp in d_common.head | default([]) %}
+  {% include imp %}
+{% endfor %}
+{% for imp in d_notes.head | default([]) %}
+  {% include imp %}
+{% endfor %}
+    {# {% for imp in dynamics.common.head %}
       {% include imp %}
     {% endfor %}
     {% for imp in dynamics.notes.head %}
       {% include imp %}
-    {% endfor %}
+    {% endfor %} #}
   </head>
   <body class="theme-{{meta.baseTheme}} markdown-preview-view markdown-rendered markdown-preview-section {{meta.bodyClasses}}">
     {%include "components/notegrowthhistory.njk"%}
-    
+
     {% if settings.dgShowFileTree !== true %}
       {%include "components/navbar.njk"%}
     {%else%}
