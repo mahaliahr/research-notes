@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /pre-start-thoughts/ideas-around-phd-noncoherent/
 noteIcon: ''
-title: Messy - different ways of communicating / existing
 visibility: public
 description: >-
   Messy - different ways of communicating / existing

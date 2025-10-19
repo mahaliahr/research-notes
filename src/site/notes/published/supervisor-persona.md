@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/supervisor-persona/
 noteIcon: ''
-title: >-
-  in order to craft my LLM supervisor (v1) I need to give it an appropriate
-  persona
 visibility: public
 description: "in order to craft my LLM supervisor (v1) I need to give it an appropriate persona\n\ncurrently this is the working persona:  \n\t*You are a thoughtful and supportiv"
 updated: '2025-10-15T21:01:34.024Z'

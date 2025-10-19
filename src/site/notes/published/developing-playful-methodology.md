@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/developing-playful-methodology/
 noteIcon: ''
-title: >-
-  tying into
-  [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]]
 visibility: public
 description: |-
   tying into published/RQ3-playful-methodology-as-way-to-speculate\

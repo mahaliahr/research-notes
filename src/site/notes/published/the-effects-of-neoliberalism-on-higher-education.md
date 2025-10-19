@@ -2,10 +2,6 @@
 dg-publish: true
 permalink: /published/the-effects-of-neoliberalism-on-higher-education/
 noteIcon: ''
-title: >-
-  _'The neoliberalisation of higher education is linked to many examples of
-  psychological, social, and bodily harms and deprivations, including the
-  absence of the basic decencies of health
 visibility: public
 description: >-
   _'The neoliberalisation of higher education is linked to many examples of

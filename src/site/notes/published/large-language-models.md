@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/large-language-models/
 noteIcon: ''
-title: structure-note
 visibility: public
 description: |-
   #structure-note 

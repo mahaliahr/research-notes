@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/llm-in-academia/
 noteIcon: ''
-title: >-
-  LLM inspired by this - 'academia' speak like a translator. Are people already
-  using them to achieve this to a certain extent
 visibility: public
 description: >-
   LLM inspired by this - 'academia' speak like a translator. Are people already

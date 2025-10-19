@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/mickel-performance-practice-as-research-learning-teaching/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

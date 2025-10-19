@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/utopia-in-the-margins/
 noteIcon: ''
-title: 'Le Guin has a very evocative quote:'
 visibility: public
 description: >-
   Le Guin has a very evocative quote:

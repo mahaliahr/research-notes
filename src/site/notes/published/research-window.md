@@ -1,5 +1,4 @@
 ---
-title: This is a snapshot of my thinking and research for my PhD.
 permalink: /notes/research-window/
 dg-publish: true
 visibility: public

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/22-01-2024-where-did-i-learn-to-learn/
 noteIcon: ''
-title: I didn't learn how to learn from school.
 visibility: public
 description: >-
   I didn't learn how to learn from school. 

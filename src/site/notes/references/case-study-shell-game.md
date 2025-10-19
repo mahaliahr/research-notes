@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/case-study-shell-game/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

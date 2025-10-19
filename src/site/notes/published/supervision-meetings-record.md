@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/supervision-meetings-record/
 noteIcon: ''
-title: 25-26 academic year
 visibility: public
 description: >-
   25-26 academic year

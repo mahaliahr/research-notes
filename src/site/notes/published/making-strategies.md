@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/making-strategies/
 noteIcon: ''
-title: Making strategies can help you get started in a concrete and productive way
 visibility: public
 description: "Making strategies can help you get started in a concrete and productive way\_\n\nIn the early stage of making what you are doing might not feel like research. It’s"
 updated: '2025-10-15T21:01:34.010Z'

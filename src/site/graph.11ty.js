@@ -42,7 +42,7 @@ module.exports = class {
 
     for (const p of zettels) {
       const id = p.url;
-      const title = (p.data && p.data.title) || p.fileSlug;
+      const title = p.fileSlug;
 
       nodes.push({ id, title, url: p.url });
 

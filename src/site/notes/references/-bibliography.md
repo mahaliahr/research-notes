@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/bibliography/
 noteIcon: ''
-title: group based on research areas?
 visibility: public
 description: |-
   group based on research areas?

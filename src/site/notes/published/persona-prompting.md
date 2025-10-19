@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/persona-prompting/
 noteIcon: ''
-title: PersonaPrompting Library
 visibility: public
 description: >-
   PersonaPrompting Library

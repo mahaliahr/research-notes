@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/research-methods/
 noteIcon: ''
-title: >-
-  I believe I need to research more about research methods in education and
-  non-coventional artistic research methods.
 visibility: public
 description: >-
   I believe I need to research more about research methods in education and

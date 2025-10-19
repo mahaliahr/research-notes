@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/the-model/
 noteIcon: ''
-title: '![illustrated model of research](/img/user/images/model.jpeg)'
 visibility: public
 description: >-
   ![illustrated model of research](/img/user/images/model.jpeg)

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/phd-proposal/
 noteIcon: ''
-title: as of June 2024 for the AfR (Application for Registration)
 visibility: public
 description: >-
   as of June 2024 for the AfR (Application for Registration)

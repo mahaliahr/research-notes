@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/possibility-spaces-and-impossibility-spaces/
 noteIcon: ''
-title: 29-10-23-
 visibility: public
 description: >-
   29-10-23-

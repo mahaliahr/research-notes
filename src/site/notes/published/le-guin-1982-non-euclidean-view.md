@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/le-guin-1982-non-euclidean-view/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

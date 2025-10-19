@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/case-study-roby/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

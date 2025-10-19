@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/sicart-play-matters/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

@@ -2,10 +2,6 @@
 dg-publish: true
 permalink: /published/my-positionality/
 noteIcon: ''
-title: >-
-  within this research I will use my
-  [[published/autoethnographic-experience-as-lecturer-and-student\|autoethnographic-experience-as-lecturer-and-student]]
-  as direct research.
 visibility: public
 description: >-
   within this research I will use my

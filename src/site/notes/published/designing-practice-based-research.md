@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/designing-practice-based-research/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

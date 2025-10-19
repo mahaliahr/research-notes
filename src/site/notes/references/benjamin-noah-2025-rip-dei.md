@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/benjamin-noah-2025-rip-dei/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

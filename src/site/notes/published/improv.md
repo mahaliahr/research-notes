@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/improv/
 noteIcon: ''
-title: '160924 thoughts:'
 visibility: public
 description: |-
   160924 thoughts: 

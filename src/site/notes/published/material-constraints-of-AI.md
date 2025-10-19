@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/material-constraints-of-ai/
 noteIcon: ''
-title: How much energy does using transformers (genAI) actually take?
 visibility: public
 description: |-
   How much energy does using transformers (genAI) actually take? 

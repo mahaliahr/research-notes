@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ethics/
 noteIcon: ''
-title: Ethical considerations
 visibility: public
 description: |-
   Ethical considerations 

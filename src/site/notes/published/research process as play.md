@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/research-process-as-play/
 noteIcon: ''
-title: >-
-  I am also interested in the **process** of doing this in a speculative (and
-  playful way) —> this could become pedagogically informative
 visibility: public
 description: >-
   I am also interested in the **process** of doing this in a speculative (and

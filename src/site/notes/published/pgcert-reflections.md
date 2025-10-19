@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/pgcert-reflections/
 noteIcon: ''
-title: '[[published/theories-practices-policies\|theories-practices-policies]]'
 visibility: public
 description: >-
   Using the published/the-riddle-for-reflection\ from 'hands on research'. The

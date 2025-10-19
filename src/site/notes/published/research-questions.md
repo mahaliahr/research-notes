@@ -2,8 +2,6 @@
 dg-publish: true
 permalink: /published/research-questions/
 noteIcon: ''
-title: >-
-  [[published/RQ1-how-will-ai-change-teaching-and-learning\|RQ1-how-will-ai-change-teaching-and-learning]]
 visibility: public
 description: "published/RQ1-how-will-ai-change-teaching-and-learning\\\n\npublished/RQ2-socio-political-and-tech-changing-learning\\\n\_\npublished/RQ3-playful-methodology-as-way-to"
 updated: '2025-10-15T21:01:34.021Z'

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/play-as-practice-in-new-ways-of-being/
 noteIcon: ''
-title: 29-10-23-
 visibility: public
 description: >-
   29-10-23-

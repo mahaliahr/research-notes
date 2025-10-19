@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/scales-of-learning-interventions/
 noteIcon: ''
-title: 24/01/25
 visibility: public
 description: |-
   24/01/25

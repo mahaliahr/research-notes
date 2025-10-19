@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/annotated-bib-guidance/
 noteIcon: ''
-title: this is simply bibliography list with some notes.
 visibility: public
 description: >-
   this is simply bibliography list with some notes.

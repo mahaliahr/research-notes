@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/pgcert-final-project/
 noteIcon: ''
-title: What I asked?
 visibility: public
 description: |-
   What I asked?

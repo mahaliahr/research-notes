@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ll-ms-disrupting-formalities/
 noteIcon: ''
-title: why is everyone using it?
 visibility: public
 description: >-
   why is everyone using it? 

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/naidoo-2013-students-as-consumers/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

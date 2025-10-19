@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/supervision-010525/
 noteIcon: ''
-title: 'Overview:'
 visibility: public
 description: >-
   Overview: 

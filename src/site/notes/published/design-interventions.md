@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/design-interventions/
 noteIcon: ''
-title: '[[published/project-supervisor-bot\|project-supervisor-bot]]'
 visibility: public
 description: |-
   published/project-supervisor-bot\

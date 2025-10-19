@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/oreilly-research-identity-threshold-concepts/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

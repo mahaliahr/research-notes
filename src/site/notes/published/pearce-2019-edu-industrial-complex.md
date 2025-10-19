@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/pearce-2019-edu-industrial-complex/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

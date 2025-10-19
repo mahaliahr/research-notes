@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/supervision-110225/
 noteIcon: ''
-title: 'Summary:'
 visibility: public
 description: >-
   Summary: 

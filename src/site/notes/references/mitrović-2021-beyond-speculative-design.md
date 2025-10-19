@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/mitrovic-2021-beyond-speculative-design/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: |-
   references/-bibliography\

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/complaints-about-llm-use/
 noteIcon: ''
-title: 12-08-2024-
 visibility: public
 description: >-
   12-08-2024-

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/af-r-as-rehearsal/
 noteIcon: ''
-title: 31-01-2024
 visibility: public
 description: >-
   31-01-2024 

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/reflections-on-the-working-of-the-system/
 noteIcon: ''
-title: '![alt text](/img/user/images/20240813_191052.jpg)'
 visibility: public
 description: >-
   ![alt text](/img/user/images/20240813_191052.jpg)

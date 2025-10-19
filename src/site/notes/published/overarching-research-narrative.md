@@ -2,11 +2,6 @@
 dg-publish: true
 permalink: /published/overarching-research-narrative/
 noteIcon: ''
-title: >-
-  at the moment (29/01/2025) I am wondering how to connect all the thoughts that
-  I am having into something cohesive. I am thinking to have about narrative
-  threads and /or threads of speculation as the basis for offshoots and tangents
-  - but that it all comes back to this basic narrative
 visibility: public
 description: >-
   at the moment (29/01/2025) I am wondering how to connect all the thoughts that

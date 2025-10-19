@@ -2,11 +2,6 @@
 dg-publish: true
 permalink: /published/methodology/
 noteIcon: ''
-title: >-
-  Aligning with the research aims and
-  [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]],
-  [[published/speculative-design\|speculative-design]] will inform the
-  methodology.
 visibility: public
 description: >-
   Aligning with the research aims and

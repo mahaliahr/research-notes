@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/freire-1970-pedagogy-of-the-oppressed/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: |-
   references/-bibliography\

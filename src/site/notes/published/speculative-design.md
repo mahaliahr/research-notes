@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/speculative-design/
 noteIcon: ''
-title: structure-note
 visibility: public
 description: |-
   #structure-note

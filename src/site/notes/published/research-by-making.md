@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/research-by-making/
 noteIcon: ''
-title: When does making become research?
 visibility: public
 description: >-
   When does making become research?

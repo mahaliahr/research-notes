@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/material-research/
 noteIcon: ''
-title: teaches you about the affordance of a particular material.
 visibility: public
 description: >-
   teaches you about the affordance of a particular material.

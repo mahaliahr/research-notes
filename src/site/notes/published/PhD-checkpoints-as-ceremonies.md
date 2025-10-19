@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ph-d-checkpoints-as-ceremonies/
 noteIcon: ''
-title: 03-08-24 -
 visibility: public
 description: >-
   03-08-24 - 

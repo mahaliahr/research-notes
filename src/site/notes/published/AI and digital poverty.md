@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ai-and-digital-poverty/
 noteIcon: ''
-title: what is the relevant research in this area?
 visibility: public
 description: >-
   what is the relevant research in this area?

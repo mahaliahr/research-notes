@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/ai-literacy/
 noteIcon: ''
-title: >-
-  this is a growing area that will be as important as the technological
-  developments of [[published/generative-AI\|generative-AI]].
 visibility: public
 description: >-
   this is a growing area that will be as important as the technological

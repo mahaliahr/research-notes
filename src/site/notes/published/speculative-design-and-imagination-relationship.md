@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/speculative-design-and-imagination-relationship/
 noteIcon: ''
-title: What is the relationship between speculative design and imagination?
 visibility: public
 description: >-
   What is the relationship between speculative design and imagination?

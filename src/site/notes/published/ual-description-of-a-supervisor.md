@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ual-description-of-a-supervisor/
 noteIcon: ''
-title: '**Extracted from the PGR handbook:**'
 visibility: public
 description: |-
   **Extracted from the PGR handbook:**

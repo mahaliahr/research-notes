@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/project-supervisor-bot/
 noteIcon: ''
-title: >-
-  Developing plan of
-  [[published/functionality-and-behaviour\|functionality-and-behaviour]]
 visibility: public
 description: |-
   Developing plan of published/functionality-and-behaviour\

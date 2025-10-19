@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/czerniewicz-cronin-2023-higher-education-for-good/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /pre-start-thoughts/end-of-december-2023-phd-thoughts/
 noteIcon: ''
-title: _Al and labour_
 visibility: public
 description: |-
   _Al and labour_

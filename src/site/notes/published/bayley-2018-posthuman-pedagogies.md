@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/bayley-2018-posthuman-pedagogies/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/humans-and-ai-working-together-and-embodiment/
 noteIcon: ''
-title: 03-08-2024-
 visibility: public
 description: >-
   03-08-2024-

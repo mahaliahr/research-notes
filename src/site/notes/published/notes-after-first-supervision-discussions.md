@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/notes-after-first-supervision-discussions/
 noteIcon: ''
-title: 'Winnie:'
 visibility: public
 description: |-
   Winnie:

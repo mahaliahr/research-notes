@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/case-study-illinois-chat/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

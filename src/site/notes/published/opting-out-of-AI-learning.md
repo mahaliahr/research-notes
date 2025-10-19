@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/opting-out-of-ai-learning/
 noteIcon: ''
-title: >-
-  should people be allowed to opt out of using
-  [[published/generative-AI\|generative-AI]] in learning
 visibility: public
 description: >-
   should people be allowed to opt out of using published/generative-AI\ in

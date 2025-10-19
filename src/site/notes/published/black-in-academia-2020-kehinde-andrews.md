@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/black-in-academia-2020-kehinde-andrews/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

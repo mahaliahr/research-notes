@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ideas-for-possible-futures/
 noteIcon: ''
-title: 11-04-2024-
 visibility: public
 description: |-
   11-04-2024- 

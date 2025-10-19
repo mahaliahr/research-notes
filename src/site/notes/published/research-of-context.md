@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/research-of-context/
 noteIcon: ''
-title: what is out there?
 visibility: public
 description: |-
   what is out there?

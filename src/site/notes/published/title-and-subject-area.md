@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/title-and-subject-area/
 noteIcon: ''
-title: >-
-  Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for
-  Learning
 visibility: public
 description: >-
   #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for

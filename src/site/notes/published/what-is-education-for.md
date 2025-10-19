@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/what-is-education-for/
 noteIcon: ''
-title: 11-06-2024-
 visibility: public
 description: |-
   11-06-2024-

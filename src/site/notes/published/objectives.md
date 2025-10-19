@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/objectives/
 noteIcon: ''
-title: Critically examine the potential implications of AI on teaching and learning.
 visibility: public
 description: "Critically examine the potential implications of AI on teaching and learning.\_\n\n- Use speculative design to envision and construct scenarios that explore altern"
 updated: '2025-10-15T21:01:34.016Z'

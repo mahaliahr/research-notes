@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/autoethnography/
 noteIcon: ''
-title: 'General thoughts:'
 visibility: public
 description: |-
   General thoughts:

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/imagination-power-education-relationship/
 noteIcon: ''
-title: 'imagination/dreaming -> [[unpublished/power\|power]] <- education/learning'
 visibility: public
 description: >-
   imagination/dreaming -> unpublished/power\ <- education/learning 

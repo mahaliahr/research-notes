@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/llm-as-personal-tutors/
 noteIcon: ''
-title: what would things look like if LLM’s were personal tutors?
 visibility: public
 description: >
   what would things look like if LLM’s were personal tutors? 

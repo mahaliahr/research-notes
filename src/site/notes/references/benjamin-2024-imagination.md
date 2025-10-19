@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/benjamin-2024-imagination/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: |-
   references/-bibliography\

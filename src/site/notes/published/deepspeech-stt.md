@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/deepspeech-stt/
 noteIcon: ''
-title: 'https://github.com/mozilla/DeepSpeech'
 visibility: public
 description: |-
   https://github.com/mozilla/DeepSpeech

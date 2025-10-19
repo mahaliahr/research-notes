@@ -3,7 +3,6 @@ dg-publish: true
 permalink: >-
   /pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/
 noteIcon: ''
-title: bring personalitiy into it when you talk about it
 visibility: public
 description: >-
   bring personalitiy into it when you talk about it 

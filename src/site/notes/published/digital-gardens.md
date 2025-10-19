@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/digital-gardens/
 noteIcon: ''
-title: 'https://maggieappleton.com/garden-history'
 visibility: public
 description: >-
   https://maggieappleton.com/garden-history

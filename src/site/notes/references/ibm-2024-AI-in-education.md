@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/ibm-2024-ai-in-education/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

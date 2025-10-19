@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/filliou-1970-teaching-and-learning-as-performance-arts/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

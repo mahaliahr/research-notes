@@ -31,5 +31,13 @@ module.exports = {
     },
     "dg-publish": d => (typeof d["dg-publish"] === "boolean" ? d["dg-publish"] : true),
     visibility: d => d.visibility || "public",
+    title: d => d.page.fileSlug,
+    description: d =>
+      d.description ||
+      (d.content || "").replace(/<[^>]*>/g, "").trim().slice(0, 160),
+    permalink: d => d.permalink || `/notes/${d.page.fileSlug}/`,
+    "dg-publish": d => (typeof d["dg-publish"] === "boolean" ? d["dg-publish"] : true),
+    visibility: d => d.visibility || "public",
+    updated: d => d.updated || d.page.date,
   },
 };

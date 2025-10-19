@@ -2,10 +2,6 @@
 dg-publish: true
 permalink: /published/historical-context/
 noteIcon: ''
-title: >-
-  Traditional educational models often face criticism for their rigidity and
-  failure to meet diverse student needs, often favouring rote memorisation over
-  practical skills (Belas, 2019).
 visibility: public
 description: >-
   Traditional educational models often face criticism for their rigidity and

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/de-koven-2020-the-infinite-playground/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

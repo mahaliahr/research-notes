@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/exploring-ai-literacy-in-creative-education-talk/
 noteIcon: ''
-title: 05-07-2024
 visibility: public
 description: "05-07-2024\nI attended a talk facilitated by UAL Teaching and Learning(**Navigating the Future: Exploring published/AI-literacy\\ in Creative Education**\_with Mar"
 updated: '2025-10-15T21:01:34.000Z'

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/supervision-110925/
 noteIcon: ''
-title: 'Work in progress:'
 visibility: public
 description: >
   [Project planning and milestones in the coming

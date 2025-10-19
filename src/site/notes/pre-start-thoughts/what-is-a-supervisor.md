@@ -2,10 +2,6 @@
 dg-publish: true
 permalink: /pre-start-thoughts/what-is-a-supervisor/
 noteIcon: ''
-title: >-
-  Extracted from the
-  [[published/ual-description-of-a-supervisor\|ual-description-of-a-supervisor]]in
-  the PGR handbook
 visibility: public
 description: "Extracted from the published/ual-description-of-a-supervisor\\in the PGR handbook \n\n_Formal supervision may consist of:\_\n* _Written comments or guidance on your "
 updated: '2025-10-15T21:01:33.999Z'

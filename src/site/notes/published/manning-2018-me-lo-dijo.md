@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/manning-2018-me-lo-dijo/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/generative-ai/
 noteIcon: ''
-title: Generative AI or GenAI is... (add definition in my own words)
 visibility: public
 description: |-
   Generative AI or GenAI is... (add definition in my own words)

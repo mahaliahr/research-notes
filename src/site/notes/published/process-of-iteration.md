@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/process-of-iteration/
 noteIcon: ''
-title: '''research in art and design is characterised by iteration'' p13'
 visibility: public
 description: >-
   'research in art and design is characterised by iteration' p13

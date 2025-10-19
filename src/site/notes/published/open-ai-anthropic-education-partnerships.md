@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/open-ai-anthropic-education-partnerships/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

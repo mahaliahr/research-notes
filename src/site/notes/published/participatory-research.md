@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/participatory-research/
 noteIcon: ''
-title: >-
-  potential collaborators: other artist / designers, researchers from other
-  disciplines, exxperts in the field, volunteer participants, friends etc
 visibility: public
 description: >-
   potential collaborators: other artist / designers, researchers from other

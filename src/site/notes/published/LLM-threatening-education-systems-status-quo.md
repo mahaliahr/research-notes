@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/llm-threatening-education-systems-status-quo/
 noteIcon: ''
-title: LLM's seem to threaten something about the education system.
 visibility: public
 description: >-
   LLM's seem to threaten something about the education system. 

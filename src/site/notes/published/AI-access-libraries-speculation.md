@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/ai-access-libraries-speculation/
 noteIcon: ''
-title: 13-08-2024
 visibility: public
 description: >-
   13-08-2024

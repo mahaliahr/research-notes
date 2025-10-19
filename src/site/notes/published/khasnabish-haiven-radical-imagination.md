@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/khasnabish-haiven-radical-imagination/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

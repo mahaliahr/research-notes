@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/llm-as-phd-supervisor/
 noteIcon: ''
-title: structure-note
 visibility: public
 description: >-
   #structure-note 

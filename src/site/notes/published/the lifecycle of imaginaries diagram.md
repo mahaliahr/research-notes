@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/the-lifecycle-of-imaginaries-diagram/
 noteIcon: ''
-title: '![alt text](/img/user/images/20240814_111440.jpg)'
 visibility: public
 description: >-
   ![alt text](/img/user/images/20240814_111440.jpg)

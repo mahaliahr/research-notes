@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/project-cci-ual-staff-interviews/
 noteIcon: ''
-title: 'Considerations -> everyone is very busy, will people have time to contribute?'
 visibility: public
 description: >-
   Considerations -> everyone is very busy, will people have time to contribute? 

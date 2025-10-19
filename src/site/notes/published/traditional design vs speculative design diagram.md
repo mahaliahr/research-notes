@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/traditional-design-vs-speculative-design-diagram/
 noteIcon: ''
-title: '![alt text](/img/user/images/traditional-vs-speculative.png)'
 visibility: public
 description: |-
   ![alt text](/img/user/images/traditional-vs-speculative.png)

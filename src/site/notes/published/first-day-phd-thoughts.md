@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/first-day-phd-thoughts/
 noteIcon: ''
-title: 04-01-2024
 visibility: public
 description: |-
   04-01-2024

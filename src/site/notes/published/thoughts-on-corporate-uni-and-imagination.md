@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/thoughts-on-corporate-uni-and-imagination/
 noteIcon: ''
-title: 02-08-2024
 visibility: public
 description: |-
   02-08-2024

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/supervisor-bot-v2-prototype/
 noteIcon: ''
-title: speaker diarization
 visibility: public
 description: |-
   speaker diarization 

@@ -2,9 +2,6 @@
 dg-publish: true
 permalink: /published/focus-on-process/
 noteIcon: ''
-title: >-
-  Now that we are in a time where generative AI can produce 'results' with
-  'ease'. The **process** of what we do becomes much more important.
 visibility: public
 description: >-
   Now that we are in a time where generative AI can produce 'results' with

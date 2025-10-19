@@ -2,11 +2,6 @@
 dg-publish: true
 permalink: /published/my-practice/
 noteIcon: ''
-title: >-
-  (20-08-24) I am thinking a lot currently about what exactly my practice is. I
-  have an interdisciplinary design practice, which started (in studying in HE)
-  in the realm of Architecture, this spatial/experience design approach for sure
-  has a relevance and underpinning to my work now, but not in an obvious way.
 visibility: public
 description: >-
   (20-08-24) I am thinking a lot currently about what exactly my practice is. I

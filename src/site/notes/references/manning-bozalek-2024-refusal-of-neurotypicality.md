@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/manning-bozalek-2024-refusal-of-neurotypicality/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: >-
   references/-bibliography\

@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /references/hooks-1994-teaching-to-trangress/
 noteIcon: ''
-title: '[[references/-bibliography\|-bibliography]]'
 visibility: public
 description: |-
   references/-bibliography\

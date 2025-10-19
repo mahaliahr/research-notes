@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /published/theories-practices-policies/
 noteIcon: ''
-title: What I asked?
 visibility: public
 description: |-
   # What I asked?
