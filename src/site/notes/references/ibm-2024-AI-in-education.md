@@ -36,8 +36,4 @@ Part of education is learning to function in society and as AI becomes more perv
 
 Phaedra mentioned that critically this need to be a multi-disciplinary and multi-faceted conversation in understanding and communicating AI literacy - **not just engineering and computer science**. Another point raised was that statistics education (in earlier education) may become increasingly important to provide foundational and more intuitive understanding of how AI models work. This is interesting to me, it's like building the skills and knowledge to understand more fundamentally the 'anatomy' of AI systems and the how they work.
 
-<<<<<<< HEAD
 [[AI-literacy]] is becoming extremely important - how will this fit into the educational landscape?
-=======
-[[AI-literacy]] is becoming extremely important - how will this fit into the educational landscape?
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

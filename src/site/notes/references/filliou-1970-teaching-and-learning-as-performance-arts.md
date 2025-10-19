@@ -35,9 +35,5 @@ Large numbers:
 
 ---
 
-<<<<<<< HEAD
 
 [[imagination-practice]] 
-=======
-[[imagination-practice]] 
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
