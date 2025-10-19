@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/references/ibm-2024-ai-in-education/","noteIcon":""}
+dg-publish: true
+permalink: /references/ibm-2024-ai-in-education/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  _AI in education: Safety, literacy, and predictions_, IBM (2024). Available
+  at: [https://www.youtube.com/watch?v=JSnwZmbTMXM](https:/
+updated: '2025-10-15T21:01:34.031Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

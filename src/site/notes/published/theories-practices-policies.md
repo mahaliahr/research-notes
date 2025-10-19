@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/theories-practices-policies/","noteIcon":""}
+dg-publish: true
+permalink: /published/theories-practices-policies/
+noteIcon: ''
+title: What I asked?
+visibility: public
+description: |-
+  # What I asked?
+
+  ##### **Imagination microteach**
+  Can you foster imagination within object based learning?
+  we were asked to come up with a 20 min micro teach se
+updated: '2025-10-15T21:01:34.026Z'
 ---
 
 # What I asked?

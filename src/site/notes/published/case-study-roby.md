@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/case-study-roby/","noteIcon":""}
+dg-publish: true
+permalink: /published/case-study-roby/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+  _ROBY | matteo loglio_ (no date). Available at:
+  [https://matlo.me/roby](https://matlo.me/roby) (Accessed: 19 March 2025).
+
+
+  news, oio (
+updated: '2025-10-15T21:01:34.004Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

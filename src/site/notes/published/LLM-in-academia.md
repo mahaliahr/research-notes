@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/llm-in-academia/","noteIcon":""}
+dg-publish: true
+permalink: /published/llm-in-academia/
+noteIcon: ''
+title: >-
+  LLM inspired by this - 'academia' speak like a translator. Are people already
+  using them to achieve this to a certain extent
+visibility: public
+description: >-
+  LLM inspired by this - 'academia' speak like a translator. Are people already
+  using them to achieve this to a certain extent 
+
+
+  published/LLM-threatening-educati
+updated: '2025-10-15T21:01:34.001Z'
 ---
 
 

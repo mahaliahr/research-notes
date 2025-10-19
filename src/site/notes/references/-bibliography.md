@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/references/bibliography/","noteIcon":""}
+dg-publish: true
+permalink: /references/bibliography/
+noteIcon: ''
+title: group based on research areas?
+visibility: public
+description: |-
+  group based on research areas?
+
+  published/black-in-academia-2020-kehinde-andrews\
+
+  references/benjamin-2024-imagination\ 
+
+  references/benjamin-noah-2025-rip-dei
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 group based on research areas?

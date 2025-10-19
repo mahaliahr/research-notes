@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-110225/","noteIcon":""}
+dg-publish: true
+permalink: /published/supervision-110225/
+noteIcon: ''
+title: 'Summary:'
+visibility: public
+description: >-
+  Summary: 
+
+
+  Final Project Slides:
+  [final-presentation.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EX0qB3782wtLmhM3vIZPaEo
+updated: '2025-10-15T21:01:34.023Z'
 ---
 
 Summary: 

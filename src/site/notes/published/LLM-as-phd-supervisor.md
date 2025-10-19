@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/llm-as-phd-supervisor/","noteIcon":""}
+dg-publish: true
+permalink: /published/llm-as-phd-supervisor/
+noteIcon: ''
+title: structure-note
+visibility: public
+description: >-
+  #structure-note 
+
+
+  Below I have highlighted the core areas from the
+  published/ual-description-of-a-supervisor\ that I need to consider for my
+  published/project-s
+updated: '2025-10-15T21:01:34.001Z'
 ---
 
 #structure-note 

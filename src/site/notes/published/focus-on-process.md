@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/focus-on-process/","noteIcon":""}
+dg-publish: true
+permalink: /published/focus-on-process/
+noteIcon: ''
+title: >-
+  Now that we are in a time where generative AI can produce 'results' with
+  'ease'. The **process** of what we do becomes much more important.
+visibility: public
+description: >-
+  Now that we are in a time where generative AI can produce 'results' with
+  'ease'. The **process** of what we do becomes much more important. 
+
+  This is something t
+updated: '2025-10-15T21:01:34.007Z'
 ---
 
 Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 

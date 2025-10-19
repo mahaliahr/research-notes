@@ -1,5 +1,21 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-methods/","noteIcon":""}
+dg-publish: true
+permalink: /published/research-methods/
+noteIcon: ''
+title: >-
+  I believe I need to research more about research methods in education and
+  non-coventional artistic research methods.
+visibility: public
+description: >-
+  I believe I need to research more about research methods in education and
+  non-coventional artistic research methods.
+
+
+  ---
+
+
+  For my published/pgcert-final-project
+updated: '2025-10-15T21:01:34.021Z'
 ---
 
 I believe I need to research more about research methods in education and non-coventional artistic research methods.

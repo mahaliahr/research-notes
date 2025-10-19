@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/improv/","noteIcon":""}
+dg-publish: true
+permalink: /published/improv/
+noteIcon: ''
+title: '160924 thoughts:'
+visibility: public
+description: |-
+  160924 thoughts: 
+
+  is improv published/imagination-practice\? (almost certainly yes)
+
+  I want to learn about the published/history-of-improv\
+
+  livecoding as impr
+updated: '2025-10-15T21:01:34.009Z'
 ---
 
 160924 thoughts: 

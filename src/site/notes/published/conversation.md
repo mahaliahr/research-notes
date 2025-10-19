@@ -1,5 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/published/conversation/","noteIcon":""}
+dg-publish: true
+permalink: /published/conversation/
+noteIcon: ''
+title: 1. ~~input capture
+visibility: public
+description: "1. ~~input capture\n\t- ~~text based input\n\t\t- ~~shared doc\n\t\t- ~~use unpublished/webhook\\ service to capture data and send to LLM\n\t- voice based input (speech to"
+updated: '2025-10-15T21:01:34.005Z'
 ---
 
 1. ~~input capture

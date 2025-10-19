@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/the-model/","noteIcon":""}
+dg-publish: true
+permalink: /published/the-model/
+noteIcon: ''
+title: '![illustrated model of research](/img/user/images/model.jpeg)'
+visibility: public
+description: >-
+  ![illustrated model of research](/img/user/images/model.jpeg)
+
+
+  the diagram show the interrelations of the six components of 'hands on
+  research' or practice base
+updated: '2025-10-15T21:01:34.025Z'
 ---
 
 ![illustrated model of research](/img/user/images/model.jpeg)

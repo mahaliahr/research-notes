@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/complaints-about-llm-use/","noteIcon":""}
+dg-publish: true
+permalink: /published/complaints-about-llm-use/
+noteIcon: ''
+title: 12-08-2024-
+visibility: public
+description: >-
+  12-08-2024-
+
+  something that I keep seeing amongst academics at CCI (and a criticism shared
+  by others more broadly) is complaints that chatGPT (and the like) is b
+updated: '2025-10-15T21:01:34.005Z'
 ---
 
 12-08-2024-

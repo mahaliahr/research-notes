@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-technically-possible-with-ai-now-and-in-the-future/","noteIcon":""}
+dg-publish: true
+permalink: /published/what-is-technically-possible-with-ai-now-and-in-the-future/
+noteIcon: ''
+title: >-
+  I need to build up knowledge re. [[published/generative-AI\|generative-AI]]
+  currently and where it might head in the future. What are plausible
+  speculations and projections that we could make about the way the AI will
+  progress - especially considering the money that is being lost (as of Summer
+  2024) after all the investments that have been made recently
+visibility: public
+description: >-
+  I need to build up knowledge re. published/generative-AI\ currently and where
+  it might head in the future. What are plausible speculations and projections
+  that 
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 I need to build up knowledge re. [[published/generative-AI\|generative-AI]] currently and where it might head in the future. What are plausible speculations and projections that we could make about the way the AI will progress - especially considering the money that is being lost (as of Summer 2024) after all the investments that have been made recently 

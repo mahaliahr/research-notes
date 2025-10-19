@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/obsessions-with-futures-is-bad/","noteIcon":""}
+dg-publish: true
+permalink: /published/obsessions-with-futures-is-bad/
+noteIcon: ''
+title: >-
+  'It seems that the utopian imagination is trapped, like capitalism and
+  industrialism and the human population, in a one-way future consisting only of
+  growth' p6
+  [[published/le-guin-1982-non-euclidean-view\|le-guin-1982-non-euclidean-view]]
+visibility: public
+description: >-
+  'It seems that the utopian imagination is trapped, like capitalism and
+  industrialism and the human population, in a one-way future consisting only of
+  growth' p6
+updated: '2025-10-15T21:01:34.016Z'
 ---
 
 'It seems that the utopian imagination is trapped, like capitalism and industrialism and the human population, in a one-way future consisting only of growth' p6 [[published/le-guin-1982-non-euclidean-view\|le-guin-1982-non-euclidean-view]]

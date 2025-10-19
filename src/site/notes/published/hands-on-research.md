@@ -1,5 +1,20 @@
 ---
-{"dg-publish":true,"permalink":"/published/hands-on-research/","noteIcon":""}
+dg-publish: true
+permalink: /published/hands-on-research/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+  Rasch, M., Gijsen, J. and Staal, H. (eds) (2024) _Hands on research for
+  artists, designers & educators_.
+
+
+  ---
+
+  This book scaffolds real
+updated: '2025-10-15T21:01:34.008Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

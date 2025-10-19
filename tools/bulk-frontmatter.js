@@ -3,9 +3,30 @@ const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-const TARGET_DIR = process.argv[2] || "src/site/notes/published";
-const NOTE_PREFIX = process.argv[3] || "/note";      // e.g. "/posts"
-const WRITE = process.argv.includes("--write");      // dry-run by default
+/**
+ * Usage:
+ *  node tools/bulk-frontmatter.js [targetDir] --kind=note --prefix=/notes [--write]
+ *  node tools/bulk-frontmatter.js src/site/posts --kind=post --prefix=/posts --write
+ */
+
+const TARGET_DIR = process.argv[2] || "src/site/notes"; // default to notes root
+const ARGS = process.argv.slice(3).reduce((acc, arg) => {
+  const m = arg.match(/^--([^=]+)(?:=(.*))?$/);
+  if (m) acc[m[1]] = m[2] === undefined ? true : m[2];
+  return acc;
+}, {});
+
+// Infer kind if not provided: posts if path has '/posts/', else notes if '/notes/'
+const inferredKind =
+  TARGET_DIR.includes("/posts/") || TARGET_DIR.endsWith("/posts")
+    ? "post"
+    : (TARGET_DIR.includes("/notes/") || TARGET_DIR.endsWith("/notes"))
+      ? "note"
+      : null;
+
+const KIND = (ARGS.kind || inferredKind || "note").toLowerCase(); // 'note' | 'post'
+const PREFIX = ARGS.prefix || (KIND === "post" ? "/posts" : "/notes");
+const WRITE = !!ARGS.write;
 
 function toSlug(str) {
   return String(str || "")
@@ -15,7 +36,6 @@ function toSlug(str) {
 }
 
 function firstH1(content) {
-  // try markdown H1, then first non-empty line
   const m = content.match(/^\s*#\s+(.+?)\s*$/m);
   if (m) return m[1].trim();
   const line = (content.split("\n").find(x => x.trim().length) || "").trim();
@@ -27,12 +47,11 @@ function iso(d) {
 }
 
 function summarize(content) {
-  // strip HTML, code fences, frontmatter residue
   const stripped = content
     .replace(/```[\s\S]*?```/g, "")
     .replace(/<[^>]+>/g, "")
-    .replace(/\[\[([^\]|]+)(\|[^\]]+)?\]\]/g, "$1") // obsidian links
-    .replace(/\((\w+::.*?)\)/g, "");                // dataview inline
+    .replace(/\[\[([^\]|]+)(\|[^\]]+)?\]\]/g, "$1")
+    .replace(/\((\w+::.*?)\)/g, "");
   return stripped.trim().slice(0, 160);
 }
 
@@ -49,6 +68,9 @@ function walk(dir) {
 const files = walk(TARGET_DIR);
 let changed = 0;
 
+console.log(`• Kind: ${KIND}  • Prefix: ${PREFIX}  • Dir: ${TARGET_DIR}`);
+console.log(WRITE ? "• Mode: WRITE\n" : "• Mode: DRY-RUN\n");
+
 for (const file of files) {
   const raw = fs.readFileSync(file, "utf8");
   const stat = fs.statSync(file);
@@ -56,22 +78,37 @@ for (const file of files) {
   const data = parsed.data || {};
   const body = parsed.content || "";
 
-  // compute safe defaults
   const slug = toSlug(path.basename(file, ".md"));
   const computedTitle = data.title || firstH1(body) || slug;
   const computedDate = data.date ? iso(data.date) : iso(stat.mtime);
   const computedDesc = data.description || summarize(body);
-  const permalink = data.permalink || `${NOTE_PREFIX}/${slug}/`;
+  const permalink = data.permalink || `${PREFIX}/${slug}/`;
 
-  // determine changes
   const updates = {};
-  if (!data.type) updates.type = "post";
-  if (!data.title) updates.title = computedTitle;
-  if (!data.description) updates.description = computedDesc;
-  if (!data.date) updates.date = computedDate;
-  if (!data.permalink) updates.permalink = permalink;
-  if (typeof data["dg-publish"] !== "boolean") updates["dg-publish"] = true;
-  if (!data.visibility) updates.visibility = "public";
+
+  if (KIND === "post") {
+    // Posts: ensure type=post (for your Eleventy collections)
+    if (!data.type) updates.type = "post";
+    if (!data.title) updates.title = computedTitle;
+    if (!data.description) updates.description = computedDesc;
+    if (!data.date) updates.date = computedDate;
+    if (!data.permalink) updates.permalink = permalink;
+    if (typeof data["dg-publish"] !== "boolean") updates["dg-publish"] = true;
+    if (!data.visibility) updates.visibility = "public";
+  } else {
+    // Notes (zettels): DO NOT set type: 'post'. Keep notes type-less (or type: 'note' if you prefer).
+    // Minimal defaults to keep builds safe without forcing blog-ish metadata.
+    if (!data.title) updates.title = computedTitle;
+    // Many people prefer not to add a date to zettels; comment out the next line if you don’t want dates on notes:
+    // if (!data.date) updates.date = computedDate;
+    if (!data.permalink) updates.permalink = permalink;
+    if (typeof data["dg-publish"] !== "boolean") updates["dg-publish"] = true;
+    if (!data.visibility) updates.visibility = "public";
+    // Optional: description for notes (handy for search/previews)
+    if (!data.description && computedDesc) updates.description = computedDesc;
+    // Optional: updated from file mtime if missing
+    if (!data.updated) updates.updated = iso(stat.mtime);
+  }
 
   const keys = Object.keys(updates);
   if (!keys.length) continue;
@@ -88,7 +125,7 @@ for (const file of files) {
 }
 
 console.log(
-  `\n${WRITE ? "Updated" : "Would update"} ${changed} file(s). ` +
-  `Dir: ${TARGET_DIR}  Prefix: ${NOTE_PREFIX}\n` +
-  `Tip: run with --write to apply.`
+  `\n${WRITE ? "Updated" : "Would update"} ${changed} file(s).\n` +
+  `Tip (notes): node tools/bulk-frontmatter.js src/site/notes --kind=note --prefix=/notes --write\n` +
+  `Tip (posts): node tools/bulk-frontmatter.js src/site/posts --kind=post --prefix=/posts --write\n`
 );

@@ -1,5 +1,21 @@
 ---
-{"dg-publish":true,"permalink":"/published/methodology/","noteIcon":""}
+dg-publish: true
+permalink: /published/methodology/
+noteIcon: ''
+title: >-
+  Aligning with the research aims and
+  [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]],
+  [[published/speculative-design\|speculative-design]] will inform the
+  methodology.
+visibility: public
+description: >-
+  Aligning with the research aims and
+  published/RQ3-playful-methodology-as-way-to-speculate\,
+  published/speculative-design\ will inform the methodology. 
+
+
+  Design 
+updated: '2025-10-15T21:01:34.014Z'
 ---
 
 Aligning with the research aims and [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]], [[published/speculative-design\|speculative-design]] will inform the methodology. 

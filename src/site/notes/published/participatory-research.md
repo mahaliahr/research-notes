@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/participatory-research/","noteIcon":""}
+dg-publish: true
+permalink: /published/participatory-research/
+noteIcon: ''
+title: >-
+  potential collaborators: other artist / designers, researchers from other
+  disciplines, exxperts in the field, volunteer participants, friends etc
+visibility: public
+description: >-
+  potential collaborators: other artist / designers, researchers from other
+  disciplines, exxperts in the field, volunteer participants, friends etc
+
+
+  dialogue and 
+updated: '2025-10-15T21:01:34.017Z'
 ---
 
 potential collaborators: other artist / designers, researchers from other disciplines, exxperts in the field, volunteer participants, friends etc

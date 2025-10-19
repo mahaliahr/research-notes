@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/mickel-performance-practice-as-research-learning-teaching/","noteIcon":""}
+dg-publish: true
+permalink: /published/mickel-performance-practice-as-research-learning-teaching/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  Mickel, L. (2024) ‘Performance practice as research, learning and teaching’,
+  _Teaching in Higher Education_, 29(2), pp. 489–501. Avai
+updated: '2025-10-15T21:01:34.014Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

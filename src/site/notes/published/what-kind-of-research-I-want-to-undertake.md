@@ -1,5 +1,20 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-kind-of-research-i-want-to-undertake/","noteIcon":""}
+dg-publish: true
+permalink: /published/what-kind-of-research-i-want-to-undertake/
+noteIcon: ''
+title: (11-04-2024)
+visibility: public
+description: |-
+  (11-04-2024)
+
+  published/developing-playful-methodology\
+
+  published/practice-based-research\
+
+  published/I don't want to design a pedagogical framework\
+
+  publishe
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 (11-04-2024)

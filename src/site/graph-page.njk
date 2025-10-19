@@ -1,0 +1,90 @@
+---
+permalink: "/graph/"
+layout: "layouts/note.njk" 
+title: "Graph"
+---
+
+<h1>Idea Graph</h1>
+<div id="graph" style="width:100%;height:600px;border:1px solid #eee;border-radius:12px;overflow:hidden;"></div>
+
+<!-- D3 for a lightweight force-directed rendering -->
+<script src="https://unpkg.com/d3@7"></script>
+<script>
+(async function () {
+  try {
+    const res = await fetch('/graph.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Failed to load /graph.json');
+    const data = await res.json();
+
+    // Expecting: { nodes: [{id, title, url}], links: [{source, target}] }
+    const nodes = (data.nodes || []).map(d => Object.assign({}, d));
+    const links = (data.links || []).map(d => Object.assign({}, d));
+
+    const el = document.getElementById('graph');
+    const width = el.clientWidth, height = el.clientHeight;
+
+    const svg = d3.select(el).append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+    const simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(60))
+      .force('charge', d3.forceManyBody().strength(-120))
+      .force('center', d3.forceCenter(width / 2, height / 2));
+
+    const link = svg.append('g')
+      .attr('stroke', '#ccc')
+      .attr('stroke-opacity', 0.7)
+      .selectAll('line')
+      .data(links)
+      .join('line');
+
+    const node = svg.append('g')
+      .attr('stroke', '#fff')
+      .attr('stroke-width', 1.5)
+      .selectAll('circle')
+      .data(nodes)
+      .join('circle')
+      .attr('r', 5)
+      .attr('fill', '#555')
+      .call(drag(simulation))
+      .on('click', (event, d) => { if (d.url) window.location.href = d.url; })
+      .append('title')
+      .text(d => d.title || d.id);
+
+    simulation.on('tick', () => {
+      link
+        .attr('x1', d => d.source.x)
+        .attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x)
+        .attr('y2', d => d.target.y);
+
+      svg.selectAll('circle')
+        .attr('cx', d => d.x)
+        .attr('cy', d => d.y);
+    });
+
+    function drag(sim) {
+      function dragstarted(event) {
+        if (!event.active) sim.alphaTarget(0.3).restart();
+        event.subject.fx = event.subject.x;
+        event.subject.fy = event.subject.y;
+      }
+      function dragged(event) {
+        event.subject.fx = event.x;
+        event.subject.fy = event.y;
+      }
+      function dragended(event) {
+        if (!event.active) sim.alphaTarget(0);
+        event.subject.fx = null;
+        event.subject.fy = null;
+      }
+      return d3.drag().on('start', dragstarted).on('drag', dragged).on('end', dragended);
+    }
+  } catch (e) {
+    document.getElementById('graph').innerHTML =
+      '<p style="padding:1rem">Could not render graph. Is <code>/graph.json</code> building?</p>';
+    console.error(e);
+  }
+})();
+</script>

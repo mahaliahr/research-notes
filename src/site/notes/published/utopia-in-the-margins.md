@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/utopia-in-the-margins/","noteIcon":""}
+dg-publish: true
+permalink: /published/utopia-in-the-margins/
+noteIcon: ''
+title: 'Le Guin has a very evocative quote:'
+visibility: public
+description: >-
+  Le Guin has a very evocative quote:
+
+  'What kind of utopia can come out of these margins, negations, and
+  obscurities?' p10
+
+  I am also interested in ways that we ca
+updated: '2025-10-15T21:01:34.027Z'
 ---
 
 Le Guin has a very evocative quote:

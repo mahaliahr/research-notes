@@ -1,5 +1,23 @@
 ---
-{"dg-publish":true,"permalink":"/published/humans-and-ai-working-together-and-embodiment/","noteIcon":""}
+dg-publish: true
+permalink: /published/humans-and-ai-working-together-and-embodiment/
+noteIcon: ''
+title: 03-08-2024-
+visibility: public
+description: >-
+  03-08-2024-
+
+
+  published/humans and AI school speculation\ 
+
+
+
+  _I made the below note, but can't make sense of it now,  but may have use int
+  the future_
+
+
+  embodimen
+updated: '2025-10-15T21:01:34.008Z'
 ---
 
 03-08-2024-

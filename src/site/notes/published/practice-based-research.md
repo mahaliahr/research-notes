@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/practice-based-research/","noteIcon":""}
+dg-publish: true
+permalink: /published/practice-based-research/
+noteIcon: ''
+title: >-
+  I feel that I need to keep coming back to earlier thoughts I was having about
+  [[published/what-kind-of-research-I-want-to-undertake\|what-kind-of-research-I-want-to-undertake]]
+  to ensure that I keep the intended spirit of the research alive, whilst
+  defining and solidifying things further.
+visibility: public
+description: >-
+  I feel that I need to keep coming back to earlier thoughts I was having about
+  published/what-kind-of-research-I-want-to-undertake\ to ensure that I keep the
+  int
+updated: '2025-10-15T21:01:34.019Z'
 ---
 
 

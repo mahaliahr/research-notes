@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/project-supervisor-bot/","noteIcon":""}
+dg-publish: true
+permalink: /published/project-supervisor-bot/
+noteIcon: ''
+title: >-
+  Developing plan of
+  [[published/functionality-and-behaviour\|functionality-and-behaviour]]
+visibility: public
+description: |-
+  Developing plan of published/functionality-and-behaviour\
+
+  Thoughts about published/relationship-with-AI-bot-vs-human\
+
+  ![alt text](/img/user/images/supervisor-
+updated: '2025-10-15T21:01:34.020Z'
 ---
 
 Developing plan of [[published/functionality-and-behaviour\|functionality-and-behaviour]]

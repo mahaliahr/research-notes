@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/le-guin-1982-non-euclidean-view/","noteIcon":""}
+dg-publish: true
+permalink: /published/le-guin-1982-non-euclidean-view/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  'We use the French word lecture, “reading,” to mean reading and speaking
+  aloud,
+
+  a performance; the French call such a performance not
+updated: '2025-10-15T21:01:34.009Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

@@ -1,5 +1,22 @@
 ---
-{"dg-publish":true,"permalink":"/published/large-language-models/","noteIcon":""}
+dg-publish: true
+permalink: /published/large-language-models/
+noteIcon: ''
+title: structure-note
+visibility: public
+description: |-
+  #structure-note 
+
+
+
+  ---
+
+  published/LLM-in-academia\
+  published/LLM-as-phd-supervisor\
+  published/LLM-as-personal-tutors\
+  published/LLMs disrupting formalities\
+  pu
+updated: '2025-10-15T21:01:34.009Z'
 ---
 
 #structure-note 

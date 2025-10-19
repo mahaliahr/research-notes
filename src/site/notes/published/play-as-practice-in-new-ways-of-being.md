@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/play-as-practice-in-new-ways-of-being/","noteIcon":""}
+dg-publish: true
+permalink: /published/play-as-practice-in-new-ways-of-being/
+noteIcon: ''
+title: 29-10-23-
+visibility: public
+description: >-
+  29-10-23-
+
+
+  play is how we as children role play the experience of being adults or
+  autonomous beings. In that way play can be a vehicle /mode of roleplaying ways
+updated: '2025-10-15T21:01:34.019Z'
 ---
 
 29-10-23-

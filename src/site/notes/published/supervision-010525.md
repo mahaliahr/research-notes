@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-010525/","noteIcon":""}
+dg-publish: true
+permalink: /published/supervision-010525/
+noteIcon: ''
+title: 'Overview:'
+visibility: public
+description: >-
+  Overview: 
+
+  -  plans for upcoming/in progress design interventions 
+
+  - annotated bibliography and brainstorm of personal motivations for the
+  research
+
+  - two ethics
+updated: '2025-10-15T21:01:34.023Z'
 ---
 
 Overview: 

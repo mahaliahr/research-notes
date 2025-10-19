@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/22-01-2024-where-did-i-learn-to-learn/","noteIcon":""}
+dg-publish: true
+permalink: /published/22-01-2024-where-did-i-learn-to-learn/
+noteIcon: ''
+title: I didn't learn how to learn from school.
+visibility: public
+description: >-
+  I didn't learn how to learn from school. 
+
+
+  So where did I learn it from?
+
+
+  Skimming through a reading
+  published/oreilly-research-identity-threshold-concepts\ for
+updated: '2025-10-15T21:01:33.999Z'
 ---
 
 

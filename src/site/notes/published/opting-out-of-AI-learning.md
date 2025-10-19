@@ -1,5 +1,20 @@
 ---
-{"dg-publish":true,"permalink":"/published/opting-out-of-ai-learning/","noteIcon":""}
+dg-publish: true
+permalink: /published/opting-out-of-ai-learning/
+noteIcon: ''
+title: >-
+  should people be allowed to opt out of using
+  [[published/generative-AI\|generative-AI]] in learning
+visibility: public
+description: >-
+  should people be allowed to opt out of using published/generative-AI\ in
+  learning
+
+
+  in theory yes, but what would that mean?
+
+  what would be the motivations for so
+updated: '2025-10-15T21:01:34.017Z'
 ---
 
 should people be allowed to opt out of using [[published/generative-AI\|generative-AI]] in learning

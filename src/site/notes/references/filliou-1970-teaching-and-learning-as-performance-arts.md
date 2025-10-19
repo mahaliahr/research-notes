@@ -1,5 +1,22 @@
 ---
-{"dg-publish":true,"permalink":"/references/filliou-1970-teaching-and-learning-as-performance-arts/","noteIcon":""}
+dg-publish: true
+permalink: /references/filliou-1970-teaching-and-learning-as-performance-arts/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  ---
+
+
+  La Révolte des Mediocres (page ref?)
+
+
+  ‘First I intend to show how they could be applied in the one field of study
+  most neglected
+updated: '2025-10-15T21:01:34.030Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

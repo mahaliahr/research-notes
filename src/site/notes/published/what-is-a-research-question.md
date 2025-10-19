@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-a-research-question/","noteIcon":""}
+dg-publish: true
+permalink: /published/what-is-a-research-question/
+noteIcon: ''
+title: 'A research question is:'
+visibility: public
+description: |-
+  A research question is:
+  - as yet unanswered
+  - open-ended (not a yes-or-no question)
+  - specific, clear and concise 
+  - a structuring mechanism
+  - a work in progres
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 A research question is:

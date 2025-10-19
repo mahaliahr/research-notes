@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/","noteIcon":""}
+dg-publish: true
+permalink: >-
+  /pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/
+noteIcon: ''
+title: bring personalitiy into it when you talk about it
+visibility: public
+description: >-
+  bring personalitiy into it when you talk about it 
+
+
+  'grand narrative'
+
+  what holds it together, why you, why is it important, why is it important in
+  the time and 
+updated: '2025-10-15T21:01:33.998Z'
 ---
 
 

@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-meetings-record/","noteIcon":""}
+dg-publish: true
+permalink: /published/supervision-meetings-record/
+noteIcon: ''
+title: 25-26 academic year
+visibility: public
+description: >-
+  25-26 academic year
+
+  published/supervision-110925\
+
+  ///
+
+  24-25 academic year [supervisor
+  records](https://artslondon.sharepoint.com/teams/MahaliasSupervisionTeam/S
+updated: '2025-10-15T21:01:34.024Z'
 ---
 
 25-26 academic year

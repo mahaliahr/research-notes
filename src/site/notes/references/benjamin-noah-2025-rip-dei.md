@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/references/benjamin-noah-2025-rip-dei/","noteIcon":""}
+dg-publish: true
+permalink: /references/benjamin-noah-2025-rip-dei/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  _RIP… D.E.I. with Ruha Benjamin | What Now? with Trevor Noah Podcast_ (2025).
+  Available at: [https://www.youtube.com/watch?v=1VRCfuKE
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

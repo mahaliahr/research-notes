@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/designing-practice-based-research/","noteIcon":""}
+dg-publish: true
+permalink: /published/designing-practice-based-research/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+  Skains, R.L. (2024) _Designing and Conducting Practice-Based Research
+  Projects_. Available at: [https://www.intellectbooks.com/designi
+updated: '2025-10-15T21:01:34.006Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

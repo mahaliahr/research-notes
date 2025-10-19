@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/ethics/","noteIcon":""}
+dg-publish: true
+permalink: /published/ethics/
+noteIcon: ''
+title: Ethical considerations
+visibility: public
+description: |-
+  Ethical considerations 
+  - co-creation with students, how do the students not feel exploited? 
+  - open-source / massive platforms - ethics 
+  - positionality of par
+updated: '2025-10-15T21:01:34.007Z'
 ---
 
 Ethical considerations 

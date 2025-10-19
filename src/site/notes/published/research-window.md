@@ -1,5 +1,14 @@
 ---
-# {"dg-publish":true,"permalink":"/published/research-window/","tags":["gardenEntry"],"noteIcon":""}
+title: This is a snapshot of my thinking and research for my PhD.
+permalink: /notes/research-window/
+dg-publish: true
+visibility: public
+description: |-
+  This is a snapshot of my thinking and research for my PhD. 
+  This is in flux as thoughts develop.
+
+  [Planning Overview](https://www.notion.so/PhD-Planning-Overvie
+updated: '2025-10-18T12:46:58.776Z'
 ---
 
 This is a snapshot of my thinking and research for my PhD. 

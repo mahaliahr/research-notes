@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/process-of-iteration/","noteIcon":""}
+dg-publish: true
+permalink: /published/process-of-iteration/
+noteIcon: ''
+title: '''research in art and design is characterised by iteration'' p13'
+visibility: public
+description: >-
+  'research in art and design is characterised by iteration' p13
+
+  Each new cycle of actions is based on the findings of the previous one.  Your
+  questions, knowledg
+updated: '2025-10-15T21:01:34.019Z'
 ---
 
 'research in art and design is characterised by iteration' p13

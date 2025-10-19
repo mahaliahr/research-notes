@@ -9,34 +9,61 @@ function userEleventySetup(eleventyConfig) {
   // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
 
-  // POSTS: either explicitly type: post OR live in /posts/ (adjust if needed)
-    eleventyConfig.addCollection("post", (c) =>
+  // ---------------------------
+  // POSTS  (= /notes/blog/* or type: "post")
+  // ---------------------------
+  eleventyConfig.addCollection("posts", (c) =>
     c.getAll()
-      .filter(p => (p.data && p.data.type === "post") || p.inputPath.includes("/notes/published/"))
-      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
+      .filter(p =>
+        p.inputPath.includes("/notes/blog/") || (p.data && p.data.type === "post")
+      )
+      .filter(isPublic)
+      .sort((a, b) => new Date(b.date || b.data?.date || 0) - new Date(a.date || a.data?.date || 0))
   );
-  
-  // ZETTELS/NOTES: everything under /notes/ that is NOT a post
+
+  // ---------------------------
+  // ZETTELS (= everything under /notes/ that is NOT a post)
+  // ---------------------------
   eleventyConfig.addCollection("zettels", (c) =>
     c.getAll()
       .filter(p => p.inputPath.includes("/notes/"))
-      .filter(p => !(p.data && p.data.type === "post"))
-      .sort((a,b) => new Date(b.data?.updated || b.date || 0) - new Date(a.data?.updated || a.date || 0))
+      .filter(p => !p.inputPath.includes("/notes/blog/"))      // exclude posts folder
+      .filter(p => (p.data?.type || "") !== "post")            // exclude any stray post-typed files
+      .filter(isPublic)
+      .sort((a, b) =>
+        new Date(b.data?.updated || b.date || 0) -
+        new Date(a.data?.updated || a.date || 0)
+      )
   );
 
-  // Entry notes for “start exploring” (tag: gardenEntry or your tag of choice)
+  // ---------------------------
+  // ENTRY NOTES (trailheads)  tag: gardenEntry
+  // ---------------------------
   eleventyConfig.addCollection("entryNotes", (c) =>
     c.getAll()
       .filter(p => p.inputPath.includes("/notes/"))
+      .filter(p => !p.inputPath.includes("/notes/blog/"))      // don’t feature posts here
+      .filter(isPublic)
       .filter(p => (p.data?.tags || []).includes("gardenEntry"))
-      .sort((a,b) => (a.data?.title || a.fileSlug).localeCompare(b.data?.title || b.fileSlug))
+      .sort((a, b) => (a.data?.title || a.fileSlug).localeCompare(b.data?.title || b.fileSlug))
   );
 
-  // FEATURED: tag for highlights
-    eleventyConfig.addCollection("featuredPosts", (c) =>
-    c.getFilteredByTag("featured")
-      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
+  // ---------------------------
+  // FEATURED POSTS  (tag: featured)
+  // ---------------------------
+  eleventyConfig.addCollection("featuredPosts", (c) =>
+    c.getAll()
+      .filter(p =>
+        (p.inputPath.includes("/notes/blog/") || p.data?.type === "post") &&
+        (p.data?.tags || []).includes("featured") &&
+        isPublic(p)
+      )
+      .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
   );
+
+  // ===========================
+  // BELOW: live-data parsers 
+  // ===========================
 
   // Helper: read the raw rendered markdown (not HTML)
   const getText = (p) => (p.template && p.template.inputContent) || p.templateContent || "";

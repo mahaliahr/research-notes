@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/the-lifecycle-of-imaginaries-diagram/","noteIcon":""}
+dg-publish: true
+permalink: /published/the-lifecycle-of-imaginaries-diagram/
+noteIcon: ''
+title: '![alt text](/img/user/images/20240814_111440.jpg)'
+visibility: public
+description: >-
+  ![alt text](/img/user/images/20240814_111440.jpg)
+
+
+  Alternative or new configurations of the world are presented in the diagram
+  attached across a variety of cont
+updated: '2025-10-15T21:01:34.025Z'
 ---
 
 ![alt text](/img/user/images/20240814_111440.jpg)

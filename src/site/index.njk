@@ -20,7 +20,7 @@ eleventyExcludeFromCollections: true
   <h1>Research in Progress</h1>
   <p class="tagline">Process as everything — livestreamed notes, sessions, and reflections.</p>
   <nav class="quick-links">
-    <a href="/posts/">Posts</a>
+    <a href="/blog/">Posts</a>
     <a href="/notes/">Zettelkasten</a>
     <a href="/graph/">Graph</a>
     {% if settings.dgEnableSearch %}<a href="/search/">Search</a>{% endif %}
@@ -28,7 +28,7 @@ eleventyExcludeFromCollections: true
 </header>
 
 <section class="live-dashboard">
-  <h2>Live</h2>
+  <h2>🔴 Live</h2>
   <div id="live-widget">
     <div id="live-now"></div>
     <div id="live-next"></div>
@@ -51,7 +51,7 @@ eleventyExcludeFromCollections: true
         </li>
       {% endfor %}
     </ul>
-    <p class="more"><a href="/posts/">See all posts →</a></p>
+    <p class="more"><a href="/blog/">See all posts →</a></p>
   {% else %}
     <p>No posts yet.</p>
   {% endif %}
@@ -78,13 +78,16 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section class="zettel-gateway">
-  <h2>🌿 Explore the Zettelkasten</h2>
-  <div class="gateway">
-    <div class="panel">
-      <h3>Graph</h3>
-      <p>Wander the idea graph and follow links in any direction.</p>
-      <p><a class="button" href="/graph/">Open the graph →</a></p>
-    </div>
+  <h2>Explore the Zettelkasten</h2>
+   <div class="graph-embed" style="position:relative;width:100%;height:520px;">
+    <iframe
+      src="/graph/"
+      title="Zettelkasten Graph"
+      loading="lazy"
+      style="width:100%;height:100%;border:1px solid #eee;border-radius:12px;"
+    ></iframe>
+  </div>
+  <p class="more"><a href="/notes/">Browse all notes →</a></p>
     <div class="panel">
       <h3>Trailheads</h3>
       {% set entries = collections.entryNotes | default([]) %}

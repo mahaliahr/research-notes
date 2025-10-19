@@ -1,5 +1,21 @@
 ---
-{"dg-publish":true,"permalink":"/published/phd-proposal/","noteIcon":""}
+dg-publish: true
+permalink: /published/phd-proposal/
+noteIcon: ''
+title: as of June 2024 for the AfR (Application for Registration)
+visibility: public
+description: >-
+  as of June 2024 for the AfR (Application for Registration)
+
+
+  ---
+
+  #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for
+  Learning
+
+
+  **Subjec
+updated: '2025-10-15T21:01:34.018Z'
 ---
 
 as of June 2024 for the AfR (Application for Registration)

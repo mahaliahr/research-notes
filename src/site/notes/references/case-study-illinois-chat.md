@@ -1,5 +1,23 @@
 ---
-{"dg-publish":true,"permalink":"/references/case-study-illinois-chat/","noteIcon":""}
+dg-publish: true
+permalink: /references/case-study-illinois-chat/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  _Illinois Chat_ (2025). Available at: [https://uiuc.chat/](https://uiuc.chat/)
+  (Accessed: 22 April 2025).
+
+  ___
+
+
+  https://uiuc.chat/
+
+  cus
+updated: '2025-10-15T21:01:34.029Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

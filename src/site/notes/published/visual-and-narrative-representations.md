@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/visual-and-narrative-representations/","noteIcon":""}
+dg-publish: true
+permalink: /published/visual-and-narrative-representations/
+noteIcon: ''
+title: >-
+  idea: imagination workshop using visual/ narrative prompts - bring some of
+  these speculations to life. Not sure of all the details yet, but thinking
+  about ways to start visualising some of the speculations that I have come up
+  with so far:
+visibility: public
+description: >-
+  idea: imagination workshop using visual/ narrative prompts - bring some of
+  these speculations to life. Not sure of all the details yet, but thinking
+  about ways 
+updated: '2025-10-15T21:01:34.027Z'
 ---
 
 idea: imagination workshop using visual/ narrative prompts - bring some of these speculations to life. Not sure of all the details yet, but thinking about ways to start visualising some of the speculations that I have come up with so far:

@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/relationship-with-ai-bot-vs-human/","noteIcon":""}
+dg-publish: true
+permalink: /published/relationship-with-ai-bot-vs-human/
+noteIcon: ''
+title: >-
+  The relationship with the AI supervisor bot can be more 'intimate' in a sense,
+  than that of the human to human relationship. The first thing that comes to
+  mind is the fact that there is no sense of judgement from this entity, it has
+  limitless time and patience.
+visibility: public
+description: >-
+  The relationship with the AI supervisor bot can be more 'intimate' in a sense,
+  than that of the human to human relationship. The first thing that comes to
+  mind 
+updated: '2025-10-15T21:01:34.020Z'
 ---
 
 The relationship with the AI supervisor bot can be more 'intimate' in a sense, than that of the human to human relationship. The first thing that comes to mind is the fact that there is no sense of judgement from this entity, it has limitless time and patience. 

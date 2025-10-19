@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/play-is-the-work-of-operating-a-system/","noteIcon":""}
+dg-publish: true
+permalink: /published/play-is-the-work-of-operating-a-system/
+noteIcon: ''
+title: >-
+  ‘Play is not an act of diversion, but the work of working a system […] Fun is
+  not the effect of enjoyment released by a system, but a nickname for the
+  feeling of operating […] it in a new way’.  p?
+  [[references/bogost-2016-play-anything\|bogost-2016-play-anything]]
+visibility: public
+description: >-
+  ‘Play is not an act of diversion, but the work of working a system […] Fun is
+  not the effect of enjoyment released by a system, but a nickname for the
+  feeling o
+updated: '2025-10-15T21:01:34.019Z'
 ---
 
 ‘Play is not an act of diversion, but the work of working a system […] Fun is not the effect of enjoyment released by a system, but a nickname for the feeling of operating […] it in a new way’.  p? [[references/bogost-2016-play-anything\|bogost-2016-play-anything]]

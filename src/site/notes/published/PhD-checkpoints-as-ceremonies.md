@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/ph-d-checkpoints-as-ceremonies/","noteIcon":""}
+dg-publish: true
+permalink: /published/ph-d-checkpoints-as-ceremonies/
+noteIcon: ''
+title: 03-08-24 -
+visibility: public
+description: >-
+  03-08-24 - 
+
+  It seems to me that one of the things about a PhD that is unpleasant or that
+  makes things really stressful if the passing though of the formalities.
+updated: '2025-10-15T21:01:34.002Z'
 ---
 
 

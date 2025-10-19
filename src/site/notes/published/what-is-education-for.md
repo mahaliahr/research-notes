@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-education-for/","noteIcon":""}
+dg-publish: true
+permalink: /published/what-is-education-for/
+noteIcon: ''
+title: 11-06-2024-
+visibility: public
+description: |-
+  11-06-2024-
+
+  An idea to think about: what is education for?
+
+  **historically and now** - within the context that I exist within in the UK
+
+  published/connection-b
+updated: '2025-10-15T21:01:34.028Z'
 ---
 
 11-06-2024-

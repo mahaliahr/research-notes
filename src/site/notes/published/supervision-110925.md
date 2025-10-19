@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-110925/","noteIcon":""}
+dg-publish: true
+permalink: /published/supervision-110925/
+noteIcon: ''
+title: 'Work in progress:'
+visibility: public
+description: >
+  [Project planning and milestones in the coming
+  weeks/months](https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664)
+
+
+  # Work in progress:
+updated: '2025-10-15T21:01:34.023Z'
 ---
 
 [Project planning and milestones in the coming weeks/months](https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664)

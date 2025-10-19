@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/project-cci-ual-staff-interviews/","noteIcon":""}
+dg-publish: true
+permalink: /published/project-cci-ual-staff-interviews/
+noteIcon: ''
+title: 'Considerations -> everyone is very busy, will people have time to contribute?'
+visibility: public
+description: >-
+  Considerations -> everyone is very busy, will people have time to contribute? 
+
+  How to design it so that people feel inclined to do it, rather than being a
+  burde
+updated: '2025-10-15T21:01:34.019Z'
 ---
 
 Considerations -> everyone is very busy, will people have time to contribute? 

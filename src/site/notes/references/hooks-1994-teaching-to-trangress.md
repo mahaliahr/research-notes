@@ -1,5 +1,20 @@
 ---
-{"dg-publish":true,"permalink":"/references/hooks-1994-teaching-to-trangress/","noteIcon":""}
+dg-publish: true
+permalink: /references/hooks-1994-teaching-to-trangress/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: |-
+  references/-bibliography\
+
+  hooks, bell. Teaching to Transgress, 1994. 
+
+  ---
+
+  chapter 11 - Language (teaching new worlds /new words)
+
+  This quote 'This is the opp
+updated: '2025-10-15T21:01:34.031Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

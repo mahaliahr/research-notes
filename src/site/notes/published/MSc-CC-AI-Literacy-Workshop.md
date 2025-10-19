@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/m-sc-cc-ai-literacy-workshop/","noteIcon":""}
+dg-publish: true
+permalink: /published/m-sc-cc-ai-literacy-workshop/
+noteIcon: ''
+title: >-
+  For the incoming cohort, I am planning an introductory AI literacy session, to
+  'onboard' students, understand what they know/ opinions about AI and flag some
+  issues that are important to bear in mind. It will also a moment to introduce
+  my PhD research and give a wider context of what I am doing.
+visibility: public
+description: >-
+  For the incoming cohort, I am planning an introductory AI literacy session, to
+  'onboard' students, understand what they know/ opinions about AI and flag some
+  is
+updated: '2025-10-15T21:01:34.002Z'
 ---
 
 For the incoming cohort, I am planning an introductory AI literacy session, to 'onboard' students, understand what they know/ opinions about AI and flag some issues that are important to bear in mind. It will also a moment to introduce my PhD research and give a wider context of what I am doing.

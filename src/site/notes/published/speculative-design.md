@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/speculative-design/","noteIcon":""}
+dg-publish: true
+permalink: /published/speculative-design/
+noteIcon: ''
+title: structure-note
+visibility: public
+description: |-
+  #structure-note
+
+
+  published/definitions-of-speculative design\
+
+  published/AI-access-libraries-speculation\
+  published/humans and AI school speculation\
+  published
+updated: '2025-10-15T21:01:34.023Z'
 ---
 
 #structure-note

@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/references/mitrovic-2021-beyond-speculative-design/","noteIcon":""}
+dg-publish: true
+permalink: /references/mitrovic-2021-beyond-speculative-design/
+noteIcon: ''
+title: '[[references/-bibliography\|-bibliography]]'
+visibility: public
+description: |-
+  references/-bibliography\
+
+  Mitrović, I. et al. (2021) Beyond speculative design: Past, Present - Future.
+
+  ---
+
+  ~~"Good speculations 'stretch' rather that 'shatt
+updated: '2025-10-15T21:01:34.031Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

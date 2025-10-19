@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/ai-literacy/","noteIcon":""}
+dg-publish: true
+permalink: /published/ai-literacy/
+noteIcon: ''
+title: >-
+  this is a growing area that will be as important as the technological
+  developments of [[published/generative-AI\|generative-AI]].
+visibility: public
+description: >-
+  this is a growing area that will be as important as the technological
+  developments of published/generative-AI\. 
+
+
+  In the references/ibm-2024-AI-in-education\ po
+updated: '2025-10-15T21:01:34.000Z'
 ---
 
 this is a growing area that will be as important as the technological developments of [[published/generative-AI\|generative-AI]]. 
