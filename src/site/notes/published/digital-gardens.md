@@ -1,4 +1,4 @@
-s---
+---
 dg-publish: true
 title: Digital Gardens
 permalink: /notes/digital-gardens/
