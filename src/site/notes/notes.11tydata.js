@@ -29,5 +29,7 @@ module.exports = {
       });
       return noteSettings;
     },
+    "dg-publish": d => (typeof d["dg-publish"] === "boolean" ? d["dg-publish"] : true),
+    visibility: d => d.visibility || "public",
   },
 };
