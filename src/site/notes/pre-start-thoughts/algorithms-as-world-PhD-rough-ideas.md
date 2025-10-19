@@ -1,5 +1,21 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/","noteIcon":"","title":null,"visibility":"public","description":"---\norder - resistance - messiness\nThe current state of the world - systems published/types-of-systems\\ sp","updated":"2025-10-15T21:01:33.999Z","dgPassFrontmatter":true}
+dg-publish: true
+permalink: /pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/
+noteIcon: ''
+title: >-
+  [[published/play-is-the-work-of-operating-a-system\|play-is-the-work-of-operating-a-system]]
+visibility: public
+description: |-
+  published/play-is-the-work-of-operating-a-system\
+
+  ---
+
+  order - resistance - messiness
+
+  The current state of the world - systems 
+  published/types-of-systems\
+  sp
+updated: '2025-10-15T21:01:33.999Z'
 ---
 
 

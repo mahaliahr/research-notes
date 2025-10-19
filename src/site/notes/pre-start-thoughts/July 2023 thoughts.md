@@ -1,5 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/pre-start-thoughts/july-2023-thoughts/","noteIcon":"","visibility":"public","description":null,"updated":"2025-10-15T21:01:33.998Z","dgPassFrontmatter":true}
+dg-publish: true
+permalink: /pre-start-thoughts/july-2023-thoughts/
+noteIcon: ''
+title: REMEMBER - You can do all the things you want to do without a PhD
+visibility: public
+description: "REMEMBER - You can do all the things you want to do without a PhD\n\n---\n\nPhD as activism\_\n\nCritical and provocative work\n\n--- \n\nWorking within constraints (me)\n\n"
+updated: '2025-10-15T21:01:33.998Z'
 ---
 
 REMEMBER - You can do all the things you want to do without a PhD
