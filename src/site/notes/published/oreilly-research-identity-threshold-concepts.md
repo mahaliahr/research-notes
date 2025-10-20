@@ -14,8 +14,7 @@ updated: '2025-10-20T22:37:52.597Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 O’Reilly, J., 2023. “See you on the other side”: researcher identity, threshold concepts and making a ritual of confirmation. _Spark: UAL Creative Teaching and Learning Journal_, _6_(1), pp.10-22. 
 

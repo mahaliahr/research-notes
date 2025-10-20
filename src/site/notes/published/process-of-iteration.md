@@ -13,7 +13,6 @@ updated: '2025-10-20T22:34:14.471Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
-
 'research in art and design is characterised by iteration' p13
 Each new cycle of actions is based on the findings of the previous one.  Your questions, knowledge and practice move forward by looking back and responding to what has happened
 
@@ -21,6 +20,6 @@ iteration is particularly important in research by making. Applying what you've 
 'This is where search becomes re-search' p13
 
 ---
-_thought: this is were [[published/field-notes\|field-notes]] could become important. I need to keep notes on the iterative process of my research and how things are changing. 
+_thought: this is were [[field-notes]] could become important. I need to keep notes on the iterative process of my research and how things are changing. 
 
 _should I make fieldnotes a tag in obsidian, how to mark and organise them?_

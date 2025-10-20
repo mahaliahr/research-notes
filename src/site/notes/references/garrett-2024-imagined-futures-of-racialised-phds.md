@@ -12,8 +12,7 @@ description: >-
 updated: '2025-10-20T22:34:14.495Z'
 ---
 
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 Garrett, R. (2024). Racism shapes careers: career trajectories and imagined futures of racialised minority PhDs in UK higher education. Globalisation, Societies and Education, pp.1–15.
 
@@ -62,9 +61,9 @@ How might these changes be compounded to worsen the above stated elitism, racism
 
 These thoughts tie deeply into my positionality
 
-[[published/LLM-in-academia\|LLM-in-academia]]
+[[LLM-in-academia]]
 
-[[published/GenAI-catalysing-change\|GenAI-catalysing-change]]
+[[GenAI-catalysing-change]]
 
-[[published/LLMs disrupting formalities\|LLMs disrupting formalities]]
+[[LLMs disrupting formalities]]
 

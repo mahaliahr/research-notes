@@ -17,8 +17,7 @@ description: >-
   most neglected by society,
 updated: '2025-10-20T22:39:58.918Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 ---
 
@@ -26,7 +25,7 @@ La Révolte des Mediocres (page ref?)
 
 ‘First I intend to show how they could be applied in the one field of study most neglected by society, although I consider it the most important: the creative use of leisure’ p 14
 
-[[published/reflections-on-the-working-of-the-system\|reflections-on-the-working-of-the-system]] 
+[[reflections-on-the-working-of-the-system]] 
 
 ---
 

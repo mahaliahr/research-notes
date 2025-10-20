@@ -11,17 +11,16 @@ description: |-
   we were asked to come up with a 20 min micro teach se
 updated: '2025-10-20T22:34:14.485Z'
 ---
-
 # What I asked?
 
 ##### **Imagination microteach**
 Can you foster imagination within object based learning?
-we were asked to come up with a 20 min micro teach session - I chose to try and engage this with thoughts that I had been having on the phd around [[published/imagination-practice\|imagination-practice]] particulary in examining how adults can reconnect with this key skillset that feels really central and important in teaching for children, but loses focus once people reach adulthood. In the context of the phd, imagination is also a central component of the so called '21st century skills' which will become increasingly important - particularly with the shifts that AI is making in pedagogical
+we were asked to come up with a 20 min micro teach session - I chose to try and engage this with thoughts that I had been having on the phd around [[imagination-practice]] particulary in examining how adults can reconnect with this key skillset that feels really central and important in teaching for children, but loses focus once people reach adulthood. In the context of the phd, imagination is also a central component of the so called '21st century skills' which will become increasingly important - particularly with the shifts that AI is making in pedagogical
 practice.
 
 ##### **Blog post writing**
 **education industrial complex** 
-I learnt of the term '[[published/educational-industrial-complex\|educational-industrial-complex]]' and wanted to dig deeper into what that meant, as the term immediately seeming to align with some of the teaching struggles I was facing
+I learnt of the term '[[educational-industrial-complex]]' and wanted to dig deeper into what that meant, as the term immediately seeming to align with some of the teaching struggles I was facing
 
 # What I did? 
 
@@ -31,7 +30,7 @@ I chose clay as the medium in which people would work, this was for it's tactile
 and asked them to make something that responded to the description 
 
 ##### **Blog post writing**
-reading the following articles by [[published/pearce-2019-edu-industrial-complex\|pearce-2019-edu-industrial-complex]] and [[published/naidoo-2013-students-as-consumers\|naidoo-2013-students-as-consumers]] allowed me to reflect deeper on these themes with more contextual reference.
+reading the following articles by [[pearce-2019-edu-industrial-complex]] and [[naidoo-2013-students-as-consumers]] allowed me to reflect deeper on these themes with more contextual reference.
 
 ##### **Case studies
 
@@ -44,7 +43,7 @@ As part of the session at the end we had a 'reflection and sharing' session. Fee
 
  exceprt from my blog:
 	_Challenges in the classroom, such as the over-recruitment of students to maximize university revenue alongside the lack of adequate space for delivering the quality of education we aspire to, are key contextual issues that have made the concept of an ‘Education Industrial Complex’ particularly resonant for me. As a lecturer, it can often feel disempowering to see decisions being made primarily from a business standpoint, with little consideration for their pedagogical implications. This leads to the notion of ‘commodified teaching’—where education is treated as a product to be bought and sold—prompting serious reflections on the core values and objectives of education in the 21st century (Naidoo and Whitty, 2013). It begs the question of how educational institutions, particularly those dedicated to creative disciplines like UAL, can avoid transforming into mere commercial entities and instead remain committed to fostering innovative, critical, and socially responsible thinkers. Although these challenges can sometimes seem daunting, I find solace in the opportunities present within arts higher education to experiment in the classroom and to actively engage both peers and students in directly addressing these issues through creative and critical approaches.
-I also found connection to Paulo Friere's ideas of the [[published/banking-system\|banking-system]], ideas of commodification of education is reminiscient of Freires articulation of the passivity of transmission in the banking style mode of teaching. These things in combination promote a type of educational marketplace. Making education a product rather than a transformative process
+I also found connection to Paulo Friere's ideas of the [[banking-system]], ideas of commodification of education is reminiscient of Freires articulation of the passivity of transmission in the banking style mode of teaching. These things in combination promote a type of educational marketplace. Making education a product rather than a transformative process
 
 # What I (don't) know?
 

@@ -10,7 +10,6 @@ description: >-
   Learning Futures. Open Book Publishers.
 updated: '2025-10-20T22:34:14.494Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 Czerniewicz, L. and Cronin, C. (2023) _Higher education for good: Teaching and Learning Futures. Open Book Publishers.
 

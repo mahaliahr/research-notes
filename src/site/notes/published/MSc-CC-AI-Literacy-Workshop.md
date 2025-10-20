@@ -12,8 +12,9 @@ updated: '2025-10-20T22:34:14.421Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
+This year for the new cohort of students (25/26) I want to take the opportunity to introduce and 'onboard' the students to think about AI in a more critical way, understand what they know or understand AI is, and try to 'unmask' some preconceived notions about it **before** students use it blindly within their learning.
 
-For the incoming cohort, I am planning an introductory AI literacy session, to 'onboard' students, understand what they know/ opinions about AI and flag some issues that are important to bear in mind. It will also a moment to introduce my PhD research and give a wider context of what I am doing.
+It will also a moment to introduce my PhD research and give a wider context of what I am doing.
 
 ---
 First session in first week (general)
@@ -23,6 +24,8 @@ Topics to potentially cover:
 - opinions and imaginations of AI - explore people's perceptions 
 - what is AI? Here I am interested to gain understanding of what students think
 	- Define AI - give overview, talk about the 'wooliness' of the term AI
+	- ~~(very) brief history?~~
+
 Additional: introduce my research and the potential to be involved in research project(s) on the course.
 
 - Possible activity - what does the large language model know about you? (Exposing privacy questions when using corporate AI tools)

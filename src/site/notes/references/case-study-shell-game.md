@@ -10,12 +10,11 @@ description: >-
   Available at: [https://www.shellgame.co/podcast](https://www.shellgame.co
 updated: '2025-10-20T22:34:14.493Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 Ratliff, E. (2024) ‘Shell Game | Evan Ratliff | Substack’. (Shell Game). Available at: [https://www.shellgame.co/podcast](https://www.shellgame.co/podcast) (Accessed: 5 March 2025).
 
 ---
-#### [[published/speculative-design\|speculative-design]] case study
+#### [[speculative-design]] case study
 
 DRAFT TEXT 
 Shell Game is a podcast series by Evan Ratcliff that chronicles his journey to create an AI voice-bot replica of himself and release it into the world as an experiment seeing what happens and how people react to it. 

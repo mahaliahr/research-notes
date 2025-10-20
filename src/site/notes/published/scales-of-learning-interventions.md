@@ -18,7 +18,6 @@ description: |-
   How could tie all of this together coherently? 
 updated: '2025-10-20T22:38:45.243Z'
 ---
-
 24/01/25
 
 personal - me as a learner

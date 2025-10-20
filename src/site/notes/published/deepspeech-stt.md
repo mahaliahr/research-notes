@@ -17,7 +17,6 @@ description: |-
 updated: 2025-10-20T22:34:14.438Z
 featured: true
 ---
-
 https://github.com/mozilla/DeepSpeech
 
 **Pros:**

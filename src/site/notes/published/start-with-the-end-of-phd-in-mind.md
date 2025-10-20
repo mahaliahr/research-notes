@@ -11,9 +11,8 @@ description: |-
   personal-motivations.canvas
 updated: '2025-10-20T22:34:14.478Z'
 ---
-
 09-01-2024
-[[unpublished/why-am-i-doing-a-phd\|why-am-i-doing-a-phd]]
+[[why-am-i-doing-a-phd]]
 
 what is my personal connection to the problem?
 [[personal-motivations.canvas|personal-motivations]]

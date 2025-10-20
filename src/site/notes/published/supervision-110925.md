@@ -11,28 +11,27 @@ description: >
   # Work in progress:
 updated: '2025-10-20T22:34:14.479Z'
 ---
-
 [Project planning and milestones in the coming weeks/months](https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664)
 
 # Work in progress:
 ### Supervisor-Bot Prototype
-[[published/supervisor-bot-v1-prototype\|supervisor-bot-v1-prototype]]
+[[supervisor-bot-v1-prototype]]
 
 ### Staff interview planning 
-[[published/project-cci-ual-staff-interviews\|project-cci-ual-staff-interviews]]
+[[project-cci-ual-staff-interviews]]
 
 ### AI Literacy sessions for new students
-[[published/MSc-CC-AI-Literacy-Workshop\|MSc-CC-AI-Literacy-Workshop]]
+[[MSc-CC-AI-Literacy-Workshop]]
 
 ---
 ### Research Design (Developing)
 
 learning experiments - 
-	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
-	'live coding a phd' [[published/focus-on-process\|focus-on-process]]
+	'supervisor-bot' [[project-supervisor-bot]]
+	'live coding a phd' [[focus-on-process]]
 
-[[published/teaching\|teaching]] experiments - 
-	'diy-bot' framework [[published/diy-bot-creation\|diy-bot-creation]] 
+[[teaching]] experiments - 
+	'diy-bot' framework [[diy-bot-creation]] 
 	AI literacy workshops 
 
 _other ideas, not yet very defined: 
@@ -52,7 +51,7 @@ need to do some contextual writing, for the bot
 
 supervisor bot
  -> DIY bot with students[^1] (see what their background is)
-	 contrast to Chatgpt
+	 contrast to ChatGPT
 	 educational tool as a way to understand
 climate crisis impact
 

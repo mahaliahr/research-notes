@@ -20,4 +20,4 @@ Erin Manning ([whom I referred to in blog post 1](https://mmhrpgcert.myblog.arts
 
 ---
 
-[[published/classroom as dramaturgical site for experimentation\|classroom as dramaturgical site for experimentation]]
+[[classroom as dramaturgical site for experimentation]]

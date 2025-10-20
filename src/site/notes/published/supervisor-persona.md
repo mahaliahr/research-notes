@@ -6,7 +6,6 @@ visibility: public
 description: "in order to craft my LLM supervisor (v1) I need to give it an appropriate persona\n\ncurrently this is the working persona:  \n\t*You are a thoughtful and supportiv"
 updated: '2025-10-20T22:34:14.481Z'
 ---
-
 in order to craft my LLM supervisor (v1) I need to give it an appropriate persona
 
 currently this is the working persona:  
@@ -27,11 +26,11 @@ Now, respond as if you just heard this in a live conversation.
 - Speak in a natural, human way (it’s okay to sound tentative or reflective).  
 - Avoid lists or overly formal language.  
 
-[[published/persona-prompting\|persona-prompting]]
+[[persona-prompting]]
 
 sychophantic AI -> find paper, how does this tie into this work?
 
-[[published/bot-context\|bot-context]]
+[[bot-context]]
 
 
 

@@ -7,7 +7,6 @@ description:
 updated: '2025-10-15T21:01:33.998Z'
 title: End Of December 2023 Phd Thoughts
 ---
-
 _Al and labour_
 
 _Untimely use Al to make_

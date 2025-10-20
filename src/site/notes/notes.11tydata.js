@@ -6,27 +6,33 @@ const allSettings = settings.ALL_NOTE_SETTINGS;
 module.exports = {
   layout: "note.njk",
   eleventyComputed: {
+    // Layout: home note (gardenEntry) vs regular note
     layout: (data) => {
       const tags = Array.isArray(data.tags) ? data.tags : [];
       // remove "layouts/" prefix here
       return tags.includes("gardenEntry") ? "index.njk" : "note.njk";
     },
+
+    // Permalink:
+    // - gardenEntry → "/"
+    // - otherwise: explicit front matter if provided, else /notes/<fileSlug>/
     permalink: (data) => {
-      if (data.tags.indexOf("gardenEntry") != -1) {
-        return "/";
-      }
-      return data.permalink || undefined;
+      const tags = Array.isArray(data.tags) ? data.tags : [];
+      if (tags.includes("gardenEntry")) return "/";
+      return data.permalink || `/notes/${data.page.fileSlug}/`;
     },
+
+    // Per-note settings merged with env defaults (DG convention)
     settings: (data) => {
       const noteSettings = {};
-      allSettings.forEach((setting) => {
-        let noteSetting = data[setting];
-        let globalSetting = process.env[setting];
-
-        let settingValue =
-          noteSetting || (globalSetting === "true" && noteSetting !== false);
-        noteSettings[setting] = settingValue;
-      });
+      for (const setting of allSettings) {
+        const noteSetting = data[setting];
+        const globalSetting = process.env[setting];
+        noteSettings[setting] =
+          typeof noteSetting !== "undefined"
+            ? noteSetting
+            : (globalSetting === "true" && noteSetting !== false);
+      }
       return noteSettings;
     },
 
