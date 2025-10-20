@@ -2,14 +2,7 @@
 dg-publish: true
 noteIcon: ''
 visibility: public
-description: >-
-  bring personalitiy into it when you talk about it 
-
-
-  'grand narrative'
-
-  what holds it together, why you, why is it important, why is it important in
-  the time and 
+description: 
 updated: '2025-10-15T21:01:33.998Z'
 title: Notes From What Is Your Research Or Practice And Who Are You In It
 permalink: /notes/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/
