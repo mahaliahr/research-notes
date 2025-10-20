@@ -6,9 +6,9 @@ tying into [[RQ3-playful-methodology-as-way-to-speculate]]
 
 core tenents of play that feed into research methods that I am interested in 
 ie.
-- [[published/Autoethnography\|autoethnography]]
-- critical / [[published/speculative-design\|speculative-design]]
-- arts based [[published/research-methods\|research-methods]] (?)
+- [[autoethnography]]
+- critical / [[speculative-design]]
+- arts based [[research-methods]] (?)
 
 core tenents of play (that I care about)
 - multisensory

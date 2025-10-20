@@ -1,24 +1,12 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
-title: Focus On Process
-permalink: /notes/focus-on-process/
-visibility: public
-description: >-
-  Now that we are in a time where generative AI can produce 'results' with
-  'ease'. The **process** of what we do becomes much more important. 
-
-  This is something t
-updated: '2025-10-20T22:34:14.446Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 
 This is something that I am thinking about a lot and I believe will be an important element within the research.
 
 tangential but perhaps useful thing that I am using at the moment to track my research that ties into the above idea:
-[[published/digital-gardens\|digital-gardens]]
-[[_unpublished/zettelkasten\|zettelkasten]]
+[[digital-gardens]]
+[[zettelkasten]]
 
 as part of [[my-practice]], I am also a live-coder. Live coding as a practice is very much about the practice of sharing your progress. This has led me to think about the idea - what isf I 'live code my PhD' - what would that look like?
 

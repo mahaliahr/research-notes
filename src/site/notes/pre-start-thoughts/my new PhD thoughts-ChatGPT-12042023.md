@@ -12,6 +12,10 @@ title: >-
 visibility: public
 description: 
 updated: '2025-10-15T21:01:33.999Z'
+<<<<<<< HEAD
+title: My New Phd Thoughts Chatgpt 12042023
+=======
+>>>>>>> 60d0c7e (Revert "Revert "fixing the mess"")
 ---
 
 in a world where 'AI can do everything' creativity and imagination become the vital and most inherent things that we could learn/teach. how can we use computational tools ot help build these skills. what can educational intitutions do to stay relevant?how can people outside of these institutes still feel this agency to be creative and imagination if automation takes away certain skills or the need to learn certain things

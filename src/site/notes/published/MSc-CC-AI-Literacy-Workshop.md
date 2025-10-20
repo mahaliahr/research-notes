@@ -1,22 +1,9 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
-title: Msc Cc Ai Literacy Workshop
-permalink: /notes/msc-cc-ai-literacy-workshop/
-visibility: public
-description: >-
-  This year for the new cohort of students (25/26) I want to take the
-  opportunity to introduce and 'onboard' the students to think about AI in a
-  more critical way
-updated: '2025-10-20T22:34:14.421Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 This year for the new cohort of students (25/26) I want to take the opportunity to introduce and 'onboard' the students to think about AI in a more critical way, understand what they know or understand AI is, and try to 'unmask' some preconceived notions about it **before** students use it blindly within their learning.
 
-This year for the new cohort of students (25/26) I want to take the opportunity to introduce and 'onboard' the students to think about AI in a more critical way, understand what they know or understand AI is, and try to 'unmask' some preconceived notions about it **before** students use it blindly within their learning.
-
-For the incoming cohort, I am planning an introductory AI literacy session, to 'onboard' students, understand what they know/ opinions about AI and flag some issues that are important to bear in mind. It will also a moment to introduce my PhD research and give a wider context of what I am doing.
+It will also a moment to introduce my PhD research and give a wider context of what I am doing.
 
 ---
 First session in first week (general)
@@ -35,14 +22,11 @@ Additional: introduce my research and the potential to be involved in research p
 
 responsible uses of ai in a masters level of education - expectations
 
-<<<<<<< HEAD
-=======
 ---
 
 genAI in HE - GenAI in industry
 what is responsible use, what is thinking critically
 
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 
 genAI in HE - GenAI in industry

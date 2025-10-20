@@ -3,8 +3,6 @@
 ---
 (13-08-2024) Libraries are often thought of as being increasingly obsolete. 
 
-(13-08-2024) Libraries are often thought of as being increasingly obsolete. 
-
-Could some kind of model based on the idea of the library offer access to people who may not have the financial capabilities to do this at home ([[published/AI-and-digital-poverty\|AI-and-digital-poverty]])
+Could some kind of model based on the idea of the library offer access to people who may not have the financial capabilities to do this at home ([[AI-and-digital-poverty]])
 
 What might this look like?

@@ -3,7 +3,7 @@
 ---
 The process of learning and teaching at the same time. How do they **simultaneously** work towards my goals (whilst also feeding into each other).
 
-The process of learning and teaching at the same time. How do they **simultaneously** work towards my goals (whilst also feeding into each other).
+My [[pgcert-reflections]] started to explore my autoethnographic experience as a teacher and the difficulties that we are facing currently. Crucially I think a major player in shaping the learning environments at the moment is the political landscape and socio economic forces that shape the choices the universities make and thus the landscape of the classroom. Currently (March 2025) that is the more significant challenge to the teaching than that of AI.
 
 My [[published/pgcert-reflections\|pgcert-reflections]] started to explore my autoethnographic experience as a teacher and the difficulties that we are facing currently. Crucially I think a major player in shaping the learning environments at the moment is the political landscape and socio economic forces that shape the choices the universities make and thus the landscape of the classroom. Currently (March 2025) that is the more significant challenge to the teaching than that of AI.
 

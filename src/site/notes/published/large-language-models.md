@@ -1,25 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
-title: Large Language Models
-permalink: /notes/large-language-models/
-visibility: public
-description: |-
-  #structure-note 
-
-
-
-  ---
-
-  LLM-in-academia
-  LLM-as-phd-supervisor
-  LLM-as-personal-tutors
-  LLMs disrupting formalities
-  LLM-threatening-education-systems-status-quo
-  c
-updated: '2025-10-20T22:34:14.456Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 #structure-note 
 
@@ -46,7 +26,7 @@ https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s -->
 [[supervisor-bot-v1-prototype]]
 [[supervisor-persona]]
 
-[[published/open-source-LLMs\|open-source-LLMs]]
-[[_unpublished/running-LLMs-locally\|running-LLMs-locally]]
+[[open-source-LLMs]]
+[[running-LLMs-locally]]
 
 [memory]
