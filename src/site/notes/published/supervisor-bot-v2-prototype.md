@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervisor-bot-v2-prototype/","noteIcon":""}
+dg-publish: true
 ---
-
 speaker diarization 
 simple UI
 memory

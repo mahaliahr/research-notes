@@ -1,15 +1,14 @@
 ---
-{"dg-publish":true,"permalink":"/published/conversation/","noteIcon":""}
+dg-publish: true
 ---
-
 1. ~~input capture
 	- ~~text based input
 		- ~~shared doc
-		- ~~use [[unpublished/webhook\|webhook]] service to capture data and send to LLM
+		- ~~use [[webhook]] service to capture data and send to LLM
 	- voice based input (speech to text tools)
-		- [[unpublished/whisper-stt\|whisper-stt]] 
-		- [[unpublished/vosk-stt\|vosk-stt]]
-		- [[published/deepspeech-stt\|deepspeech-stt]] (no longer actively supported, but could fine-tune)
+		- [[whisper-stt]] 
+		- [[vosk-stt]]
+		- [[deepspeech-stt]] (no longer actively supported, but could fine-tune)
 	- storing inputs
 		- Use a local database (e.g., SQLite or PostgreSQL) to log conversations.
 		- Implement a timestamped message queue to track dialogue progression
@@ -17,6 +16,6 @@
 3. user interface
 
 Real time interjections and interactions
-[[unpublished/voice-activity-detection\|voice-activity-detection]] (VAD)
+[[voice-activity-detection]] (VAD)
 
 [speaker-diarisation]

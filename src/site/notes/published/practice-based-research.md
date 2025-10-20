@@ -1,11 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/published/practice-based-research/","noteIcon":""}
+dg-publish: true
 ---
 
+I feel that I need to keep coming back to earlier thoughts I was having about [[what-kind-of-research-I-want-to-undertake]] to ensure that I keep the intended spirit of the research alive, whilst defining and solidifying things further. 
 
-I feel that I need to keep coming back to earlier thoughts I was having about [[published/what-kind-of-research-I-want-to-undertake\|what-kind-of-research-I-want-to-undertake]] to ensure that I keep the intended spirit of the research alive, whilst defining and solidifying things further. 
-
-Critically I believe that my practice will take the form of [[published/design-interventions\|design-interventions]], choreography of activity through workshops, performance(?) and through my teaching. I will use [[published/research-methods\|research-methods]] that will align with this.
+Critically I believe that my practice will take the form of [[design-interventions]], choreography of activity through workshops, performance(?) and through my teaching. I will use [[research-methods]] that will align with this.
 
 ---
 How I am currently (2/4/25) envisioning my PhD research
@@ -13,11 +12,11 @@ How I am currently (2/4/25) envisioning my PhD research
 **Experiments in my teaching & learning
 
 learning experiments - 
-	'supervisor-bot' [[published/project-supervisor-bot\|project-supervisor-bot]]
-	'live coding a phd' focus on process
+	'supervisor-bot' [[project-supervisor-bot]]
+	'live-coding a phd' focus on process
 
-[[published/teaching\|teaching]] experiments - 
-	'diy-bot' framework [[published/diy-bot-creation\|diy-bot-creation]] 
+[[teaching]] experiments - 
+	'diy-bot' framework [[diy-bot-creation]] 
 	AI literacy workshops 
 
 other ideas, not yet very defined: 
@@ -27,7 +26,7 @@ other ideas, not yet very defined:
 
 these will be informed by tangible aspects such as **environmental issues, political and economic** factors
 
-I will follow threads from here - informed by this idea of [[published/possibility-spaces-and-impossibility-spaces\|possibility-spaces-and-impossibility-spaces]] as the [[published/overarching-research-narrative\|overarching-research-narrative]]
+I will follow threads from here - informed by this idea of [[possibility-spaces-and-impossibility-spaces]] as the [[overarching-research-narrative]]
 
 work towards a September Deadline to have something ready to show the new cohort / bring to conferences
 

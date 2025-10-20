@@ -1,7 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/annotated-bib-guidance/","noteIcon":""}
----
+dg-publish: true
+permalink: /published/annotated-bib-guidance/
+noteIcon: ''
+visibility: public
+description: >-
+  this is simply bibliography list with some notes.
 
+
+  - helpful as it provides supervisor with a quick overview of what you have
+  reviewed so far and what you plan 
+updated: '2025-10-15T21:01:34.003Z'
+---
 this is simply bibliography list with some notes.
 
 - helpful as it provides supervisor with a quick overview of what you have reviewed so far and what you plan to review. which can help them to identify goals in your research and point you in new directions.

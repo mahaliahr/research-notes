@@ -1,10 +1,9 @@
 ---
-{"dg-publish":true,"permalink":"/published/play-is-the-work-of-operating-a-system/","noteIcon":""}
+dg-publish: true
 ---
+‘Play is not an act of diversion, but the work of working a system […] Fun is not the effect of enjoyment released by a system, but a nickname for the feeling of operating […] it in a new way’.  p? [[bogost-2016-play-anything]]
 
-‘Play is not an act of diversion, but the work of working a system […] Fun is not the effect of enjoyment released by a system, but a nickname for the feeling of operating […] it in a new way’.  p? [[references/bogost-2016-play-anything\|bogost-2016-play-anything]]
-
-this relates (kind of) to [[references/filliou-1970-teaching-and-learning-as-performance-arts\|filliou-1970-teaching-and-learning-as-performance-arts]] comments in regard to [[published/reflections-on-the-working-of-the-system\|reflections-on-the-working-of-the-system]]
+this relates (kind of) to [[filliou-1970-teaching-and-learning-as-performance-arts]] comments in regard to [[reflections-on-the-working-of-the-system]]
 
 excerpt from pgcert blog: 
 I think this quote from Bogost offers an excellent way to reframe our engagement with systems, and in an education context challenges the conventional perception of learning as a linear journey towards predetermined outcomes. It in some ways suggests that there is an essence of learning which lies in navigating and manipulating constraints in innovative ways. 

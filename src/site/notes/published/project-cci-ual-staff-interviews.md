@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/project-cci-ual-staff-interviews/","noteIcon":""}
+dg-publish: true
 ---
-
 Considerations -> everyone is very busy, will people have time to contribute? 
 How to design it so that people feel inclined to do it, rather than being a burden?
 

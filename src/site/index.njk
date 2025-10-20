@@ -1,0 +1,114 @@
+---
+layout: "layouts/note.njk"
+title: "PhD Live"
+permalink: "/"
+eleventyExcludeFromCollections: true
+---
+
+{# <section class="hero">
+  <h1>{{ metadata.title or "PhD Live" }}</h1>
+  <p>Exploring generative AI, learning, and live processes in creative practice.</p>
+  <nav class="cta">
+    <a class="btn" href="/notes">Blog / Notes</a>
+    <a class="btn" href="/garden">Digital Garden</a>
+    <a class="btn" href="https://youtube.com/@phd-live">YouTube</a>
+    <a class="btn" href="/about">About</a>
+  </nav>
+</section> #}
+
+<header class="home-hero">
+  <h1>PhD Live</h1>
+  <p class="tagline">Process as everything — livestreamed notes, sessions, and reflections.</p>
+  <nav class="quick-links">
+    <a href="/blog/">Posts</a>
+    <a href="/notes/">Zettelkasten</a>
+    <a href="/graph/">Graph</a>
+    {% if settings.dgEnableSearch %}<a href="/search/">Search</a>{% endif %}
+  </nav>
+</header>
+
+<section class="live-dashboard">
+  <h2>🔴 Live</h2>
+  <div id="live-widget">
+    <div id="live-now"></div>
+    <div id="live-next"></div>
+    <div id="live-stream"></div>
+  </div>
+  <script src="/assets/js/live-widget.js" defer></script>
+</section>
+
+<section class="latest-posts">
+  <h2>Latest Reflections</h2>
+  {% set posts = collections.posts | default([]) %}
+  {% if posts | length %}
+    <ul class="cards">
+      {% for post in posts | slice(0,6) %}
+        <li class="card">
+          <h3><a href="{{ post.url }}">{{ post.data.title or post.fileSlug }}</a></h3>
+          <small>{{ post.date | isoDate }}</small>
+          {% set desc = post.data.description or (post.templateContent | striptags) %}
+          <p>{{ desc | truncate(140) }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="more"><a href="/blog/">See all posts →</a></p>
+  {% else %}
+    <p>No posts yet.</p>
+  {% endif %}
+</section>
+
+<section class="recent-notes">
+  <h2>Recently Updated Notes</h2>
+  {% set z = collections.zettels | default([]) %}
+  {% if z | length %}
+    <ul class="list">
+      {% for n in z | slice(0,10) %}
+        <li>
+          <a href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a>
+          {# Prefer updated/created if your layout exposes them; else fallback to date #}
+          {% if n.data.updated %}<small>updated {{ n.data.updated }}</small>
+          {% else %}<small>{{ n.date | isoDate }}</small>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <p class="more"><a href="/notes/">Browse all notes →</a></p>
+  {% else %}
+    <p>Notes will appear here as you publish them.</p>
+  {% endif %}
+</section>
+
+<section class="zettel-gateway">
+  <h2>Explore the Zettelkasten</h2>
+   <div class="graph-embed" style="position:relative;width:100%;height:520px;">
+    <iframe
+      src="/graph/"
+      title="Zettelkasten Graph"
+      loading="lazy"
+      style="width:100%;height:100%;border:1px solid #eee;border-radius:12px;"
+    ></iframe>
+  </div>
+  <p class="more"><a href="/notes/">Browse all notes →</a></p>
+    <div class="panel">
+      <h3>Trailheads</h3>
+      {% set entries = collections.entryNotes | default([]) %}
+      {% if entries | length %}
+        <ul class="pill-list">
+          {% for n in entries | slice(0,12) %}
+            <li><a class="pill" href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a></li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>Add <code>gardenEntry</code> to note tags to feature it here.</p>
+      {% endif %}
+    </div>
+    <div class="panel">
+      <h3>Search</h3>
+      <p>Look up concepts, tags, and relations across the whole garden.</p>
+      {% if settings.dgEnableSearch %}
+        <p><a class="button" href="/search/">Search the garden →</a></p>
+      {% else %}
+        <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
+      {% endif %}
+    </div>
+  </div>
+</section>
