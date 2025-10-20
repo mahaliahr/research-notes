@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/m-sc-cc-ai-literacy-workshop/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 This year for the new cohort of students (25/26) I want to take the opportunity to introduce and 'onboard' the students to think about AI in a more critical way, understand what they know or understand AI is, and try to 'unmask' some preconceived notions about it **before** students use it blindly within their learning.
 
 It will also a moment to introduce my PhD research and give a wider context of what I am doing.

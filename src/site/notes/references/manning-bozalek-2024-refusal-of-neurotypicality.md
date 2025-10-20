@@ -1,7 +1,8 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/references/manning-bozalek-2024-refusal-of-neurotypicality/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 Manning, E. and Bozalek, V.G., 2024. In conversation with Erin Manning: A refusal of neurotypicality through attunements to learning otherwise. _Qualitative Inquiry_, p.10778004241254397.
 
@@ -11,4 +12,4 @@ Erin Manning ([whom I referred to in blog post 1](https://mmhrpgcert.myblog.arts
 
 ---
 
-[[classroom as dramaturgical site for experimentation]]
+[[published/classroom as dramaturgical site for experimentation\|classroom as dramaturgical site for experimentation]]

@@ -1,4 +1,5 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/the-riddle-for-reflection/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-![riddle](riddle.jpeg)
+
+![riddle](/img/user/images/riddle.jpeg)

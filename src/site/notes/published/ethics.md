@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/ethics/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 Ethical considerations 
 - co-creation with students, how do the students not feel exploited? 
 - open-source / massive platforms - ethics 
@@ -13,7 +14,7 @@ current proposed research projects:
 - supervisor bot 
 - cci staff interviews 
 
-[[ethical-AI]]
+[[published/ethical-AI\|ethical-AI]]
 
 ---
 

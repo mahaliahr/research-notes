@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/how-to-shift-power-relations-of-speculation/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 'How do we shift the power relations of speculation? How can design education create a culture where subaltern voices have visibility and power? Can CSD enable the democratisation of speculation?' p178
 
 - participation and engagement:

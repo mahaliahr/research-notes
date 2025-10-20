@@ -1,10 +1,11 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/supervision-110225/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 Summary: 
 
 Final Project Slides: [final-presentation.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EX0qB3782wtLmhM3vIZPaEoBGtYFeacw85jwp2CqO2hayQ?e=U1YQ3l) 
-PgCert Summary: [[pgcert-reflections]]
+PgCert Summary: [[published/pgcert-reflections\|pgcert-reflections]]
 
 ---
 Next steps: 
@@ -46,11 +47,11 @@ Things to think about:
 How do people choose what AI tool to use? Esp. non-specialists
 Who is the audience (for the PhD) - who am I talking too?
 
-[[ethics]] form - methods
+[[published/ethics\|ethics]] form - methods
 	co-creation with students, how do the students not feel exploited? 
 	open-source / massive platforms - ethics 
 
 RNUAL Symposium - present on things that I want feedback on, WIP - doesn't need to be finished! 
 
 ---
-[[supervision-meetings-record]]
+[[published/supervision-meetings-record\|supervision-meetings-record]]

@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/research-of-context/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 what is out there?
 
-[[annotated-bib-guidance]]
+[[published/annotated-bib-guidance\|annotated-bib-guidance]]

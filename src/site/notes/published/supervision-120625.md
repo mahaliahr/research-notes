@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/supervision-120625/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 #### OneDrive folder with work in progress: [__draft ethics content](https://artslondon-my.sharepoint.com/:f:/g/personal/m_henryrichards_arts_ac_uk/En2EC8QI9MJLgIjr0UpgeJIB6qSr5UVXAFgrtSByi_9iMA?e=1cmR92)
 current proposed research projects: 
 - ~~student ai literacy workshops (make this just class? not special session)
@@ -53,7 +54,7 @@ staff interview planning and timeline
 ---
 
 <!-- 
-~ [[Ethics]] draft text 
+~ [[published/ethics\|Ethics]] draft text 
 
 **Tips for a good ethics application**
 

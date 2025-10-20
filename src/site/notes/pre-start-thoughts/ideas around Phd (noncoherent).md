@@ -1,11 +1,7 @@
 ---
-dg-publish: true
-permalink: /pre-start-thoughts/ideas-around-phd-noncoherent/
-noteIcon: ''
-visibility: public
-description:
-updated: '2025-10-15T21:01:33.999Z'
+{"dg-publish":true,"permalink":"/pre-start-thoughts/ideas-around-phd-noncoherent/","noteIcon":"","visibility":"public","description":null,"updated":"2025-10-15T21:01:33.999Z","dgPassFrontmatter":true}
 ---
+
 Messy - different ways of communicating / existing
 
 there are two branches of research that my masters thesis was beginning to open up:

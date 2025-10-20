@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/title-and-subject-area/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for Learning
 
 **Subject Area

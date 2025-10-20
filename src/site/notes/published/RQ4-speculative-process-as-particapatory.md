@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/rq-4-speculative-process-as-particapatory/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+
 How can the speculative process be structured as a participatory activity, involving stakeholders in the generation of these future 'possibility spaces’? 
 
 ---

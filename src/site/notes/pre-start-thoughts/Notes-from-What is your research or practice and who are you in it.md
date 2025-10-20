@@ -1,11 +1,7 @@
 ---
-dg-publish: true
-permalink: /pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/
-noteIcon: ''
-visibility: public
-description: 
-updated: '2025-10-15T21:01:33.998Z'
+{"dg-publish":true,"permalink":"/pre-start-thoughts/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/","noteIcon":"","visibility":"public","description":null,"updated":"2025-10-15T21:01:33.998Z","dgPassFrontmatter":true}
 ---
+
 
 bring personalitiy into it when you talk about it 
 
