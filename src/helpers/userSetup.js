@@ -9,6 +9,10 @@ function userEleventySetup(eleventyConfig) {
   // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
 
+  const isMd = (p) =>
+  typeof p?.inputPath === "string" &&
+  p.inputPath.toLowerCase().endsWith(".md");
+
   // ---------------------------
   // POSTS  (= /notes/blog/* or type: "post")
   // ---------------------------
