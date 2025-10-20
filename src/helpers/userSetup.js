@@ -9,6 +9,10 @@ function userEleventySetup(eleventyConfig) {
   // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
 
+  const isMd = (p) =>
+  typeof p?.inputPath === "string" &&
+  p.inputPath.toLowerCase().endsWith(".md");
+
   // ---------------------------
   // POSTS  (= /notes/blog/* or type: "post")
   // ---------------------------
@@ -66,8 +70,11 @@ function userEleventySetup(eleventyConfig) {
   // ===========================
 
   // Helper: read the raw rendered markdown (not HTML)
-  const getText = (p) => (p.template && p.template.inputContent) || p.templateContent || "";
-
+const getText = (p) => {
+  if (!p) return "";
+  const raw = p.template?.inputContent ?? p.templateContent ?? "";
+  return (typeof raw === "string") ? raw : "";
+};
   // --- MILESTONES ---
   // Matches: "- [ ] Title #milestone @YYYY-MM-DD" or "- [x] ..."
   const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+(.+?)\s*(?:@(\d{4}-\d{2}-\d{2}))?(?=\s|$)/gm;
@@ -100,11 +107,12 @@ function userEleventySetup(eleventyConfig) {
   // --- SESSIONS ---
   // Any note in "notes/sessions/" or that contains "start::" is a session.
   // Extract start/end/topic from inline fields.
-  const inlineField = (src, key) => {
-    const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
-    const m = src.match(re);
-    return m ? m[1].trim() : null;
-  };
+function inlineField(src, key) {
+  if (typeof src !== "string" || !src) return null;
+  const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
+  const m = src.match(re);
+  return m ? m[1].trim() : null;
+}
 
   eleventyConfig.addCollection("sessions", (c) => {
     return c.getAll()
@@ -125,26 +133,38 @@ function userEleventySetup(eleventyConfig) {
   const streamLineRe = /^\s*-\s*(\d{1,2}:\d{2})\s+(.+)$/gm;
 
   eleventyConfig.addCollection("streamItems", (c) => {
-    const out = [];
-    const candidates = c.getAll().filter(p =>
-      /stream\.md$/.test(p.inputPath) || p.inputPath.includes("/notes/daily/")
+  const out = [];
+
+  // Only markdown; only daily or stream.md
+  const candidates = c.getAll().filter(p => {
+    const path = p?.inputPath || "";
+    return isMd(p) && (
+      /\/notes\/daily\//i.test(path) || /\/stream\.md$/i.test(path)
     );
-    for (const p of candidates) {
-      const txt = getText(p);
-      const dateField = inlineField(txt, "date");
-      // Try to derive a date from filename if no date:: present
-      const fromName = p.inputPath.match(/(\d{4}-\d{2}-\d{2})/);
-      const day = dateField || (fromName ? fromName[1] : null);
-      let m;
-      while ((m = streamLineRe.exec(txt))) {
-        const [, time, message] = m;
-        out.push({
-          date: day ? `${day} ${time}` : time,
-          text: message.trim(),
-          url: p.url,
-        });
-      }
+  });
+
+  for (const p of candidates) {
+    const txt = getText(p);
+    if (!txt) continue;
+
+    // find date:: inline or derive from filename (YYYY-MM-DD in fileSlug or path)
+    const dateField = inlineField(txt, "date");
+    const fromSlug = (p.fileSlug || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const fromPath = (p.inputPath || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const day = dateField || fromSlug || fromPath || null;
+
+    // Reset regex state for each file
+    const re = new RegExp(STREAM_LINE_RE.source, STREAM_LINE_RE.flags);
+    let m;
+    while ((m = re.exec(txt))) {
+      const [, time, message] = m;
+      out.push({
+        date: day ? `${day} ${time}` : time,
+        text: message.trim(),
+        url: p.url,
+      });
     }
+  }
     return out.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
   });
 
