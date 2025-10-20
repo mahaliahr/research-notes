@@ -1,5 +1,6 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/what-is-a-classroom/","noteIcon":""}
 ---
 
-[[classroom as dramaturgical site for experimentation]]
+
+[[published/classroom as dramaturgical site for experimentation\|classroom as dramaturgical site for experimentation]]

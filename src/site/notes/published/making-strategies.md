@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/making-strategies/","noteIcon":""}
 ---
+
 Making strategies can help you get started in a concrete and productive way 
 
 In the early stage of making what you are doing might not feel like research. It’s through reflection, documentation and articulation that making can become research. 

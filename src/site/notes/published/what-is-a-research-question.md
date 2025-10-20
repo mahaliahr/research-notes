@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/what-is-a-research-question/","noteIcon":""}
 ---
+
 A research question is:
 - as yet unanswered
 - open-ended (not a yes-or-no question)
@@ -11,4 +12,4 @@ A research question is:
 
 ---
 
-Here are my current [[research-questions]]
+Here are my current [[published/research-questions\|research-questions]]

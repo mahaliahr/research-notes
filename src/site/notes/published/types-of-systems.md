@@ -1,5 +1,6 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/types-of-systems/","noteIcon":""}
 ---
-[[banking-system]]
+
+[[published/banking-system\|banking-system]]
 

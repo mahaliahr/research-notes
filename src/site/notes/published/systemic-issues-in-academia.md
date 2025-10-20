@@ -1,4 +1,5 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/systemic-issues-in-academia/","noteIcon":""}
 ---
-[[educational-industrial-complex]]
+
+[[published/educational-industrial-complex\|educational-industrial-complex]]

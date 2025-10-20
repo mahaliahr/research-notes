@@ -1,7 +1,8 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/thoughts-on-corporate-uni-and-imagination/","noteIcon":""}
 ---
-02-08-2024
-[[corporate university speculation]]
 
-[[imagination power education relationship]]
+02-08-2024
+[[published/corporate university speculation\|corporate university speculation]]
+
+[[published/imagination power education relationship\|imagination power education relationship]]
