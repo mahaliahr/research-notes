@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/practice-based-research/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Practice Based Research
+permalink: /notes/practice-based-research/
+visibility: public
+description: >-
+  I feel that I need to keep coming back to earlier thoughts I was having about
+  what-kind-of-research-I-want-to-undertake to ensure that I keep the intended
+  spiri
+updated: '2025-10-20T22:34:14.471Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 
 I feel that I need to keep coming back to earlier thoughts I was having about [[what-kind-of-research-I-want-to-undertake]] to ensure that I keep the intended spirit of the research alive, whilst defining and solidifying things further. 

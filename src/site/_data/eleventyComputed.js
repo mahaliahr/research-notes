@@ -18,4 +18,3 @@ module.exports = {
     return undefined;
   }
 };
->>>>>>> b078af0 (attempting fix of date bug):src/site/_data/eleventyComputed.js

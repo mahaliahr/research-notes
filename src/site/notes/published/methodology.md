@@ -1,5 +1,19 @@
 ---
-{"dg-publish":true,"permalink":"/published/methodology/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Methodology
+permalink: /notes/methodology/
+visibility: public
+description: >-
+  Aligning with the research aims and
+  RQ3-playful-methodology-as-way-to-speculate, speculative-design will inform
+  the methodology. 
+
+
+  Design probes and artifacts w
+updated: '2025-10-20T22:34:14.460Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Aligning with the research aims and [[RQ3-playful-methodology-as-way-to-speculate]], [[speculative-design]] will inform the methodology. 
 

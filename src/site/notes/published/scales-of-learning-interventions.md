@@ -14,4 +14,8 @@ university level
 
 How could tie all of this together coherently? 
 
+<<<<<<< HEAD
 [[overarching-research-narrative]] 
+=======
+[[overarching-research-narrative]] 
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

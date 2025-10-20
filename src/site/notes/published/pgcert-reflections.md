@@ -1,5 +1,18 @@
 ---
-{"dg-publish":true,"permalink":"/published/pgcert-reflections/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Pgcert Reflections
+permalink: /notes/pgcert-reflections/
+visibility: public
+description: >-
+  Using the the-riddle-for-reflection from 'hands on research'. The following
+  are my reflections on the modules and final progect of the pgcert.
+
+
+  # theories-pract
+updated: '2025-10-20T22:34:14.469Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
  Using the [[the-riddle-for-reflection]] from 'hands on research'. The following are my reflections on the modules and final progect of the pgcert.
 

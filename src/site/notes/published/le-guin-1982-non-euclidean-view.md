@@ -1,5 +1,20 @@
 ---
-{"dg-publish":true,"permalink":"/published/le-guin-1982-non-euclidean-view/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Le Guin 1982 Non Euclidean View
+permalink: /notes/le-guin-1982-non-euclidean-view/
+visibility: public
+description: >-
+  -bibliography
+
+
+  'We use the French word lecture, “reading,” to mean reading and speaking
+  aloud,
+
+  a performance; the French call such a performance not a lecture b
+updated: '2025-10-20T22:34:14.457Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 

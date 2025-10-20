@@ -1,5 +1,22 @@
 ---
-{"dg-publish":true,"permalink":"/published/hands-on-research/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Hands On Research
+permalink: /notes/hands-on-research/
+visibility: public
+description: >-
+  -bibliography
+
+  Rasch, M., Gijsen, J. and Staal, H. (eds) (2024) _Hands on research for
+  artists, designers & educators_.
+
+
+  ---
+
+  This book scaffolds really great gui
+updated: '2025-10-20T22:36:44.895Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 Rasch, M., Gijsen, J. and Staal, H. (eds) (2024) _Hands on research for artists, designers & educators_.
@@ -18,4 +35,8 @@ I like this quote as it has me thinking about [[focus-on-process]] thoughts that
 - [[reflecting-on-research]]
 - [[documenting-research]]
 - [[making-public]]
+<<<<<<< HEAD
 [[the-riddle-for-reflection]]
+=======
+[[the-riddle-for-reflection]]
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/focus-on-process/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Focus On Process
+permalink: /notes/focus-on-process/
+visibility: public
+description: >-
+  Now that we are in a time where generative AI can produce 'results' with
+  'ease'. The **process** of what we do becomes much more important. 
+
+  This is something t
+updated: '2025-10-20T22:34:14.446Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 
 This is something that I am thinking about a lot and I believe will be an important element within the research.

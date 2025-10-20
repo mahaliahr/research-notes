@@ -1,5 +1,25 @@
 ---
-{"dg-publish":true,"permalink":"/published/large-language-models/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Large Language Models
+permalink: /notes/large-language-models/
+visibility: public
+description: |-
+  #structure-note 
+
+
+
+  ---
+
+  LLM-in-academia
+  LLM-as-phd-supervisor
+  LLM-as-personal-tutors
+  LLMs disrupting formalities
+  LLM-threatening-education-systems-status-quo
+  c
+updated: '2025-10-20T22:34:14.456Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 #structure-note 
 

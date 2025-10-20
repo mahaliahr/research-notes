@@ -1,5 +1,17 @@
 ---
-{"dg-publish":true,"permalink":"/published/process-of-iteration/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Process Of Iteration
+permalink: /notes/process-of-iteration/
+visibility: public
+description: >-
+  'research in art and design is characterised by iteration' p13
+
+  Each new cycle of actions is based on the findings of the previous one.  Your
+  questions, knowledg
+updated: '2025-10-20T22:34:14.471Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 'research in art and design is characterised by iteration' p13
 Each new cycle of actions is based on the findings of the previous one.  Your questions, knowledge and practice move forward by looking back and responding to what has happened

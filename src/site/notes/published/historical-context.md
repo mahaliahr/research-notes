@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/historical-context/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Historical Context
+permalink: /notes/historical-context/
+visibility: public
+description: >-
+  Traditional educational models often face criticism for their rigidity and
+  failure to meet diverse student needs, often favouring rote memorisation over
+  practic
+updated: '2025-10-20T22:34:14.448Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Traditional educational models often face criticism for their rigidity and failure to meet diverse student needs, often favouring rote memorisation over practical skills (Belas, 2019). 
 

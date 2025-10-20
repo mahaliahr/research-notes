@@ -1,5 +1,23 @@
 ---
-{"dg-publish":true,"permalink":"/published/phd-proposal/","dgPassFrontmatter":true,"noteIcon":""}
+dg-publish: true
+<<<<<<< HEAD
+title: Phd Proposal
+permalink: /notes/phd-proposal/
+visibility: public
+description: >-
+  as of June 2024 for the AfR (Application for Registration)
+
+
+  ---
+
+  #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for
+  Learning
+
+
+  glossary
+updated: '2025-10-20T22:34:14.469Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 as of June 2024 for the AfR (Application for Registration)
 
