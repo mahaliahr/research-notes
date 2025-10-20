@@ -522,6 +522,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("src/site/img");
+  eleventyConfig.addPassthroughCopy({"src/site/assets": "assets"});
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
@@ -542,6 +543,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("jsonify", function (variable) {
     return JSON.stringify(variable) || '""';
   });
+
+  eleventyConfig.addNunjucksFilter("jsonify", (value) => JSON.stringify(value));
 
   eleventyConfig.addFilter("validJson", function (variable) {
     if (Array.isArray(variable)) {
@@ -567,9 +570,10 @@ module.exports = function (eleventyConfig) {
       output: "dist",
       data: `_data`,
     },
-    templateFormats: ["njk", "md", "11ty.js"],
+    templateFormats: ["njk", "md", "html", "11ty.js"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: false,
+    markdownTemplateEngine: "njk",
     passthroughFileCopy: true,
   };
+
 };
