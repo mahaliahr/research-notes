@@ -10,10 +10,7 @@ title: >-
   still feel this agency to be creative and imagination if automation takes away
   certain skills or the need to learn certain things
 visibility: public
-description: >-
-  in a world where 'AI can do everything' creativity and imagination become the
-  vital and most inherent things that we could learn/teach. how can we use
-  computati
+description: 
 updated: '2025-10-15T21:01:33.999Z'
 ---
 
