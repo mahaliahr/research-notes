@@ -1,34 +1,23 @@
 ---
 dg-publish: true
-permalink: /published/pgcert-reflections/
-noteIcon: ''
-visibility: public
-description: >-
-  Using the published/the-riddle-for-reflection\ from 'hands on research'. The
-  following are my reflections on the modules and final progect of the pgcert.
-
-
-  # pub
-updated: '2025-10-15T21:01:34.018Z'
 ---
+ Using the [[the-riddle-for-reflection]] from 'hands on research'. The following are my reflections on the modules and final progect of the pgcert.
 
- Using the [[published/the-riddle-for-reflection\|the-riddle-for-reflection]] from 'hands on research'. The following are my reflections on the modules and final progect of the pgcert.
-
-# [[published/theories-practices-policies\|theories-practices-policies]]
+# [[theories-practices-policies]]
 
 learning aphorisms where? https://mmhrpgcert.myblog.arts.ac.uk/2024/03/20/reflection-2-learning-aphorisms/
 
 references
-[[published/pearce-2019-edu-industrial-complex\|pearce-2019-edu-industrial-complex]]
+[[pearce-2019-edu-industrial-complex]]
 [illich-deschooling-society]
-# [[published/inclusive-practices\|inclusive-practices]]
+# [[inclusive-practices]]
 
 references: 
-[[references/hooks-1994-teaching-to-trangress\|hooks-1994-teaching-to-trangress]]
-[[references/freire-1970-pedagogy-of-the-oppressed\|freire-1970-pedagogy-of-the-oppressed]]
-[[references/garrett-2024-imagined-futures-of-racialised-phds\|garrett-2024-imagined-futures-of-racialised-phds]]
-[[published/black-in-academia-2020-kehinde-andrews\|black-in-academia-2020-kehinde-andrews]]
-[[references/manning-bozalek-2024-refusal-of-neurotypicality\|manning-bozalek-2024-refusal-of-neurotypicality]]
+[[hooks-1994-teaching-to-trangress]]
+[[freire-1970-pedagogy-of-the-oppressed]]
+[[garrett-2024-imagined-futures-of-racialised-phds]]
+[[black-in-academia-2020-kehinde-andrews]]
+[[manning-bozalek-2024-refusal-of-neurotypicality]]
 
-# [[published/pgcert-final-project\|pgcert-final-project]]
+# [[pgcert-final-project]]
 

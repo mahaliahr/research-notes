@@ -11,9 +11,11 @@ description: >-
   In the references/ibm-2024-AI-in-education\ po
 updated: '2025-10-15T21:01:34.000Z'
 ---
+This is a growing area that will be as important as the technological developments of [[generative-AI]] expand and develop.
 
-this is a growing area that will be as important as the technological developments of [[published/generative-AI\|generative-AI]]. 
-
-In the [[references/ibm-2024-AI-in-education\|ibm-2024-AI-in-education]] podcast, Phaedra (sp?) mentioned that critically this need to be a multi-disciplinary and multi-facet conversation in understanding and communicating AI literacy - not just engineering and computer science. Another point raised was that statistics education (in earlier education) may become increasingly inportant to provide foundational and more intuitive understanding of how AI models work.
-
-[[published/MSc-CC-AI-Literacy-Workshop\|MSc-CC-AI-Literacy-Workshop]]
+There seems to be two ways of talking about AI Literacy
+1. coming from the major corporate entities such as Anthropic (who have developed their own short courses <https://www.anthropic.com/learn/claude-for-you>)
+2. A more critical (and academic) understanding that looks at AI Literacy **beyond the tool** to consider all the aspects that impact and shape AI Systems. Ie. material, labour, environmental costs etc.
+---
+- [[ibm-2024-AI-in-education]]
+- [[MSc-CC-AI-Literacy-Workshop]]

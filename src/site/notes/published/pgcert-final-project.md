@@ -1,19 +1,6 @@
 ---
 dg-publish: true
-permalink: /published/pgcert-final-project/
-noteIcon: ''
-visibility: public
-description: |-
-  What I asked?
-  What I did? 
-  What I found?
-  What I (don't) know?
-
-  ##### Socio-economic Factors
-  Wider socio-economic factors appear to be having as much of an influ
-updated: '2025-10-15T21:01:34.018Z'
 ---
-
 
 What I asked?
 What I did? 

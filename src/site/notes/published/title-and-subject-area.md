@@ -1,20 +1,6 @@
 ---
 dg-publish: true
-permalink: /published/title-and-subject-area/
-noteIcon: ''
-visibility: public
-description: >-
-  #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for
-  Learning
-
-
-  **Subject Area
-
-
-  This practice-based PhD operates at the **_interdiscipli
-updated: '2025-10-15T21:01:34.026Z'
 ---
-
 #### Speculating on AI Augmented Education: Creating ‘Possibility Spaces’ for Learning
 
 **Subject Area

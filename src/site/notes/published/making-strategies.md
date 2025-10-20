@@ -1,12 +1,6 @@
 ---
 dg-publish: true
-permalink: /published/making-strategies/
-noteIcon: ''
-visibility: public
-description: "Making strategies can help you get started in a concrete and productive way\_\n\nIn the early stage of making what you are doing might not feel like research. It’s"
-updated: '2025-10-15T21:01:34.010Z'
 ---
-
 Making strategies can help you get started in a concrete and productive way 
 
 In the early stage of making what you are doing might not feel like research. It’s through reflection, documentation and articulation that making can become research. 

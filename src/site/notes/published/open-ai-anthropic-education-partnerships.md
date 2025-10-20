@@ -1,22 +1,13 @@
 ---
 dg-publish: true
-permalink: /published/open-ai-anthropic-education-partnerships/
-noteIcon: ''
-visibility: public
-description: >-
-  references/-bibliography\
-
-
-  _Introducing Claude for education_ (2025). Available at:
-  [https://www.anthropic.com/news/introducing-claude-for-education](https://ww
-updated: '2025-10-15T21:01:34.016Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 _Introducing Claude for education_ (2025). Available at: [https://www.anthropic.com/news/introducing-claude-for-education](https://www.anthropic.com/news/introducing-claude-for-education) (Accessed: 23 April 2025).
 
 Edwards, B. (2025) _ChatGPT comes to 500,000 new users in OpenAI’s largest AI education deal yet_, _Ars Technica_. Available at: [https://arstechnica.com/ai/2025/02/chatgpt-comes-to-500000-new-users-in-openais-largest-ai-education-deal-yet/](https://arstechnica.com/ai/2025/02/chatgpt-comes-to-500000-new-users-in-openais-largest-ai-education-deal-yet/) (Accessed: 23 April 2025).
+
+https://academy.openai.com/public/resources/the-global-faculty-ai-project-2025-09-04?trk=feed_main-feed-card_feed-article-content
 
 ---
 

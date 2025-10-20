@@ -1,17 +1,6 @@
 ---
 dg-publish: true
-permalink: /published/notes-after-first-supervision-discussions/
-noteIcon: ''
-visibility: public
-description: |-
-  Winnie:
-
-  Who is the audience (ie in research/academia - AI, HCI, Critical Arts etc)
-
-  Contextualise why this is important, what is not working at the moment (ie.
-updated: '2025-10-15T21:01:34.016Z'
 ---
-
 Winnie:
 
 Who is the audience (ie in research/academia - AI, HCI, Critical Arts etc)

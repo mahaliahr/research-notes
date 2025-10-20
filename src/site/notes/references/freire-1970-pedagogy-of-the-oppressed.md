@@ -1,20 +1,9 @@
 ---
 dg-publish: true
-permalink: /references/freire-1970-pedagogy-of-the-oppressed/
-noteIcon: ''
-visibility: public
-description: |-
-  references/-bibliography\
-
-  published/oppression-limiting-situation-to-transform\
-
-  '_systematic education_, which can only be changed by political power, and _ed
-updated: '2025-10-15T21:01:34.030Z'
 ---
+[[-bibliography]]
 
-[[references/-bibliography\|-bibliography]]
-
-[[published/oppression-limiting-situation-to-transform\|oppression-limiting-situation-to-transform]]
+[[oppression-limiting-situation-to-transform]]
 
 '_systematic education_, which can only be changed by political power, and _educational projects_, which should be carried out with the oppressed in the process of organizing them' p28
 

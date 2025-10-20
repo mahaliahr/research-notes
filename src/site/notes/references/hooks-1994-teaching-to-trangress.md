@@ -1,22 +1,7 @@
 ---
 dg-publish: true
-permalink: /references/hooks-1994-teaching-to-trangress/
-noteIcon: ''
-visibility: public
-description: |-
-  references/-bibliography\
-
-  hooks, bell. Teaching to Transgress, 1994. 
-
-  ---
-
-  chapter 11 - Language (teaching new worlds /new words)
-
-  This quote 'This is the opp
-updated: '2025-10-15T21:01:34.031Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 hooks, bell. Teaching to Transgress, 1994. 
 
@@ -24,7 +9,7 @@ hooks, bell. Teaching to Transgress, 1994.
 
 chapter 11 - Language (teaching new worlds /new words)
 
-This quote 'This is the oppressor's language yet I need it to talk to you' leads me directly to consider some of the ways in which people (students at uni for example) us large language models to assimilate into the system. [[published/LLM-in-academia\|LLM-in-academia]]
+This quote 'This is the oppressor's language yet I need it to talk to you' leads me directly to consider some of the ways in which people (students at uni for example) us large language models to assimilate into the system. [[LLM-in-academia]]
 
 ---
 

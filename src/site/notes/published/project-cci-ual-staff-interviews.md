@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 permalink: /published/project-cci-ual-staff-interviews/
 noteIcon: ''
 visibility: public
@@ -9,8 +10,9 @@ description: >-
   How to design it so that people feel inclined to do it, rather than being a
   burde
 updated: '2025-10-15T21:01:34.019Z'
+=======
+>>>>>>> ad0e5a8 (fixing the mess)
 ---
-
 Considerations -> everyone is very busy, will people have time to contribute? 
 How to design it so that people feel inclined to do it, rather than being a burden?
 

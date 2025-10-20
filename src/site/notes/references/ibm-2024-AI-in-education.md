@@ -1,18 +1,7 @@
 ---
 dg-publish: true
-permalink: /references/ibm-2024-ai-in-education/
-noteIcon: ''
-visibility: public
-description: >-
-  references/-bibliography\
-
-
-  _AI in education: Safety, literacy, and predictions_, IBM (2024). Available
-  at: [https://www.youtube.com/watch?v=JSnwZmbTMXM](https:/
-updated: '2025-10-15T21:01:34.031Z'
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 _AI in education: Safety, literacy, and predictions_, IBM (2024). Available at: [https://www.youtube.com/watch?v=JSnwZmbTMXM](https://www.youtube.com/watch?v=JSnwZmbTMXM) (Accessed: 24 February 2025).
 
@@ -28,11 +17,17 @@ Skyler Speakman - Senior Research Scientist, IBM
 
 The conversation  in this podcast really got me thinking about approach in which we frame talking about AI to students. I think that increasingly we will need to teach how to interface with AI, before teaching students the depth of understanding of how machine learning actually works and it's more and more realistic that students will be using AI in their learning process. This means teaching a level of criticality and awareness of using these systems is vital. The panel in this conversation talked about how when using AI in educational settings (the context of conversation was with children) it's important encourage them to understand and discover that the AI is not an 'oracle', and that it can be broken, and that perhaps we should encourage students to break it to understand it.
 
-[[published/opting-out-of-AI-learning\|opting-out-of-AI-learning]] they talked about the idea of 'opting-out' of learning with AI which was a fascinating thought that I had not yet really thought about. There is certainly a lot of mixed feelings about using AI as an educational tool and some people are just generally scared of the technology. Key reasons pointed out in the discussion were:
+[[opting-out-of-AI-learning]] they talked about the idea of 'opting-out' of learning with AI which was a fascinating thought that I had not yet really thought about. There is certainly a lot of mixed feelings about using AI as an educational tool and some people are just generally scared of the technology. Key reasons pointed out in the discussion were:
 - privacy risks 
 - risk of echo chamber and bias that an AI model might subject someone to 
 It was pointed out that all these reasons boil down to a lack of trust - which is a **sociotechnical problem** not a technology problem. Fundamentally there needs to be accountability to meet with this trust issue that is incredibly important to address
 
 Part of education is learning to function in society and as AI becomes more pervasive, teaching how to interface with this is critical. 
 
+<<<<<<< HEAD
 [[published/AI-literacy\|AI-literacy]] is becoming extremely important - how will this fit into the educational landscape?
+=======
+Phaedra mentioned that critically this need to be a multi-disciplinary and multi-faceted conversation in understanding and communicating AI literacy - **not just engineering and computer science**. Another point raised was that statistics education (in earlier education) may become increasingly important to provide foundational and more intuitive understanding of how AI models work. This is interesting to me, it's like building the skills and knowledge to understand more fundamentally the 'anatomy' of AI systems and the how they work.
+
+[[AI-literacy]] is becoming extremely important - how will this fit into the educational landscape?
+>>>>>>> ad0e5a8 (fixing the mess)

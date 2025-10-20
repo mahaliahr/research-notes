@@ -1,15 +1,7 @@
 ---
-permalink: /notes/research-window/
+dg-home: 
 dg-publish: true
-visibility: public
-description: |-
-  This is a snapshot of my thinking and research for my PhD. 
-  This is in flux as thoughts develop.
-
-  [Planning Overview](https://www.notion.so/PhD-Planning-Overvie
-updated: '2025-10-18T12:46:58.776Z'
 ---
-
 This is a snapshot of my thinking and research for my PhD. 
 This is in flux as thoughts develop.
 
@@ -17,11 +9,11 @@ This is in flux as thoughts develop.
 
 ---
 ### Latest supervision meeting:
-[[published/supervision-110925\|supervision-110925]]
+[[supervision-110925]]
 
 ### Ongoing Projects:
-[[published/project-supervisor-bot\|project-supervisor-bot]]
-[[published/project-cci-ual-staff-interviews\|project-cci-ual-staff-interviews]]
+[[project-supervisor-bot]]
+[[project-cci-ual-staff-interviews]]
 
-[[published/MSc-CC-AI-Literacy-Workshop\|MSc-CC-AI-Literacy-Workshop]]
+[[MSc-CC-AI-Literacy-Workshop]]
 
