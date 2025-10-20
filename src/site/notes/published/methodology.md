@@ -1,6 +1,7 @@
 ---
 {"dg-publish":true,"permalink":"/published/methodology/","dgPassFrontmatter":true,"noteIcon":""}
 ---
+Aligning with the research aims and [[RQ3-playful-methodology-as-way-to-speculate]], [[speculative-design]] will inform the methodology. 
 
 Aligning with the research aims and [[published/RQ3-playful-methodology-as-way-to-speculate\|RQ3-playful-methodology-as-way-to-speculate]], [[published/speculative-design\|speculative-design]] will inform the methodology. 
 

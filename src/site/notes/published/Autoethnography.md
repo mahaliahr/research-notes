@@ -1,7 +1,6 @@
 ---
 {"dg-publish":true,"permalink":"/published/autoethnography/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 General thoughts:
 
 How to strengthen this skill set? 

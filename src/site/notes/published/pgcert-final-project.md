@@ -2,7 +2,6 @@
 {"dg-publish":true,"permalink":"/published/pgcert-final-project/","dgPassFrontmatter":true,"noteIcon":""}
 ---
 
-
 What I asked?
 What I did? 
 What I found?

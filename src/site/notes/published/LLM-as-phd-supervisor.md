@@ -1,10 +1,9 @@
 ---
 {"dg-publish":true,"permalink":"/published/llm-as-phd-supervisor/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 #structure-note 
 
-Below I have highlighted the core areas from the [[published/ual-description-of-a-supervisor\|ual-description-of-a-supervisor]] that I need to consider for my [[published/project-supervisor-bot\|project-supervisor-bot]]:
+Below I have highlighted the core areas from the [[ual-description-of-a-supervisor]] that I need to consider for my [[project-supervisor-bot]]:
 
 ---
 
@@ -47,7 +46,7 @@ Students may reasonably expect all their supervisors to:
 10. Put the student in touch with specialists inside or outside the University where the student’s work goes outside the supervisor’s expertise. If appropriate, the supervisor should recommend the appointment of such specialists as internal or external supervisors or advisors.
 11. Provide both encouragement and positive advice as well as criticism and negative comment as appropriate.
 ---
-In line with ethical concerns regarding these megacorporations and privacy issues - using LLM's this way, particularly within an institution is problematic. This leads me down the rabbit hole of local LLMs and I have this idea of enabling students (and me) to create custom LLMs ([[published/project-supervisor-bot\|project-supervisor-bot]] + [[published/diy-bot-creation\|diy-bot-creation]])
+In line with ethical concerns regarding these megacorporations and privacy issues - using LLM's this way, particularly within an institution is problematic. This leads me down the rabbit hole of local LLMs and I have this idea of enabling students (and me) to create custom LLMs ([[project-supervisor-bot]] + [[diy-bot-creation]])
 
 *in the realm of the more absurd/unhinged, I am also thinking about virtual pets as an inspiration, but also more generally how virtual / AI companionship has evolved over time. What is are the use cases that could be important beyond just 'information exchange' and traditional ideas of education purposes* 
 

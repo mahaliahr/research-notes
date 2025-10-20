@@ -1,7 +1,6 @@
 ---
 {"dg-publish":true,"permalink":"/published/deepspeech-stt/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 https://github.com/mozilla/DeepSpeech
 
 **Pros:**

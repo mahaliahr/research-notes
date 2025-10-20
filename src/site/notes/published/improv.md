@@ -1,12 +1,11 @@
 ---
 {"dg-publish":true,"permalink":"/published/improv/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 160924 thoughts: 
 
-is improv [[published/imagination-practice\|imagination-practice]]? (almost certainly yes)
+is improv [[imagination-practice]]? (almost certainly yes)
 
-I want to learn about the [[published/history-of-improv\|history-of-improv]]
+I want to learn about the [[history-of-improv]]
 
 livecoding as improv...
 

@@ -3,6 +3,14 @@
 ---
 
 
+  So where did I learn it from?
+
+
+  Skimming through a reading
+  published/oreilly-research-identity-threshold-concepts\ for
+updated: '2025-10-15T21:01:33.999Z'
+---
+
 I didn't learn how to learn from school. 
 
 So where did I learn it from?
@@ -13,4 +21,4 @@ An 'ecology of learning' as laid out by O'Reilly in his paper [[published/oreill
 
 --- 
 
-[[published/my-positionality\|my-positionality]]
+[[my-positionality]]

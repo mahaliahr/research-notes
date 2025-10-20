@@ -1,7 +1,6 @@
 ---
 {"dg-publish":true,"permalink":"/published/supervision-meetings-record/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 25-26 academic year
 1 [[supervision-261125\|supervision-261125]]
 ///
@@ -14,4 +13,4 @@
 23-24 academic year (started in Jan 2024)
 ///
 pre-phd
-[[pre-start-thoughts/July 2023 thoughts\|July 2023 thoughts]]
+[[July 2023 thoughts]]

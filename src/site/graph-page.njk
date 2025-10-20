@@ -1,0 +1,196 @@
+---
+permalink: "/graph/"
+layout: "layouts/note.njk" 
+title: "Graph"
+---
+
+{# <h1>Idea Graph</h1> #}
+<div id="graph" style="width:100%;height:600px;border:1px solid #eee;border-radius:12px;overflow:hidden;"></div>
+
+<div class="graph-controls" style="display:flex;gap:1rem;align-items:center;margin:.5rem 0 1rem;">
+  <label>Depth:
+    <input id="depth" type="range" min="1" max="5" step="1" value="2">
+    <span id="depthV">2</span>
+  </label>
+  <label>Focus:
+    <select id="focus"></select>
+  </label>
+  <button id="resetView">Reset</button>
+</div>
+<div id="graph" style="width:100%;height:600px;border:1px solid #eee;border-radius:12px;overflow:hidden;"></div>
+
+<script src="https://unpkg.com/d3@7"></script>
+<script>
+(async function () {
+  const host = document.getElementById('graph');
+  const depthRange = document.getElementById('depth');
+  const depthVal = document.getElementById('depthV');
+  const focusSelect = document.getElementById('focus');
+  const resetBtn = document.getElementById('resetView');
+
+  // --- Fetch data ---
+  let data;
+  try {
+    const res = await fetch('/graph.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('Failed to load /graph.json');
+    data = await res.json();
+  } catch (e) {
+    host.innerHTML = '<p style="padding:1rem">Could not render graph. Is <code>/graph.json</code> building?</p>';
+    console.error(e);
+    return;
+  }
+
+  const allNodes = data.nodes || [];
+  const allLinks = data.links || [];
+
+  // Map by id and adjacency (undirected)
+  const byId = new Map(allNodes.map(n => [n.id, n]));
+  const adj = new Map(); // id -> Set<neighborId>
+  for (const n of allNodes) adj.set(n.id, new Set());
+  for (const l of allLinks) {
+    const s = typeof l.source === 'string' ? l.source : l.source.id;
+    const t = typeof l.target === 'string' ? l.target : l.target.id;
+    if (byId.has(s) && byId.has(t)) {
+      adj.get(s).add(t);
+      adj.get(t).add(s);
+    }
+  }
+
+  // Populate focus dropdown (sorted by title)
+  const focusOptions = [...allNodes].sort((a,b) =>
+    (a.title||a.id).localeCompare(b.title||b.id)
+  );
+  focusOptions.forEach(n => {
+    const opt = document.createElement('option');
+    opt.value = n.id;
+    opt.textContent = n.title || n.id;
+    focusSelect.appendChild(opt);
+  });
+
+  // Choose initial focal node: most connected, else first
+  function mostConnected() {
+    let best = focusOptions[0]?.id;
+    let maxDeg = -1;
+    for (const n of focusOptions) {
+      const deg = (adj.get(n.id) || new Set()).size;
+      if (deg > maxDeg) { maxDeg = deg; best = n.id; }
+    }
+    return best;
+  }
+  let focalId = mostConnected() || focusOptions[0]?.id || null;
+  if (focalId) focusSelect.value = focalId;
+
+  // --- BFS to depth from focal ---
+  function subgraphFrom(id, depth) {
+    if (!id || !byId.has(id)) return { nodes: [], links: [] };
+    const seen = new Set([id]);
+    let frontier = [id];
+    let d = 0;
+
+    while (frontier.length && d < depth) {
+      const next = [];
+      for (const u of frontier) {
+        for (const v of adj.get(u) || []) {
+          if (!seen.has(v)) { seen.add(v); next.push(v); }
+        }
+      }
+      frontier = next;
+      d++;
+    }
+
+    const nodes = [...seen].map(k => byId.get(k));
+    const nodeSet = new Set(seen);
+    const links = allLinks.filter(l => {
+      const s = typeof l.source === 'string' ? l.source : l.source.id;
+      const t = typeof l.target === 'string' ? l.target : l.target.id;
+      return nodeSet.has(s) && nodeSet.has(t);
+    });
+
+    return { nodes, links };
+  }
+
+  // --- D3 scene ---
+  const svg = d3.select(host).append('svg')
+    .attr('width', 10).attr('height', 10)
+    .attr('role','img').attr('aria-label','Knowledge graph');
+
+  const linkLayer = svg.append('g').attr('stroke', '#ccc').attr('stroke-opacity', 0.7);
+  const nodeLayer = svg.append('g').attr('stroke', '#fff').attr('stroke-width', 1.25);
+
+  let simulation;
+  function initSim(nodes, links, width, height) {
+    if (simulation) simulation.stop();
+    simulation = d3.forceSimulation(nodes)
+      .force('link', d3.forceLink(links).id(d => d.id).distance(60))
+      .force('charge', d3.forceManyBody().strength(-140))
+      .force('center', d3.forceCenter(width / 2, height / 2));
+    simulation.on('tick', ticked);
+  }
+
+  function ticked() {
+    linkSel
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    nodeSel
+      .attr('cx', d => d.x)
+      .attr('cy', d => d.y);
+  }
+
+  let linkSel = linkLayer.selectAll('line');
+  let nodeSel = nodeLayer.selectAll('circle');
+
+  function draw(sub) {
+    const { nodes, links } = sub;
+    linkSel = linkLayer.selectAll('line').data(links, d => (d.source.id||d.source)+'→'+(d.target.id||d.target));
+    linkSel.exit().remove();
+    linkSel = linkSel.enter().append('line').merge(linkSel);
+
+    nodeSel = nodeLayer.selectAll('circle').data(nodes, d => d.id);
+    nodeSel.exit().remove();
+    const enter = nodeSel.enter().append('circle')
+      .attr('r', 5).attr('fill', d => d.id === focalId ? '#222' : '#555')
+      .on('click', (event, d) => {
+        focalId = d.id;
+        focusSelect.value = focalId;
+        update(); // re-filter from new focal
+      })
+      .on('dblclick', (event, d) => { if (d.url) window.location.href = d.url; });
+    enter.append('title').text(d => d.title || d.id);
+    nodeSel = enter.merge(nodeSel)
+      .attr('fill', d => d.id === focalId ? '#222' : '#555');
+
+    const w = host.clientWidth || host.parentNode.clientWidth || 800;
+    const h = host.clientHeight || 600;
+    svg.attr('width', w).attr('height', h).attr('viewBox', `0 0 ${w} ${h}`);
+    initSim(nodes, links, w, h);
+    simulation.alpha(1).restart();
+    setTimeout(() => simulation.alphaTarget(0), 600);
+  }
+
+  function currentDepth() {
+    const n = parseInt(depthRange.value, 10);
+    return isNaN(n) ? 2 : Math.max(1, Math.min(8, n));
+  }
+
+  function update() {
+    depthVal.textContent = String(currentDepth());
+    const sub = subgraphFrom(focalId, currentDepth());
+    draw(sub);
+  }
+
+  // Controls
+  depthRange.addEventListener('input', update);
+  focusSelect.addEventListener('change', () => { focalId = focusSelect.value; update(); });
+  resetBtn.addEventListener('click', () => { focalId = mostConnected(); focusSelect.value = focalId; depthRange.value = 2; update(); });
+
+  // Resize-aware
+  const ro = new ResizeObserver(() => update());
+  ro.observe(host);
+  window.addEventListener('load', update);
+
+  // Initial render
+  update();
+})();
+</script>

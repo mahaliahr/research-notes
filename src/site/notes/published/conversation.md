@@ -1,7 +1,6 @@
 ---
 {"dg-publish":true,"permalink":"/published/conversation/","dgPassFrontmatter":true,"noteIcon":""}
 ---
-
 1. ~~input capture
 	- ~~text based input
 		- ~~shared doc

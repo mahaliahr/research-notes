@@ -1,7 +1,6 @@
 ---
 {"dg-publish":true,"permalink":"/pre-start-thoughts/end-of-december-2023-phd-thoughts/","noteIcon":"","visibility":"public","description":null,"updated":"2025-10-15T21:01:33.998Z","dgPassFrontmatter":true}
 ---
-
 _Al and labour_
 
 _Untimely use Al to make_
