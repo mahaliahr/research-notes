@@ -1,4 +1,5 @@
 ---
+<<<<<<< HEAD
 dg-publish: true
 title: Functionality And Behaviour
 permalink: /notes/functionality-and-behaviour/
@@ -9,6 +10,9 @@ description: |-
   ##### interface
   'student to bot' interaction could be shared with the human supervisors, so that they woul
 updated: 2025-10-20T22:34:14.446Z
+=======
+dg-publish: 
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 list of functionality for the [[project-supervisor-bot]]
 

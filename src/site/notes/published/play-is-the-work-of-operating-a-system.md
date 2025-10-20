@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Play Is The Work Of Operating A System
 permalink: /notes/play-is-the-work-of-operating-a-system/
 visibility: public
@@ -8,6 +9,8 @@ description: >-
   not the effect of enjoyment released by a system, but a nickname for the
   feeling o
 updated: '2025-10-20T22:34:14.470Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 ‘Play is not an act of diversion, but the work of working a system […] Fun is not the effect of enjoyment released by a system, but a nickname for the feeling of operating […] it in a new way’.  p? [[bogost-2016-play-anything]]
 

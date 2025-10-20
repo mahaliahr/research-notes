@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Mickel Performance Practice As Research Learning Teaching
 permalink: /notes/mickel-performance-practice-as-research-learning-teaching/
 visibility: public
@@ -10,6 +11,8 @@ description: >-
   Mickel, L. (2024) ‘Performance practice as research, learning and teaching’,
   _Teaching in Higher Education_, 29(2), pp. 489–501. Available at: [h
 updated: '2025-10-20T22:34:14.461Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 

@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Relationship With Ai Bot Vs Human
 permalink: /notes/relationship-with-ai-bot-vs-human/
 visibility: public
@@ -8,6 +9,8 @@ description: >-
   than that of the human to human relationship. The first thing that comes to
   mind 
 updated: '2025-10-20T22:34:14.473Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 The relationship with the AI supervisor bot can be more 'intimate' in a sense, than that of the human to human relationship. The first thing that comes to mind is the fact that there is no sense of judgement from this entity, it has limitless time and patience. 
 In this sense its seems possible and probable that a student might rely on the bot more than a human supervisor/teacher. The question that follows - is this bad thing?

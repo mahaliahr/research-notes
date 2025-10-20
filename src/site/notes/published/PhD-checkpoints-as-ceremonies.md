@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Phd Checkpoints As Ceremonies
 permalink: /notes/phd-checkpoints-as-ceremonies/
 visibility: public
@@ -11,6 +12,10 @@ description: >-
 updated: '2025-10-20T22:34:14.421Z'
 ---
 
+=======
+---
+
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 03-08-24 - 
 It seems to me that one of the things about a PhD that is unpleasant or that makes things really stressful if the passing though of the formalities. The important checkpoints/ceremonies/rituals of the process that legitimise the work that you have been doing by ‘the academy’. This was affirmed for me when a number of Doctoral school staff talked about the first milestone achievement of the process the Application for Registration (AfR)  being 'a rehearsal' [[AfR-as-rehearsal]], preparation for the bigger moment the 'Confirmation'. It struck me the performative connotations of the word rehearsal which leads me to think once again of play.
 

@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Large Language Models
 permalink: /notes/large-language-models/
 visibility: public
@@ -17,6 +18,8 @@ description: |-
   LLM-threatening-education-systems-status-quo
   c
 updated: '2025-10-20T22:34:14.456Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 #structure-note 
 

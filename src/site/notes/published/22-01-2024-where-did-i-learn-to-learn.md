@@ -26,4 +26,8 @@ An 'ecology of learning' as laid out by O'Reilly in his paper [[oreilly-research
 
 --- 
 
+<<<<<<< HEAD
 [[my-positionality]]
+=======
+[[my-positionality]]
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

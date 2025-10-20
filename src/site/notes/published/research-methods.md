@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Research Methods
 permalink: /notes/research-methods/
 visibility: public
@@ -13,6 +14,8 @@ description: >-
 
   For my pgcert-final-project I began t
 updated: '2025-10-20T22:38:27.634Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 I believe I need to research more about research methods in education and non-coventional artistic research methods.
 
@@ -24,4 +27,8 @@ The process of recording my [[autoethnographic-experience-as-lecturer-and-studen
 
 I need to consider how the research methods feed in the broader 'playful' [[methodology]]
 
+<<<<<<< HEAD
 Additionally I want to work with the cohort that I teach, inviting students to be a part of the research in a participatory way, I will need to look more into [[participatory-research]]
+=======
+Additionally I want to work with the cohort that I teach, inviting students to be a part of the research in a participatory way, I will need to look more into [[participatory-research]]
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

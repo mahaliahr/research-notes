@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Oreilly Research Identity Threshold Concepts
 permalink: /notes/oreilly-research-identity-threshold-concepts/
 visibility: public
@@ -10,6 +11,8 @@ description: >-
   O’Reilly, J., 2023. “See you on the other side”: researcher identity,
   threshold concepts and making a ritual of confirmation. _Spark: UAL Creativ
 updated: '2025-10-20T22:37:52.597Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 
@@ -25,4 +28,9 @@ Firstly, an emphasis on the importance of a ‘hands on’ approach to Arts educ
 > 
 > _O’Reilly, 2023, p14_
 
+<<<<<<< HEAD
 Secondly, I am intrigued by the presentation of the idea that the PhD process is more than just an academic endeavour, but actually a way of creating agency through an ‘ecology of learning’. This ecology being an assemblage of different parts of life, including personal practice, pedagogy, academic and professional aspects – and as such, is considered a ‘life practice’ that encourages individuals to forge their own paths and futures, contributing to personal and professional development (O’Reilly, 2023, p17). This idea of learning is interesting to me as it’s distinctly different to most learning experiences I have had so far in my life (in educational institutions) and is in large part very autodidactic. As my research is focused around speculating on learning in the future (assuming drastic shifts due to AI / other potential technological developments), reading this made me wonder if this ‘ecology of learning’ approach might be more utilised in other learning environments outside of postgraduate research. For example, if we imagined a future where LLM’s and the development of AI assistants meant that the traditional role of teacher/lecturer became more obsolete (or at the very least distinctly different) would education more broadly modelled on this ‘[[ecology-of-learning]]’ be more feasible? It’s the beginning of an idea, I will keep ruminating on…
+=======
+
+Secondly, I am intrigued by the presentation of the idea that the PhD process is more than just an academic endeavour, but actually a way of creating agency through an ‘ecology of learning’. This ecology being an assemblage of different parts of life, including personal practice, pedagogy, academic and professional aspects – and as such, is considered a ‘life practice’ that encourages individuals to forge their own paths and futures, contributing to personal and professional development (O’Reilly, 2023, p17). This idea of learning is interesting to me as it’s distinctly different to most learning experiences I have had so far in my life (in educational institutions) and is in large part very autodidactic. As my research is focused around speculating on learning in the future (assuming drastic shifts due to AI / other potential technological developments), reading this made me wonder if this ‘ecology of learning’ approach might be more utilised in other learning environments outside of postgraduate research. For example, if we imagined a future where LLM’s and the development of AI assistants meant that the traditional role of teacher/lecturer became more obsolete (or at the very least distinctly different) would education more broadly modelled on this ‘[[ecology-of-learning]]’ be more feasible? It’s the beginning of an idea, I will keep ruminating on…
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

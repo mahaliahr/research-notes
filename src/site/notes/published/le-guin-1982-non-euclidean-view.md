@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Le Guin 1982 Non Euclidean View
 permalink: /notes/le-guin-1982-non-euclidean-view/
 visibility: public
@@ -12,6 +13,8 @@ description: >-
 
   a performance; the French call such a performance not a lecture b
 updated: '2025-10-20T22:34:14.457Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 

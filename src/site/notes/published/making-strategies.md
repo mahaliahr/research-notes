@@ -1,10 +1,13 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Making Strategies
 permalink: /notes/making-strategies/
 visibility: public
 description: "Making strategies can help you get started in a concrete and productive way\_\n\nIn the early stage of making what you are doing might not feel like research. It’s"
 updated: '2025-10-20T22:34:14.459Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Making strategies can help you get started in a concrete and productive way 
 

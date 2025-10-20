@@ -1,5 +1,6 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Manning 2018 Me Lo Dijo
 permalink: /notes/manning-2018-me-lo-dijo/
 visibility: public
@@ -10,6 +11,8 @@ description: >-
   Manning, E. (2018) ‘Me lo dijo un pajarito – neurodiversity, Black life and
   the university as we know it,’ in _Bloomsbury Academic eBooks_. [http
 updated: '2025-10-20T22:34:14.459Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 

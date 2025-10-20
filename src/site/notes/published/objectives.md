@@ -1,10 +1,13 @@
 ---
 dg-publish: true
+<<<<<<< HEAD
 title: Objectives
 permalink: /notes/objectives/
 visibility: public
 description: "Critically examine the potential implications of AI on teaching and learning.\_\n\n- Use speculative design to envision and construct scenarios that explore altern"
 updated: '2025-10-20T22:34:14.464Z'
+=======
+>>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Critically examine the potential implications of AI on teaching and learning. 
 
