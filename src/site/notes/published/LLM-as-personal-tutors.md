@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/llm-as-personal-tutors/","noteIcon":""}
 ---
+
 
 what would things look like if LLM’s were personal tutors? 
 

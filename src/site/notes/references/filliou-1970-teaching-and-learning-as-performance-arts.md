@@ -1,7 +1,8 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/references/filliou-1970-teaching-and-learning-as-performance-arts/","noteIcon":""}
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 ---
 
@@ -9,7 +10,7 @@ La Révolte des Mediocres (page ref?)
 
 ‘First I intend to show how they could be applied in the one field of study most neglected by society, although I consider it the most important: the creative use of leisure’ p 14
 
-[[reflections-on-the-working-of-the-system]] 
+[[published/reflections-on-the-working-of-the-system\|reflections-on-the-working-of-the-system]] 
 
 ---
 
@@ -19,8 +20,5 @@ Large numbers:
 
 ---
 
-<<<<<<< HEAD
-[[published/imagination-practice\|imagination-practice]] 
-=======
+
 [[imagination-practice]] 
->>>>>>> ad0e5a8 (fixing the mess)

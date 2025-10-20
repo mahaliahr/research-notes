@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/persona-prompting/","noteIcon":""}
 ---
+
 PersonaPrompting Library
 https://github.com/sockcymbal/enhanced-llm-reasoning-tree-of-thoughts/blob/main/persona_library.md
 

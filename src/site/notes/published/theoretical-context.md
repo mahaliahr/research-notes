@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/theoretical-context/","noteIcon":""}
 ---
+
 The research integrates speculative design, critical pedagogy, and AI, framed by Ian Bogost's concept of 'possibility spaces' from ‘Play Anything’ (2016), linking play with scientific and mathematical explorations where all potential solutions are explored without assuming outcomes (Bogost, 2016b, chap. 6). Speculative design, as defined by Dunne and Raby (2013), serves to envision alternative futures and provoke critical reflection on current educational practices. Concurrently, critical pedagogy, influenced by Freire (1970) and hooks (1994), guides the creation of dynamic and emancipatory educational spaces through dialogue and co-creation of knowledge, aligning with the project's goal of fostering 21st-century skills via participatory and playful methodologies. This approach underscores the need to address socio-political injustices in education, ensuring technological advancements serve as inclusive and transformative tools rather than perpetuating inequities. 
 
 Theories of computational creativity, exemplified by McCormack and d'Inverno (2014), explore how AI systems simulate, augment, or replicate human creativity, generating novel ideas, artifacts and solutions. AI's capacity to analyse data, recognise patterns and generate creative outputs, suggest potential to enrich creativity in educational settings, offering new tools for artistic expression, problem-solving and innovative thinking. 

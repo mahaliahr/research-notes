@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/references/benjamin-2024-imagination/","noteIcon":""}
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 Imagination - A Manifesto

@@ -1,14 +1,15 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/case-study-roby/","noteIcon":""}
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 _ROBY | matteo loglio_ (no date). Available at: [https://matlo.me/roby](https://matlo.me/roby) (Accessed: 19 March 2025).
 
 news, oio (2024) _the real open AI_, _oio news_. Available at: [https://www.oio.news/p/31](https://www.oio.news/p/31) (Accessed: 22 April 2025).
 
 ---
 
-[[diy-bot-creation]]
+[[published/diy-bot-creation\|diy-bot-creation]]
 
 This is a small AI set up by OIO Studio. As a studio they call Roby their creative director - Roby helps them come up with new ideas, moderates their Discord community and runs it's own Instagram account. They have recently upgraded their system (oio news, 2024) and are planning to share the technical setup so more people can build their own locally hosted bots. 
 

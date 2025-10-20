@@ -1,6 +1,7 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/pgcert-final-project/","noteIcon":""}
 ---
+
 
 What I asked?
 What I did? 

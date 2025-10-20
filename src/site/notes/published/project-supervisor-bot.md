@@ -1,16 +1,17 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/project-supervisor-bot/","noteIcon":""}
 ---
-Developing plan of [[functionality-and-behaviour]]
 
-Thoughts about [[relationship-with-AI-bot-vs-human]]
+Developing plan of [[published/functionality-and-behaviour\|functionality-and-behaviour]]
 
-![alt text](supervisor-bot-v1-screenshot-2.png)
-→ [[supervisor-bot-v1-prototype]]
+Thoughts about [[published/relationship-with-AI-bot-vs-human\|relationship-with-AI-bot-vs-human]]
 
-[[supervisor-bot-v2-prototype]]
+![alt text](/img/user/images/supervisor-bot-v1-screenshot-2.png)
+→ [[published/supervisor-bot-v1-prototype\|supervisor-bot-v1-prototype]]
 
-~~[[llm-supervisor-v1-progress]]~~
+[[published/supervisor-bot-v2-prototype\|supervisor-bot-v2-prototype]]
+
+~~[[published/llm-supervisor-v1-progress\|llm-supervisor-v1-progress]]~~
 
 ---
 

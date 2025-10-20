@@ -1,21 +1,22 @@
 ---
-dg-publish: true
+{"dg-publish":true,"permalink":"/published/what-kind-of-research-i-want-to-undertake/","noteIcon":""}
 ---
+
 (11-04-2024)
 
-[[developing-playful-methodology]]
+[[published/developing-playful-methodology\|developing-playful-methodology]]
 
-[[practice-based-research]]
+[[published/practice-based-research\|practice-based-research]]
 
-[[I don't want to design a pedagogical framework]]
+[[published/I don't want to design a pedagogical framework\|I don't want to design a pedagogical framework]]
 
-[[design-interventions]]
-[[choreography-of-experience]]
+[[published/design-interventions\|design-interventions]]
+[[published/choreography-of-experience\|choreography-of-experience]]
 
-[[research process as play]] 
+[[published/research process as play\|research process as play]] 
 
-[[not one specific speculative product]]
+[[published/not one specific speculative product\|not one specific speculative product]]
 
-[[autoethnographic-experience-as-lecturer-and-student]]
+[[published/autoethnographic-experience-as-lecturer-and-student\|autoethnographic-experience-as-lecturer-and-student]]
 
 ---
