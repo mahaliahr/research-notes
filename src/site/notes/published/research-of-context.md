@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/research-of-context/","noteIcon":""}
+dg-publish: true
 ---
-
 what is out there?
 
-[[published/annotated-bib-guidance\|annotated-bib-guidance]]
+[[annotated-bib-guidance]]

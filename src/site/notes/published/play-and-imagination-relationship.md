@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/play-and-imagination-relationship/","noteIcon":""}
+dg-publish: true
 ---
-
 11-07-2024
 
 what is the relationship between **play and imagination?**

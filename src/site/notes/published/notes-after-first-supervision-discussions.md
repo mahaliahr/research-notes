@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/notes-after-first-supervision-discussions/","noteIcon":""}
+dg-publish: true
 ---
-
 Winnie:
 
 Who is the audience (ie in research/academia - AI, HCI, Critical Arts etc)

@@ -1,12 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/published/autoethnography/","noteIcon":""}
+dg-publish: true
 ---
-
 General thoughts:
 
 How to strengthen this skill set? 
 
-visual autoethnography
+visual autoethnography ([[autographic-turn-in-design]])
 
 developing narrative (is this something that I can look into in more depth?)
 My mind immediately goes to works by Allison Parish[https://www.decontextualize.com/] in the computational field

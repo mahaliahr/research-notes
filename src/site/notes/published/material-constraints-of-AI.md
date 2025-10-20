@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/material-constraints-of-ai/","noteIcon":""}
+dg-publish: true
 ---
-
 
 How much energy does using transformers (genAI) actually take? 
 

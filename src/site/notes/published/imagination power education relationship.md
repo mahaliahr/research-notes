@@ -1,8 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/published/imagination-power-education-relationship/","noteIcon":""}
+dg-publish: true
 ---
-
-imagination/dreaming -> [[unpublished/power\|power]] <- education/learning 
+imagination/dreaming -> [[power]] <- education/learning 
 
 the relationship between imagination power and learning are interrelated and power seems intrinsically present and at the centre of this 
 

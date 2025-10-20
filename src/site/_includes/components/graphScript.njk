@@ -1,11 +1,49 @@
 <script>
+    function adaptGraphData(raw) {
+        if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.links)) return null;
+
+        // Ensure ids are strings and consistent (we use url as id from /graph.json)
+        const byId = {};
+        for (const n of raw.nodes) {
+            const id = String(n.id || n.url || "");
+            byId[id] = {
+                id,
+                url: n.url || id,
+                title: n.title || id,
+                hide: !!n.hide,
+                home: !!n.home,
+                neighbors: []   // fill below
+            };
+        }
+
+        // Normalize links to string ids and build neighbor lists
+        const links = [];
+        for (const l of raw.links) {
+            const s = typeof l.source === "string" ? l.source : String(l.source?.id || l.source || "");
+            const t = typeof l.target === "string" ? l.target : String(l.target?.id || l.target || "");
+            if (byId[s] && byId[t]) {
+                links.push({ source: s, target: t });
+                byId[s].neighbors.push(t);
+                byId[t].neighbors.push(s);
+            }
+        }
+
+        return { nodes: byId, links };
+    }
+
     async function fetchGraphData() {
-        const graphData = await fetch('/graph.json').then(res => res.json());
+        const raw = await fetch('/graph.json', { cache: 'no-store' }).then(res => res.json());
+        const graphData = adaptGraphData(raw);          // <-- adapt here
         const fullGraphData  = filterFullGraphData(graphData);
         return {graphData, fullGraphData}
     }
+    {# async function fetchGraphData() {
+        const graphData = await fetch('/graph.json').then(res => res.json());
+        const fullGraphData  = filterFullGraphData(graphData);
+        return {graphData, fullGraphData}
+    } #}
 
-    function getNextLevelNeighbours(existing, remaining) {
+    {# function getNextLevelNeighbours(existing, remaining) {
         const keys = Object.values(existing).map((n) => n.neighbors).flat();
         const n_remaining = Object.keys(remaining).reduce((acc, key) => {
                 if (keys.indexOf(key) != -1) {
@@ -18,6 +56,21 @@
                 return acc;
             }, {});
         return existing, n_remaining;
+    } #}
+
+    function getNextLevelNeighbours(existing, remaining) {
+        const keys = Object.values(existing).map((n) => n.neighbors).flat();
+        const n_remaining = Object.keys(remaining).reduce((acc, key) => {
+            if (keys.indexOf(key) !== -1) {
+                if (!remaining[key].hide) {
+                    existing[key] = remaining[key];
+                }
+            } else {
+                acc[key] = remaining[key];
+            }
+            return acc;
+        }, {});
+        return [existing, n_remaining]; // return a pair
     }
 
     function filterLocalGraphData(graphData, depth) {
@@ -37,7 +90,7 @@
         let existing = {};
         existing[currentNode.url] = currentNode;
         for (let i = 0; i < depth; i++) {
-            existing, remaining = getNextLevelNeighbours(existing, remaining);
+        [existing, remaining] = getNextLevelNeighbours(existing, remaining);
         }
         nodes = Object.values(existing);
         if (!currentNode.home) {
@@ -64,8 +117,8 @@
             return;
         }
         const el = document.getElementById(id);
-        width = el.offsetWidth;
-        height = el.offsetHeight;
+        const width = el.offsetWidth;
+        const height = el.offsetHeight;
         const highlightNodes = new Set();
         let hoverNode = null;
         const color = getCssVar("--graph-main");

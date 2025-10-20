@@ -1,4 +1,4 @@
 ---
-{"dg-publish":true,"permalink":"/published/ethical-ai/","noteIcon":""}
+dg-publish: true
 ---
 is this even possible?

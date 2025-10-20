@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervision-010525/","noteIcon":""}
+dg-publish: true
 ---
-
 Overview: 
 -  plans for upcoming/in progress design interventions 
 - annotated bibliography and brainstorm of personal motivations for the research
@@ -43,7 +42,7 @@ Ethics draft begun - no
 ---
 - Here is the link to the annotated bibliography of books (and other content) that I have engaged with recently: [annotated-bib-150425.docx](https://artslondon-my.sharepoint.com/:w:/g/personal/m_henryrichards_arts_ac_uk/EcKOdFtIXCROgx_lwNNEKcQB7too-VKuIlSpJuuIPx1NMQ?e=HL5i1q)
 
-- I have begun to try to express some of the underlying motivations and drive behind this research and try to start linking it to my positionality. Here is a link to a very rough draft of me collating ideas and thoughts together (might not be that legible at the moment). add link to personal motivations: [personal-motivation-brainstorm.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EVSx9DNFiZJIsHu-fT9ELzwByNgXs0NEc_aZFMRC-kuXPg?e=1dtBpr) The following summary of a pgcert reading is also connected to these thoughts [[references/garrett-2024-imagined-futures-of-racialised-phds\|garrett-2024-imagined-futures-of-racialised-phds]]
+- I have begun to try to express some of the underlying motivations and drive behind this research and try to start linking it to my positionality. Here is a link to a very rough draft of me collating ideas and thoughts together (might not be that legible at the moment). add link to personal motivations: [personal-motivation-brainstorm.pdf](https://artslondon-my.sharepoint.com/:b:/g/personal/m_henryrichards_arts_ac_uk/EVSx9DNFiZJIsHu-fT9ELzwByNgXs0NEc_aZFMRC-kuXPg?e=1dtBpr) The following summary of a pgcert reading is also connected to these thoughts [[garrett-2024-imagined-futures-of-racialised-phds]]
 
 ---
 
@@ -51,7 +50,7 @@ Ethics draft begun - no
 
  1. Student support fund (there seems to be a sperate one for CCI - what does this mean?) Can I apply to go to conferences if I am not presenting (main SSF seems to state this, but CCI one doesn't)
 
-![cci ssf screenshot](/img/user/images/cci-ssf.png)
+![cci ssf screenshot](cci-ssf.png)
 
 2. ~~does the post-registration ethics form cover everything - like an umbrella ethics? For each study would I need to fill in a seperate ethics form **YES
 3. ~~advice about how to conduct or do the staff interviews as everyone is super busy. I don;t want to do a quesitonaire that might be easier and more time constraint beneficial. I want it to be more personable

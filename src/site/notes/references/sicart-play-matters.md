@@ -1,8 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/references/sicart-play-matters/","noteIcon":""}
+dg-publish: true
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 
 Sicart, M. (2014) _Play matters_. Available at: [https://doi.org/10.7551/mitpress/10042.001.0001](https://doi.org/10.7551/mitpress/10042.001.0001).
 

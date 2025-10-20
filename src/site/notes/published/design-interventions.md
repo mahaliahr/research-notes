@@ -1,12 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/published/design-interventions/","noteIcon":""}
+dg-publish: true
 ---
+[[project-supervisor-bot]]
+[[diy-bot-creation]] 
 
-[[published/project-supervisor-bot\|project-supervisor-bot]]
-[[published/diy-bot-creation\|diy-bot-creation]] 
 
-
-[[technical-questions-and-challenges\|technical-questions-and-challenges]]
+[[technical-questions-and-challenges]]
 
 ---
 

@@ -1,5 +1,4 @@
 ---
-{"dg-publish":true,"permalink":"/published/case-study-shiffbot/","noteIcon":""}
+dg-publish: true
 ---
-
 https://shiffbot.withgoogle.com/

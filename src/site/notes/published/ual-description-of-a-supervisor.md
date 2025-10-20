@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/ual-description-of-a-supervisor/","noteIcon":""}
+dg-publish: true
 ---
-
 
 **Extracted from the PGR handbook:**
 

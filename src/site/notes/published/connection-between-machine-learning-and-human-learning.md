@@ -1,4 +1,4 @@
 ---
-{"dg-publish":true,"permalink":"/published/connection-between-machine-learning-and-human-learning/","noteIcon":""}
+dg-publish: true
 ---
 [[metaphors-of-machine-learning]] 

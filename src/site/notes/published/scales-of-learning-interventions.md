@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/scales-of-learning-interventions/","noteIcon":""}
+dg-publish: true
 ---
-
 24/01/25
 
 personal - me as a learner

@@ -1,12 +1,11 @@
 ---
-{"dg-publish":true,"permalink":"/published/imagination-practice/","noteIcon":""}
+dg-publish: true
 ---
-
 I like the way Filliou describes the need to ‘practice...natural imagination’ p20.  Imagination is not often thought of as something to practice.
 
-[[published/artists the only adults that practice imagination\|artists the only adults that practice imagination]]
+[[artists-the-only-adults-that-practice-imagination]]
 
-this also relates to Ruha Benjamin's thought about imagination [[references/benjamin-2024-imagination\|benjamin-2024-imagination]]
+this also relates to Ruha Benjamin's thought about imagination [[benjamin-2024-imagination]]
 
 #### Thinking about Improv
 

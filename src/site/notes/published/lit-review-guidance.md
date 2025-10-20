@@ -1,4 +1,3 @@
 ---
-{"dg-publish":true,"permalink":"/published/lit-review-guidance/","noteIcon":""}
+dg-publish: true
 ---
-

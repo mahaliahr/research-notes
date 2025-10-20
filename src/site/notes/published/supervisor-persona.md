@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/supervisor-persona/","noteIcon":""}
+dg-publish: true
 ---
-
 in order to craft my LLM supervisor (v1) I need to give it an appropriate persona
 
 currently this is the working persona:  
@@ -22,11 +21,11 @@ Now, respond as if you just heard this in a live conversation.
 - Speak in a natural, human way (it’s okay to sound tentative or reflective).  
 - Avoid lists or overly formal language.  
 
-[[published/persona-prompting\|persona-prompting]]
+[[persona-prompting]]
 
 sychophantic AI -> find paper, how does this tie into this work?
 
-[[published/bot-context\|bot-context]]
+[[bot-context]]
 
 
 

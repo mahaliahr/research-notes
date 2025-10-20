@@ -1,8 +1,7 @@
 ---
-{"dg-publish":true,"permalink":"/published/bayley-2018-posthuman-pedagogies/","noteIcon":""}
+dg-publish: true
 ---
-
-[[references/-bibliography\|-bibliography]]
+[[-bibliography]]
 Bayley, Annouchka. Posthuman Pedagogies in Practice: Arts Based Approaches for Developing Participatory Futures, 2018.
 
 ---

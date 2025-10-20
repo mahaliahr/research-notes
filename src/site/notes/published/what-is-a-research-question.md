@@ -1,7 +1,6 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-a-research-question/","noteIcon":""}
+dg-publish: true
 ---
-
 A research question is:
 - as yet unanswered
 - open-ended (not a yes-or-no question)
