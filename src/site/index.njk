@@ -17,7 +17,7 @@ eleventyExcludeFromCollections: true
 </section> #}
 
 <header class="home-hero">
-  <h1>PhD Live</h1>
+  {# <h1>PhD Live</h1> #}
   <p class="tagline">Process as everything - livestreamed notes, sessions, and reflections.</p>
   <nav class="quick-links">
     <a href="/blog/">Posts</a>
@@ -39,7 +39,8 @@ eleventyExcludeFromCollections: true
 
 <section class="latest-posts">
   <h2>Latest Reflections</h2>
-  {% set posts = collections.posts | default([]) %}
+  {% set posts = collections.post
+   | default([]) %}
   {% if posts | length %}
     <ul class="cards">
       {% for post in posts | slice(0,6) %}
@@ -79,36 +80,33 @@ eleventyExcludeFromCollections: true
 
 <section class="zettel-gateway">
   <h2>Explore the Zettelkasten</h2>
-   <div class="graph-embed" style="position:relative;width:100%;height:520px;">
-    <iframe
-      src="/graph/"
-      title="Zettelkasten Graph"
-      loading="lazy"
-      style="width:100%;height:100%;border:1px solid #eee;border-radius:12px;"
-    ></iframe>
-  </div>
+
+  {# Include DG graph UI (expects /graph.json) #}
+  {% include "components/graphScript.njk" %}
+
   <p class="more"><a href="/notes/">Browse all notes →</a></p>
-    <div class="panel">
-      <h3>Trailheads</h3>
-      {% set entries = collections.entryNotes | default([]) %}
-      {% if entries | length %}
-        <ul class="pill-list">
-          {% for n in entries | slice(0,12) %}
-            <li><a class="pill" href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a></li>
-          {% endfor %}
-        </ul>
-      {% else %}
-        <p>Add <code>gardenEntry</code> to note tags to feature it here.</p>
-      {% endif %}
-    </div>
-    <div class="panel">
-      <h3>Search</h3>
-      <p>Look up concepts, tags, and relations across the whole garden.</p>
-      {% if settings.dgEnableSearch %}
-        <p><a class="button" href="/search/">Search the garden →</a></p>
-      {% else %}
-        <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
-      {% endif %}
-    </div>
+
+  <div class="panel">
+    <h3>Trailheads</h3>
+    {% set entries = collections.entryNotes | default([]) %}
+    {% if entries | length %}
+      <ul class="pill-list">
+        {% for n in entries | slice(0,12) %}
+          <li><a class="pill" href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a></li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Add <code>gardenEntry</code> to note tags to feature it here.</p>
+    {% endif %}
+  </div>
+
+  <div class="panel">
+    <h3>Search</h3>
+    <p>Look up concepts, tags, and relations across the whole garden.</p>
+    {% if settings.dgEnableSearch %}
+      <p><a class="button" href="/search/">Search the garden →</a></p>
+    {% else %}
+      <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
+    {% endif %}
   </div>
 </section>
