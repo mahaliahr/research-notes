@@ -1,5 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/published/what-is-a-classroom/","noteIcon":""}
+dg-publish: true
+permalink: /published/what-is-a-classroom/
+noteIcon: ''
+visibility: public
+description: published/classroom as dramaturgical site for experimentation\
+updated: '2025-10-15T21:01:34.027Z'
 ---
 
 

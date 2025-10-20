@@ -1,0 +1,15 @@
+---
+permalink: "/data/milestones.json"
+eleventyExcludeFromCollections: true
+---
+[
+{%- set items = collections.milestones | default([]) -%}
+{%- for p in items -%}
+{%- if not loop.first %},{% endif -%}
+{"title":"{{ (p.data.title or p.fileSlug) | dump | safe }}",
+ "due":"{{ p.data.due | default('') | dump | safe }}",
+ "status":"{{ p.data.status | default('') | dump | safe }}",
+ "area":"{{ p.data.area | default('') | dump | safe }}",
+ "url":"{{ p.url | dump | safe }}"}
+{%- endfor -%}
+]

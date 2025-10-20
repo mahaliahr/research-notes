@@ -7,7 +7,13 @@ src/site/styles/_theme.*.css
 # Local Netlify folder
 .netlify
 .idea/
+.env
+.env.*
 .vercel
 .cache
 _site/
 **/.DS_Store
+_unpublished/
+src/site/notes/.obsidian
+src/site/notes/.obsidian/plugins/digitalgarden/data.json
+src/site/notes/phd-notebook/

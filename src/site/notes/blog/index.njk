@@ -1,0 +1,16 @@
+---
+layout: "layouts/note.njk"
+permalink: "/blog/"
+title: "Posts"
+---
+<h1>Posts</h1>
+<ul class="post-list">
+  {% for p in collections.posts %}
+    <li>
+      <a href="{{ p.url }}">{{ p.data.title or p.fileSlug }}</a>
+      <small>{{ p.date | isoDate }}</small>
+      {% set desc = p.data.description or (p.templateContent | striptags) %}
+      <p>{{ desc | truncate(140) }}</p>
+    </li>
+  {% endfor %}
+</ul>

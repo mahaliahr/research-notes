@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/black-in-academia-2020-kehinde-andrews/","noteIcon":""}
+dg-publish: true
+permalink: /published/black-in-academia-2020-kehinde-andrews/
+noteIcon: ''
+visibility: public
+description: >-
+  references/-bibliography\
+
+
+  Black In Academia (2020) _Professor Kehinde Andrews – Surviving the Academy #
+  BlackInAcademia_. [https://www.youtube.com/watch?v=HHf7
+updated: '2025-10-15T21:01:34.003Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

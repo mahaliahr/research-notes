@@ -1,5 +1,16 @@
 ---
-{"dg-publish":true,"permalink":"/published/ual-description-of-a-supervisor/","noteIcon":""}
+dg-publish: true
+permalink: /published/ual-description-of-a-supervisor/
+noteIcon: ''
+visibility: public
+description: |-
+  **Extracted from the PGR handbook:**
+
+  Formal supervision may consist of:
+
+  - Written comments or guidance on your work;
+  - Face-to-Face meetings, the venue and ti
+updated: '2025-10-15T21:01:34.027Z'
 ---
 
 

@@ -1,5 +1,14 @@
 ---
-{"dg-publish":true,"permalink":"/references/case-study-shell-game/","noteIcon":""}
+dg-publish: true
+permalink: /references/case-study-shell-game/
+noteIcon: ''
+visibility: public
+description: >-
+  references/-bibliography\
+
+  Ratliff, E. (2024) ‘Shell Game | Evan Ratliff | Substack’. (Shell Game).
+  Available at: [https://www.shellgame.co/podcast](https://www.
+updated: '2025-10-15T21:01:34.029Z'
 ---
 
 [[references/-bibliography\|-bibliography]]

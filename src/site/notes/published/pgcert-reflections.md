@@ -1,5 +1,15 @@
 ---
-{"dg-publish":true,"permalink":"/published/pgcert-reflections/","noteIcon":""}
+dg-publish: true
+permalink: /published/pgcert-reflections/
+noteIcon: ''
+visibility: public
+description: >-
+  Using the published/the-riddle-for-reflection\ from 'hands on research'. The
+  following are my reflections on the modules and final progect of the pgcert.
+
+
+  # pub
+updated: '2025-10-15T21:01:34.018Z'
 ---
 
  Using the [[published/the-riddle-for-reflection\|the-riddle-for-reflection]] from 'hands on research'. The following are my reflections on the modules and final progect of the pgcert.

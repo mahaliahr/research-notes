@@ -1,0 +1,14 @@
+---
+permalink: "/data/sessions.json"
+eleventyExcludeFromCollections: true
+---
+[
+{%- set items = collections.sessions | default([]) -%}
+{%- for p in items -%}
+{%- if not loop.first %},{% endif -%}
+{"topic":"{{ (p.data.topic or p.data.title or p.fileSlug) | dump | safe }}",
+ "start":"{{ p.data.start | default('') | dump | safe }}",
+ "end":"{{ p.data.end | default('') | dump | safe }}",
+ "url":"{{ p.url | dump | safe }}"}
+{%- endfor -%}
+]

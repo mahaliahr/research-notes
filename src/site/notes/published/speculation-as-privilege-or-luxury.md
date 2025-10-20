@@ -1,5 +1,13 @@
 ---
-{"dg-publish":true,"permalink":"/published/speculation-as-privilege-or-luxury/","noteIcon":""}
+dg-publish: true
+permalink: /published/speculation-as-privilege-or-luxury/
+noteIcon: ''
+visibility: public
+description: >-
+  'To speculate seems too difficult when our realities fluctuate so readily. To
+  speculate is a privilege whilst our economies collapse and millions are left
+  unemp
+updated: '2025-10-15T21:01:34.023Z'
 ---
 
 'To speculate seems too difficult when our realities fluctuate so readily. To speculate is a privilege whilst our economies collapse and millions are left unemployed. To speculate is a
