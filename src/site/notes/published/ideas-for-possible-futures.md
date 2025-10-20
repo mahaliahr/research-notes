@@ -20,15 +20,16 @@ updated: '2025-10-20T22:36:59.537Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
+
 11-04-2024- 
 
-[[LLM-as-personal-tutors]] 
+[[published/LLM-as-personal-tutors\|LLM-as-personal-tutors]] 
 
-[[humans and AI school speculation]]
+[[published/humans and AI school speculation\|humans and AI school speculation]]
 
-[[spaces-for-learning-in-the-future]]
+[[published/spaces-for-learning-in-the-future\|spaces-for-learning-in-the-future]]
 
-[[corporate university speculation]]
+[[published/corporate university speculation\|corporate university speculation]]
 
 <<<<<<< HEAD
 [[AI-access-libraries-speculation]]

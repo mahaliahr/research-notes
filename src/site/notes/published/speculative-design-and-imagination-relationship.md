@@ -11,9 +11,10 @@ description: >-
   participator
 updated: '2025-10-20T22:34:14.477Z'
 ---
+
 What is the relationship between speculative design and imagination?
 
-How can the imagining process be considered particpatory? or structured to be participatory? (connecting to [[RQ4-speculative-process-as-particapatory]])
+How can the imagining process be considered particpatory? or structured to be participatory? (connecting to [[published/RQ4-speculative-process-as-particapatory\|RQ4-speculative-process-as-particapatory]])
 
 Imagining is an act of play - engaging with speculations of alternate realities is playful
 

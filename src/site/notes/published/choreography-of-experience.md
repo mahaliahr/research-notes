@@ -9,4 +9,5 @@ description: >-
   LLMs)
 updated: '2025-10-20T22:34:14.433Z'
 ---
-I’m interested in making [[design-interventions]] and choreographing experience through technology and shaping experience through technology (AI specifically LLMs)
+
+I’m interested in making [[published/design-interventions\|design-interventions]] and choreographing experience through technology and shaping experience through technology (AI specifically LLMs)

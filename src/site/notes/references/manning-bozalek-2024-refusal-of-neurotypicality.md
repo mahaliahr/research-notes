@@ -1,8 +1,4 @@
 ---
-dg-publish: true
----
-[[-bibliography]]
-dg-publish: true
 title: Manning Bozalek 2024 Refusal Of Neurotypicality
 permalink: /notes/manning-bozalek-2024-refusal-of-neurotypicality/
 visibility: public
@@ -24,4 +20,4 @@ Erin Manning ([whom I referred to in blog post 1](https://mmhrpgcert.myblog.arts
 
 ---
 
-[[classroom as dramaturgical site for experimentation]]
+[[published/classroom as dramaturgical site for experimentation\|classroom as dramaturgical site for experimentation]]

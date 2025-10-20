@@ -11,6 +11,7 @@ description: >-
   corporate university speculation
 updated: '2025-10-20T22:38:50.554Z'
 ---
+
 something about the intangible space of future learning… not sure what this is yet
 
 [[corporate university speculation]]

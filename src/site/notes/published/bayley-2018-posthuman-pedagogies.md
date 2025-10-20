@@ -16,7 +16,8 @@ description: >-
   chapter 2 - 21st Cent
 updated: '2025-10-20T22:34:14.430Z'
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 Bayley, Annouchka. Posthuman Pedagogies in Practice: Arts Based Approaches for Developing Participatory Futures, 2018.
 
 ---

@@ -8,6 +8,7 @@ title: Notes From What Is Your Research Or Practice And Who Are You In It
 permalink: /notes/notes-from-what-is-your-research-or-practice-and-who-are-you-in-it/
 ---
 
+
 bring personalitiy into it when you talk about it 
 
 'grand narrative'

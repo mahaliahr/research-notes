@@ -9,6 +9,7 @@ description: |-
   this feels to me like it maybe a useful diagram to refer to at some point p69
 updated: '2025-10-20T22:34:14.486Z'
 ---
-![alt text](traditional-vs-speculative.png)
+
+![alt text](/img/user/images/traditional-vs-speculative.png)
 
 this feels to me like it maybe a useful diagram to refer to at some point p69

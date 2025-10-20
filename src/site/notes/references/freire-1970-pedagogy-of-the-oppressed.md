@@ -14,9 +14,10 @@ description: >-
   _educational projects_, wh
 updated: '2025-10-20T22:34:14.495Z'
 ---
-[[-bibliography]]
 
-[[oppression-limiting-situation-to-transform]]
+[[references/-bibliography\|-bibliography]]
+
+[[published/oppression-limiting-situation-to-transform\|oppression-limiting-situation-to-transform]]
 
 '_systematic education_, which can only be changed by political power, and _educational projects_, which should be carried out with the oppressed in the process of organizing them' p28
 

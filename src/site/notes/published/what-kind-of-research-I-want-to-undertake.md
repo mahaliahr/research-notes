@@ -16,21 +16,22 @@ description: |-
   choreography-of-expe
 updated: '2025-10-20T22:34:14.491Z'
 ---
+
 (11-04-2024)
 
-[[developing-playful-methodology]]
+[[published/developing-playful-methodology\|developing-playful-methodology]]
 
-[[practice-based-research]]
+[[published/practice-based-research\|practice-based-research]]
 
-[[I don't want to design a pedagogical framework]]
+[[published/I don't want to design a pedagogical framework\|I don't want to design a pedagogical framework]]
 
-[[design-interventions]]
-[[choreography-of-experience]]
+[[published/design-interventions\|design-interventions]]
+[[published/choreography-of-experience\|choreography-of-experience]]
 
-[[research process as play]] 
+[[published/research process as play\|research process as play]] 
 
-[[not one specific speculative product]]
+[[published/not one specific speculative product\|not one specific speculative product]]
 
-[[autoethnographic-experience-as-lecturer-and-student]]
+[[published/autoethnographic-experience-as-lecturer-and-student\|autoethnographic-experience-as-lecturer-and-student]]
 
 ---

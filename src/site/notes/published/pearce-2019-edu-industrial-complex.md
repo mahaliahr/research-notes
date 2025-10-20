@@ -14,7 +14,8 @@ updated: '2025-10-20T22:34:14.467Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 Pearce, K. (2019) ‘The Education-Industrial Complex and 21st Century Learning’, _DIY Geniys_, 15 July. Available at: [https://www.diygenius.com/education-industrial-complex/](https://www.diygenius.com/education-industrial-complex/).
 

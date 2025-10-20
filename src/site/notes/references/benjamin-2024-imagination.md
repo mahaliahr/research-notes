@@ -9,6 +9,7 @@ description: |-
   Imagination - A Manifesto
 updated: '2025-10-20T22:34:14.492Z'
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 Imagination - A Manifesto

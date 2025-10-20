@@ -11,6 +11,7 @@ description: |-
   [Planning Overview](https://www.notion.so/PhD-Planning-Overvie
 updated: '2025-10-20T22:34:14.475Z'
 ---
+
 This is a snapshot of my thinking and research for my PhD. 
 This is in flux as thoughts develop.
 
@@ -18,11 +19,11 @@ This is in flux as thoughts develop.
 
 ---
 ### Latest supervision meeting:
-[[supervision-110925]]
+[[published/supervision-110925\|supervision-110925]]
 
 ### Ongoing Projects:
-[[project-supervisor-bot]]
-[[project-cci-ual-staff-interviews]]
+[[published/project-supervisor-bot\|project-supervisor-bot]]
+[[published/project-cci-ual-staff-interviews\|project-cci-ual-staff-interviews]]
 
-[[MSc-CC-AI-Literacy-Workshop]]
+[[published/MSc-CC-AI-Literacy-Workshop\|MSc-CC-AI-Literacy-Workshop]]
 

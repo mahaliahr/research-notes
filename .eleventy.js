@@ -596,8 +596,6 @@ module.exports = function (eleventyConfig) {
     return JSON.stringify(variable) || '""';
   });
 
-  eleventyConfig.addNunjucksFilter("jsonify", (value) => JSON.stringify(value));
-
   eleventyConfig.addFilter("validJson", function (variable) {
     if (Array.isArray(variable)) {
       return variable.map((x) => x.replaceAll("\\", "\\\\")).join(",");

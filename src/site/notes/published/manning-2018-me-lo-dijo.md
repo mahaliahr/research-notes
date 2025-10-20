@@ -14,7 +14,8 @@ updated: '2025-10-20T22:34:14.459Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 
 Manning, E. (2018) ‘Me lo dijo un pajarito – neurodiversity, Black life and the university as we know it,’ in _Bloomsbury Academic eBooks_. [https://doi.org/10.5040/9781350032910.ch-007](https://doi.org/10.5040/9781350032910.ch-007)
 

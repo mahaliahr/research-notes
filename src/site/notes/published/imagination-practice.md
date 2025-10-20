@@ -14,11 +14,12 @@ updated: '2025-10-20T22:37:07.219Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
+
 I like the way Filliou describes the need to ‘practice...natural imagination’ p20.  Imagination is not often thought of as something to practice.
 
-[[artists-the-only-adults-that-practice-imagination]]
+[[published/artists the only adults that practice imagination\|artists the only adults that practice imagination]]
 
-this also relates to Ruha Benjamin's thought about imagination [[benjamin-2024-imagination]]
+this also relates to Ruha Benjamin's thought about imagination [[references/benjamin-2024-imagination\|benjamin-2024-imagination]]
 
 #### Thinking about Improv
 

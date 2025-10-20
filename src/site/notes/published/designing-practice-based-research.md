@@ -10,10 +10,11 @@ description: >-
   Projects_. Available at: [https://www.intellectbooks.com/designing-and-condu
 updated: '2025-10-20T22:34:14.440Z'
 ---
-[[-bibliography]]
+
+[[references/-bibliography\|-bibliography]]
 Skains, R.L. (2024) _Designing and Conducting Practice-Based Research Projects_. Available at: [https://www.intellectbooks.com/designing-and-conducting-practice-based-research-projects](https://www.intellectbooks.com/designing-and-conducting-practice-based-research-projects) (Accessed: 7 December 2024).
 
 ---
-[[annotated-bib-guidance]]
-[[lit-review-guidance]]
+[[published/annotated-bib-guidance\|annotated-bib-guidance]]
+[[published/lit-review-guidance\|lit-review-guidance]]
 

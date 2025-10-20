@@ -13,7 +13,8 @@ description: >-
   'The
 updated: '2025-10-20T22:39:15.020Z'
 ---
-![illustrated model of research](model.jpeg)
+
+![illustrated model of research](/img/user/images/model.jpeg)
 
 the diagram show the interrelations of the six components of 'hands on research' or practice based research. 
 'The circle model is an open and non-linear model. Any action can be an entry point' p2

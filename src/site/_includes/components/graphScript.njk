@@ -1,36 +1,4 @@
 <script>
-    function adaptGraphData(raw) {
-        if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.links)) return null;
-
-        // Ensure ids are strings and consistent (we use url as id from /graph.json)
-        const byId = {};
-        for (const n of raw.nodes) {
-            const id = String(n.id || n.url || "");
-            byId[id] = {
-                id,
-                url: n.url || id,
-                title: n.title || id,
-                hide: !!n.hide,
-                home: !!n.home,
-                neighbors: []   // fill below
-            };
-        }
-
-        // Normalize links to string ids and build neighbor lists
-        const links = [];
-        for (const l of raw.links) {
-            const s = typeof l.source === "string" ? l.source : String(l.source?.id || l.source || "");
-            const t = typeof l.target === "string" ? l.target : String(l.target?.id || l.target || "");
-            if (byId[s] && byId[t]) {
-                links.push({ source: s, target: t });
-                byId[s].neighbors.push(t);
-                byId[t].neighbors.push(s);
-            }
-        }
-
-        return { nodes: byId, links };
-    }
-
     async function fetchGraphData() {
         const graphData = await fetch('{{ "/graph.json" | url }}', { cache: "no-store" }).then(res => res.json());
         const fullGraphData  = filterFullGraphData(graphData);

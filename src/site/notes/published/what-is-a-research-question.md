@@ -12,6 +12,7 @@ description: |-
   - a work in progres
 updated: '2025-10-20T22:39:54.499Z'
 ---
+
 A research question is:
 - as yet unanswered
 - open-ended (not a yes-or-no question)

@@ -9,6 +9,7 @@ description: >-
   essen
 updated: '2025-10-20T22:34:14.438Z'
 ---
+
 'What is speculative design from a practitioner’s point of view, really? James Auger provides one useful starting point: “Speculative design proposals are essentially tools for questioning. Their aim is therefore not to propose implementable product solutions, nor to offer answers to the questions they pose; they are intended to act like a mirror reflecting the role a specific technology plays or may play in each of our lives, instigating contemplation and discussion.”'(Auger, 2012) p73
 
 Many individual practitioners define the term for themselves on an ad hoc basis. The members of Basel, Switzerland-based circumflex.studio, for example, provide a very clear definition of what speculative design means in their own work: “Speculative design should be an informed projection that brings into question the reality we ground this projection on. Informed means that it’s not about making up just any alternative future, present or past but grounding this speculation in prior knowledge, emerging tendencies, existing technologies, and human behaviours. Through creating an alternative reading – set in the future, present or past – the predominant reality is put into question and inherent biases are revealed. This is our very ideal understanding of speculative design.” (Büsse & Mitrokhov, 2019)p74

@@ -12,6 +12,7 @@ updated: '2025-10-20T22:34:14.449Z'
 =======
 >>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
+
 'How do we shift the power relations of speculation? How can design education create a culture where subaltern voices have visibility and power? Can CSD enable the democratisation of speculation?' p178
 
 - participation and engagement:

@@ -17,6 +17,7 @@ I am also interested in the **process** of doing this in a speculative (and play
 [[research-methods]]
 =======
 ---
+
 I am also interested in the **process** of doing this in a speculative (and playful way) —> this could become pedagogically informative
 
 [[research-methods]]
