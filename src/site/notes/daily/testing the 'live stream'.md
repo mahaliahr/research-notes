@@ -11,7 +11,6 @@ duration: 2h
 dg-publish: true
 permalink: /daily/testing-the-live-stream/
 dgPassFrontmatter: true
-noteIcon: ""
 ---
 
 <!-- 🔁 Used for your timeline or “Research Stream” visual -->
