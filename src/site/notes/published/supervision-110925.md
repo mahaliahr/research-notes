@@ -42,7 +42,7 @@ need to do some contextual writing, for the bot
 
 supervisor bot
  -> DIY bot with students[^1] (see what their background is)
-	 contrast to ChatGPT
+	 contrast to Chatgpt
 	 educational tool as a way to understand
 climate crisis impact
 

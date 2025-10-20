@@ -6,5 +6,7 @@ I have noticed there seems to be a lot of panic and/or exasperation at students 
 
 Often students may be using AI even before they are enrolled, specifically in regards to the application and admissions step ([[published/LLMs disrupting formalities\|LLMs disrupting formalities]]).
 
-I think that it is important to consider why so many students might be using AI, as I don't think it's because they want to 'cheat' or take the 'easy route'. Understanding these bigger reasons may help us to think of suitable approaches moving forward. Additionally having the skills to engage with AI tools is increasingly being seen as a skillset that is worth developing - so how to balance building these skills vs. the negative impact that this might have on students learning experience?
+students using AI even before they are enrolled - at the admissions step [[published/LLMs disrupting formalities\|LLMs disrupting formalities]]
+
+Also important to consider why so many students are using AI, as I don't think it's because they want to 'cheat' or take the 'easy route'. Understanding these bigger reasons may help us to think of suitable approaches moving forward
 

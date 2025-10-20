@@ -4,6 +4,6 @@
 
 In conversation with my supervisor (31-01-2024 ), they mentioned 'the Application for Registration' is a rehearsal for later steps (such as confirmation), it struck me that this is interesting language to use to describe the process, with links to performativity  - ie. [[_unpublished/classroom as dramaturgical site\|classroom as dramaturgical site]]? 
 
-Can the PhD be a performance or have aspects of performativity? This connects to thoughts I'm having around play.
+31-01-2024 
 
 [[published/PhD-checkpoints-as-ceremonies\|PhD-checkpoints-as-ceremonies]]
