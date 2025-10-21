@@ -40,8 +40,8 @@ module.exports = {
 
     visibility: (d) => d.visibility || "public",
 
-    // Titles default to filename (Zettelkasten style)
-    title: (d) => d.page.fileSlug,
+    // done globally now in eleventyComputed.js
+    // title: (d) => d.page.fileSlug,
 
     // Basic description fallback from content
     description: (d) =>

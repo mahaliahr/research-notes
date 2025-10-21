@@ -1,32 +1,51 @@
 #!/usr/bin/env node
+/**
+ * Bulk front-matter normalizer for notes and posts.
+ *
+ * Usage:
+ *  node tools/bulk-frontmatter.js [targetDir] --kind=note --prefix=/notes [--write]
+ *  node tools/bulk-frontmatter.js src/site/notes --kind=note --prefix=/notes --write
+ *  node tools/bulk-frontmatter.js src/site/notes/blog --kind=post --prefix=/blog --write
+ */
+
 const fs = require("fs");
 const path = require("path");
 const matter = require("gray-matter");
 
-/**
- * Usage:
- *  node tools/bulk-frontmatter.js [targetDir] --kind=note --prefix=/notes [--write]
- *  node tools/bulk-frontmatter.js src/site/posts --kind=post --prefix=/posts --write
- */
-
-const TARGET_DIR = process.argv[2] || "src/site/notes"; // default to notes root
+const TARGET_DIR = process.argv[2] || "src/site/notes";
 const ARGS = process.argv.slice(3).reduce((acc, arg) => {
   const m = arg.match(/^--([^=]+)(?:=(.*))?$/);
   if (m) acc[m[1]] = m[2] === undefined ? true : m[2];
   return acc;
 }, {});
 
-// Infer kind if not provided: posts if path has '/posts/', else notes if '/notes/'
+// Infer kind if not provided
 const inferredKind =
-  TARGET_DIR.includes("/posts/") || TARGET_DIR.endsWith("/posts")
-    ? "post"
-    : (TARGET_DIR.includes("/notes/") || TARGET_DIR.endsWith("/notes"))
-      ? "note"
-      : null;
+  TARGET_DIR.includes("/posts/") || /(^|\/)posts$/.test(TARGET_DIR) ? "post" :
+  TARGET_DIR.includes("/notes/") || /(^|\/)notes$/.test(TARGET_DIR) ? "note" :
+  null;
 
 const KIND = (ARGS.kind || inferredKind || "note").toLowerCase(); // 'note' | 'post'
 const PREFIX = ARGS.prefix || (KIND === "post" ? "/posts" : "/notes");
-const WRITE = !!ARGS.write;
+const WRITE  = !!ARGS.write;
+
+// Directories to skip while walking
+const IGNORE_DIRS = new Set([
+  "_templates", ".obsidian", "images", "img", "assets", "media", ".git", "node_modules"
+]);
+
+function walk(dir) {
+  const res = [];
+  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+    const p = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (!IGNORE_DIRS.has(entry.name)) res.push(...walk(p));
+    } else if (p.toLowerCase().endsWith(".md")) {
+      res.push(p);
+    }
+  }
+  return res;
+}
 
 function toSlug(str) {
   return String(str || "")
@@ -55,58 +74,60 @@ function summarize(content) {
   return stripped.trim().slice(0, 160);
 }
 
-function walk(dir) {
-  const res = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const p = path.join(dir, entry.name);
-    if (entry.isDirectory()) res.push(...walk(p));
-    else if (p.endsWith(".md")) res.push(p);
-  }
-  return res;
+// Optional: very narrow pre-fix for the known bad YAML line "permalink: >-"
+function preFixMalformedYaml(raw) {
+  return raw.replace(/^\s*permalink:\s*>-\s*$/m, ""); // drop the bad line
 }
-
-const files = walk(TARGET_DIR);
-let changed = 0;
 
 console.log(`• Kind: ${KIND}  • Prefix: ${PREFIX}  • Dir: ${TARGET_DIR}`);
 console.log(WRITE ? "• Mode: WRITE\n" : "• Mode: DRY-RUN\n");
 
+const files = walk(TARGET_DIR);
+let changed = 0;
+
 for (const file of files) {
-  const raw = fs.readFileSync(file, "utf8");
   const stat = fs.statSync(file);
-  const parsed = matter(raw);
+  let raw = fs.readFileSync(file, "utf8");
+
+  // Pre-fix known YAML issue
+  raw = preFixMalformedYaml(raw);
+
+  let parsed;
+  try {
+    parsed = matter(raw);
+  } catch (e) {
+    console.warn(`! Skipping (YAML error): ${file}\n  ${e.message}`);
+    continue;
+  }
+
   const data = parsed.data || {};
   const body = parsed.content || "";
 
   const slug = toSlug(path.basename(file, ".md"));
   const computedTitle = data.title || firstH1(body) || slug;
-  const computedDate = data.date ? iso(data.date) : iso(stat.mtime);
-  const computedDesc = data.description || summarize(body);
-  const permalink = data.permalink || `${PREFIX}/${slug}/`;
+  const computedDate  = data.date ? iso(data.date) : iso(stat.mtime);
+  const computedDesc  = data.description || summarize(body);
+  const permalink     = data.permalink || `${PREFIX}/${slug}/`;
 
   const updates = {};
 
   if (KIND === "post") {
-    // Posts: ensure type=post (for your Eleventy collections)
     if (!data.type) updates.type = "post";
     if (!data.title) updates.title = computedTitle;
-    if (!data.description) updates.description = computedDesc;
+    if (!data.description && computedDesc) updates.description = computedDesc;
     if (!data.date) updates.date = computedDate;
     if (!data.permalink) updates.permalink = permalink;
     if (typeof data["dg-publish"] !== "boolean") updates["dg-publish"] = true;
     if (!data.visibility) updates.visibility = "public";
   } else {
-    // Notes (zettels): DO NOT set type: 'post'. Keep notes type-less (or type: 'note' if you prefer).
-    // Minimal defaults to keep builds safe without forcing blog-ish metadata.
+    // KIND === 'note' (zettels, sessions, references, etc.)
     if (!data.title) updates.title = computedTitle;
-    // Many people prefer not to add a date to zettels; comment out the next line if you don’t want dates on notes:
+    // If you do NOT want dates on notes, leave the next line commented.
     // if (!data.date) updates.date = computedDate;
     if (!data.permalink) updates.permalink = permalink;
     if (typeof data["dg-publish"] !== "boolean") updates["dg-publish"] = true;
     if (!data.visibility) updates.visibility = "public";
-    // Optional: description for notes (handy for search/previews)
     if (!data.description && computedDesc) updates.description = computedDesc;
-    // Optional: updated from file mtime if missing
     if (!data.updated) updates.updated = iso(stat.mtime);
   }
 
@@ -126,6 +147,7 @@ for (const file of files) {
 
 console.log(
   `\n${WRITE ? "Updated" : "Would update"} ${changed} file(s).\n` +
-  `Tip (notes): node tools/bulk-frontmatter.js src/site/notes --kind=note --prefix=/notes --write\n` +
-  `Tip (posts): node tools/bulk-frontmatter.js src/site/posts --kind=post --prefix=/posts --write\n`
+  `Examples:\n` +
+  `  Notes → node tools/bulk-frontmatter.js src/site/notes --kind=note --prefix=/notes --write\n` +
+  `  Posts → node tools/bulk-frontmatter.js src/site/notes/blog --kind=post --prefix=/blog --write\n`
 );
