@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-
 title: Diy Bot Creation
 permalink: /notes/diy-bot-creation/
 visibility: public

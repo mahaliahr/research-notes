@@ -3,7 +3,10 @@ dg-publish: true
 permalink: /pre-start-thoughts/my-new-ph-d-thoughts-chat-gpt-12042023/
 noteIcon: ''
 visibility: public
-description: 
+description: >-
+  in a world where 'AI can do everything' creativity and imagination become the
+  vital and most inherent things that we could learn/teach. how can we use
+  computati
 updated: '2025-10-15T21:01:33.999Z'
 <<<<<<< HEAD
 title: My New Phd Thoughts Chatgpt 12042023
