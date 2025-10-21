@@ -96,6 +96,9 @@ let changed = 0;
 console.log(`• Kind: ${KIND}  • Prefix: ${PREFIX}  • Dir: ${TARGET_DIR}`);
 console.log(WRITE ? "• Mode: WRITE\n" : "• Mode: DRY-RUN\n");
 
+const files = walk(TARGET_DIR);
+let changed = 0;
+
 for (const file of files) {
   const stat = fs.statSync(file);
   let raw = fs.readFileSync(file, "utf8");
