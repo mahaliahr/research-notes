@@ -5,6 +5,9 @@ title: "Graph"
 ---
 
 {# <h1>Idea Graph</h1> #}
+
+{% include "components/graphScript.njk" %}
+
 <div id="graph" style="width:100%;height:600px;border:1px solid #eee;border-radius:12px;overflow:hidden;"></div>
 
 <div class="graph-controls" style="display:flex;gap:1rem;align-items:center;margin:.5rem 0 1rem;">
@@ -19,7 +22,7 @@ title: "Graph"
 </div>
 <div id="graph" style="width:100%;height:600px;border:1px solid #eee;border-radius:12px;overflow:hidden;"></div>
 
-<script src="https://unpkg.com/d3@7"></script>
+{# <script src="https://unpkg.com/d3@7"></script>
 <script>
 (async function () {
   const host = document.getElementById('graph');
@@ -193,4 +196,4 @@ title: "Graph"
   // Initial render
   update();
 })();
-</script>
+</script> #}
