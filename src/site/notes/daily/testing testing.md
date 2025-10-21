@@ -1,14 +1,23 @@
 ---
-title: 2025-10-21
 dg-publish: true
 visibility: public
 tags:
-  - daily
-  - stream
+  - session
+  - worklog
 ---
 
-date:: 2025-10-21
+start:: 2025-10-21T22:40
+end:: 
+topic:: 
 
-- 18:55 What you just did
-- HH:MM Another log line
-- HH:MM Linked [[note]] / thought
+## Intent
+What are you aiming to do in this session?
+
+## Notes
+- Steps, decisions, links (e.g., [[some-related-note]])
+
+## Outputs / Artifacts
+- Draft/asset: [[artifact]]
+
+## Reflection
+What worked, what didn’t, what’s next?

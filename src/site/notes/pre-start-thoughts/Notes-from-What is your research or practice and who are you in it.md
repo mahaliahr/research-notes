@@ -5,7 +5,14 @@ permalink: >-
 noteIcon: ''
 title: bring personalitiy into it when you talk about it
 visibility: public
-description: 
+description: >-
+  bring personalitiy into it when you talk about it 
+
+
+  'grand narrative'
+
+  what holds it together, why you, why is it important, why is it important in
+  the time and 
 updated: '2025-10-15T21:01:33.998Z'
 ---
 

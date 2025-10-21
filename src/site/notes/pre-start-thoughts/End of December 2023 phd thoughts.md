@@ -4,7 +4,20 @@ permalink: /pre-start-thoughts/end-of-december-2023-phd-thoughts/
 noteIcon: ''
 title: _Al and labour_
 visibility: public
-description:
+description: |-
+  _Al and labour_
+
+  _Untimely use Al to make_
+
+  _things 'easier' / facilitate_
+
+  _time for rest (rest is_
+
+  _resistance)_
+
+  _If being at rest (in rest states_
+
+  _is vit
 updated: '2025-10-15T21:01:33.998Z'
 ---
 _Al and labour_

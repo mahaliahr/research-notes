@@ -4,7 +4,15 @@ permalink: /pre-start-thoughts/ideas-around-phd-noncoherent/
 noteIcon: ''
 title: Messy - different ways of communicating / existing
 visibility: public
-description:
+description: >-
+  Messy - different ways of communicating / existing
+
+
+  there are two branches of research that my masters thesis was beginning to
+  open up:
+
+
+  1. Reality - what is re
 updated: '2025-10-15T21:01:33.999Z'
 <<<<<<< HEAD
 title: Ideas Around Phd Noncoherent
