@@ -4,19 +4,18 @@ visibility: public
 tags: [session, worklog]
 ---
 
-start:: {{date}}T{{time}}
+start:: <% tp.date.now('YYYY-MM-DD[T]HH:mm') %>
 end:: 
 topic:: 
 
-## Aim
+## Intent
 What are you aiming to do in this session?
 
 ## Notes
-- Key steps, thoughts, decisions
-- Link to related notes: [[some-related-note]]
+- Steps, decisions, links (e.g., [[some-related-note]])
 
 ## Outputs / Artifacts
-- Draft/asset: [[artifact-or-output]]
+- Draft/asset: [[artifact]]
 
 ## Reflection
-What worked, what didn’t, and what’s next?
+What worked, what didn’t, what’s next?

@@ -1,5 +1,19 @@
 ---
 dg-publish: true
+title: Hands On Research
+permalink: /notes/hands-on-research/
+visibility: public
+description: >-
+  -bibliography
+
+  Rasch, M., Gijsen, J. and Staal, H. (eds) (2024) _Hands on research for
+  artists, designers & educators_.
+
+
+  ---
+
+  This book scaffolds really great gui
+updated: '2025-10-20T22:36:44.895Z'
 ---
 [[-bibliography]]
 Rasch, M., Gijsen, J. and Staal, H. (eds) (2024) _Hands on research for artists, designers & educators_.

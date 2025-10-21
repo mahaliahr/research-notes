@@ -1,5 +1,19 @@
 ---
 dg-publish: true
+title: Bibliography
+permalink: /notes/bibliography/
+visibility: public
+description: |-
+  group based on research areas?
+
+  black-in-academia-2020-kehinde-andrews
+
+  benjamin-2024-imagination 
+
+  benjamin-noah-2025-rip-dei
+
+  czerniewicz-cronin-2023-higher-e
+updated: '2025-10-20T22:34:14.491Z'
 ---
 group based on research areas?
 

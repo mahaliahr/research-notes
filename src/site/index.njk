@@ -86,7 +86,7 @@ eleventyExcludeFromCollections: true
 
   <p class="more"><a href="/notes/">Browse all notes →</a></p>
 
-  <div class="panel">
+  {# <div class="panel">
     <h3>Trailheads</h3>
     {% set entries = collections.entryNotes | default([]) %}
     {% if entries | length %}
@@ -98,7 +98,7 @@ eleventyExcludeFromCollections: true
     {% else %}
       <p>Add <code>gardenEntry</code> to note tags to feature it here.</p>
     {% endif %}
-  </div>
+  </div> #}
 
   <div class="panel">
     <h3>Search</h3>

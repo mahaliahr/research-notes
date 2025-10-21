@@ -9,6 +9,56 @@
     }
   }
 
+  (async function () {
+  const $ = (sel) => document.querySelector(sel);
+  const safeFetch = async (url) => {
+    try {
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) throw new Error(r.statusText);
+      return await r.json();
+    } catch (e) {
+      console.warn("live-widget: failed", url, e);
+      return []; // be graceful
+    }
+  };
+
+  const [sessions, milestones, stream] = await Promise.all([
+    safeFetch("/data/sessions.json"),
+    safeFetch("/data/milestones.json"),
+    safeFetch("/data/stream.json"),
+  ]);
+
+  // Live now / next from sessions
+  const now = Date.now();
+  const parse = (s) => (s && s.start ? new Date(s.start).getTime() : 0);
+  const current = sessions.find(s => {
+    const st = parse(s), en = s.end ? new Date(s.end).getTime() : st + 2*60*60*1000;
+    return st && now >= st && now <= en;
+  });
+  const upcoming = sessions
+    .filter(s => parse(s) > now)
+    .sort((a,b)=>parse(a)-parse(b))[0];
+
+  if (current) {
+    $("#live-now").innerHTML =
+      `<strong>Live now:</strong> <a href="${current.url}">${current.topic||"Session"}</a>`;
+  } else {
+    $("#live-now").innerHTML = `<em>Not live right now</em>`;
+  }
+
+  if (upcoming) {
+    $("#live-next").innerHTML =
+      `<strong>Next:</strong> ${new Date(upcoming.start).toLocaleString()} — <a href="${upcoming.url}">${upcoming.topic||"Session"}</a>`;
+  }
+
+  // Stream (latest 5)
+  const latest = (stream || []).slice(0, 5);
+  $("#live-stream").innerHTML = latest.length
+    ? `<ul>${latest.map(i => `<li>${i.date ? `<small>${i.date}</small> `:""}${i.text||""}</li>`).join("")}</ul>`
+    : `<em>No recent stream items yet.</em>`;
+})();
+
+
   function el(id) { return document.getElementById(id); }
 
   async function render() {

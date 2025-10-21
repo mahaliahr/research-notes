@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Research By Making
+permalink: /notes/research-by-making/
+visibility: public
+description: >-
+  When does making become research?
+
+
+  'Making isn't limited to to the production of material artefacts, but can also
+  refer to temporal and ephemeral forms, to lang
+updated: '2025-10-20T22:38:23.692Z'
 ---
 When does making become research?
 

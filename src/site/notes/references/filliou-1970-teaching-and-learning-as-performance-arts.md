@@ -1,5 +1,21 @@
 ---
 dg-publish: true
+title: Filliou 1970 Teaching And Learning As Performance Arts
+permalink: /notes/filliou-1970-teaching-and-learning-as-performance-arts/
+visibility: public
+description: >-
+  -bibliography
+
+
+  ---
+
+
+  La Révolte des Mediocres (page ref?)
+
+
+  ‘First I intend to show how they could be applied in the one field of study
+  most neglected by society,
+updated: '2025-10-20T22:39:58.918Z'
 ---
 [[-bibliography]]
 

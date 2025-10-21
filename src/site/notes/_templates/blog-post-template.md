@@ -1,8 +1,8 @@
 ---
-title: "{{title}}"
-description: "Short summary of this post."
-date: {{date}}
-updated: {{date}}
+title: "<% tp.file.title %>"
+description: "One–two sentence summary."
+date: "<% tp.date.now('YYYY-MM-DD') %>"
+updated: "<% tp.date.now('YYYY-MM-DD') %>"
 type: post
 tags: [post, reflection]
 featured: false
@@ -10,10 +10,13 @@ dg-publish: true
 visibility: public
 ---
 
-# {{title}}
+# <% tp.file.title %>
 
-Intro paragraph to set context.
+Intro paragraph…
 
 ## Body
-Main content here. Link into the zettelkasten:
+Main content goes here. Link into the zettelkasten:
 - [[related-note]]
+
+## References
+- …

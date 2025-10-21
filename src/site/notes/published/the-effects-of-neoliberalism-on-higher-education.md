@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: The Effects Of Neoliberalism On Higher Education
+permalink: /notes/the-effects-of-neoliberalism-on-higher-education/
+visibility: public
+description: >-
+  _'The neoliberalisation of higher education is linked to many examples of
+  psychological, social, and bodily harms and deprivations, including the
+  absence of the
+updated: '2025-10-20T22:39:08.850Z'
 ---
 _'The neoliberalisation of higher education is linked to many examples of psychological, social, and bodily harms and deprivations, including the absence of the basic decencies of health
 insurance, and, tragically, even death by suicide. Academic death has been spurred on by the pressures of commercialisation, managerialism, competitive individualism, bureaucracy, and acceleration — all of which have transformed once-privileged academic jobs into hellish dystopias and put an end to ideals of autonomy, craft, intrinsic satisfaction, and

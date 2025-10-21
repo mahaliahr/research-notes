@@ -1,5 +1,13 @@
 ---
 dg-publish: false
+title: Bot Context
+permalink: /notes/bot-context/
+visibility: public
+description: >-
+  for the supervisor-bot-v1-prototype, in order for the bot to have a deeper
+  understnading of my research, I am creating a context file that the bot will
+  call on 
+updated: '2025-10-20T22:34:14.430Z'
 ---
 for the [[supervisor-bot-v1-prototype]], in order for the bot to have a deeper understnading of my research, I am creating a context file that the bot will call on in order to have a deeper context
 

@@ -2,17 +2,12 @@
 dg-publish: true
 permalink: /pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/
 noteIcon: ''
-title: 
+title: Algorithms As World Phd Rough Ideas
 visibility: public
-description:
-
+description: |-
   ---
-
   order - resistance - messiness
-
-  The current state of the world - systems 
-  published/types-of-systems\
-  sp
+  The current state of the world - systems published/types-of-systems\ sp
 updated: '2025-10-15T21:01:33.999Z'
 ---
 

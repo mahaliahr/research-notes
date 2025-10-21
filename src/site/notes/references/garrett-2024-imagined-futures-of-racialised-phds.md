@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Garrett 2024 Imagined Futures Of Racialised Phds
+permalink: /notes/garrett-2024-imagined-futures-of-racialised-phds/
+visibility: public
+description: >-
+  -bibliography
+
+
+  Garrett, R. (2024). Racism shapes careers: career trajectories and imagined
+  futures of racialised minority PhDs in UK higher education. Globalisa
+updated: '2025-10-20T22:34:14.495Z'
 ---
 
 [[-bibliography]]

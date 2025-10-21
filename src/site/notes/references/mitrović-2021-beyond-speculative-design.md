@@ -1,5 +1,17 @@
 ---
 dg-publish: true
+title: Mitrovi 2021 Beyond Speculative Design
+permalink: /notes/mitrovi-2021-beyond-speculative-design/
+visibility: public
+description: |-
+  -bibliography
+
+  Mitrović, I. et al. (2021) Beyond speculative design: Past, Present - Future.
+
+  ---
+
+  ~~"Good speculations 'stretch' rather that 'shatter' the co-o
+updated: '2025-10-20T22:40:13.114Z'
 ---
 [[-bibliography]]
 

@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: Oppression Limiting Situation To Transform
+permalink: /notes/oppression-limiting-situation-to-transform/
+visibility: public
+description: >-
+  'in order for the oppressed to be able to wage the struggle for their
+  liberation, they must percieve the reality of oppression not as a closed world
+  from which 
+updated: '2025-10-20T22:37:43.365Z'
 ---
 'in order for the oppressed to be able to wage the struggle for their liberation, they must percieve the reality of oppression not as a closed world from which there is no exit, but as a limiting situation which they can transform' p23
 

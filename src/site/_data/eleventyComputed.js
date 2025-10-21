@@ -31,4 +31,16 @@ module.exports = {
     const seg = (data?.page?.url || "").split("/").filter(Boolean).pop() || "";
     return prettifyFromSlug(seg);
   },
+date: (data) => {
+    const d = data.date;
+    if (d == null) return d;
+    if (d instanceof Date) return d;
+    if (typeof d === "string") {
+      // Ignore unresolved template tokens
+      if (d.includes("{{") || d.includes("<%")) return undefined;
+      return d;
+    }
+    if (typeof d === "number") return new Date(d); // tolerate timestamps
+    return undefined; // drop weird types
+  },
 };

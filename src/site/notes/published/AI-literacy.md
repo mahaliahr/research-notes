@@ -10,6 +10,7 @@ description: >-
 
   In the references/ibm-2024-AI-in-education\ po
 updated: '2025-10-15T21:01:34.000Z'
+title: Ai Literacy
 ---
 This is a growing area that will be as important as the technological developments of [[generative-AI]] expand and develop.
 

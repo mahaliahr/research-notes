@@ -1,5 +1,16 @@
 ---
 dg-publish: true
+title: Utopia In The Margins
+permalink: /notes/utopia-in-the-margins/
+visibility: public
+description: >-
+  Le Guin has a very evocative quote:
+
+  'What kind of utopia can come out of these margins, negations, and
+  obscurities?' p10
+
+  I am also interested in ways that we ca
+updated: '2025-10-20T22:39:25.191Z'
 ---
 Le Guin has a very evocative quote:
 'What kind of utopia can come out of these margins, negations, and obscurities?' p10

@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Oreilly Research Identity Threshold Concepts
+permalink: /notes/oreilly-research-identity-threshold-concepts/
+visibility: public
+description: >-
+  -bibliography
+
+
+  O’Reilly, J., 2023. “See you on the other side”: researcher identity,
+  threshold concepts and making a ritual of confirmation. _Spark: UAL Creativ
+updated: '2025-10-20T22:37:52.597Z'
 ---
 [[-bibliography]]
 

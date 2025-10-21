@@ -1,5 +1,18 @@
 ---
 dg-publish: true
+title: Supervision 010525
+permalink: /notes/supervision-010525/
+visibility: public
+description: >-
+  Overview: 
+
+  -  plans for upcoming/in progress design interventions 
+
+  - annotated bibliography and brainstorm of personal motivations for the
+  research
+
+  - two ethics
+updated: '2025-10-20T22:34:14.479Z'
 ---
 Overview: 
 -  plans for upcoming/in progress design interventions 

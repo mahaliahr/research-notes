@@ -1,5 +1,17 @@
 ---
 dg-publish: true
+title: Case Study Roby
+permalink: /notes/case-study-roby/
+visibility: public
+description: >-
+  -bibliography
+
+  _ROBY | matteo loglio_ (no date). Available at:
+  [https://matlo.me/roby](https://matlo.me/roby) (Accessed: 19 March 2025).
+
+
+  news, oio (2024) _the r
+updated: '2025-10-20T22:34:14.432Z'
 ---
 [[-bibliography]]
 _ROBY | matteo loglio_ (no date). Available at: [https://matlo.me/roby](https://matlo.me/roby) (Accessed: 19 March 2025).

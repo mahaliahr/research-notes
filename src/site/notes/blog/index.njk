@@ -5,7 +5,7 @@ title: "Posts"
 ---
 <h1>Posts</h1>
 <ul class="post-list">
-  {% for p in collections.posts %}
+  {% for p in collections.post %}
     <li>
       <a href="{{ p.url }}">{{ p.data.title or p.fileSlug }}</a>
       <small>{{ p.date | isoDate }}</small>

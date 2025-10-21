@@ -10,6 +10,7 @@ description: >-
   - helpful as it provides supervisor with a quick overview of what you have
   reviewed so far and what you plan 
 updated: '2025-10-15T21:01:34.003Z'
+title: Annotated Bib Guidance
 ---
 this is simply bibliography list with some notes.
 

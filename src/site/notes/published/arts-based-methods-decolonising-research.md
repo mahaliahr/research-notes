@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Arts Based Methods Decolonising Research
+permalink: /notes/arts-based-methods-decolonising-research/
+visibility: public
+description: >-
+  -bibliography
+
+
+  Seppälä, T., Sarantou, M. and Miettinen, S. (eds) (no date) _Arts-Based
+  Methods for Decolonising Participatory Research_. (Routledge Advances in 
+updated: '2025-10-20T22:34:14.427Z'
 ---
 [[-bibliography]]
 

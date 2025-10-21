@@ -4,9 +4,9 @@ visibility: public
 tags: [zettel]
 ---
 
-# {{title}}
+# <% tp.file.title %>
 
-**One-sentence idea.**
+**One-sentence claim / idea.**
 
 ## Context
 Where this idea comes from; related readings.
@@ -16,4 +16,4 @@ Where this idea comes from; related readings.
 - Leads to: [[next-note]]
 
 ## Open Questions
-- ...
+- …

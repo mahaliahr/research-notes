@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Possibility Spaces And Impossibility Spaces
+permalink: /notes/possibility-spaces-and-impossibility-spaces/
+visibility: public
+description: >-
+  29-10-23-
+
+
+  it feels that the conditions in which many work in Academia (and more broadly
+  within society in late stage capitalism, in more specific termsthe-effe
+updated: '2025-10-20T22:38:02.707Z'
 ---
 
 29-10-23-

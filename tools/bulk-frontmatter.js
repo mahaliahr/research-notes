@@ -54,12 +54,20 @@ function toSlug(str) {
     .replace(/^-+|-+$/g, "");
 }
 
-function firstH1(content) {
-  const m = content.match(/^\s*#\s+(.+?)\s*$/m);
-  if (m) return m[1].trim();
-  const line = (content.split("\n").find(x => x.trim().length) || "").trim();
-  return line.replace(/^#+\s*/, "").trim();
+function prettifyFromSlug(slug = "") {
+  const s = decodeURIComponent(slug)
+    .replace(/[_-]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+  return s.replace(/\b\w/g, c => c.toUpperCase());
 }
+
+// function firstH1(content) {
+//   const m = content.match(/^\s*#\s+(.+?)\s*$/m);
+//   if (m) return m[1].trim();
+//   const line = (content.split("\n").find(x => x.trim().length) || "").trim();
+//   return line.replace(/^#+\s*/, "").trim();
+// }
 
 function iso(d) {
   try { return new Date(d).toISOString(); } catch { return null; }
@@ -104,7 +112,7 @@ for (const file of files) {
   const body = parsed.content || "";
 
   const slug = toSlug(path.basename(file, ".md"));
-  const computedTitle = data.title || firstH1(body) || slug;
+  const computedTitle = prettifyFromSlug(slug);
   const computedDate  = data.date ? iso(data.date) : iso(stat.mtime);
   const computedDesc  = data.description || summarize(body);
   const permalink     = data.permalink || `${PREFIX}/${slug}/`;

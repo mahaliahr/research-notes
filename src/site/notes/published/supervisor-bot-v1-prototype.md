@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: Supervisor Bot V1 Prototype
+permalink: /notes/supervisor-bot-v1-prototype/
+visibility: public
+description: >-
+  This prototype explores the potential of a Large Language Model to act as a
+  supervisor, by adopting a 'persona'[^1] and listening to conversations between
+  the s
+updated: '2025-10-20T22:34:14.480Z'
 ---
 This prototype explores the potential of a Large Language Model to act as a supervisor, by adopting a 'persona'[^1] and listening to conversations between the student (me) and my supervisors, acting as an additional supervisor offering feedback.  
 

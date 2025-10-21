@@ -1,5 +1,18 @@
 ---
 dg-publish: true
+title: Freire 1970 Pedagogy Of The Oppressed
+permalink: /notes/freire-1970-pedagogy-of-the-oppressed/
+visibility: public
+description: >-
+  -bibliography
+
+
+  oppression-limiting-situation-to-transform
+
+
+  '_systematic education_, which can only be changed by political power, and
+  _educational projects_, wh
+updated: '2025-10-20T22:34:14.495Z'
 ---
 [[-bibliography]]
 

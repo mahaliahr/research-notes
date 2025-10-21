@@ -1,5 +1,10 @@
 ---
 dg-publish: true
+title: Supervisor Persona
+permalink: /notes/supervisor-persona/
+visibility: public
+description: "in order to craft my LLM supervisor (v1) I need to give it an appropriate persona\n\ncurrently this is the working persona:  \n\t*You are a thoughtful and supportiv"
+updated: '2025-10-20T22:34:14.481Z'
 ---
 in order to craft my LLM supervisor (v1) I need to give it an appropriate persona
 

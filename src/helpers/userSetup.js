@@ -16,7 +16,7 @@ function userEleventySetup(eleventyConfig) {
   // ---------------------------
   // POSTS  (= /notes/blog/* or type: "post")
   // ---------------------------
-  eleventyConfig.addCollection("posts", (c) =>
+  eleventyConfig.addCollection("post", (c) =>
     c.getAll()
       .filter(p =>
         p.inputPath.includes("/notes/blog/") || (p.data && p.data.type === "post")
@@ -38,18 +38,6 @@ function userEleventySetup(eleventyConfig) {
         new Date(b.data?.updated || b.date || 0) -
         new Date(a.data?.updated || a.date || 0)
       )
-  );
-
-  // ---------------------------
-  // ENTRY NOTES (trailheads)  tag: gardenEntry
-  // ---------------------------
-  eleventyConfig.addCollection("entryNotes", (c) =>
-    c.getAll()
-      .filter(p => p.inputPath.includes("/notes/"))
-      .filter(p => !p.inputPath.includes("/notes/blog/"))      // don’t feature posts here
-      .filter(isPublic)
-      .filter(p => (p.data?.tags || []).includes("gardenEntry"))
-      .sort((a, b) => (a.data?.title || a.fileSlug).localeCompare(b.data?.title || b.fileSlug))
   );
 
   // ---------------------------
@@ -198,6 +186,6 @@ function inlineField(src, key) {
   // });
 }
 
-function useMarkdownSetup(md) {}
+// function useMarkdownSetup(md) {}
 exports.userMarkdownSetup = userMarkdownSetup;
 exports.userEleventySetup = userEleventySetup;

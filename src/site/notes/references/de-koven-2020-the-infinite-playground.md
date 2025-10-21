@@ -1,5 +1,21 @@
 ---
 dg-publish: true
+title: De Koven 2020 The Infinite Playground
+permalink: /notes/de-koven-2020-the-infinite-playground/
+visibility: public
+description: >-
+  -bibliography
+
+
+  De Koven, B. and Gramazio, H. (2020) The Infinite Playground - A Player's
+  Guide to Imaginations. The MIT Press.
+
+
+  ---
+
+
+  _'Imagination and play are 
+updated: '2025-10-20T22:34:14.494Z'
 ---
 [[-bibliography]]
 

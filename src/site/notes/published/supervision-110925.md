@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Supervision 110925
+permalink: /notes/supervision-110925/
+visibility: public
+description: >
+  [Project planning and milestones in the coming
+  weeks/months](https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664)
+
+
+  # Work in progress:
+updated: '2025-10-20T22:34:14.479Z'
 ---
 [Project planning and milestones in the coming weeks/months](https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664)
 
