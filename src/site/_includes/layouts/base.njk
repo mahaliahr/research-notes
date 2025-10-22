@@ -16,18 +16,8 @@
     {% include "components/pageheader.njk" ignore missing %}
   </head>
   <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
-    {% if settings.dgShowFileTree !== true %}
-      {% include "components/navbar.njk" ignore missing %}
-    {% else %}
-      {% include "components/filetree.njk" ignore missing %}
-    {% endif %}
-
     <main class="content">
       {{ content | safe }}
     </main>
-
-    <footer class="site-footer">
-      <p>Digital Garden © {{ helpers.currentYear() | default('2025') }}</p>
-    </footer>
   </body>
 </html>
