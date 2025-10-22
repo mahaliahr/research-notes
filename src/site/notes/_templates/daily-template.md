@@ -1,12 +1,10 @@
 ---
-title: "{{date}}"
+title: "2025-10-22"
 dg-publish: true
 visibility: public
 tags: [daily, stream]
 ---
 
-date:: {{date}}
-
-- {{time}} Started day — plan: …
-- {{time}} Began [[session-writing-introduction]]
-- {{time}} Reflection: …
+- 13:34 Started…
+- 13:34 Linked [[zettel]]
+- 13:34 Wrap-up

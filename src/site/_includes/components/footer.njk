@@ -1,0 +1,6 @@
+<div class="footer-inner">
+  <p>Digital Garden © {{ helpers.currentYear() }}</p>
+  {% if settings.dgShowBacklinks %}
+    {% include "components/backlinks.njk" %}
+  {% endif %}
+</div>

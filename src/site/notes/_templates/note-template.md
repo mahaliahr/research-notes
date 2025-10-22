@@ -4,7 +4,7 @@ visibility: public
 tags: [zettel]
 ---
 
-# {{title}}
+# session-template
 
 **One-sentence idea.**
 

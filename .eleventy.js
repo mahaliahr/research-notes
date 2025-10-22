@@ -99,6 +99,12 @@ eleventyConfig.ignores.add("templates/**");
 eleventyConfig.ignores.add("src/site/_templates/**");
 eleventyConfig.ignores.add("src/site/notes/_templates/**");
 
+  // Add these layout aliases
+  eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+  eleventyConfig.addLayoutAlias('note', 'layouts/note.njk');
+
+  eleventyConfig.addLayoutAlias("index", "layouts/index.njk"); // optional convenience
+
 
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
@@ -569,6 +575,7 @@ eleventyConfig.ignores.add("src/site/notes/_templates/**");
   eleventyConfig.addPassthroughCopy({"src/site/assets": "assets"});
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
+  eleventyConfig.addPassthroughCopy("src/site/favicon.svg");
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
@@ -611,8 +618,9 @@ eleventyConfig.ignores.add("src/site/notes/_templates/**");
   return {
     dir: {
       input: "src/site",
-      output: "dist",
-      data: `_data`,
+          includes: "_includes",
+          layouts: "_includes/layouts",
+          output: "dist"
     },
     templateFormats: ["njk", "md", "html", "11ty.js"],
     htmlTemplateEngine: "njk",

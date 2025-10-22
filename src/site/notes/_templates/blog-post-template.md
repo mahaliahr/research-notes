@@ -1,8 +1,8 @@
 ---
-title: "{{title}}"
-description: "Short summary of this post."
-date: {{date}}
-updated: {{date}}
+title: "session-template"
+description: "One–two sentence summary."
+date: "2025-10-22"
+updated: "2025-10-22"
 type: post
 tags: [post, reflection]
 featured: false
@@ -10,7 +10,7 @@ dg-publish: true
 visibility: public
 ---
 
-# {{title}}
+# session-template
 
 Intro paragraph to set context.
 
