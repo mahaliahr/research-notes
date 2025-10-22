@@ -4,18 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
-
-    <link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
-    <link rel="stylesheet" href="{{ '/styles/custom.css' | url }}">
-
+    {% include "components/pageheader.njk" ignore missing %}
     <script src="https://unpkg.com/d3@7"></script>
     <script src="https://unpkg.com/force-graph"></script>
-    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-    <script src="https://unpkg.com/@alpinejs/morph/dist/cdn.min.js" defer></script>
   </head>
   <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
     <main class="content">
       {{ content | safe }}
     </main>
+
+    {% include "components/graphScript.njk" %}
   </body>
 </html>
