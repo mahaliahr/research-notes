@@ -16,18 +16,17 @@
 <script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
 <link href="/styles/digital-garden-base.css" rel="stylesheet">
-{%-if meta.themeStyle%}
-    <link href="/styles/obsidian-base.css" rel="stylesheet">
-    <link href="{{meta.themeStyle}}" rel="stylesheet">
-{% else %}
-    <link href="/styles/style.css" rel="stylesheet">
-{%endif%}
+<link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
 
-<link href="/styles/custom-style.css" rel="stylesheet">
-{%- for style in dynamics.styles -%}
-<link href="{{style}}" rel="stylesheet">
-{%- endfor -%}
+{%- if meta.themeStyle -%}
+  <link rel="stylesheet" href="{{ '/styles/obsidian-base.css' | url }}">
+  <link rel="stylesheet" href="{{ meta.themeStyle }}">
+{%- else -%}
+  <link rel="stylesheet" href="{{ '/styles/obsidian-base.css' | url }}">
+{%- endif -%}
 
+<link rel="stylesheet" href="{{ '/styles/_theme.82f819db.css' | url }}">
+<link rel="stylesheet" href="{{ '/styles/custom-style.css' | url }}">
 <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
 {# optional png fallback if you have one: #}
 {# <link rel="icon" href="{{ '/favicon.png' | url }}"> #}

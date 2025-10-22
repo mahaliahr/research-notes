@@ -3,13 +3,16 @@ layout: "base.njk"
 ---
 
 <article class="note-container">
-  {% include "components/notegrowthhistory.njk" %}
-  
+  {% include "components/notegrowthhistory.njk" ignore missing %}
+
   <div class="note-content">
     {{ content | safe }}
   </div>
-  
-  {% if settings.dgShowBacklinks %}
-    {% include "components/backlinks.njk" %}
+
+  <!-- Local graph container (ensure it exists) -->
+  <div id="link-graph" style="width:100%;height:320px;border:1px solid var(--background-secondary);border-radius:12px;overflow:hidden;margin-top:1rem;"></div>
+
+  {% if settings and settings.dgShowBacklinks %}
+    {% include "components/backlinks.njk" ignore missing %}
   {% endif %}
 </article>
