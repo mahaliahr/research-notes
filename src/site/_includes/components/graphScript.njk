@@ -113,18 +113,27 @@
     }
 
     function renderGraph(graphData, id, delay, fullScreen) {
-        if (graphData == null) {
-            return;
-        }
+        if (!graphData || !Array.isArray(graphData.nodes)) return null;
+
         const el = document.getElementById(id);
-        const width = el.offsetWidth;
-        const height = el.offsetHeight;
+        if (!el || el.nodeType !== 1) {
+            console.warn("graph: container missing:", id);
+            return null;
+        }
+        if (typeof ForceGraph !== "function") {
+            console.warn("graph: ForceGraph not loaded yet");
+            return null;
+        }
+
+        const width = el.offsetWidth || el.clientWidth || 600;
+        const height = el.offsetHeight || el.clientHeight || 400;
+
         const highlightNodes = new Set();
         let hoverNode = null;
         const color = getCssVar("--graph-main");
         const mutedColor = getCssVar("--graph-muted");
-        let Graph = ForceGraph()
-        (el)
+
+        const Graph = ForceGraph()(el)
             .graphData(graphData)
             .nodeId('id')
             .nodeLabel('title')
@@ -201,12 +210,10 @@
         return Graph;
     }
 
-    function renderLocalGraph(graphData, depth, fullScreen) {
-        if (window.graph){
-            window.graph._destructor();
-        }
-        const data = filterLocalGraphData(graphData, depth);
-        return renderGraph(data, 'link-graph', null, fullScreen);
+    function renderLocalGraph(graphData, depth, fullScreen, currentNode) {
+      if (window.graph) { window.graph._destructor?.(); }
+      const data = filterLocalGraphData(graphData, depth, currentNode);
+      return renderGraph(data, 'link-graph', null, fullScreen);
     }
 
     function filterFullGraphData(graphData) {
@@ -237,8 +244,69 @@
         }
         return null;
     }
+
+  // Fallback finder: current URL -> seed url -> first node
+  function safeCurrentNode(fullGraph) {
+    const trim = p => (p || '').replace(/\/+$/,'') || '/';
+    const here = trim(window.location.pathname);
+    const byUrl = fullGraph?.nodes?.find(n => trim(n.url) === here);
+    if (byUrl) return byUrl;
+
+    const seed = document.getElementById('graph-component')?.dataset?.seedUrl;
+    if (seed) {
+      const bySeed = fullGraph?.nodes?.find(n => trim(n.url) === trim(seed));
+      if (bySeed) return bySeed;
+    }
+    return fullGraph?.nodes?.[0] || null;
+  }
+
+  // Add a null-guard at the top of your existing filter function
+  function filterLocalGraphData(data, depth, currentNode) {
+    if (!data || !data.nodes || !data.links) return { nodes: [], links: [] };
+    if (!currentNode) {
+      // no current note (e.g., homepage): show full graph
+      return { nodes: Object.values(data.nodes), links: data.links };
+    }
+
+    let remaining = JSON.parse(JSON.stringify(data.nodes));
+    let links = JSON.parse(JSON.stringify(data.links));
+
+    // resolve the provided current node against our map
+    const node = remaining[currentNode.id] || Object.values(remaining).find(n => n.url === currentNode.url);
+    if (!node) return { nodes: Object.values(remaining), links };
+
+    delete remaining[node.url];
+    if (!node.home) {
+      const home = Object.values(remaining).find(v => v.home);
+      if (home) delete remaining[home.url];
+    }
+
+    node.current = true;
+    let existing = { [node.url]: node };
+    for (let i = 0; i < depth; i++) {
+      [existing, remaining] = getNextLevelNeighbours(existing, remaining);
+    }
+
+    let nodes = Object.values(existing);
+    if (!node.home) nodes = nodes.filter(n => !n.home);
+    const ids = nodes.map(n => n.id);
+    return {
+      nodes,
+      links: links.filter(con => ids.includes(con.target) && ids.includes(con.source)),
+    };
+  }
 </script>
-<div  x-init="{graphData, fullGraphData} = await fetchGraphData();" x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null}" id="graph-component" x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'" v-scope>
+<div
+  x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null, currentNode: null }"
+  id="graph-component"
+  data-seed-url="{{ (collections.zettels | default([]) | first).url | default('') }}"
+  x-init="
+    ({ graphData, fullGraphData } = await fetchGraphData());
+    fullGraph = fullGraphData;
+    currentNode = safeCurrentNode(fullGraphData);
+  "
+  x-effect="$nextTick(() => { window.graph = renderLocalGraph(graphData, depth, fullScreen, currentNode) })"
+  x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'">
     <div class="graph-title-container">
         <div class="graph-title">Connected Pages</div>
         <div id="graph-controls">
@@ -265,3 +333,32 @@
         <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
     </div>
 </div>
+<script>
+(async function () {
+  const el = document.getElementById("graph");
+  if (!el) return;
+  if (typeof ForceGraph !== "function") return;
+
+  try {
+    const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" });
+    if (!res.ok) throw new Error(res.statusText);
+    const data = await res.json();
+
+    // clean previous instance if any
+    if (window.graph && window.graph._destructor) window.graph._destructor();
+
+    const Graph = ForceGraph()(el)
+      .graphData(data)
+      .nodeId("id")
+      .nodeLabel("title")
+      .linkSource("source")
+      .linkTarget("target")
+      .width(el.clientWidth)
+      .height(el.clientHeight);
+
+    window.graph = Graph;
+  } catch (e) {
+    console.warn("graph init failed:", e);
+  }
+})();
+</script>

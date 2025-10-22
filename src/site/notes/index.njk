@@ -3,7 +3,7 @@ layout: "note.njk"
 permalink: "/notes/"
 title: "Zettelkasten"
 ---
-<h1>Zettelkasten</h1>
+{# <h1>Zettelkasten</h1> #}
 <ul class="notes-index">
   {% for n in collections.zettels %}
     <li><a href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a></li>

@@ -93,7 +93,7 @@ function getAnchorAttributes(filePath, linkTitle) {
 
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
 
 eleventyConfig.ignores.add("templates/**");
 eleventyConfig.ignores.add("src/site/_templates/**");
