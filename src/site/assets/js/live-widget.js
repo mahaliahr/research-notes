@@ -1,5 +1,5 @@
-(function () {
-  async function safeJson(url) {
+(async function () {
+  async function fetchJson(url) {
     try {
       const r = await fetch(url);
       if (!r.ok) throw 0;

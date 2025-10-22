@@ -1,10 +1,9 @@
 ---
-permalink: "notes/{{ page.fileSlug | slugify }}/"
+permalink: "{% if page.filePathStem.includes('/blog/') %}{{ page.filePathStem }}/{% else %}notes/{{ page.fileSlug | slugify }}/{% endif %}"
 ---
-{% set s = settings | default({}) %}
-{% set d = dynamics | default({}) %}
-{% set d_common = d.common | default({}) %}
-{% set d_notes  = d.notes  | default({}) %}
+{% set dynamics = dynamics | default({}) %}
+{% set d_common = dynamics.common | default({}) %}
+{% set d_notes = dynamics.notes | default({}) %}
 
 {# safe meta fallbacks used inline with |default below #}
 
@@ -15,18 +14,12 @@ permalink: "notes/{{ page.fileSlug | slugify }}/"
     {%include "components/pageheader.njk"%}
 
     {# SAFE loops #}
-{% for imp in d_common.head | default([]) %}
+{% for imp in d_common.header | default([]) %}
   {% include imp %}
 {% endfor %}
-{% for imp in d_notes.head | default([]) %}
+{% for imp in d_notes.header | default([]) %}
   {% include imp %}
 {% endfor %}
-    {# {% for imp in dynamics.common.head %}
-      {% include imp %}
-    {% endfor %}
-    {% for imp in dynamics.notes.head %}
-      {% include imp %}
-    {% endfor %} #}
   </head>
   <body class="theme-{{meta.baseTheme}} markdown-preview-view markdown-rendered markdown-preview-section {{meta.bodyClasses}}">
     {%include "components/notegrowthhistory.njk"%}
