@@ -1,4 +1,4 @@
-(function () {
+(async function () {
   async function fetchJson(url) {
     try {
       const r = await fetch(url, { cache: "no-store" });

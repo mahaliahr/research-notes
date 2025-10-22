@@ -3,14 +3,16 @@ layout: "layouts/note.njk"
 permalink: "/blog/"
 title: "Posts"
 ---
-<h1>Posts</h1>
-<ul class="post-list">
-  {% for p in collections.post %}
-    <li>
-      <a href="{{ p.url }}">{{ p.data.title or p.fileSlug }}</a>
-      <small>{{ p.date | isoDate }}</small>
-      {% set desc = p.data.description or (p.templateContent | striptags) %}
-      <p>{{ desc | truncate(140) }}</p>
-    </li>
-  {% endfor %}
-</ul>
+<div class="container">
+  <h1>Posts</h1>
+  <ul class="post-list">
+    {% for p in collections.post %}
+      <li>
+        <h2><a href="{{ p.url | url }}">{{ p.data.title or p.fileSlug }}</a></h2>
+        <time>{{ p.date | isoDate }}</time>
+        {% set desc = p.data.description or (p.templateContent | striptags) %}
+        <p>{{ desc | truncate(140) }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
