@@ -2,7 +2,6 @@ const slugify = require("@sindresorhus/slugify");
 const markdownIt = require("markdown-it");
 const fs = require("fs");
 const matter = require("gray-matter");
-const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
@@ -93,7 +92,7 @@ function getAnchorAttributes(filePath, linkTitle) {
 
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
-module.exports = function(eleventyConfig) {
+module.exports = function (eleventyConfig) {
 
 eleventyConfig.ignores.add("templates/**");
 eleventyConfig.ignores.add("src/site/_templates/**");
@@ -576,7 +575,6 @@ eleventyConfig.ignores.add("src/site/notes/_templates/**");
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy("src/site/favicon.svg");
-  eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
     tags: ["h1", "h2", "h3", "h4", "h5", "h6"],
@@ -615,15 +613,15 @@ eleventyConfig.ignores.add("src/site/notes/_templates/**");
 
   userEleventySetup(eleventyConfig);
 
+  // Copy all CSS assets
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+
+  // Optional: watch for changes during dev
+  eleventyConfig.addWatchTarget("src/site/styles");
+
   return {
-    dir: {
-      input: "src/site",
-      includes: "_includes",
-      layouts: "_includes/layouts",
-      data: "_data",
-      output: "dist"
-    },
-    templateFormats: ["njk", "md", "html", "11ty.js"],
+    dir: { input: "src/site", includes: "_includes", layouts: "_includes/layouts", data: "_data", output: "dist" },
+    templateFormats: ["njk","md","html","11ty.js"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk"
   };

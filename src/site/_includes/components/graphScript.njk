@@ -31,12 +31,12 @@
         return { nodes: byId, links };
     }
 
-    async function fetchGraphData() {
-        const raw = await fetch('/graph.json', { cache: 'no-store' }).then(res => res.json());
+    {# async function fetchGraphData() {
+        const raw = await {{ '/graph.json' | url }}, { cache: 'no-store' }).then(res => res.json());
         const graphData = adaptGraphData(raw);          // <-- adapt here
         const fullGraphData  = filterFullGraphData(graphData);
         return {graphData, fullGraphData}
-    }
+    } #}
     {# async function fetchGraphData() {
         const graphData = await fetch('/graph.json').then(res => res.json());
         const fullGraphData  = filterFullGraphData(graphData);
@@ -73,37 +73,39 @@
         return [existing, n_remaining]; // return a pair
     }
 
-    function filterLocalGraphData(graphData, depth) {
-        if (graphData == null) {
-            return null;
-        }
-        let remaining = JSON.parse(JSON.stringify(graphData.nodes));
-        let links = JSON.parse(JSON.stringify(graphData.links));
-        let currentLink = decodeURI(window.location.pathname);
-        let currentNode = remaining[currentLink] || Object.values(remaining).find((v) => v.home);
-        delete remaining[currentNode.url];
-        if (!currentNode.home) {
-            let home = Object.values(remaining).find((v) => v.home);
-            delete remaining[home.url];
-        }
-        currentNode.current = true;
-        let existing = {};
-        existing[currentNode.url] = currentNode;
-        for (let i = 0; i < depth; i++) {
-        [existing, remaining] = getNextLevelNeighbours(existing, remaining);
-        }
-        nodes = Object.values(existing);
-        if (!currentNode.home) {
-            nodes = nodes.filter(n => !n.home);
-        }
-        let ids = nodes.map((n) => n.id);
-        return {
-            nodes,
-            links: links.filter(function (con) {
-                return ids.indexOf(con.target) > -1 && ids.indexOf(con.source) > -1;
-            }),
-        }
-    }
+    {# function filterLocalGraphData(data, depth, currentNode) {
+      if (!data || !data.nodes || !data.links) return { nodes: [], links: [] };
+      if (!currentNode) {
+        // No current page match (e.g., homepage) -> show full graph
+        return { nodes: Object.values(data.nodes), links: data.links };
+      }
+      let remaining = JSON.parse(JSON.stringify(data.nodes));
+      let links = JSON.parse(JSON.stringify(data.links));
+      let currentLink = decodeURI(window.location.pathname);
+      let currentNodeData = remaining[currentLink] || Object.values(remaining).find((v) => v.home);
+      delete remaining[currentNodeData.url];
+      if (!currentNodeData.home) {
+          let home = Object.values(remaining).find((v) => v.home);
+          delete remaining[home.url];
+      }
+      currentNodeData.current = true;
+      let existing = {};
+      existing[currentNodeData.url] = currentNodeData;
+      for (let i = 0; i < depth; i++) {
+      [existing, remaining] = getNextLevelNeighbours(existing, remaining);
+      }
+      nodes = Object.values(existing);
+      if (!currentNodeData.home) {
+          nodes = nodes.filter(n => !n.home);
+      }
+      let ids = nodes.map((n) => n.id);
+      return {
+          nodes,
+          links: links.filter(function (con) {
+              return ids.indexOf(con.target) > -1 && ids.indexOf(con.source) > -1;
+          }),
+      }
+    } #}
 
     function getCssVar(variable) {return getComputedStyle(document.body).getPropertyValue(variable)}
 
@@ -112,26 +114,14 @@
         return doc.documentElement.textContent;
     }
 
-    function renderGraph(graphData, id, delay, fullScreen) {
+    function renderGraph(graphData, id, fullScreen) {
         if (!graphData || !Array.isArray(graphData.nodes)) return null;
-
         const el = document.getElementById(id);
-        if (!el || el.nodeType !== 1) {
-            console.warn("graph: container missing:", id);
-            return null;
-        }
-        if (typeof ForceGraph !== "function") {
-            console.warn("graph: ForceGraph not loaded yet");
-            return null;
-        }
+        if (!el) { console.warn('graph: container missing', id); return null; }
+        if (typeof ForceGraph !== 'function') { console.warn('graph: ForceGraph not loaded'); return null; }
 
-        const width = el.offsetWidth || el.clientWidth || 600;
-        const height = el.offsetHeight || el.clientHeight || 400;
-
-        const highlightNodes = new Set();
-        let hoverNode = null;
-        const color = getCssVar("--graph-main");
-        const mutedColor = getCssVar("--graph-muted");
+        const width = el.offsetWidth || 600;
+        const height = el.offsetHeight || 400;
 
         const Graph = ForceGraph()(el)
             .graphData(graphData)
@@ -139,226 +129,192 @@
             .nodeLabel('title')
             .linkSource('source')
             .linkTarget('target')
-            .d3AlphaDecay(0.10)
             .width(width)
-            .height(height)
-            .linkDirectionalArrowLength(2)
-            .linkDirectionalArrowRelPos(0.5)
-            .autoPauseRedraw(false)
-            .linkColor((link) => {
-                if (hoverNode == null) {
-                    return color;
-                }
-                if (link.source.id == hoverNode.id || link.target.id == hoverNode.id) {
-                    return color;
-                } else {
-                    return mutedColor;
-                }
-                
-            })
-            .nodeCanvasObject((node, ctx) => {
-                const numberOfNeighbours = (node.neighbors && node.neighbors.length) || 2;
-                const nodeR = Math.min(7, Math.max(numberOfNeighbours / 2, 2));
-                
-                ctx.beginPath();
-                ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
-                if (hoverNode == null) {
-                    ctx.fillStyle = color;
-                } else {
-                    if (node == hoverNode || highlightNodes.has(node.url)) {
-                        ctx.fillStyle = color;
-                    } else {
-                        ctx.fillStyle = mutedColor;
-                    }
-                }
-                 
-                ctx.fill();
-                
-                if (node.current) {
-                    ctx.beginPath();
-                    ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
-                    ctx.lineWidth = 0.5;
-                    ctx.strokeStyle = color;
-                    ctx.stroke();
-                }
+            .height(height);
 
-                const label = htmlDecode(node.title)
-                const fontSize = 3.5;
-                ctx.font = `${fontSize}px Sans-Serif`;
-
-                ctx.textAlign = 'center';
-                ctx.textBaseline = 'top';
-                ctx.fillText(label, node.x, node.y + nodeR + 2);
-            })
-            .onNodeClick(node => {
-                window.location = node.url;
-            })
-            .onNodeHover(node => {
-                highlightNodes.clear();
-                if (node) {
-                highlightNodes.add(node);
-                node.neighbors.forEach(neighbor => highlightNodes.add(neighbor));
-                }
-                hoverNode = node || null;
-                
-            });
-            if (fullScreen || (delay != null && graphData.nodes.length > 4)) {
-                setTimeout(() => {
-                    Graph.zoomToFit(5, 75);
-                }, delay || 200);
-            }
         return Graph;
     }
-
-    function renderLocalGraph(graphData, depth, fullScreen, currentNode) {
-      if (window.graph) { window.graph._destructor?.(); }
-      const data = filterLocalGraphData(graphData, depth, currentNode);
-      return renderGraph(data, 'link-graph', null, fullScreen);
-    }
-
-    function filterFullGraphData(graphData) {
-        if (graphData == null) {
-            return null;
-        }
-        graphData = JSON.parse(JSON.stringify(graphData));
-        const hiddens = Object.values(graphData.nodes).filter((n) => n.hide).map((n) => n.id);
-        const data = {
-            links: JSON.parse(JSON.stringify(graphData.links)).filter((l) => hiddens.indexOf(l.source) == -1 && hiddens.indexOf(l.target) == -1),
-            nodes: [...Object.values(graphData.nodes).filter((n) => !n.hide)]
-        }
-        return data
-    }
-
-    function openFullGraph(fullGraphData) {
-        lucide.createIcons({
-                attrs: {
-                    class: ["svg-icon"]
-                }
-            });
-        return renderGraph(fullGraphData, "full-graph-container", 200, false);;
-    }
-
-    function closefullGraph(fullGraph) {
-        if (fullGraph) {
-            fullGraph._destructor();
-        }
-        return null;
-    }
-
-  // Fallback finder: current URL -> seed url -> first node
-  function safeCurrentNode(fullGraph) {
-    const trim = p => (p || '').replace(/\/+$/,'') || '/';
-    const here = trim(window.location.pathname);
-    const byUrl = fullGraph?.nodes?.find(n => trim(n.url) === here);
-    if (byUrl) return byUrl;
-
-    const seed = document.getElementById('graph-component')?.dataset?.seedUrl;
-    if (seed) {
-      const bySeed = fullGraph?.nodes?.find(n => trim(n.url) === trim(seed));
-      if (bySeed) return bySeed;
-    }
-    return fullGraph?.nodes?.[0] || null;
-  }
-
-  // Add a null-guard at the top of your existing filter function
-  function filterLocalGraphData(data, depth, currentNode) {
-    if (!data || !data.nodes || !data.links) return { nodes: [], links: [] };
-    if (!currentNode) {
-      // no current note (e.g., homepage): show full graph
-      return { nodes: Object.values(data.nodes), links: data.links };
-    }
-
-    let remaining = JSON.parse(JSON.stringify(data.nodes));
-    let links = JSON.parse(JSON.stringify(data.links));
-
-    // resolve the provided current node against our map
-    const node = remaining[currentNode.id] || Object.values(remaining).find(n => n.url === currentNode.url);
-    if (!node) return { nodes: Object.values(remaining), links };
-
-    delete remaining[node.url];
-    if (!node.home) {
-      const home = Object.values(remaining).find(v => v.home);
-      if (home) delete remaining[home.url];
-    }
-
-    node.current = true;
-    let existing = { [node.url]: node };
-    for (let i = 0; i < depth; i++) {
-      [existing, remaining] = getNextLevelNeighbours(existing, remaining);
-    }
-
-    let nodes = Object.values(existing);
-    if (!node.home) nodes = nodes.filter(n => !n.home);
-    const ids = nodes.map(n => n.id);
-    return {
-      nodes,
-      links: links.filter(con => ids.includes(con.target) && ids.includes(con.source)),
-    };
-  }
 </script>
-<div
-  x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null, currentNode: null }"
-  id="graph-component"
-  data-seed-url="{{ (collections.zettels | default([]) | first).url | default('') }}"
-  x-init="
-    ({ graphData, fullGraphData } = await fetchGraphData());
-    fullGraph = fullGraphData;
-    currentNode = safeCurrentNode(fullGraphData);
-  "
-  x-effect="$nextTick(() => { window.graph = renderLocalGraph(graphData, depth, fullScreen, currentNode) })"
-  x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'">
-    <div class="graph-title-container">
-        <div class="graph-title">Connected Pages</div>
-        <div id="graph-controls">
-                <div class="depth-control">
-                    <label for="graph-depth">Depth</label>
-                    <div class="slider">
-                            <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth"/>
-                    <datalist id="depthmarkers">
-                            <option value="1" label="1"></option>
-                            <option value="2" label="2"></option>
-                            <option value="3" label="3"></option>
-                    </datalist>
-                    </div>
-                    <span id="depth-display" x-text="depth"></span>
-                </div>
-                <div class="ctrl-right">
-                    <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => {fullGraph = openFullGraph(fullGraphData)}, 100)"><i  icon-name="globe" aria-hidden="true"></i></span>
-                    <span  id="graph-fs-btn"  x-on:click="fullScreen = !fullScreen"><i  icon-name="expand" aria-hidden="true"></i></span>
-                </div>
-        </div>
-    </div>
-    <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph" ></div>
-    <div x-show="showFullGraph" id="full-graph" class="show" style="display: none;">
-        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span><div id="full-graph-container"></div>
-    </div>
-</div>
-<script>
-(async function () {
-  const el = document.getElementById("graph");
-  if (!el) return;
-  if (typeof ForceGraph !== "function") return;
 
+<script>
+// homepage bootstrap (optional, safe)
+{# (async function () {
+  const id = pickGraphContainerId();
+  if (!id) return;
+  if (typeof ForceGraph !== "function") return;
   try {
     const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" });
-    if (!res.ok) throw new Error(res.statusText);
+    if (!res.ok) return;
     const data = await res.json();
-
-    // clean previous instance if any
     if (window.graph && window.graph._destructor) window.graph._destructor();
+    window.graph = renderGraph(data, id, false);
+  } catch (e) { console.warn('graph init failed', e); }
+})(); #}
+</script>
 
-    const Graph = ForceGraph()(el)
-      .graphData(data)
+<script>
+(function () {
+  // Pick container (note pages or homepage)
+  const pickContainerId = () => {
+    if (document.getElementById("link-graph")) return "link-graph";
+    if (document.getElementById("graph")) return "graph";
+    return null;
+  };
+  // Back-compat alias for any old code
+  const pickGraphContainerId = pickContainerId;
+
+  const cssVar = (name, fb) => {
+    try { const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim(); return v || fb; }
+    catch { return fb; }
+  };
+  const COLORS = {
+    main:  cssVar("--graph-main",  "#7aa2f7"),
+    muted: cssVar("--graph-muted", "#9aa5ce"),
+    curr:  cssVar("--text-accent", "#f7768e"),
+    link:  cssVar("--graph-link",  "rgba(154,165,206,0.55)"),
+    labelBg:   cssVar("--graph-label-bg",   "rgba(0,0,0,0.55)"),
+    labelText: cssVar("--graph-label-text", "#fff")
+  };
+
+  const norm = p => (String(p || "").replace(/\/+$/,"") || "/");
+  const sameUrl = (a, b) => norm(a) === norm(b);
+
+  async function fetchGraph() {
+    const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" }); // <-- quoted + fetch()
+    if (!res.ok) throw new Error(`graph.json ${res.status}`);
+    return res.json();
+  }
+
+  function adapt(raw) {
+    if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.links)) {
+      return { nodes: [], links: [], adj: new Map() };
+    }
+    const idOf = n => String(n.id || n.url || "");
+    const nodes = raw.nodes.map(n => ({
+      id: idOf(n),
+      url: n.url || idOf(n),
+      title: n.title || idOf(n),
+      home: !!n.home
+    }));
+    const adj = new Map(nodes.map(n => [n.id, new Set()]));
+    const links = [];
+    for (const l of raw.links) {
+      const s = typeof l.source === "string" ? l.source : String(l.source?.id || l.source || "");
+      const t = typeof l.target === "string" ? l.target : String(l.target?.id || l.target || "");
+      if (adj.has(s) && adj.has(t)) {
+        links.push({ source: s, target: t });
+        adj.get(s).add(t); adj.get(t).add(s);
+      }
+    }
+    return { nodes, links, adj };
+  }
+
+  function neighborhood(data, currentId, depth) {
+    if (!currentId || depth <= 0) return { nodes: data.nodes, links: data.links };
+    const visited = new Set([currentId]);
+    let frontier = [currentId];
+    for (let d = 0; d < depth; d++) {
+      const next = [];
+      for (const id of frontier) {
+        for (const nb of (data.adj.get(id) || [])) {
+          if (!visited.has(nb)) { visited.add(nb); next.push(nb); }
+        }
+      }
+      frontier = next;
+    }
+    const nodes = data.nodes.filter(n => visited.has(n.id));
+    const links = data.links.filter(l => visited.has(l.source) && visited.has(l.target));
+    return { nodes, links };
+  }
+
+  function currentFromPath(nodes) {
+    const here = norm(window.location.pathname);
+    return nodes.find(n => sameUrl(n.url, here)) || null;
+  }
+
+  function render(elId, data, current, depth) {
+    const el = document.getElementById(elId);
+    if (!el || typeof ForceGraph !== "function") return null;
+
+    const subset = current ? neighborhood(data, current.id, depth) : { nodes: data.nodes, links: data.links };
+    const width = el.offsetWidth || 600;
+    const height = el.offsetHeight || 400;
+
+    const highlightNodes = new Set();
+    const highlightLinks = new Set();
+
+    const graph = ForceGraph()(el)
+      .graphData(subset)
       .nodeId("id")
       .nodeLabel("title")
       .linkSource("source")
       .linkTarget("target")
-      .width(el.clientWidth)
-      .height(el.clientHeight);
+      .width(width)
+      .height(height)
+      .d3AlphaDecay(0.1)
+      .nodeRelSize(4)
+      .linkDirectionalArrowLength(0)
+      .backgroundColor(null)
+      .onNodeHover(node => {
+        highlightNodes.clear();
+        highlightLinks.clear();
+        if (node) {
+          highlightNodes.add(node.id);
+          (data.adj.get(node.id) || []).forEach(nid => highlightNodes.add(nid));
+          data.links.forEach(l => {
+            if (l.source === node.id || l.target === node.id) highlightLinks.add(l);
+          });
+        }
+        el.style.cursor = node ? "pointer" : null;
+      })
+      .onNodeClick(node => { if (node?.url) window.location.href = node.url; })
+      .nodeColor(n => (current && n.id === current.id) ? COLORS.curr : (highlightNodes.has(n.id) ? COLORS.main : COLORS.muted))
+      .linkColor(l => (highlightLinks.has(l) ? COLORS.main : COLORS.link))
+      .linkWidth(l => (highlightLinks.has(l) ? 2.2 : 0.8))
+      // Draw labels with DG theme colors
+      .nodeCanvasObject((node, ctx, globalScale) => {
+        // Optional zoom gate: comment out to always show labels
+        if (12 / globalScale < 6) return;
 
-    window.graph = Graph;
-  } catch (e) {
-    console.warn("graph init failed:", e);
+        const label = node.title || node.id;
+        if (!label) return;
+
+        const isCurrent = current && node.id === current.id;
+        const color = isCurrent ? cssVar("--text-accent", "#f7768e")
+                                : cssVar("--graph-label-text", "#ffffff");
+
+        const fontSize = Math.max(8, 12 / globalScale);
+        ctx.font = `${fontSize}px system-ui, -apple-system, Segoe UI, Roboto, sans-serif`;
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+
+        // Fill text
+        ctx.fillStyle = color;
+        ctx.fillText(label, node.x, node.y);
+      })
+      .nodeCanvasObjectMode(() => "after");
+
+    const ro = new ResizeObserver(() => {
+      graph.width(el.offsetWidth || 600).height(el.offsetHeight || 400);
+    });
+    ro.observe(el);
+    return graph;
+  }
+
+  async function init() {
+    const id = pickContainerId();
+    if (!id) return;
+    const raw = await fetchGraph();
+    const data = adapt(raw);
+    const current = currentFromPath(data.nodes);
+    if (window.graph && window.graph._destructor) window.graph._destructor();
+    window.graph = render(id, data, current, 2);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => init().catch(console.warn));
+  } else {
+    init().catch(console.warn);
   }
 })();
 </script>

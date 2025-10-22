@@ -12,7 +12,10 @@
         "build:sass": "sass src/site/styles:dist/styles --style compressed",
         "get-theme": "node src/site/get-theme.js",
         "update:frontmatter": "node tools/bulk-frontmatter.js",
-        "build": "npm-run-all get-theme build:*"
+        "build": "npm-run-all get-theme build:*",
+        "css": "sass src/site/styles/digital-garden-base.scss:src/site/styles/digital-garden-base.css src/site/styles/custom-style.scss:src/site/styles/custom-style.css --no-source-map",
+        "dev": "npm-run-all -p css start",
+        "start": "eleventy --serve"
     },
     "keywords": [],
     "author": "",
