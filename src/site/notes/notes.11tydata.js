@@ -6,7 +6,6 @@ const allSettings = settings.ALL_NOTE_SETTINGS;
 module.exports = {
   layout: "note.njk",
   eleventyComputed: {
-    // Layout: home note (gardenEntry) vs regular note
     layout: (data) => {
       const tags = Array.isArray(data.tags) ? data.tags : [];
       // remove "layouts/" prefix here
