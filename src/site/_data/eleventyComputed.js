@@ -33,14 +33,13 @@ module.exports = {
   },
 date: (data) => {
     const d = data.date;
-    if (d == null) return d;
+    if (d == null) return d;               // let Eleventy use page.date
     if (d instanceof Date) return d;
     if (typeof d === "string") {
-      // Ignore unresolved template tokens
-      if (d.includes("{{") || d.includes("<%")) return undefined;
+      if (d.includes("{{") || d.includes("<%")) return undefined; // ignore leaked tags
       return d;
     }
-    if (typeof d === "number") return new Date(d); // tolerate timestamps
-    return undefined; // drop weird types
+    if (typeof d === "number") return new Date(d);
+    return undefined;
   },
 };
