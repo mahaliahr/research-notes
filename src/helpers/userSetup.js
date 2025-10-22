@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function userMarkdownSetup(md) {
   // The md parameter stands for the markdown-it instance used throughout the site generator.
   // Feel free to add any plugin you want here instead of /.eleventy.js
@@ -69,7 +71,13 @@ function userEleventySetup(eleventyConfig) {
   // BELOW: live-data parsers 
   // ===========================
 
-  // Helper: read the raw rendered markdown (not HTML)
+//   // Helper: read the raw rendered markdown (not HTML)
+// const getText = (p) => {
+//   if (!p) return "";
+//   const raw = p.template?.inputContent ?? p.templateContent ?? "";
+//   return (typeof raw === "string") ? raw : "";
+// };
+
 const getText = (p) => {
   if (!p) return "";
   const raw = p.template?.inputContent ?? p.templateContent ?? "";

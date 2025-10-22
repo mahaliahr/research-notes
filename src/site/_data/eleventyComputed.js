@@ -31,4 +31,19 @@ module.exports = {
     const seg = (data?.page?.url || "").split("/").filter(Boolean).pop() || "";
     return prettifyFromSlug(seg);
   },
+<<<<<<< HEAD:src/site/data/eleventyComputed.js
 };
+=======
+date: (data) => {
+    const d = data.date;
+    if (d == null) return d;               // let Eleventy use page.date
+    if (d instanceof Date) return d;
+    if (typeof d === "string") {
+      if (d.includes("{{") || d.includes("<%")) return undefined; // ignore leaked tags
+      return d;
+    }
+    if (typeof d === "number") return new Date(d);
+    return undefined;
+  },
+};
+>>>>>>> b078af0 (attempting fix of date bug):src/site/_data/eleventyComputed.js
