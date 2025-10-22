@@ -8,7 +8,7 @@ module.exports = {
   },
   date: (data) => {
     const d = data.date;
-    if (d == null) return d;
+    if (d == null) return d;               // let Eleventy use page.date
     if (d instanceof Date) return d;
     if (typeof d === "string") {
       if (d.includes("{{") || d.includes("<%")) return undefined;
