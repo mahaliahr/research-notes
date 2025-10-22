@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="{{ meta.mainLanguage | default('en') }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
+
+    <link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
+    <link rel="stylesheet" href="{{ '/styles/custom.css' | url }}">
+
+    <script src="https://unpkg.com/d3@7"></script>
+    <script src="https://unpkg.com/force-graph"></script>
+    <script src="https://unpkg.com/@alpinejs/morph/dist/cdn.min.js" defer></script>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    {% include "components/pageheader.njk" ignore missing %}
+  </head>
+  <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
+    {% if settings.dgShowFileTree !== true %}
+      {% include "components/navbar.njk" ignore missing %}
+    {% else %}
+      {% include "components/filetree.njk" ignore missing %}
+    {% endif %}
+
+    <main class="content">
+      {{ content | safe }}
+    </main>
+
+    <footer class="site-footer">
+      <p>Digital Garden © {{ helpers.currentYear() | default('2025') }}</p>
+    </footer>
+  </body>
+</html>

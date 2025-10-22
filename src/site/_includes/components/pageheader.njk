@@ -28,7 +28,9 @@
 <link href="{{style}}" rel="stylesheet">
 {%- endfor -%}
 
-{% favicons './src/site/favicon.svg', appleIconBgColor='#123' %}
+<link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
+{# optional png fallback if you have one: #}
+{# <link rel="icon" href="{{ '/favicon.png' | url }}"> #}
 
 {% if metatags %}
     {% for name, content in metatags %}

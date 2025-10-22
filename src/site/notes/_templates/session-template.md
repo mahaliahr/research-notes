@@ -4,7 +4,7 @@ visibility: public
 tags: [session, worklog]
 ---
 
-start:: <% tp.date.now('YYYY-MM-DD[T]HH:mm') %>
+start:: 2025-10-22T13:34
 end:: 
 topic:: 
 

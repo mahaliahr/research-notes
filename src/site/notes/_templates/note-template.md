@@ -4,7 +4,7 @@ visibility: public
 tags: [zettel]
 ---
 
-# <% tp.file.title %>
+# session-template
 
 **One-sentence claim / idea.**
 

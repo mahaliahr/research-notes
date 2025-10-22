@@ -1,8 +1,8 @@
 ---
-title: "<% tp.file.title %>"
+title: "session-template"
 description: "One–two sentence summary."
-date: "<% tp.date.now('YYYY-MM-DD') %>"
-updated: "<% tp.date.now('YYYY-MM-DD') %>"
+date: "2025-10-22"
+updated: "2025-10-22"
 type: post
 tags: [post, reflection]
 featured: false
@@ -10,7 +10,7 @@ dg-publish: true
 visibility: public
 ---
 
-# <% tp.file.title %>
+# session-template
 
 Intro paragraph…
 

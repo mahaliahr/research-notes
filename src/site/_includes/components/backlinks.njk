@@ -1,0 +1,11 @@
+{% set links = backlinks or [] %}
+{% if links | length %}
+<section class="backlinks">
+  <h2>Backlinks</h2>
+  <ul>
+    {% for l in links %}
+      <li><a href="{{ l.url | url }}">{{ l.title or l.url }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
