@@ -14,8 +14,11 @@ visibility: public
 
 # template
 
-Intro paragraph to set context.
+Intro paragraph…
 
 ## Body
-Main content here. Link into the zettelkasten:
+Main content goes here. Link into the zettelkasten:
 - [[related-note]]
+
+## References
+- …

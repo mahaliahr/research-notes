@@ -1,10 +1,14 @@
 ---
-title: "2025-10-22"
+title: "<% tp.file.title || tp.date.now('YYYY-MM-DD') %>"
 dg-publish: true
 visibility: public
-tags: [daily, stream]
+tags:
+  - daily
+  - stream
+permalink: false
+eleventyExcludeFromCollections: true
 ---
 
-- 13:34 Started…
-- 13:34 Linked [[zettel]]
-- 13:34 Wrap-up
+- <% tp.date.now('HH:mm') %> Started…
+- <% tp.date.now('HH:mm') %> Linked [[zettel]]
+- <% tp.date.now('HH:mm') %> Wrap-up

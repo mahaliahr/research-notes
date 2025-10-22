@@ -618,14 +618,13 @@ eleventyConfig.ignores.add("src/site/notes/_templates/**");
   return {
     dir: {
       input: "src/site",
-          includes: "_includes",
-          layouts: "_includes/layouts",
-          output: "dist"
+      includes: "_includes",
+      layouts: "_includes/layouts",
+      data: "_data",
+      output: "dist"
     },
     templateFormats: ["njk", "md", "html", "11ty.js"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+    markdownTemplateEngine: "njk"
   };
-
 };
