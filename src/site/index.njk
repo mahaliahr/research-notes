@@ -5,17 +5,6 @@ permalink: "/"
 eleventyExcludeFromCollections: true
 ---
 
-{# <section class="hero">
-  <h1>{{ metadata.title or "PhD Live" }}</h1>
-  <p>Exploring generative AI, learning, and live processes in creative practice.</p>
-  <nav class="cta">
-    <a class="btn" href="/notes">Blog / Notes</a>
-    <a class="btn" href="/garden">Digital Garden</a>
-    <a class="btn" href="https://youtube.com/@phd-live">YouTube</a>
-    <a class="btn" href="/about">About</a>
-  </nav>
-</section> #}
-
 <header class="home-hero">
   <h1>PhD-Live</h1>
   <p class="tagline">Process as everything - livestreamed notes, sessions, and reflections.</p>
@@ -39,12 +28,15 @@ eleventyExcludeFromCollections: true
 
 <section class="latest-posts">
   <h2>Latest Reflections</h2>
-  {% set posts = collections.post | default([]) %}
+  {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
     <ul class="cards">
       {% for post in posts | slice(0,6) %}
         <li class="card">
-          <h3><a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a></h3>
+          <h3>
+            <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
+            {% if post.data.featured %}<span class="badge">Featured</span>{% endif %}
+          </h3>
           <small>{{ post.date | isoDate }}</small>
           {% set desc = post.data.description or (post.templateContent | striptags) %}
           <p>{{ desc | truncate(140) }}</p>
@@ -57,6 +49,32 @@ eleventyExcludeFromCollections: true
   {% endif %}
 </section>
 
+<section class="featured-notes">
+  <h2>Featured Notes</h2>
+  {% set fz = collections.featuredZettels | default([]) %}
+  {% if fz | length %}
+    <ul class="cards">
+      {% for n in fz | slice(0,6) %}
+        <li class="card">
+          <h3>
+            <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
+            <span class="badge">Featured</span>
+          </h3>
+          {% if n.data.updated %}
+            <small>updated {{ n.data.updated | isoDate }}</small>
+          {% else %}
+            <small>{{ n.date | isoDate }}</small>
+          {% endif %}
+          {% set desc = n.data.description or (n.templateContent | striptags) %}
+          <p>{{ desc | truncate(140) }}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>Add featured: true (or tag gardenEntry) in a note’s front matter to feature it here.</p>
+  {% endif %}
+</section>
+
 <section class="recent-notes">
   <h2>Recently Updated Notes</h2>
   {% set z = collections.zettels | default([]) %}
@@ -65,8 +83,11 @@ eleventyExcludeFromCollections: true
       {% for n in z | slice(0,10) %}
         <li>
           <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
-          {% if n.data.updated %}<small>updated {{ n.data.updated }}</small>
-          {% else %}<small>{{ n.date | isoDate }}</small>{% endif %}
+          {% if n.data.updated %}
+            <small>updated {{ n.data.updated | isoDate }}</small>
+          {% else %}
+            <small>{{ n.date | isoDate }}</small>
+          {% endif %}
         </li>
       {% endfor %}
     </ul>
@@ -77,32 +98,17 @@ eleventyExcludeFromCollections: true
 </section>
 
 <section class="zettel-gateway">
-  <h2>Explore the Zettelkasten</h2>
+  <h2>Explore the Digital Garden</h2>
 
   {# Include DG graph UI (expects /graph.json) #}
   {% include "components/graphScript.njk" %}
 
-  <p class="more"><a href="/notes/">Browse all notes →</a></p>  <p class="more"><a href="{{ '/notes/' | url }}">Browse all notes →</a></p>
-
-  {# <div class="panel">
-    <h3>Trailheads</h3>
-    {% set entries = collections.entryNotes | default([]) %}
-    {% if entries | length %}
-      <ul class="pill-list">
-        {% for n in entries | slice(0,12) %}
-          <li><a class="pill" href="{{ n.url }}">{{ n.data.title or n.fileSlug }}</a></li>
-        {% endfor %}
-      </ul>
-    {% else %}
-      <p>Add <code>gardenEntry</code> to note tags to feature it here.</p>
-    {% endif %}
-  </div> #}
 
   <div class="panel">
     <h3>Search</h3>
     <p>Look up concepts, tags, and relations across the whole garden.</p>
-    {% if settings.dgEnableSearch %}
-      <p><a class="button" href="/search/">Search the garden →</a></p>
+    {% if settings and settings.dgEnableSearch %}
+      <p><a class="button" href="{{ '/search/' | url }}">Search the garden →</a></p>
     {% else %}
       <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
     {% endif %}

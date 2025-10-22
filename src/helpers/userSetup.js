@@ -8,52 +8,78 @@ function userEleventySetup(eleventyConfig) {
   // The eleventyConfig parameter stands for the the config instantiated in /.eleventy.js.
   // Feel free to add any plugin you want here instead of /.eleventy.js
 
-  // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
+  const isMd = (p) => typeof p?.inputPath === "string" && p.inputPath.toLowerCase().endsWith(".md");
+  const byDateDesc = (a, b) => new Date(b.date || 0) - new Date(a.date || 0);
 
-  const isMd = (p) =>
-  typeof p?.inputPath === "string" &&
-  p.inputPath.toLowerCase().endsWith(".md");
+  // Add this helper (used by post collections)
+  const isPost = (p) => {
+    const tags = Array.isArray(p.data?.tags) ? p.data.tags : [];
+    return (
+      p.data?.type === "post" ||
+      /\/notes\/blog\//i.test(p.inputPath || "") ||
+      tags.includes("post")
+    );
+  };
 
-  // ---------------------------
-  // POSTS  (= /notes/blog/* or type: "post")
-  // ---------------------------
-  eleventyConfig.addCollection("post", (c) =>
-    c.getAll()
-      .filter(p =>
-        p.inputPath.includes("/notes/blog/") || (p.data && p.data.type === "post")
-      )
-      .filter(isPublic)
-      .sort((a, b) => new Date(b.date || b.data?.date || 0) - new Date(a.date || a.data?.date || 0))
-  );
+  const isZettel = (p) => {
+    const url = String(p.url || "");
+    return isMd(p) && isPublic(p) && url.startsWith("/notes/") && !url.startsWith("/notes/blog/");
+  };
+  const isFeatured = (p) => {
+    const tags = Array.isArray(p.data?.tags) ? p.data.tags : [];
+    return p.data?.featured === true || tags.includes("gardenEntry"); // support both flags
+  };
+  const updatedMs = (p) => {
+    const u = p.data?.updated;
+    if (u) {
+      const d = new Date(u);
+      if (!isNaN(d)) return d.getTime();
+    }
+    return new Date(p.date || 0).getTime();
+  };
 
-  // ---------------------------
-  // ZETTELS (= everything under /notes/ that is NOT a post)
-  // ---------------------------
-  eleventyConfig.addCollection("zettels", (c) =>
-    c.getAll()
-      .filter(p => p.inputPath.includes("/notes/"))
-      .filter(p => !p.inputPath.includes("/notes/blog/"))      // exclude posts folder
-      .filter(p => (p.data?.type || "") !== "post")            // exclude any stray post-typed files
-      .filter(isPublic)
-      .sort((a, b) =>
-        new Date(b.data?.updated || b.date || 0) -
-        new Date(a.data?.updated || a.date || 0)
-      )
-  );
+  // Recently updated zettels
+  eleventyConfig.addCollection("zettels", (col) => {
+    return col.getAll().filter(isZettel).sort((a, b) => updatedMs(b) - updatedMs(a));
+  });
 
-  // ---------------------------
-  // FEATURED POSTS  (tag: featured)
-  // ---------------------------
-  eleventyConfig.addCollection("featuredPosts", (c) =>
-    c.getAll()
-      .filter(p =>
-        (p.inputPath.includes("/notes/blog/") || p.data?.type === "post") &&
-        (p.data?.tags || []).includes("featured") &&
-        isPublic(p)
-      )
-      .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
-  );
+  // Featured only zettels
+  eleventyConfig.addCollection("featuredZettels", (col) => {
+    return col.getAll().filter((p) => isZettel(p) && isFeatured(p)).sort((a, b) => updatedMs(b) - updatedMs(a));
+  });
+
+  // Featured-first ordering
+  eleventyConfig.addCollection("zettelsFeaturedFirst", (col) => {
+    const items = col.getAll().filter(isZettel);
+    return items.sort((a, b) => {
+      const fa = isFeatured(a), fb = isFeatured(b);
+      if (fa !== fb) return fb - fa; // featured first
+      return updatedMs(b) - updatedMs(a);
+    });
+  });
+
+  // All posts (unchanged behavior)
+  eleventyConfig.addCollection("post", (col) => {
+    return col.getAll().filter((p) => isMd(p) && isPublic(p) && isPost(p)).sort(byDateDesc);
+  });
+
+  // Featured first (featured posts float to the top, then by date)
+  eleventyConfig.addCollection("postFeaturedFirst", (col) => {
+    const items = col.getAll().filter((p) => isMd(p) && isPublic(p) && isPost(p));
+    return items.sort((a, b) => {
+      const fa = !!a.data?.featured, fb = !!b.data?.featured;
+      if (fa !== fb) return fb - fa;
+      return byDateDesc(a, b);
+    });
+  });
+
+  // Featured only (optional)
+  eleventyConfig.addCollection("featuredPosts", (col) => {
+    return col.getAll()
+      .filter((p) => isMd(p) && isPublic(p) && isPost(p) && p.data?.featured === true)
+      .sort(byDateDesc);
+  });
 
   // ===========================
   // BELOW: live-data parsers 
