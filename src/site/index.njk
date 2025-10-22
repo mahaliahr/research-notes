@@ -100,9 +100,9 @@ eleventyExcludeFromCollections: true
 <section class="zettel-gateway">
   <h2>Explore the Digital Garden</h2>
 
-  {# Include DG graph UI (expects /graph.json) #}
-  {% include "components/graphScript.njk" %}
+  <div id="graph" style="width:100%;height:600px;border:1px solid var(--background-secondary);border-radius:12px;overflow:hidden;"></div>
 
+  {% include "components/graphScript.njk" %}
 
   <div class="panel">
     <h3>Search</h3>

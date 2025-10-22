@@ -23,7 +23,7 @@
         "cross-env": "^7.0.3",
         "html-minifier-terser": "^7.2.0",
         "node-html-parser": "^6.1.13",
-        "sass": "^1.49.9"
+        "sass": "^1.93.2"
     },
     "dependencies": {
         "@11ty/eleventy-img": "^4.0.2",
