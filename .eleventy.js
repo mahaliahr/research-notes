@@ -212,9 +212,10 @@ module.exports = function (eleventyConfig) {
         function (tokens, idx, options, env, self) {
           return self.renderToken(tokens, idx, options, env, self);
         };
+
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        // Preserve your existing width/metadata parsing from token.content
         const imageName = tokens[idx].content;
-        //"image.png|metadata?|width"
         const [fileName, ...widthAndMetaData] = imageName.split("|");
         const lastValue = widthAndMetaData[widthAndMetaData.length - 1];
         const lastValueIsNumber = !isNaN(lastValue);
@@ -224,18 +225,27 @@ module.exports = function (eleventyConfig) {
         if (widthAndMetaData.length > 1) {
           metaData = widthAndMetaData.slice(0, widthAndMetaData.length - 1).join(" ");
         }
-
         if (!lastValueIsNumber) {
           metaData += ` ${lastValue}`;
         }
-
         if (width) {
           const widthIndex = tokens[idx].attrIndex("width");
           const widthAttr = `${width}px`;
-          if (widthIndex < 0) {
-            tokens[idx].attrPush(["width", widthAttr]);
-          } else {
-            tokens[idx].attrs[widthIndex][1] = widthAttr;
+          if (widthIndex < 0) tokens[idx].attrPush(["width", widthAttr]);
+          else tokens[idx].attrs[widthIndex][1] = widthAttr;
+        }
+
+        // NEW: rewrite relative image src to public /notes/images path
+        const srcIdx = tokens[idx].attrIndex("src");
+        if (srcIdx >= 0) {
+          let src = tokens[idx].attrs[srcIdx][1] || "";
+          const isAbsolute = /^https?:\/\//i.test(src) || src.startsWith("/");
+          if (!isAbsolute) {
+            // Keep subpath if user wrote images/foo.png; else prefix images/
+            src = src.startsWith("images/")
+              ? `/notes/${src}`
+              : `/notes/images/${src}`;
+            tokens[idx].attrs[srcIdx][1] = src;
           }
         }
 
@@ -518,13 +528,36 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
+  // Serve assets and images like the original theme
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" }); // expects /assets/img/...
+  eleventyConfig.addWatchTarget("src/site/assets");
+
+  // Optional: if you keep attachments next to notes, also copy them
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
+  });
+  eleventyConfig.addWatchTarget("src/site/notes");
+
+  // Keep your other passthroughs
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  eleventyConfig.addWatchTarget("src/site/assets");
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  eleventyConfig.addWatchTarget("src/site/styles");
+
   eleventyConfig.addPassthroughCopy("src/site/img");
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
-  eleventyConfig.addWatchTarget("src/site/assets");
-  eleventyConfig.addWatchTarget("src/site/styles");
+  eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
+  eleventyConfig.addWatchTarget("src/site/notes/images");
+
+  // If you want to copy ALL images under notes (including subfolders):
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
+  });
+  eleventyConfig.addWatchTarget("src/site/notes");
+
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
@@ -560,6 +593,36 @@ module.exports = function (eleventyConfig) {
     },
   });
 
+  // Convert Obsidian-style image embeds ![[image.png|alt or WxH]]
+  eleventyConfig.addFilter("dgMedia", (html) => {
+    if (!html) return html;
+    const re = /!\[\[([^\]|#]+)(?:#[^\]]+)?(?:\|([^\]]+))?\]\]/g;
+
+    return html.replace(re, (_m, file, alias) => {
+      const raw = String(file || "").trim().replace(/^\.?\//, "");
+      const ext = raw.split(".").pop().toLowerCase();
+      if (!/^(png|jpe?g|gif|svg|webp|avif)$/.test(ext)) return _m;
+
+      // Alt or size (200 or 200x120)
+      const a = String(alias || "").trim();
+      let alt = a || raw, w, h;
+      const m = a.match(/^(\d+)(?:x(\d+))?$/);
+      if (m) { w = m[1]; h = m[2]; alt = raw; }
+
+      // Map to public URL under /notes; keep subpath if provided (images/foo.png)
+      const src = raw.includes("/") ? `/notes/${encodeURI(raw)}` : `/notes/images/${encodeURI(raw)}`;
+
+      const attrs = [
+        `src="${src}"`,
+        `alt="${alt.replace(/"/g, "&quot;")}"`,
+        `loading="lazy"`, `decoding="async"`,
+        w ? `width="${w}"` : "", h ? `height="${h}"` : ""
+      ].filter(Boolean).join(" ");
+
+      return `<img ${attrs}>`;
+    });
+  });
+
   // isoDate used by blog list templates in DG
   eleventyConfig.addFilter("isoDate", (d) => (d ? new Date(d).toISOString() : ""));
 
@@ -579,6 +642,17 @@ module.exports = function (eleventyConfig) {
       const href = map.get(key) || `/notes/${key}/`;
       const text = alias || target;
       return `<a class="internal-link" href="${href}">${text}</a>`;
+    });
+  });
+
+  eleventyConfig.addFilter("embedMedia", (html) => {
+    if (!html) return html;
+    return html.replace(/!\[\[([^\]|#]+)(?:#[^\]]+)?\]\]/g, (_m, file) => {
+      const fname = String(file).trim();
+      const safe = encodeURI(fname);
+      // Adjust the base to where you store images
+      const src = `/assets/img/${safe}`;
+      return `<img src="${src}" alt="${fname}">`;
     });
   });
 
