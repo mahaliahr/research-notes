@@ -3,7 +3,7 @@
 {% block content %}
 <article class="note">
   <h1>{{ title or page.fileSlug }}</h1>
-  {{ content | link | safe }}
+  {{ content | link | dgMedia | safe }}
 
   {% include "components/localgraph.njk" %}
 </article>

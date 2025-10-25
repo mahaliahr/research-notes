@@ -1,6 +1,5 @@
 netlify/functions
 src/site/notes/.obsidian/**
-src/site/notes/images/**
 templates/**
 src/site/_templates/**
 src/site/notes/_templates/**
