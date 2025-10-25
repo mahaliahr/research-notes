@@ -98,6 +98,10 @@ body {
   max-width: 100%;
   overflow: hidden;
 }
+/* Optional fullscreen class (only on the graph element) */
+.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #0b0b0b); }
+/* Label color for the graph */
+:root { --graph-label-text: rgba(154,165,206,0.55); }
 
 .graph-fs {
   position: fixed !important;
@@ -165,3 +169,10 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
   line-height: 1.05;
   margin: 0.6rem 0;
 }
+.graph-controls button {
+  background: var(--background-secondary, #1b1b1b);
+  color: var(--text-normal, #e5e5e5);
+  border: 1px solid var(--background-modifier-border, #2a2a2a);
+  border-radius: 6px; padding: .35rem .6rem; cursor: pointer;
+}
+.graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }

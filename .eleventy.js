@@ -2,6 +2,7 @@ const slugify = require("@sindresorhus/slugify");
 const markdownIt = require("markdown-it");
 const fs = require("fs");
 const matter = require("gray-matter");
+const faviconsPlugin = require("eleventy-plugin-gen-favicons");
 const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
@@ -292,44 +293,6 @@ module.exports = function (eleventyConfig) {
       };
     })
     .use(userMarkdownSetup);
-
-  // graph
-  
-  // Add the graph data collection
-  eleventyConfig.addCollection("graph", function(collection) {
-    const graph = {
-      nodes: [],
-      edges: []
-    };
-    
-    // Get all notes (excluding private/draft)
-    const notes = collection.getAll()
-      .filter(item => item.template?.inputPath?.endsWith(".md"))
-      .filter(item => item.data?.dg_publish !== false);
-
-    // Add nodes
-    notes.forEach(note => {
-      graph.nodes.push({
-        id: note.url,
-        title: note.data.title || note.fileSlug,
-        url: note.url
-      });
-    });
-
-    // Add edges from backlinks
-    notes.forEach(note => {
-      if (note.data.backlinks) {
-        note.data.backlinks.forEach(backlink => {
-          graph.edges.push({
-            source: backlink.url,
-            target: note.url
-          });
-        });
-      }
-    });
-
-    return graph;
-  });
 
   eleventyConfig.setLibrary("md", markdownLib);
 
@@ -632,8 +595,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("jsonify", function (variable) {
     return JSON.stringify(variable) || '""';
   });
-
-  eleventyConfig.addNunjucksFilter("jsonify", (value) => JSON.stringify(value));
 
   eleventyConfig.addFilter("validJson", function (variable) {
     if (Array.isArray(variable)) {
