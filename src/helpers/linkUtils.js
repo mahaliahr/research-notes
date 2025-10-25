@@ -51,7 +51,7 @@ function getGraph(data) {
         v.data["dg-home"] ||
         (v.data.tags && v.data.tags.indexOf("gardenEntry") > -1) ||
         false,
-      outBound: extractLinks(v.template.frontMatter.content),
+      //outBound: extractLinks(v.template.frontMatter.content),
       neighbors: new Set(),
       backLinks: new Set(),
       noteIcon: v.data.noteIcon || process.env.NOTE_ICON_DEFAULT,

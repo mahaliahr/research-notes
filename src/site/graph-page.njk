@@ -6,19 +6,9 @@ title: "Graph View"
 
 <div class="graph-container">
   <h1>Map of Ideas</h1>
-  
-  <p>This is a visual representation of the connections between different concepts in the digital garden. This collection of ideas is following a Zettelkasten approach, emphasising the relationships between notes.</p>
-
-  <div id="graph-wrapper">
-    <div id="graph" style="width:100%; height:600px; border:1px solid var(--background-secondary); border-radius:12px; overflow:hidden;"></div>
-  </div>
-
-  {% include "components/graphScript.njk" %}
+  {% include "components/localgraph.njk" %}
 </div>
 
 <style>
-  .graph-container {
-    padding: 1rem;
-    width: 100%;
-  }
+  .graph-container { padding: 1rem; width: 100%; }
 </style>

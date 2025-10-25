@@ -1,8 +1,6 @@
 ---
 layout: "base.njk"
-title: "PhD Live"
-permalink: "/"
-eleventyExcludeFromCollections: true
+title: "Home"
 ---
 
 <header class="home-hero">
@@ -100,9 +98,7 @@ eleventyExcludeFromCollections: true
 <section class="zettel-gateway">
   <h2>Explore the Digital Garden</h2>
 
-  <div id="graph" style="width:100%;height:600px;border:1px solid var(--background-secondary);border-radius:12px;overflow:hidden;"></div>
-
-  {% include "components/graphScript.njk" %}
+  {# {% include "components/graphScript.njk" %} #}
 
   <div class="panel">
     <h3>Search</h3>
@@ -114,3 +110,5 @@ eleventyExcludeFromCollections: true
     {% endif %}
   </div>
 </section>
+
+{% include "components/localgraph.njk" %}

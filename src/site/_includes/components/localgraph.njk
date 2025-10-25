@@ -1,0 +1,176 @@
+<div x-data="localGraph()" x-init="init()" class="local-graph">
+  <div class="graph-controls">
+    <div class="gc-left">
+      <label>Depth</label>
+      <input type="range" min="1" max="4" step="1" x-model.number="depth" @input="applySubset()" :disabled="showAll || !current">
+      <button type="button" @click="focusNeighborhood()" class="gc-focus">Focus</button>
+      <button type="button" @click="toggleAll()" class="gc-all" x-text="showAll ? 'Neighborhood' : 'All'"></button>
+    </div>
+    <div class="gc-right">
+      <input type="search" class="gc-search" placeholder="Find note…" @keydown.enter="jumpTo($event.target.value)">
+      <button type="button" @click="fit()" class="gc-fit">Fit</button>
+      <button type="button" @click="toggleFullscreen()" class="gc-fs">Fullscreen</button>
+    </div>
+  </div>
+
+  <div x-ref="canvas" style="width:100%;height:320px;border:1px solid var(--background-secondary);border-radius:12px;overflow:hidden;"></div>
+</div>
+
+<script>
+window.localGraph = window.localGraph || function localGraph() {
+  const cssVar = (name, fb) => {
+    try { const v = getComputedStyle(document.documentElement).getPropertyValue(name).trim(); return v || fb; }
+    catch { return fb; }
+  };
+  const COLORS = {
+    main:  cssVar("--graph-main",  "#7aa2f7"),
+    muted: cssVar("--graph-muted", "#9aa5ce"),
+    curr:  cssVar("--text-accent", "#f7768e"),
+    link:  cssVar("--graph-link",  "rgba(154,165,206,0.55)"),
+    label: cssVar("--graph-label-text", "rgba(154,165,206,0.55)")
+  };
+  const norm = p => (String(p || "").replace(/\/+$/,"") || "/");
+  const sameUrl = (a, b) => norm(a) === norm(b);
+  const isGraphPage = () => {
+    const p = (location.pathname || "/").replace(/\/+$/,"");
+    return p === "/graph" || p === ""; // "" means "/"
+  };
+
+  return {
+    fg: null,
+    data: { nodes: [], links: [], adj: new Map() },
+    current: null,
+    depth: 2,
+    showAll: false,
+    isFullscreen: false,
+
+    async init() {
+      try {
+        const raw = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" }).then(r => r.json());
+        this.data = this.adapt(raw);
+      } catch { this.data = { nodes: [], links: [], adj: new Map() }; }
+
+      this.current = this.currentFromPath(this.data.nodes);
+      this.showAll = !this.current; // on /graph/ slider starts disabled until a node is selected
+
+      this.fg = this.createGraph(this.$refs.canvas);
+      this.applySubset();
+
+      const ro = new ResizeObserver(() => {
+        try { this.fg.width(this.$refs.canvas.offsetWidth).height(this.$refs.canvas.offsetHeight); } catch {}
+      });
+      ro.observe(this.$refs.canvas);
+    },
+
+    adapt(raw) {
+      if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.links)) return { nodes: [], links: [], adj: new Map() };
+      const idOf = n => String(n.id || n.url || "");
+      const nodes = raw.nodes.map(n => ({ id: idOf(n), url: n.url || idOf(n), title: n.title || idOf(n) }));
+      const adj = new Map(nodes.map(n => [n.id, new Set()]));
+      const links = [];
+      for (const l of raw.links) {
+        const s = typeof l.source === "string" ? l.source : String(l.source?.id || l.source || "");
+        const t = typeof l.target === "string" ? l.target : String(l.target?.id || l.target || "");
+        if (adj.has(s) && adj.has(t)) { links.push({ source: s, target: t }); adj.get(s).add(t); adj.get(t).add(s); }
+      }
+      return { nodes, links, adj };
+    },
+
+    currentFromPath(nodes) {
+      const here = norm(window.location.pathname);
+      return (nodes || []).find(n => sameUrl(n.url, here)) || null;
+    },
+
+    neighborhood(currentId, depth) {
+      if (!currentId || depth <= 0) return { nodes: this.data.nodes, links: this.data.links };
+      const visited = new Set([currentId]); let frontier = [currentId];
+      for (let d = 0; d < depth; d++) {
+        const next = [];
+        for (const id of frontier) for (const nb of (this.data.adj.get(id) || []))
+          if (!visited.has(nb)) { visited.add(nb); next.push(nb); }
+        frontier = next;
+      }
+      return {
+        nodes: this.data.nodes.filter(n => visited.has(n.id)),
+        links: this.data.links.filter(l => visited.has(l.source) && visited.has(l.target))
+      };
+    },
+
+    createGraph(container) {
+      if (!container || typeof ForceGraph !== "function") return null;
+
+      const highlightNodes = new Set();
+      const highlightLinks = new Set();
+
+      const graph = ForceGraph()(container)
+        .nodeId("id").nodeLabel("title").linkSource("source").linkTarget("target")
+        .d3AlphaDecay(0.1).nodeRelSize(4).linkDirectionalArrowLength(0).backgroundColor(null)
+        .onNodeHover(node => {
+          highlightNodes.clear(); highlightLinks.clear();
+          if (node) {
+            highlightNodes.add(node.id);
+            (this.data.adj.get(node.id) || []).forEach(nid => highlightNodes.add(nid));
+            this.data.links.forEach(l => { if (l.source === node.id || l.target === node.id) highlightLinks.add(l); });
+          }
+          container.style.cursor = node ? "pointer" : null;
+        })
+        .onNodeClick(node => {
+          if (!node) return;
+          if (isGraphPage()) {
+            this.current = node;
+            this.showAll = false;
+            this.applySubset();
+            try { this.fg.centerAt(node.x, node.y, 400).zoom(3, 400); } catch {}
+          } else {
+            if (node?.url) window.location.href = node.url;
+          }
+        })
+        .nodeColor(n => {
+          const isCurrent = this.current && n.id === this.current.id;
+          return isCurrent ? COLORS.curr : (highlightNodes.has(n.id) ? COLORS.main : COLORS.muted);
+        })
+        .linkColor(l => (highlightLinks.has(l) ? COLORS.main : COLORS.link))
+        .linkWidth(l => (highlightLinks.has(l) ? 2.2 : 0.8))
+        .nodeCanvasObject((node, ctx, globalScale) => {
+          if (12 / globalScale < 6) return;
+          const label = node.title || node.id; if (!label) return;
+          const fontSize = Math.max(8, 12 / globalScale);
+          ctx.font = `${fontSize}px system-ui, -apple-system, Segoe UI, Roboto, sans-serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = COLORS.label;
+          ctx.fillText(label, node.x, node.y);
+        })
+        .nodeCanvasObjectMode(() => "after");
+
+      graph.width(container.offsetWidth || 600).height(container.offsetHeight || 320);
+      return graph;
+    },
+
+    applySubset() {
+      if (!this.fg) return;
+      const subset = (this.showAll || !this.current)
+        ? { nodes: this.data.nodes, links: this.data.links }
+        : this.neighborhood(this.current.id, this.depth);
+      this.fg.graphData(subset);
+    },
+
+    toggleAll() { this.showAll = !this.showAll; this.applySubset(); },
+    focusNeighborhood() { this.showAll = false; this.applySubset(); },
+    fit() { try { this.fg.zoomToFit(500, 30); } catch {} },
+
+    toggleFullscreen() {
+      this.isFullscreen = !this.isFullscreen;
+      this.$refs.canvas.classList.toggle("graph-fs", this.isFullscreen);
+      try { this.fg.width(this.$refs.canvas.offsetWidth).height(this.$refs.canvas.offsetHeight); } catch {}
+      if (this.isFullscreen) {
+        document.documentElement.style.overflow = "hidden";
+        document.body.style.overflow = "hidden";
+      } else {
+        document.documentElement.style.overflow = "";
+        document.body.style.overflow = "";
+      }
+    }
+  };
+};
+</script>
