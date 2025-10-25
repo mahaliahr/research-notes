@@ -4,32 +4,49 @@ body {
      ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
      IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
   ***/
+
+  
   font-family: "Overpass Mono", monospace;
 }
-
-/* Rescue scrolling if any theme rule disabled it */
+/* Rescue: re-enable page scroll and keep graph from overlaying */
 html, body {
   position: static !important;
   overflow: auto !important;
   height: auto !important;
   min-height: 100%;
 }
-
-/* Ensure the graph container doesn’t block the page */
 #graph, #link-graph {
   position: relative;
-  z-index: 0;
+  z-index: 1;
   max-width: 100%;
   overflow: hidden;
 }
+/* Optional fullscreen class (only on the graph element) */
+.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #0b0b0b); }
+/* Label color for the graph */
+:root { --graph-label-text: rgba(154,165,206,0.55); }
 
-/* If you have any full-screen graph class lingering, keep it scoped */
-.graph-fs {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
+.graph-controls {
+  position: relative; z-index: 2;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: .75rem; margin: .5rem 0 1rem;
+  font-size: .9rem; color: var(--text-muted, #9aa5ce);
 }
-
-:root {
-  --graph-label-text: rgba(154,165,206,0.55);
+.graph-controls .gc-right, .graph-controls .gc-left { display: flex; align-items: center; gap: .5rem; }
+.local-graph [x-ref="canvas"] { position: relative; z-index: 1; height: 320px; }
+.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #0b0b0b); }
+.graph-controls label { margin-right: .35rem; }
+.graph-controls input[type="range"] { width: 140px; }
+.graph-controls .gc-search {
+  width: 180px; background: var(--background-secondary, #1b1b1b);
+  color: var(--text-normal, #e5e5e5);
+  border: 1px solid var(--background-modifier-border, #2a2a2a);
+  border-radius: 6px; padding: .35rem .5rem;
 }
+.graph-controls button {
+  background: var(--background-secondary, #1b1b1b);
+  color: var(--text-normal, #e5e5e5);
+  border: 1px solid var(--background-modifier-border, #2a2a2a);
+  border-radius: 6px; padding: .35rem .6rem; cursor: pointer;
+}
+.graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }

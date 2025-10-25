@@ -85,13 +85,6 @@ function userEleventySetup(eleventyConfig) {
   // BELOW: live-data parsers 
   // ===========================
 
-//   // Helper: read the raw rendered markdown (not HTML)
-// const getText = (p) => {
-//   if (!p) return "";
-//   const raw = p.template?.inputContent ?? p.templateContent ?? "";
-//   return (typeof raw === "string") ? raw : "";
-// };
-
 const getText = (p) => {
   try {
     return fs.readFileSync(p.inputPath, "utf8"); // raw markdown w/ front matter stripped by gray-matter later if needed

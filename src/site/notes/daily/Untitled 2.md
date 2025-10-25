@@ -5,6 +5,7 @@ visibility: public
 tags:
   - daily
   - stream
+featured: true
 ---
 
 - 12:20 Started day — plan: …
