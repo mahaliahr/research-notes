@@ -29,7 +29,7 @@ title: "Home"
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
     <ul class="cards">
-      {% for post in posts | slice(0,6) %}
+      {% for post in posts | limit(6) %}
         <li class="card">
           <h3>
             <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
@@ -41,10 +41,26 @@ title: "Home"
         </li>
       {% endfor %}
     </ul>
-    <p class="more"><a href="{{ '/blog/' | url }}">See all posts →</a></p>
-  {% else %}
-    <p>No posts yet.</p>
   {% endif %}
+
+  {# Recent notes #}
+  {% set z = collections.zettels | default([]) %}
+  {% if z | length %}
+    <ul class="list">
+      {% for n in z | limit(10) %}
+        <li>
+          <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
+          {% if n.data.updated %}
+            <small>updated {{ n.data.updated | isoDate }}</small>
+          {% else %}
+            <small>{{ n.date | isoDate }}</small>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  <p class="more"><a href="{{ '/blog/' | url }}">See all posts →</a></p>
 </section>
 
 <section class="featured-notes">
@@ -52,7 +68,7 @@ title: "Home"
   {% set fz = collections.featuredZettels | default([]) %}
   {% if fz | length %}
     <ul class="cards">
-      {% for n in fz | slice(0,6) %}
+      {% for n in fz | limit(6) %}
         <li class="card">
           <h3>
             <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
@@ -69,7 +85,7 @@ title: "Home"
       {% endfor %}
     </ul>
   {% else %}
-    <p>Add featured: true (or tag gardenEntry) in a note’s front matter to feature it here.</p>
+    <p>Add <code>featured: true</code> (or tag <code>gardenEntry</code>) in a note’s front matter to feature it here.</p>
   {% endif %}
 </section>
 
@@ -78,7 +94,7 @@ title: "Home"
   {% set z = collections.zettels | default([]) %}
   {% if z | length %}
     <ul class="list">
-      {% for n in z | slice(0,10) %}
+      {% for n in z | limit(10) %}
         <li>
           <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
           {% if n.data.updated %}
@@ -89,10 +105,10 @@ title: "Home"
         </li>
       {% endfor %}
     </ul>
-    <p class="more"><a href="{{ '/notes/' | url }}">Browse all notes →</a></p>
   {% else %}
-    <p>Notes will appear here as you publish them.</p>
+    <p>No notes yet.</p>
   {% endif %}
+  <p class="more"><a href="{{ '/notes/' | url }}">Browse all notes →</a></p>
 </section>
 
 <section class="zettel-gateway">
@@ -112,3 +128,9 @@ title: "Home"
 </section>
 
 {% include "components/localgraph.njk" %}
+
+{# <p class="debug" style="font-size:.9em;color:#888">
+  posts: {{ collections.postFeaturedFirst | default([]) | length }},
+  featured: {{ collections.featuredZettels | default([]) | length }},
+  zettels: {{ collections.zettels | default([]) | length }}
+</p> #}

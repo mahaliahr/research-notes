@@ -1,17 +1,12 @@
-module.exports = class {
+class SessionsJson {
   data() {
-    return {
-      permalink: "/data/sessions.json",
-      eleventyExcludeFromCollections: true
-    };
+    return { permalink: "/data/sessions.json", eleventyExcludeFromCollections: true };
   }
-  render({ collections }) {
-    const items = (collections.sessions || []).map(s => ({
-      topic: s.topic || s.data?.topic || s.data?.title || s.fileSlug,
-      start: s.start || s.data?.start || null,
-      end: s.end || s.data?.end || null,
-      url: s.url
+  render(data) {
+    const items = (data.collections?.sessions || []).map(s => ({
+      start: s.start, end: s.end || null, topic: s.topic, url: s.url,
     }));
-    return JSON.stringify(items, null, 2);
+    return JSON.stringify(items);
   }
-};
+}
+module.exports = SessionsJson;

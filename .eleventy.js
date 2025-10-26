@@ -7,6 +7,7 @@ const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const fg = require("fast-glob");
 
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
 const {
@@ -528,9 +529,9 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  // Serve assets and images like the original theme
-  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" }); // expects /assets/img/...
-  eleventyConfig.addWatchTarget("src/site/assets");
+  // // Serve assets and images like the original theme
+  // eleventyConfig.addPassthroughCopy({ "src/site/assets/js": "assets" }); // expects /assets/img/...
+  // eleventyConfig.addWatchTarget("src/site/assets/js");
 
   // Optional: if you keep attachments next to notes, also copy them
   eleventyConfig.addPassthroughCopy({
@@ -548,7 +549,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
-  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
   eleventyConfig.addWatchTarget("src/site/notes/images");
 
@@ -626,6 +627,81 @@ module.exports = function (eleventyConfig) {
   // isoDate used by blog list templates in DG
   eleventyConfig.addFilter("isoDate", (d) => (d ? new Date(d).toISOString() : ""));
 
+  const getText = (p) => {
+  try { return fs.readFileSync(p.inputPath, "utf8"); } catch { return ""; }
+};
+const inlineField = (src, key) => {
+  if (typeof src !== "string" || !src) return null;
+  const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
+  const m = src.match(re);
+  return m ? m[1].trim() : null;
+};
+
+// Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
+const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+(.+?)\s*(?:@(\d{4}-\d{2}-\d{2}))?(?=\s|$)/gm;
+eleventyConfig.addCollection("milestones", (c) => {
+  const out = [];
+  for (const p of c.getAll()) {
+    const txt = getText(p);
+    if (!/#milestone\b/.test(txt)) continue;
+    let m;
+    while ((m = milestoneRe.exec(txt))) {
+      const [, box, title, due] = m;
+      out.push({
+        title: title.replace(/\s+#milestone\b/i, "").trim(),
+        due: due || null,
+        status: String(box).trim().toLowerCase() === "x" ? "done" : "planned",
+        area: null,
+        url: p.url,
+      });
+    }
+  }
+  return out.sort((a, b) => {
+    const ad = a.due ? new Date(a.due).getTime() : Infinity;
+    const bd = b.due ? new Date(b.due).getTime() : Infinity;
+    return ad - bd;
+  });
+});
+
+// Sessions: any note in notes/sessions/ or with "start::"
+eleventyConfig.addCollection("sessions", (c) => {
+  return c.getAll()
+    .filter(p => p.inputPath.includes("/notes/sessions/") || /(^|\n)\s*start::/i.test(getText(p)))
+    .map(p => {
+      const txt = getText(p);
+      const start = inlineField(txt, "start");
+      const end = inlineField(txt, "end");
+      const topic = inlineField(txt, "topic") || p.data.title || p.fileSlug;
+      return { start, end, topic, url: p.url };
+    })
+    .sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
+});
+
+// Stream: from daily notes or stream.md lines "- HH:MM message"
+const streamLineRe = /^\s*-\s*(\d{1,2}:\d{2})\s+(.+)$/gm;
+eleventyConfig.addCollection("streamItems", (c) => {
+  const out = [];
+  const candidates = c.getAll().filter(p => {
+    const path = p?.inputPath || "";
+    return typeof path === "string" && ( /\/notes\/daily\//i.test(path) || /\/stream\.md$/i.test(path) );
+  });
+  for (const p of candidates) {
+    const txt = getText(p);
+    if (!txt) continue;
+    const dateField = inlineField(txt, "date");
+    const fromSlug = (p.fileSlug || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const fromPath = (p.inputPath || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const day = dateField || fromSlug || fromPath || null;
+    const re = new RegExp(streamLineRe.source, streamLineRe.flags);
+    let m;
+    while ((m = re.exec(txt))) {
+      const [, time, message] = m;
+      out.push({ date: day ? `${day} ${time}` : time, text: message.trim(), url: p.url });
+    }
+  }
+  return out.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+});
+
   // Digital Garden-style wikilinks filter (simple)
   eleventyConfig.addFilter("link", (html, pages = []) => {
     if (!html) return html;
@@ -656,8 +732,86 @@ module.exports = function (eleventyConfig) {
     });
   });
 
-  // Keep this near the end but BEFORE return
-  userEleventySetup(eleventyConfig);
+  // Publish helper: published unless explicitly disabled
+  const isPublished = (p) => (p?.data?.["dg-publish"] !== false) && !p?.data?.draft;
+
+  eleventyConfig.addCollection("postFeaturedFirst", (api) => {
+    const byBlogFolder = api.getFilteredByGlob("src/site/notes/blog/**/*.md");
+    const byPublishedFolder = api.getFilteredByGlob("src/site/notes/published/**/*.md");
+    const byTag = api.getFilteredByTag("post");
+
+    // De-dupe by inputPath
+    const map = new Map();
+    [...byBlogFolder, ...byPublishedFolder, ...byTag].forEach(p => map.set(p.inputPath, p));
+
+    return [...map.values()]
+      .filter(isPublished)
+      .sort((a, b) => {
+        const fa = !!a.data?.featured, fb = !!b.data?.featured;
+        if (fa !== fb) return fb - fa;               // featured first
+        return (b.date || 0) - (a.date || 0);        // newest next
+      });
+  });
+
+  eleventyConfig.on('afterBuild', async () => {
+  // Get the list of all HTML files generated
+  const files = await fg('dist/**/*.html');
+
+  // Iterate over each file and minify
+  for (const file of files) {
+    // Skip if already minified
+    if (file.endsWith('.min.html')) continue;
+
+    // Read the file
+    const content = await fs.promises.readFile(file, 'utf8');
+
+    // Minify the content
+    const minified = await htmlMinifier.minify(content, {
+      useShortDoctype: true,
+      removeComments: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      preserveLineBreaks: true,
+      minifyCSS: true,
+      minifyJS: true,
+      keepClosingSlash: true,
+    });
+
+    // Write the minified content to a new file
+    await fs.promises.writeFile(file.replace('.html', '.min.html'), minified);
+  }
+});
+
+  eleventyConfig.addCollection("featuredZettels", (api) => {
+    return api.getFilteredByGlob("src/site/notes/**/*.md")
+      .filter(p => isPublished(p) && (p.data?.featured || (p.data?.tags || []).includes("gardenEntry")))
+      .sort((a, b) => {
+        const bu = b.data?.updated ? new Date(b.data.updated) : b.date;
+        const au = a.data?.updated ? new Date(a.data.updated) : a.date;
+        return bu - au;
+      });
+  });
+
+  eleventyConfig.addCollection("zettels", (api) => {
+    return api.getFilteredByGlob("src/site/notes/**/*.md")
+      .filter(p =>
+        isPublished(p) &&
+        !(p.inputPath || "").includes("/notes/blog/") &&
+        !(p.inputPath || "").includes("/notes/published/") &&
+        !p.data?.featured
+      )
+      .sort((a, b) => {
+        const bu = b.data?.updated ? new Date(b.data.updated) : b.date;
+        const au = a.data?.updated ? new Date(a.data.updated) : a.date;
+        return bu - au;
+      });
+  });
+
+  // Ensure these collections are not also added in src/helpers/userSetup.js
+  // If they are, remove one set.
+
+  // Add a limit filter for arrays
+  eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   return {
     dir: { input: "src/site", includes: "_includes", layouts: "_includes/layouts", data: "_data", output: "dist" },
@@ -666,3 +820,4 @@ module.exports = function (eleventyConfig) {
     markdownTemplateEngine: "njk"
   };
 }; // <— nothing below this line
+

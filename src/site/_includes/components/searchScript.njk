@@ -377,4 +377,7 @@
         return finalResults;
 
     }
+      if (typeof window.init === "function") {
+    document.addEventListener('DOMContentLoaded', window.init, false);
+  }
 </script>

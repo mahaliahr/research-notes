@@ -210,3 +210,9 @@ const getText = (p) => {
 function useMarkdownSetup(md) {}
 exports.userMarkdownSetup = userMarkdownSetup;
 exports.userEleventySetup = userEleventySetup;
+
+module.exports.userEleventySetup = function (eleventyConfig) {
+  const isPublished = (p) => !p.data?.draft && (p.data?.["dg-publish"] !== false);
+
+  
+};

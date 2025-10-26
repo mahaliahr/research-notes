@@ -1,16 +1,12 @@
-module.exports = class {
+class StreamJson {
   data() {
-    return {
-      permalink: "/data/stream.json",
-      eleventyExcludeFromCollections: true
-    };
+    return { permalink: "/data/stream.json", eleventyExcludeFromCollections: true };
   }
-  render({ collections }) {
-    const items = (collections.streamItems || []).map(i => ({
-      date: i.date || i.data?.date || null,
-      text: i.text || i.data?.text || "",
-      url: i.url
+  render(data) {
+    const items = (data.collections?.streamItems || []).slice(0, 50).map(i => ({
+      date: i.date, text: i.text, url: i.url,
     }));
-    return JSON.stringify(items, null, 2);
+    return JSON.stringify(items);
   }
-};
+}
+module.exports = StreamJson;
