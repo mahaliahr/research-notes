@@ -7,8 +7,13 @@
     {% include "components/pageheader.njk" ignore missing %}
   </head>
   <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
+    {% include "components/navbar.njk" ignore missing %}
+    {% include "components/searchContainer.njk" ignore missing %}
+
     <main class="content">
       {% block content %}{{ content | safe }}{% endblock %}
     </main>
+
+    {% include "components/searchScript.njk" ignore missing %}
   </body>
 </html>
