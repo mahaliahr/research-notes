@@ -1,7 +1,10 @@
+console.log("Live widget loaded");
+
 (async function () {
+  const base = (window.BASE_URL || "/").replace(/\/+$/, "") + "/";
   async function fetchJson(url) {
     try {
-      const r = await fetch(url, { cache: "no-store" });
+      const r = await fetch(base + url.replace(/^\/+/, ""), { cache: "no-store" });
       if (!r.ok) throw new Error(r.statusText);
       return await r.json();
     } catch (e) {
@@ -13,29 +16,27 @@
 
   async function render() {
     const [sessions, milestones, stream] = await Promise.all([
-      fetchJson("/data/sessions.json"),
-      fetchJson("/data/milestones.json"),
-      fetchJson("/data/stream.json")
+      fetchJson("data/sessions.json"),
+      fetchJson("data/milestones.json"),
+      fetchJson("data/stream.json")
     ]);
 
     const now = Date.now();
     const parseStart = s => (s && s.start ? new Date(s.start).getTime() : 0);
 
-    // Current session = started and not ended (or within 2h window)
+    const liveNowEl = $("#live-now");
+    const liveNextEl = $("#live-next");
+    const liveStreamEl = $("#live-stream");
+    if (!liveNowEl || !liveNextEl || !liveStreamEl) return; // guard
+
     const current = (sessions || []).find(s => {
       const st = parseStart(s);
       const en = s?.end ? new Date(s.end).getTime() : st + 2 * 60 * 60 * 1000;
       return st && now >= st && now <= en;
     });
-
-    // Next upcoming = next future start
     const upcoming = (sessions || [])
       .filter(s => parseStart(s) > now)
       .sort((a, b) => parseStart(a) - parseStart(b))[0];
-
-    const liveNowEl = $("#live-now");
-    const liveNextEl = $("#live-next");
-    const liveStreamEl = $("#live-stream");
 
     if (current) {
       liveNowEl.innerHTML =
@@ -48,12 +49,9 @@
       liveNowEl.innerHTML = `<em>No sessions yet.</em>`;
     }
 
-    if (upcoming) {
-      liveNextEl.innerHTML =
-        `<strong>Next:</strong> ${new Date(upcoming.start).toLocaleString()} — <a href="${upcoming.url}">${upcoming.topic || "Session"}</a>`;
-    } else {
-      liveNextEl.innerHTML = ``;
-    }
+    liveNextEl.innerHTML = upcoming
+      ? `<strong>Next:</strong> ${new Date(upcoming.start).toLocaleString()} — <a href="${upcoming.url}">${upcoming.topic || "Session"}</a>`
+      : ``;
 
     const latest = (stream || []).slice(0, 5);
     liveStreamEl.innerHTML = latest.length

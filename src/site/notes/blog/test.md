@@ -7,7 +7,7 @@ type: post
 tags:
   - post
   - reflection
-featured: false
+featured: true
 dg-publish: true
 visibility: public
 ---
