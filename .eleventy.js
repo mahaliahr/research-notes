@@ -95,6 +95,13 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
+  // Passthrough assets/CSS/favicon
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addWatchTarget("src/site/assets");
+  eleventyConfig.addWatchTarget("src/site/styles");
+
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
@@ -544,7 +551,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addWatchTarget("src/site/styles");
-
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
   eleventyConfig.addPassthroughCopy("src/site/img");
   eleventyConfig.addPassthroughCopy("src/site/scripts");
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
@@ -732,8 +739,22 @@ eleventyConfig.addCollection("streamItems", (c) => {
     });
   });
 
-  // Publish helper: published unless explicitly disabled
-  const isPublished = (p) => (p?.data?.["dg-publish"] !== false) && !p?.data?.draft;
+ // Collections used by the graph generator
+  const isMd = (p) => String(p.inputPath || "").toLowerCase().endsWith(".md");
+  const isPublished = (p) =>
+    p?.data?.["dg-publish"] === true &&
+    !p?.data?.draft &&
+    p?.data?.visibility !== "private";
+
+  eleventyConfig.addCollection("note", (api) =>
+    api.getFilteredByGlob("src/site/notes/**/*.md").filter((p) => isMd(p) && isPublished(p))
+  );
+  eleventyConfig.addCollection("notes", (api) =>
+    api.getFilteredByGlob("src/site/notes/**/*.md").filter((p) => isMd(p) && isPublished(p))
+  );
+
+  // Optional: Markdown config
+  eleventyConfig.setLibrary("md", markdownIt({ html: true, linkify: true }));
 
   eleventyConfig.addCollection("postFeaturedFirst", (api) => {
     const byBlogFolder = api.getFilteredByGlob("src/site/notes/blog/**/*.md");
@@ -814,10 +835,16 @@ eleventyConfig.addCollection("streamItems", (c) => {
   eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   return {
-    dir: { input: "src/site", includes: "_includes", layouts: "_includes/layouts", data: "_data", output: "dist" },
+    dir: {
+      input: "src/site",
+      includes: "_includes",
+      layouts: "_includes/layouts",
+      data: "_data",
+      output: "dist",
+    },
     templateFormats: ["njk","md","11ty.js"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
   };
 }; // <— nothing below this line
 

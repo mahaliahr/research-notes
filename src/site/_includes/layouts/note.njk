@@ -4,7 +4,7 @@
 <article class="note">
   <h1>{{ title or page.fileSlug }}</h1>
   {{ content | link | dgMedia | safe }}
-
-  {% include "components/localgraph.njk" %}
+  {# remove local graph to keep original UI in the sidebar #}
+  {# {% include "components/localgraph.njk" ignore missing %} #}
 </article>
 {% endblock %}

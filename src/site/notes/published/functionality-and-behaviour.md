@@ -3,15 +3,12 @@ dg-publish: true
 title: Functionality And Behaviour
 permalink: /notes/functionality-and-behaviour/
 visibility: public
-description: >-
+description: |-
   list of functionality for the project-supervisor-bot
 
-
   ##### interface
-
-  'student to bot' interaction could be shared with the human supervisors, so
-  that they woul
-updated: '2025-10-20T22:34:14.446Z'
+  'student to bot' interaction could be shared with the human supervisors, so that they woul
+updated: 2025-10-20T22:34:14.446Z
 ---
 list of functionality for the [[project-supervisor-bot]]
 

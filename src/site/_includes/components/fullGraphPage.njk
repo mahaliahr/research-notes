@@ -1,0 +1,173 @@
+<div class="graph-title-container">
+  <div class="graph-title">Graph</div>
+  <div id="graph-controls" class="graph-controls">
+    <div class="gc-left">
+      <input id="fg-search" class="gc-search" type="search" placeholder="Search nodes…" />
+      <button type="button" id="fg-clear">Clear</button>
+    </div>
+    <div class="ctrl-right">
+      <span id="fg-zoomfit" role="button" title="Fit graph"><i icon-name="maximize-2" aria-hidden="true"></i></span>
+      <span id="fg-reset" role="button" title="Reset view"><i icon-name="refresh-ccw" aria-hidden="true"></i></span>
+    </div>
+  </div>
+</div>
+
+<div id="full-graph-container"></div>
+
+<script>
+  (async function () {
+    const container = document.getElementById("full-graph-container");
+    if (!container) return;
+
+    // Size
+    const ensureSize = () => {
+      const vh = Math.max(window.innerHeight || 0, 400);
+      container.style.width = "100%";
+      container.style.height = (vh - 160) + "px";
+    };
+    ensureSize();
+
+    // Load data
+    let data;
+    try {
+      const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" });
+      data = await res.json();
+    } catch { return; }
+    if (!data || !data.nodes) return;
+
+    const allNodes = Object.values(data.nodes).filter(n => !n.hide);
+    const hidden = new Set(Object.values(data.nodes).filter(n => n.hide).map(n => n.id));
+    const allLinks = (data.links || []).filter(l => !hidden.has(l.source) && !hidden.has(l.target));
+
+    // Colors
+    const css = getComputedStyle(document.documentElement);
+    const mainColor = (css.getPropertyValue("--graph-main") || "#7aa2f7").trim();
+    const mutedColor = (css.getPropertyValue("--graph-muted") || "rgba(154,165,206,0.55)").trim();
+
+    let hoverNode = null;
+    const searchMatches = new Set();
+
+    const Graph = ForceGraph()(container)
+      .graphData({ nodes: allNodes, links: allLinks })
+      .nodeId("id")
+      .nodeLabel("title")
+      .linkSource("source")
+      .linkTarget("target")
+      .d3AlphaDecay(0.10)
+      .autoPauseRedraw(false)
+      .linkColor(l => {
+        // Dim links if neither end matches the search and nothing is hovered
+        const matchLink = searchMatches.size && (searchMatches.has(l.source.id) || searchMatches.has(l.target.id));
+        if (!hoverNode && searchMatches.size && !matchLink) return mutedColor;
+        if (!hoverNode) return mainColor;
+        return (l.source.id === hoverNode.id || l.target.id === hoverNode.id) ? mainColor : mutedColor;
+      })
+      .nodeCanvasObject((node, ctx) => {
+        const deg = (node.neighbors && node.neighbors.length) || 2;
+        const r = Math.min(8, Math.max(deg / 2, 2));
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
+
+        const isMatch = searchMatches.size && searchMatches.has(node.id);
+        const active = isMatch || !searchMatches.size || (hoverNode && (node.id === hoverNode.id));
+        ctx.fillStyle = active ? mainColor : mutedColor;
+        ctx.fill();
+
+        if (node.home) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r + 1, 0, 2 * Math.PI, false);
+          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = mainColor;
+          ctx.stroke();
+        }
+
+        const label = String(node.title || node.id || "");
+        if (label) {
+          const fontSize = 3.5;
+          ctx.font = `${fontSize}px Sans-Serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "top";
+          ctx.fillStyle = "#bbb";
+          ctx.fillText(label, node.x, node.y + r + 2);
+        }
+      })
+      .onNodeHover(node => {
+        hoverNode = node || null;
+      })
+      .onNodeClick(node => { if (node?.url) window.location = node.url; });
+
+    // Fit once
+    setTimeout(() => { try { Graph.zoomToFit(400, 60); } catch {} }, 200);
+
+    // Resize
+    const ro = new ResizeObserver(() => {
+      const w = container.clientWidth || container.offsetWidth || 1;
+      const h = container.clientHeight || container.offsetHeight || 1;
+      Graph.width(w).height(h);
+    });
+    ro.observe(container);
+    window.addEventListener("resize", () => {
+      ensureSize();
+      const w = container.clientWidth || container.offsetWidth || 1;
+      const h = container.clientHeight || container.offsetHeight || 1;
+      Graph.width(w).height(h);
+      setTimeout(() => { try { Graph.zoomToFit(300, 50); } catch {} }, 50);
+    });
+
+    // Search wiring
+    const qInput = document.getElementById("fg-search");
+    const clearBtn = document.getElementById("fg-clear");
+    const normalize = s => String(s || "").normalize("NFKD").toLowerCase();
+
+    function applySearch(q) {
+      searchMatches.clear();
+      const nq = normalize(q);
+      if (!nq) { Graph.refresh(); return; }
+      for (const n of allNodes) {
+        const hay = normalize(n.title || n.id || "");
+        if (hay.includes(nq)) searchMatches.add(n.id);
+      }
+      Graph.refresh();
+    }
+
+    function focusFirstMatch() {
+      if (searchMatches.size === 0) return;
+      const firstId = searchMatches.values().next().value;
+      const node = allNodes.find(n => n.id === firstId);
+      if (!node || node.x == null || node.y == null) return;
+      try {
+        Graph.centerAt(node.x, node.y, 600);
+        Graph.zoom(4, 600);
+      } catch {}
+    }
+
+    qInput?.addEventListener("input", (e) => applySearch(e.target.value));
+    qInput?.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        applySearch(qInput.value);
+        setTimeout(focusFirstMatch, 50);
+      }
+      if (e.key === "Escape") {
+        qInput.value = "";
+        applySearch("");
+      }
+    });
+    clearBtn?.addEventListener("click", () => {
+      qInput.value = "";
+      applySearch("");
+    });
+
+    // Controls
+    document.getElementById("fg-zoomfit")?.addEventListener("click", () => {
+      try { Graph.zoomToFit(400, 60); } catch {}
+    });
+    document.getElementById("fg-reset")?.addEventListener("click", () => {
+      try { Graph.zoom(1); Graph.centerAt(0, 0, 300); } catch {}
+    });
+
+    // Icons
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons({ attrs: { class: ["svg-icon"] } });
+    }
+  })();
+</script>

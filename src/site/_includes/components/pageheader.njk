@@ -1,8 +1,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
 <link rel="stylesheet" href="{{ '/styles/custom-style.css' | url }}">
 <link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
-
+<script>window.BASE_URL = "{{ '' | url }}";</script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/force-graph"></script>
+<script defer src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons({ attrs: { class: ['svg-icon'] } });
+    }
+  });
+</script>

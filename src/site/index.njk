@@ -1,5 +1,5 @@
 ---
-layout: "base.njk"
+layout: "index.njk"
 title: "Home"
 ---
 
@@ -7,9 +7,10 @@ title: "Home"
   <h1>PhD-Live</h1>
   <p class="tagline">Process as everything - livestreamed notes, sessions, and reflections.</p>
   <nav class="quick-links">
-    <a href="{{ '/blog/'  | url }}">Posts</a>
-    <a href="{{ '/notes/' | url }}">Digital Garden</a>
-    <a href="{{ '/graph/' | url }}">Graph</a>
+    <a href="{{ '/about/'  | url }}">About/</a>
+    <a href="{{ '/blog/'  | url }}">Posts/</a>
+    <a href="{{ '/notes/' | url }}">Digital Garden/</a>
+    <a href="{{ '/graph/' | url }}">Graph/</a>
     {% if settings.dgEnableSearch %}<a href="{{ '/search/' | url }}">Search</a>{% endif %}
   </nav>
 </header>
@@ -29,7 +30,7 @@ title: "Home"
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
     <ul class="cards">
-      {% for post in posts | limit(6) %}
+      {% for post in posts | limit(4) %}
         <li class="card">
           <h3>
             <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
@@ -47,7 +48,7 @@ title: "Home"
   {% set z = collections.zettels | default([]) %}
   {% if z | length %}
     <ul class="list">
-      {% for n in z | limit(10) %}
+      {% for n in z | limit(4) %}
         <li>
           <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
           {% if n.data.updated %}
@@ -89,7 +90,7 @@ title: "Home"
   {% endif %}
 </section>
 
-<section class="recent-notes">
+{# <section class="recent-notes">
   <h2>Recently Updated Notes</h2>
   {% set z = collections.zettels | default([]) %}
   {% if z | length %}
@@ -109,7 +110,7 @@ title: "Home"
     <p>No notes yet.</p>
   {% endif %}
   <p class="more"><a href="{{ '/notes/' | url }}">Browse all notes →</a></p>
-</section>
+</section> #}
 
 <section class="zettel-gateway">
   <h2>Explore the Digital Garden</h2>
@@ -120,14 +121,12 @@ title: "Home"
     <h3>Search</h3>
     <p>Look up concepts, tags, and relations across the whole garden.</p>
     {% if settings and settings.dgEnableSearch %}
-      <p><a class="button" href="{{ '/search/' | url }}">Search the garden →</a></p>
+      <p><a class="button" href="{{ '/graph/' | url }}">Search the garden →</a></p>
     {% else %}
       <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
     {% endif %}
   </div>
 </section>
-
-{% include "components/localgraph.njk" %}
 
 {# <p class="debug" style="font-size:.9em;color:#888">
   posts: {{ collections.postFeaturedFirst | default([]) | length }},
