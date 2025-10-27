@@ -2,8 +2,9 @@
   "dgEnableSearch": true,
   "dgShowInlineTitle": true,
   "dgShowTags": true,
-  "dgShowBacklinks": false,
-  "dgShowLocalGraph": false,
+  "dgShowBacklinks": true,
+  "dgShowLocalGraph": true,
+  "dgExpandLocalGraph": true,
   "dgShowToc": false,
   "dgShowFileTree": false,
   "dgLinkPreview": false

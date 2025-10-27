@@ -1,39 +1,16 @@
 <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
 <script>
-    document.addEventListener('DOMContentLoaded', init, false);
-    document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
+  // Guard the optional init function
+  if (typeof window.init === "function") {
+    document.addEventListener('DOMContentLoaded', window.init, false);
+  }
 
-    window.toggleSearch = function () {
-        if (document.getElementById('globalsearch').classList.contains('active')) {
-            document
-                .getElementById('globalsearch')
-                .classList
-                .remove('active');
-        } else {
-            document
-                .getElementById('globalsearch')
-                .classList
-                .add('active');
-            document
-                .getElementById('term')
-                .focus();
-        }
-    }
+  // Keep this, it exists below in this file
+  document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
 
-    window.toggleTagSearch = function (evt) {
-        console.log(evt.textContent);
-        const term = evt.textContent;
-        if (term) {
-            window
-                .document
-                .getElementById('term')
-                .value = term.trim();
-            window.toggleSearch();
-            window.search();
-        }
-    }
-
-    const loadingSvg = `
+  // Avoid const redeclaration across duplicate includes
+  if (!window.loadingSvg) {
+    window.loadingSvg = `
     <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
       <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
           <circle cx="22" cy="22" r="6" stroke-opacity="0">
@@ -75,6 +52,36 @@
           </circle>
       </g>
   </svg>`;
+  }
+    window.toggleSearch = function () {
+        if (document.getElementById('globalsearch').classList.contains('active')) {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .remove('active');
+        } else {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .add('active');
+            document
+                .getElementById('term')
+                .focus();
+        }
+    }
+
+    window.toggleTagSearch = function (evt) {
+        console.log(evt.textContent);
+        const term = evt.textContent;
+        if (term) {
+            window
+                .document
+                .getElementById('term')
+                .value = term.trim();
+            window.toggleSearch();
+            window.search();
+        }
+    }
 
     function debounce(func, wait, immediate) {
         var timeout;
@@ -282,7 +289,7 @@
         console.log(`search for ${search}`);
         window.lastSearch = search;
 
-        resultsDiv.innerHTML = loadingSvg;
+        resultsDiv.innerHTML = window.loadingSvg;
         //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
         //let results = await searchRequest.json();
         let results = offlineSearch(search);
@@ -377,7 +384,4 @@
         return finalResults;
 
     }
-      if (typeof window.init === "function") {
-    document.addEventListener('DOMContentLoaded', window.init, false);
-  }
 </script>

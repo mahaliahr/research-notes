@@ -1,14 +1,10 @@
 ---
 permalink: "/graph/"
-layout: "base.njk" 
+layout: "base.njk"
 title: "Graph View"
+showSidebar: false
+dgShowLocalGraph: false
 ---
-
-<div class="graph-container">
-  <h1>Map of Ideas</h1>
-  {% include "components/localgraph.njk" %}
-</div>
-
-<style>
-  .graph-container { padding: 1rem; width: 100%; }
-</style>
+<h1>Map of Ideas</h1>
+<p>Look up concepts, tags, and relations across the whole garden.</p>
+{% include "components/fullGraphPage.njk" %}
