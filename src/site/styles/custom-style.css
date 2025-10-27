@@ -98,8 +98,9 @@ body {
   max-width: 100%;
   overflow: hidden;
 }
+
 /* Optional fullscreen class (only on the graph element) */
-.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #0b0b0b); }
+.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #ffffff); }
 /* Label color for the graph */
 :root { --graph-label-text: rgba(154,165,206,0.55); }
 
@@ -182,3 +183,41 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
 .list { list-style: none; padding: 0; margin: 1rem 0; }
 .list li { padding: .4rem 0; }
 .badge { margin-left: .5rem; font-size: .8em; padding: .1rem .4rem; border: 1px solid currentColor; border-radius: .5rem; }
+
+/* Make fullscreen override #graph/#link-graph (IDs are more specific) */
+#graph.graph-fs, #link-graph.graph-fs,
+#graph.fullscreen, #link-graph.fullscreen {
+  position: fixed !important;
+  inset: 0;
+  z-index: 1000;
+  background: var(--background-primary, #ffffff);
+}
+body.graph-fs-open { overflow: hidden !important; }
+
+#link-graph { height: 260px; position: relative; overflow: hidden; }
+.aside #link-graph, .sidebar #link-graph { height: 260px; }
+/* Fullscreen helper (optional) */
+#link-graph.graph-fs {
+  position: fixed !important; inset: 0; width: 100vw !important; height: 100vh !important;
+  z-index: 1000; background: var(--background-primary, #0b0b0b);
+}
+body.graph-fs-open { overflow: hidden !important; }
+
+/* Full graph page */
+.full-graph-wrap { position: relative; width: 100%; }
+.full-graph-controls { display: flex; gap: .5rem; margin: .5rem 0; }
+#full-graph-page { width: 100%; height: calc(100vh - 160px); min-height: 420px; position: relative; overflow: hidden; }
+.full-graph-controls button {
+  background: var(--background-secondary, #1b1b1b);
+  color: var(--text-normal, #e5e5e5);
+  border: 1px solid var(--background-modifier-border, #2a2a2a);
+  border-radius: 6px; padding: .35rem .6rem; cursor: pointer;
+}
+.full-graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }
+
+.page.has-sidebar { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; }
+.page.no-sidebar { display: block; }
+
+#full-graph-container { width: 100%; height: calc(100vh - 160px); min-height: 420px; position: relative; overflow: hidden; }
+/* Reuse existing graph control styles (digital-garden-base.css) via the same classes:
+   .graph-title-container, #graph-controls, .depth-control, .ctrl-right */
