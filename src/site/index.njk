@@ -5,13 +5,16 @@ title: "Home"
 
 <header class="home-hero">
   <h1>PhD-Live</h1>
-  <p class="tagline">Process as everything - livestreamed notes, sessions, and reflections.</p>
+  <p class="tagline"><strong>*Process as everything</strong> -- livestreamed notes, sessions, and reflections.</p>
+  <p>PhD-Live is an evolving research environment documenting my doctoral process in real time.</p>
   <nav class="quick-links">
     <a href="{{ '/about/'  | url }}">About/</a>
     <a href="{{ '/blog/'  | url }}">Posts/</a>
-    <a href="{{ '/notes/' | url }}">Digital Garden/</a>
+    <a href="{{ '/notes/' | url }}">Notes/</a>
     <a href="{{ '/graph/' | url }}">Graph/</a>
-    {% if settings.dgEnableSearch %}<a href="{{ '/search/' | url }}">Search</a>{% endif %}
+    <a href="{{ 'https://www.notion.so/1e7d4b0df71d80f2995bf3e009ffb571?v=1e7d4b0df71d8128a2aa000c8f41d3f2&source=copy_link' | url }}">*Reading List/</a>
+    <a href="{{ 'https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664?source=copy_link' | url }}">*PhD Planning/</a>
+    {# {% if settings.dgEnableSearch %}<a href="{{ '/search/' | url }}">Search</a>{% endif %} #}
   </nav>
 </header>
 
@@ -115,12 +118,9 @@ title: "Home"
 
 <section class="zettel-gateway">
   <h2>Explore the Digital Garden</h2>
-
-  {# {% include "components/graphScript.njk" %} #}
-
   <div class="panel">
     <h3>Search</h3>
-    <p>Look up concepts, tags, and relations across the whole garden.</p>
+    <p>All notes connect through the 'digital garden', which maps ideas, reflections, and experiments across my PhD research.</p>
     {% if settings and settings.dgEnableSearch %}
       <p><a class="button" href="{{ '/graph/' | url }}">Search the garden →</a></p>
     {% else %}

@@ -1,7 +1,7 @@
 ---
 dg-home: null
-dg-publish: true
-title: Research Window
+dg-publsish: true
+title: PhD-Live
 permalink: /notes/research-window/
 visibility: public
 description: |-

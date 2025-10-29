@@ -1,7 +1,7 @@
 <aside class="sidebar">
   <div class="sidebar-container">
     {% if settings.dgShowLocalGraph and (page.dgShowLocalGraph !== false) %}
-      <details class="sidebar-block graph-block" {% if settings.dgExpandLocalGraph %}open{% endif %}>
+      <details class="sidebar-block graph-block" {% if settings.dgExpandLocalGraph or settings.dgShowLocalGraph %}open{% endif %}>
         <summary>Graph</summary>
         {% include "components/graphScript.njk" ignore missing %}
       </details>

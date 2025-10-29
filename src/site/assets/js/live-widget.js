@@ -44,7 +44,7 @@ console.log("Live widget loaded");
     } else if (sessions && sessions.length) {
       const last = [...sessions].sort((a,b) => parseStart(b) - parseStart(a))[0];
       liveNowEl.innerHTML =
-        `Not live. Last session: <a href="${last.url}">${last.topic || "Session"}</a>`;
+        `Currently not live. Last session: <a href="${last.url}">${last.topic || "Session"}</a>`;
     } else {
       liveNowEl.innerHTML = `<em>No sessions yet.</em>`;
     }
