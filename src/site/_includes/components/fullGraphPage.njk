@@ -16,6 +16,24 @@
 
 <script>
   (async function () {
+    // Wait helper: resolves when ForceGraph is available or after timeout
+    const waitForForceGraph = (timeout = 5000, interval = 50) => new Promise((resolve, reject) => {
+      const start = Date.now();
+      const check = () => {
+        if (typeof ForceGraph === 'function') return resolve();
+        if (Date.now() - start > timeout) return reject(new Error('ForceGraph not available'));
+        setTimeout(check, interval);
+      };
+      check();
+    });
+
+    try {
+      await waitForForceGraph();
+    } catch (e) {
+      console.warn('fullGraphPage: ForceGraph not available — graph will not render', e);
+      return;
+    }
+
     const container = document.getElementById("full-graph-container");
     if (!container) return;
 

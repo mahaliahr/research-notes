@@ -1,6 +1,15 @@
-<div class="footer-inner">
+{# <div class="footer-inner">
   <p>Digital Garden © {{ helpers.currentYear() }}</p>
   {% if settings.dgShowBacklinks %}
     {% include "components/backlinks.njk" %}
   {% endif %}
-</div>
+</div> #}
+
+<footer class="site-footer">
+  <p>
+    © {{ helpers.currentYear() }} Mahalia Henry-Richards</p> 
+    · Built with <a href="https://dg-docs.ole.dev/">Digital Garden</a> and 
+    <a href="https://www.11ty.dev/">Eleventy</a>  
+    · <a href="https://github.com/mahaliahr/research-notes">View source on GitHub</a>
+  </p>
+</footer>

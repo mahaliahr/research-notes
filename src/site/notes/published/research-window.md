@@ -1,5 +1,15 @@
 ---
-{"dg-home":null,"dg-publish":true,"permalink":"/published/research-window/","dgPassFrontmatter":true,"noteIcon":""}
+dg-home: null
+dg-publsish: true
+title: PhD-Live
+permalink: /notes/research-window/
+visibility: public
+description: |-
+  This is a snapshot of my thinking and research for my PhD. 
+  This is in flux as thoughts develop.
+
+  [Planning Overview](https://www.notion.so/PhD-Planning-Overvie
+updated: '2025-10-20T22:34:14.475Z'
 ---
 This is a snapshot of my thinking and research for my PhD. 
 This is in flux as thoughts develop.

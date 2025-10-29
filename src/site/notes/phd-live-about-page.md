@@ -1,10 +1,11 @@
 ---
+layout: "index.njk"
 tags: ["gardenEntry"]
 permalink: "/about/"
 ---
 ### About PhD-Live
 
-**How it works**
+### How it works
 PhD Live is built from my evolving collection of notes, managed locally in Obsidian
 and published automatically as a living website.The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas.
 
@@ -26,7 +27,7 @@ All of this comes together to create a structure where thoughts and ideas grow o
 The full source code and content structure live in the public repository:
 github.com/mahaliahr/research-notes
 
-**Why it exists**
+### Why it exists
 
 This website forms part of my practice-based PhD at the Creative Computing Institute, UAL.
 My research explores how generative AI is transforming learning and teaching and uses speculative design and imagination as a method in imagining new ways to engage with these systems. 
@@ -39,7 +40,7 @@ Rather than presenting polished outcomes, [[PhD-Live]] foregrounds the process o
 - how ideas unfold, cross-pollinate, and sometimes fall apart.
 - It is both archive and performance - an experimental rehearsal for what scholarship might look like when it becomes live, networked, and entangled with AI.
 
-**In short**
+### What it is
 - PhD Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
 - It’s part website, part studio, part sketchbook:
-- A place where fragments come together, connections emerge, and the process itself becomes the work.
+- A place where fragments come together, connections emerge, and the process itself becomes the work.e
