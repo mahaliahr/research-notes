@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
     {% include "components/pageheader.njk" ignore missing %}
+        <title>{% if title %}{{ title }}{% else %}{{ meta.title or "Site" }}{% endif %}</title>
   </head>
   <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
     {% include "components/navbar.njk" ignore missing %}
@@ -19,5 +20,6 @@
       </main>
     </div>
     {% include "components/searchScript.njk" ignore missing %}
+    {# {% include "components/footer.njk" ignore missing %} #}
   </body>
 </html>
