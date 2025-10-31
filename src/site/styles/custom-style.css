@@ -58,11 +58,105 @@ body.graph-fs-open { overflow: hidden !important; }
 }
 .graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }
 
-.cards { list-style: none; padding: 0; margin: 1rem 0; display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-.card { padding: 1rem; border: 1px solid var(--background-secondary, #2a2a2a); border-radius: 12px; }
+/* Cards 4x4 grid */
+.cards { list-style: none; margin: 0; padding: 0; }
+.cards.grid-4x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.cards.grid-4x4 li.card {
+  background: var(--card-bg, #feffff);
+  border: 1px solid var(--card-border, rgba(255,255,255,0.03));
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform .12s ease, box-shadow .12s ease;
+  box-shadow: 0 6px 18px rgba(6,10,15,0.35);
+}
+.cards.grid-4x4 li.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(6,10,15,0.45);
+}
+.cards.grid-4x4 li.card h3 { margin: 0 0 .35rem 0; font-size: 1.05rem; }
+.cards.grid-4x4 li.card p { margin: .45rem 0 0; color: var(--muted, #9aa1b3); font-size: .95rem; }
+.cards.grid-4x4 li.card small { color: var(--muted, #9aa1b3); display:block; margin-top:.25rem; }
+
+/* Small badge positioning */
+.cards.grid-4x4 .badge { float: none; margin-left: .5rem; font-size: .7rem; padding: .15rem .4rem; }
+
+/* Responsive breakpoints */
+@media (max-width: 1000px) {
+  .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .cards.grid-4x4 { grid-template-columns: 1fr; gap: .75rem; }
+}
+
 .list { list-style: none; padding: 0; margin: 1rem 0; }
 .list li { padding: .4rem 0; }
 .badge { margin-left: .5rem; font-size: .8em; padding: .1rem .4rem; border: 1px solid currentColor; border-radius: .5rem; }
+
+/* Featured notes 4x4 grid */
+.cards.grid-4x4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cards.grid-4x4 .card {
+  background: var(--card-bg, #0f1113);
+  border: 1px solid var(--card-border, rgba(255,255,255,0.04));
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards.grid-4x4 .card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+.cards.grid-4x4 .card p {
+  margin: 0.5rem 0 0 0;
+  color: var(--muted-text, #aab);
+  font-size: 0.92rem;
+}
+
+/* Badge consistent sizing */
+.card .badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.66rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--accent, #8b6cef);
+  color: white;
+  vertical-align: middle;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1100px) {
+  .cards.grid-4x4 { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 760px) {
+  .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 420px) {
+  .cards.grid-4x4 { grid-template-columns: 1fr; }
+}
+
+/* Optional: tighten spacing on small viewports */
+@media (max-width: 640px) {
+  .cards.grid-4x4 .card { padding: 0.75rem; min-height: 100px; }
+}
 
 /* Make fullscreen override #graph/#link-graph (IDs are more specific) */
 #graph.graph-fs, #link-graph.graph-fs,

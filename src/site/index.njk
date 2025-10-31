@@ -32,7 +32,7 @@ title: "Home"
   <h2>Latest Reflections</h2>
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
-    <ul class="cards">
+    <ul class="cards grid-4x4">
       {% for post in posts | limit(4) %}
         <li class="card">
           <h3>
@@ -72,12 +72,12 @@ title: "Home"
   <h2>Featured Notes</h2>
   {% set fz = collections.featuredZettels | default([]) %}
   {% if fz | length %}
-    <ul class="cards">
-      {% for n in fz | limit(6) %}
+    <ul class="cards grid-4x4">
+      {% for n in fz | limit(4) %}
         <li class="card">
           <h3>
             <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
-            <span class="badge">Featured</span>
+            {% if n.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
           {% if n.data.updated %}
             <small>updated {{ n.data.updated | isoDate }}</small>
