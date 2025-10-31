@@ -181,16 +181,15 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
 /* Cards 4x4 grid */
 .cards { list-style: none; margin: 0; padding: 0; }
 .cards.grid-4x4 {
-  display: grid;
+  display: grid !important;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
-  align-items: start;
 }
 .cards.grid-4x4 li.card {
-  background: var(--card-bg, #feffff);
-  border: 1px solid var(--card-border, rgba(255,255,255,0.03));
   padding: 1rem;
   border-radius: 10px;
+  background: var(--card-bg,#ffffff);
+  border: 1px solid var(--card-border, rgba(255,255,255,0.03));
   transition: transform .12s ease, box-shadow .12s ease;
   box-shadow: 0 6px 18px rgba(6,10,15,0.35);
 }
@@ -228,8 +227,8 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
 }
 
 .cards.grid-4x4 .card {
-  background: var(--card-bg, #0f1113);
-  border: 1px solid var(--card-border, rgba(255,255,255,0.04));
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.04));
   border-radius: 10px;
   padding: 1rem;
   box-shadow: 0 6px 18px rgba(2,6,23,0.35);
