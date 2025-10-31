@@ -7,8 +7,8 @@ body {
 
   
   font-family: "Overpass Mono", monospace;
-}
-/* Keep IDs normal */
+
+  /* Keep IDs normal */
 #graph, #link-graph { position: relative; z-index: 1; max-width: 100%; overflow: hidden; }
 
 /* Fullscreen */
@@ -212,4 +212,6 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
   font-size: 2.25rem !important;
   line-height: 1.05;
   margin: 0.6rem 0;
+}
+
 }
