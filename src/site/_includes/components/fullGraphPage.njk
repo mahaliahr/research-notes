@@ -1,9 +1,18 @@
 <div class="graph-title-container">
   <div class="graph-title">Graph</div>
-  <div id="graph-controls" class="graph-controls">
-    <div class="gc-left">
-      <input id="fg-search" class="gc-search" type="search" placeholder="Search nodes…" />
-      <button type="button" id="fg-clear">Clear</button>
+  <div id="graph-controls">
+    <!-- Depth control exists in sidebar version; keep hidden here (no “current” node) -->
+    <div class="depth-control" style="display:none">
+      <label for="graph-depth">Depth</label>
+      <div class="slider">
+        <input name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth" value="1" />
+        <datalist id="depthmarkers">
+          <option value="1" label="1"></option>
+          <option value="2" label="2"></option>
+          <option value="3" label="3"></option>
+        </datalist>
+      </div>
+      <span id="depth-display">1</span>
     </div>
     <div class="ctrl-right">
       <span id="fg-zoomfit" role="button" title="Fit graph"><i icon-name="maximize-2" aria-hidden="true"></i></span>
@@ -16,28 +25,10 @@
 
 <script>
   (async function () {
-    // Wait helper: resolves when ForceGraph is available or after timeout
-    const waitForForceGraph = (timeout = 5000, interval = 50) => new Promise((resolve, reject) => {
-      const start = Date.now();
-      const check = () => {
-        if (typeof ForceGraph === 'function') return resolve();
-        if (Date.now() - start > timeout) return reject(new Error('ForceGraph not available'));
-        setTimeout(check, interval);
-      };
-      check();
-    });
-
-    try {
-      await waitForForceGraph();
-    } catch (e) {
-      console.warn('fullGraphPage: ForceGraph not available — graph will not render', e);
-      return;
-    }
-
     const container = document.getElementById("full-graph-container");
     if (!container) return;
 
-    // Size
+    // Ensure size similar to full-width layout
     const ensureSize = () => {
       const vh = Math.max(window.innerHeight || 0, 400);
       container.style.width = "100%";
@@ -45,28 +36,32 @@
     };
     ensureSize();
 
-    // Load data
+    // Fetch graph data
     let data;
     try {
       const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" });
       data = await res.json();
-    } catch { return; }
+    } catch (e) {
+      console.warn("full-graph: failed to load graph.json", e);
+      return;
+    }
     if (!data || !data.nodes) return;
 
-    const allNodes = Object.values(data.nodes).filter(n => !n.hide);
+    // Normalize data for ForceGraph and drop hidden nodes
+    const nodes = Object.values(data.nodes).filter(n => !n.hide);
     const hidden = new Set(Object.values(data.nodes).filter(n => n.hide).map(n => n.id));
-    const allLinks = (data.links || []).filter(l => !hidden.has(l.source) && !hidden.has(l.target));
+    const links = (data.links || []).filter(l => !hidden.has(l.source) && !hidden.has(l.target));
 
-    // Colors
     const css = getComputedStyle(document.documentElement);
-    const mainColor = (css.getPropertyValue("--graph-main") || "#7aa2f7").trim();
+    const mainColor = (css.getPropertyValue("--graph-main") || "#8b6cef").trim();
     const mutedColor = (css.getPropertyValue("--graph-muted") || "rgba(154,165,206,0.55)").trim();
 
     let hoverNode = null;
-    const searchMatches = new Set();
+    const highlight = new Set();
 
+    // Init ForceGraph
     const Graph = ForceGraph()(container)
-      .graphData({ nodes: allNodes, links: allLinks })
+      .graphData({ nodes, links })
       .nodeId("id")
       .nodeLabel("title")
       .linkSource("source")
@@ -74,9 +69,6 @@
       .d3AlphaDecay(0.10)
       .autoPauseRedraw(false)
       .linkColor(l => {
-        // Dim links if neither end matches the search and nothing is hovered
-        const matchLink = searchMatches.size && (searchMatches.has(l.source.id) || searchMatches.has(l.target.id));
-        if (!hoverNode && searchMatches.size && !matchLink) return mutedColor;
         if (!hoverNode) return mainColor;
         return (l.source.id === hoverNode.id || l.target.id === hoverNode.id) ? mainColor : mutedColor;
       })
@@ -85,9 +77,7 @@
         const r = Math.min(8, Math.max(deg / 2, 2));
         ctx.beginPath();
         ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
-
-        const isMatch = searchMatches.size && searchMatches.has(node.id);
-        const active = isMatch || !searchMatches.size || (hoverNode && (node.id === hoverNode.id));
+        const active = (!hoverNode) || node.id === hoverNode.id || highlight.has(node.url);
         ctx.fillStyle = active ? mainColor : mutedColor;
         ctx.fill();
 
@@ -110,6 +100,11 @@
         }
       })
       .onNodeHover(node => {
+        highlight.clear();
+        if (node) {
+          highlight.add(node.url);
+          (node.neighbors || []).forEach(u => highlight.add(u));
+        }
         hoverNode = node || null;
       })
       .onNodeClick(node => { if (node?.url) window.location = node.url; });
@@ -132,50 +127,7 @@
       setTimeout(() => { try { Graph.zoomToFit(300, 50); } catch {} }, 50);
     });
 
-    // Search wiring
-    const qInput = document.getElementById("fg-search");
-    const clearBtn = document.getElementById("fg-clear");
-    const normalize = s => String(s || "").normalize("NFKD").toLowerCase();
-
-    function applySearch(q) {
-      searchMatches.clear();
-      const nq = normalize(q);
-      if (!nq) { Graph.refresh(); return; }
-      for (const n of allNodes) {
-        const hay = normalize(n.title || n.id || "");
-        if (hay.includes(nq)) searchMatches.add(n.id);
-      }
-      Graph.refresh();
-    }
-
-    function focusFirstMatch() {
-      if (searchMatches.size === 0) return;
-      const firstId = searchMatches.values().next().value;
-      const node = allNodes.find(n => n.id === firstId);
-      if (!node || node.x == null || node.y == null) return;
-      try {
-        Graph.centerAt(node.x, node.y, 600);
-        Graph.zoom(4, 600);
-      } catch {}
-    }
-
-    qInput?.addEventListener("input", (e) => applySearch(e.target.value));
-    qInput?.addEventListener("keydown", (e) => {
-      if (e.key === "Enter") {
-        applySearch(qInput.value);
-        setTimeout(focusFirstMatch, 50);
-      }
-      if (e.key === "Escape") {
-        qInput.value = "";
-        applySearch("");
-      }
-    });
-    clearBtn?.addEventListener("click", () => {
-      qInput.value = "";
-      applySearch("");
-    });
-
-    // Controls
+    // Controls wired to same-looking buttons
     document.getElementById("fg-zoomfit")?.addEventListener("click", () => {
       try { Graph.zoomToFit(400, 60); } catch {}
     });
@@ -183,7 +135,7 @@
       try { Graph.zoom(1); Graph.centerAt(0, 0, 300); } catch {}
     });
 
-    // Icons
+    // Ensure lucide icons render
     if (window.lucide && typeof window.lucide.createIcons === "function") {
       window.lucide.createIcons({ attrs: { class: ["svg-icon"] } });
     }
