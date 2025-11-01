@@ -32,8 +32,9 @@ title: "Home"
   <h2>Latest Reflections</h2>
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
-    <ul class="cards grid-4x4">
-      {% for post in posts | limit(4) %}
+  <div class="cards-wrap">
+    <ul class="cards grid-2x4">
+      {% for post in posts | limit(8) %}
         <li class="card">
           <h3>
             <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
@@ -46,6 +47,7 @@ title: "Home"
       {% endfor %}
     </ul>
   {% endif %}
+</div>
 
   {# Recent notes #}
   <h2>Recent Notes</h2>
@@ -64,16 +66,16 @@ title: "Home"
       {% endfor %}
     </ul>
   {% endif %}
-
-  <p class="more"><a href="{{ '/blog/' | url }}">See all posts →</a></p>
+  <p class="more"><a href="{{ '/notes/' | url }}">See all notes →</a></p>
 </section>
 
 <section class="featured-notes">
   <h2>Featured Notes</h2>
   {% set fz = collections.featuredZettels | default([]) %}
   {% if fz | length %}
-    <ul class="cards grid-4x4">
-      {% for n in fz | limit(4) %}
+  <div class="cards-wrap">
+    <ul class="cards grid-2x4">
+      {% for n in fz | limit(8) %}
         <li class="card">
           <h3>
             <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
@@ -92,6 +94,7 @@ title: "Home"
   {% else %}
     <p>Add <code>featured: true</code> (or tag <code>gardenEntry</code>) in a note’s front matter to feature it here.</p>
   {% endif %}
+  </div>
 </section>
 
 {# <section class="recent-notes">

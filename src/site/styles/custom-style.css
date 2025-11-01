@@ -1,103 +1,92 @@
+/* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-body {
-  /***
-     ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-     IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-  ***/
 
-  
-  font-family: "Overpass Mono", monospace;
-
-  /* Keep IDs normal */
-#graph, #link-graph { position: relative; z-index: 1; max-width: 100%; overflow: hidden; }
-
-/* Fullscreen */
-#graph.graph-fs, #link-graph.graph-fs,
-#graph.fullscreen, #link-graph.fullscreen {
-  position: fixed !important;
-  inset: 0;
-  z-index: 1000;
-  background: var(--background-primary, #0b0b0b);
+/* Base */
+:root {
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.06);
+  --muted-text: #9aa1b3;
+  --accent: #8b6cef;
+  --background-primary: #0b0b0b;
+  --content-max: 1100px;
 }
-body.graph-fs-open { overflow: hidden !important; }
 
-#graph, #link-graph {
+body {
+  font-family: "Overpass Mono", monospace;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Graph containers */
+#graph, #link-graph, #full-graph-container {
   position: relative;
   z-index: 1;
   max-width: 100%;
   overflow: hidden;
 }
 
-/* Optional fullscreen class (only on the graph element) */
-.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #ffffff); }
-/* Label color for the graph */
-:root { --graph-label-text: rgba(154,165,206,0.55); }
+/* Fullscreen helpers */
+.graph-fs {
+  position: fixed !important;
+  inset: 0;
+  z-index: 1000;
+  background: var(--background-primary);
+}
+#full-graph-container, #full-graph-page { width:100%; height:calc(100vh - 160px); min-height:420px; }
 
+/* Defensive: if a stale fullscreen class remains but no graph element exists,
+   allow the page to scroll again (JS cleanup is also added) */
+body.graph-fs-open:not(:has(.graph-fs)) {
+  overflow: auto !important;
+}
+
+/* Graph controls */
 .graph-controls {
-  position: relative; z-index: 2;
-  display: flex; align-items: center; justify-content: space-between;
-  gap: .75rem; margin: .5rem 0 1rem;
-  font-size: .9rem; color: var(--text-muted, #9aa5ce);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  margin: .5rem 0 1rem;
+  font-size: .9rem;
+  color: var(--muted-text);
 }
-.graph-controls .gc-right, .graph-controls .gc-left { display: flex; align-items: center; gap: .5rem; }
-.local-graph [x-ref="canvas"] { position: relative; z-index: 1; height: 320px; }
-.graph-fs { position: fixed; inset: 0; z-index: 10; background: var(--background-primary, #0b0b0b); }
-.graph-controls label { margin-right: .35rem; }
-.graph-controls input[type="range"] { width: 140px; }
+.graph-controls .gc-left,
+.graph-controls .gc-right { display:flex; gap:.5rem; align-items:center; }
 .graph-controls .gc-search {
-  width: 180px; background: var(--background-secondary, #1b1b1b);
-  color: var(--text-normal, #e5e5e5);
-  border: 1px solid var(--background-modifier-border, #2a2a2a);
-  border-radius: 6px; padding: .35rem .5rem;
-}
-.graph-controls button {
+  width: 180px;
   background: var(--background-secondary, #1b1b1b);
   color: var(--text-normal, #e5e5e5);
-  border: 1px solid var(--background-modifier-border, #2a2a2a);
-  border-radius: 6px; padding: .35rem .6rem; cursor: pointer;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: .35rem .5rem;
 }
-.graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }
 
-/* Cards 4x4 grid */
+/* Contained section wrapper */
+.cards-wrap {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Grid and reset */
 .cards { list-style: none; margin: 0; padding: 0; }
-.cards.grid-4x4 {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr);
+.cards.grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
 }
-.cards.grid-4x4 li.card {
-  padding: 1rem;
-  border-radius: 10px;
-  background: var(--card-bg,#ffffff);
-  border: 1px solid var(--card-border, rgba(255,255,255,0.03));
-  transition: transform .12s ease, box-shadow .12s ease;
-  box-shadow: 0 6px 18px rgba(6,10,15,0.35);
-}
-.cards.grid-4x4 li.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 40px rgba(6,10,15,0.45);
-}
-.cards.grid-4x4 li.card h3 { margin: 0 0 .35rem 0; font-size: 1.05rem; }
-.cards.grid-4x4 li.card p { margin: .45rem 0 0; color: var(--muted, #9aa1b3); font-size: .95rem; }
-.cards.grid-4x4 li.card small { color: var(--muted, #9aa1b3); display:block; margin-top:.25rem; }
-
-/* Small badge positioning */
-.cards.grid-4x4 .badge { float: none; margin-left: .5rem; font-size: .7rem; padding: .15rem .4rem; }
-
-/* Responsive breakpoints */
-@media (max-width: 1000px) {
-  .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 560px) {
-  .cards.grid-4x4 { grid-template-columns: 1fr; gap: .75rem; }
+.cards.grid-2x4 .card {
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
 }
 
-.list { list-style: none; padding: 0; margin: 1rem 0; }
-.list li { padding: .4rem 0; }
-.badge { margin-left: .5rem; font-size: .8em; padding: .1rem .4rem; border: 1px solid currentColor; border-radius: .5rem; }
-
-/* Featured notes 4x4 grid */
-.cards.grid-4x4 {
+/* Cards 4x4 grid - consolidated */
+.cards { list-style: none; margin: 0; padding: 0; }
+.cards.grid-2x4 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
@@ -105,113 +94,67 @@ body.graph-fs-open { overflow: hidden !important; }
   padding: 0;
   margin: 0;
 }
-
-.cards.grid-4x4 .card {
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.04));
+.cards.grid-2x4 .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 1rem;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
   min-height: 120px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: transform .12s ease, box-shadow .12s ease;
 }
-
-.cards.grid-4x4 .card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.05rem;
+.cards.grid-2x4 .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(2,6,23,0.12);
 }
-
-.cards.grid-4x4 .card p {
-  margin: 0.5rem 0 0 0;
-  color: var(--muted-text, #aab);
-  font-size: 0.92rem;
-}
-
-/* Badge consistent sizing */
+.cards.grid-2x4 .card h3 { margin: 0 0 .5rem 0; font-size: 1.05rem; }
+.cards.grid-2x4 .card p { margin: 0.5rem 0 0 0; color: var(--muted-text); font-size: .92rem; }
 .card .badge {
-  display: inline-block;
-  margin-left: 0.5rem;
-  font-size: 0.66rem;
-  padding: 0.15rem 0.45rem;
-  border-radius: 999px;
-  background: var(--accent, #8b6cef);
-  color: white;
-  vertical-align: middle;
+  display:inline-block; margin-left:.5rem; font-size:.66rem; padding:.15rem .45rem; border-radius:999px;
+  background: var(--accent); color:#fff;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1100px) {
-  .cards.grid-4x4 { grid-template-columns: repeat(3, 1fr); }
+/* 2x4 cards grid */
+.cards.grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
 }
-@media (max-width: 760px) {
-  .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 420px) {
-  .cards.grid-4x4 { grid-template-columns: 1fr; }
-}
-
-/* Optional: tighten spacing on small viewports */
-@media (max-width: 640px) {
-  .cards.grid-4x4 .card { padding: 0.75rem; min-height: 100px; }
+@media (max-width: 560px) {
+  .cards.grid-2x4 { grid-template-columns: 1fr; }
 }
 
-/* Make fullscreen override #graph/#link-graph (IDs are more specific) */
-#graph.graph-fs, #link-graph.graph-fs,
-#graph.fullscreen, #link-graph.fullscreen {
-  position: fixed !important;
-  inset: 0;
-  z-index: 1000;
-  background: var(--background-primary, #ffffff);
-}
-body.graph-fs-open { overflow: hidden !important; }
+/* Responsive grid */
+@media (max-width:1100px) { .cards.grid-4x4 { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width:760px)  { .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width:420px)  { .cards.grid-4x4 { grid-template-columns: 1fr; } }
 
-#link-graph { height: 260px; position: relative; overflow: hidden; }
-.aside #link-graph, .sidebar #link-graph { height: 260px; }
-/* Fullscreen helper (optional) */
-#link-graph.graph-fs {
-  position: fixed !important; inset: 0; width: 100vw !important; height: 100vh !important;
-  z-index: 1000; background: var(--background-primary, #0b0b0b);
-}
-body.graph-fs-open { overflow: hidden !important; }
-
-/* Full graph page */
-.full-graph-wrap { position: relative; width: 100%; }
-.full-graph-controls { display: flex; gap: .5rem; margin: .5rem 0; }
-#full-graph-page { width: 100%; height: calc(100vh - 160px); min-height: 420px; position: relative; overflow: hidden; }
-.full-graph-controls button {
-  background: var(--background-secondary, #1b1b1b);
-  color: var(--text-normal, #e5e5e5);
-  border: 1px solid var(--background-modifier-border, #2a2a2a);
-  border-radius: 6px; padding: .35rem .6rem; cursor: pointer;
-}
-.full-graph-controls button:hover { border-color: var(--interactive-accent, #7aa2f7); }
-
+/* layout helpers */
 .page.has-sidebar { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; }
 .page.no-sidebar { display: block; }
 
-#full-graph-container { width: 100%; height: calc(100vh - 160px); min-height: 420px; position: relative; overflow: hidden; }
-/* Reuse existing graph control styles (digital-garden-base.css) via the same classes:
-   .graph-title-container, #graph-controls, .depth-control, .ctrl-right */
+/* Small adjustments for graph sidebar size */
+#link-graph { height: 260px; }
+.aside #link-graph, .sidebar #link-graph { height: 260px; }
 
-/* Larger headings override */
-/* h1 { font-size: 1.2rem; line-height: 1.05; margin-top: 1.0rem; margin-bottom: 0.6rem; }  */
-/* h2 { font-size: 1.5rem; line-height: 1.15; margin-top: 0.9rem; margin-bottom: 0.5rem; }
-h3 { font-size: 1.15rem; line-height: 1.2; margin-top: 0.8rem; margin-bottom: 0.45rem; }
-h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0.4rem; }  */
-
-/* Optional: scale down on small screens */
-@media (max-width: 640px) {
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-  h3 { font-size: 1.1rem; }
-}
-
+/* home hero heading override */
 .home-hero h1 {
   font-size: 2.25rem !important;
   line-height: 1.05;
   margin: 0.6rem 0;
 }
 
-}
+/* minimal visible rule + your overrides */
+html, body { -webkit-font-smoothing: antialiased; }
+.home-hero h1 { font-size: 2.25rem !important; line-height: 1.05; margin: .6rem 0; }
+
+/* cards grid */
+.cards { list-style: none; margin: 0; padding: 0; }
+.cards.grid-4x4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+@media (max-width:1000px){ .cards.grid-4x4{ grid-template-columns: repeat(2,1fr); } }
+@media (max-width:560px){ .cards.grid-4x4{ grid-template-columns: 1fr; } }
+html, body { overflow: auto !important; }
+
