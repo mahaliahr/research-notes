@@ -18,8 +18,9 @@
         "start": "eleventy --serve"
     },
     "scripts": {
-        "build": "npx @11ty/eleventy",
-        "dev": "npx @11ty/eleventy --serve"
+        "build": "rm -rf dist && npx @11ty/eleventy",
+        "dev": "rm -rf dist && npx @11ty/eleventy --serve",
+        "sass": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded"
     },
     "engines": {
         "node": ">=18"

@@ -95,11 +95,11 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
-  // Passthrough assets/CSS/favicon
-  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  // copy static assets into dist
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
 
   eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addWatchTarget("src/site/styles");
