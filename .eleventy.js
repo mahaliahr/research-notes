@@ -99,6 +99,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
+
   eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addWatchTarget("src/site/styles");
 

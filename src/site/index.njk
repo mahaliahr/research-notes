@@ -28,13 +28,33 @@ title: "Home"
   <script src="{{ '/assets/js/live-widget.js' | url }}" defer></script>
 </section>
 
+<section class="milestones">
+  <h2>Upcoming milestones</h2>
+  {% set ms = collections.milestones | default([]) %}
+  {% if ms | length %}
+    <ul>
+      {% for m in ms | limit(6)%}
+        <li>
+          <strong>{{ m.title }}</strong>
+          {% if m.due %}<small>due {{ m.due }}</small>{% endif %}
+          {% if m.url %}<a href="{{ m.url }}">view note</a>{% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No milestones yet. Add <code>- [ ] … #milestone @YYYY-MM-DD</code> to any note.</p>
+  {% endif %}
+    <p class="more"><a href="{{ '/planning/' | url }}">See upcoming tasks →</a></p>
+</section>
+
+
 <section class="latest-posts">
   <h2>Latest Reflections</h2>
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
   <div class="cards-wrap">
     <ul class="cards grid-2x4">
-      {% for post in posts | limit(8) %}
+      {% for post in posts | limit(4) %}
         <li class="card">
           <h3>
             <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>

@@ -141,5 +141,3 @@ When 11ty can’t find layouts, confirm `layout:` paths (e.g., `layouts/note.njk
 
 Built on [@oleeskild’s Obsidian Digital Garden](https://github.com/oleeskild/obsidian-digital-garden)  
 Extended with custom Eleventy components for live research tracking.  
-
-© 2025 Mahalia Henry-Richards. All rights reserved.
