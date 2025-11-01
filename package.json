@@ -17,6 +17,13 @@
         "dev": "npm-run-all -p css start",
         "start": "eleventy --serve"
     },
+    "scripts": {
+        "build": "npx @11ty/eleventy",
+        "dev": "npx @11ty/eleventy --serve"
+    },
+    "engines": {
+        "node": ">=18"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
