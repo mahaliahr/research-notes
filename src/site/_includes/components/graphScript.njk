@@ -69,6 +69,7 @@
         if (!graphData) return;
         const el = document.getElementById(id);
         if (!el) return;
+        if (typeof ForceGraph !== 'function') return;
 
         let Graph = null;
 
@@ -160,6 +161,8 @@
 
     function renderLocalGraph(graphData, depth, fullScreen) {
         if (!graphData) return null;
+        if (typeof ForceGraph !== 'function') return null;
+        if (!document.getElementById('link-graph')) return null;
         const data = filterLocalGraphData(graphData, depth);
         if (!data) return null;
         // Keep a single instance; renderGraph handles resize/fits
@@ -214,7 +217,7 @@
             </div>
         </div>
     </div>
-    <div x-effect="window.graph = renderLocalGraph(graphData, depth, fullScreen)" id="link-graph"></div>
+    <div x-effect="if (graphData && typeof ForceGraph === 'function' && document.getElementById('link-graph')) { window.graph = renderLocalGraph(graphData, depth, fullScreen); }" id="link-graph"></div>
     <div x-show="showFullGraph" id="full-graph" class="show" style="display:none;">
         <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span>
         <div id="full-graph-container"></div>
