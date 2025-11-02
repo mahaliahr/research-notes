@@ -836,10 +836,16 @@ eleventyConfig.addCollection("streamItems", (c) => {
   eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   return {
-    dir: { input: "src/site", includes: "_includes", layouts: "_includes/layouts", data: "_data", output: "dist" },
-    templateFormats: ["njk","md","11ty.js"],
+    dir: {
+      input: "src/site",
+      includes: "_includes",
+      layouts: "_includes/layouts",
+      data: "_data",
+      output: "dist",
+    },
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
+    templateFormats: ["njk","md","11ty.js"],
   };
 }; // <— nothing below this line
 

@@ -4,20 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "prebuild": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded && node src/site/get-theme.js",
-        "start": "npm-run-all get-theme build:sass --parallel watch:*",
-        "watch:sass": "sass --watch src/site/styles:dist/styles",
-        "watch:eleventy": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-        "build:eleventy": "cross-env ELEVENTY_ENV=prod NODE_OPTIONS=--max-old-space-size=4096 eleventy",
-        "build:sass": "sass src/site/styles:dist/styles --style compressed",
-        "get-theme": "node src/site/get-theme.js",
-        "update:frontmatter": "node tools/bulk-frontmatter.js",
-        "build": "npm-run-all get-theme build:*",
-        "css": "sass src/site/styles/digital-garden-base.scss:src/site/styles/digital-garden-base.css src/site/styles/custom-style.scss:src/site/styles/custom-style.css --no-source-map",
-        "dev": "npm-run-all -p css start",
-        "start": "eleventy --serve"
-    },
-    "scripts": {
+        "prebuild": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded",
         "build": "rm -rf dist && npx @11ty/eleventy",
         "dev": "npm run prebuild && rm -rf dist && npx @11ty/eleventy --serve"
     },
@@ -33,7 +20,7 @@
         "cross-env": "^7.0.3",
         "html-minifier-terser": "^7.2.0",
         "node-html-parser": "^6.1.13",
-        "sass": "^1.93.2"
+        "sass": "^1.93.3"
     },
     "dependencies": {
         "@11ty/eleventy-img": "^4.0.2",

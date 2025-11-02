@@ -1,4 +1,13 @@
-/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+body {
+  /***
+     ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
+     IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
+  ***/
+  font-family: "Overpass Mono", monospace;
+}
+
+  /* Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* Base */
@@ -9,8 +18,13 @@
   --accent: #8b6cef;
   --background-primary: #0b0b0b;
   --content-max: 1100px;
- 
-  
+  /* navbar */
+  /* --navbar-bg: #0b0b0b; */
+  /* --navbar-fg: #e8e8ea; */
+
+  /* local graph */
+  --graph-main: #8b6cef;            /* nodes/links primary */
+  --graph-muted: rgba(139,108,239,.45); /* de-emphasized */
 }
 
 body {
@@ -162,4 +176,3 @@ html, body { overflow: auto !important; }
 
 /* Example usage hooks if your CSS doesn’t already wire these */
 .navbar { background: var(--navbar-bg); color: var(--navbar-fg); }
-
