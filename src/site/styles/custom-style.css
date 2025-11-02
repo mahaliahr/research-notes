@@ -1,16 +1,6 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-body {
-  /***
-     ADD YOUR CUSTOM STYLING HERE. (INSIDE THE body {...} section.)
-     IT WILL TAKE PRECEDENCE OVER THE STYLING IN THE STYLE.CSS FILE.
-  ***/
-  font-family: "Overpass Mono", monospace;
-}
-
-  /* Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
-
-/* Base */
+/* Design tokens and fallbacks (top-level, not nested) */
 :root {
   --card-bg: #ffffff;
   --card-border: rgba(0,0,0,0.06);
@@ -18,20 +8,87 @@ body {
   --accent: #8b6cef;
   --background-primary: #0b0b0b;
   --content-max: 1100px;
-  /* navbar */
-  /* --navbar-bg: #0b0b0b; */
-  /* --navbar-fg: #e8e8ea; */
+  /* Navbar + graph (ForceGraph reads these) */
+  --navbar-bg: #f7f7f7;
+  --navbar-fg: #0b0b0b;
+  --graph-main: #8b6cef;
+  --graph-muted: rgba(139,108,239,.45);
+}
 
-  /* local graph */
-  --graph-main: #8b6cef;            /* nodes/links primary */
-  --graph-muted: rgba(139,108,239,.45); /* de-emphasized */
+/* Base */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto; /* safety: restore scroll unless a fullscreen overlay is on top */
 }
 
 body {
-  font-family: "Overpass Mono", monospace;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Overpass Mono", monospace;
+}
+
+/* Containment for wide sections */
+.cards-wrap {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Cards grid — 2 columns (mobile: 1) */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .cards.grid-2x4 {
+    grid-template-columns: 1fr;
+  }
+}
+.cards.grid-2x4 .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cards.grid-2x4 .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
+}
+
+.cards.grid-2x4 .card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.cards.grid-2x4 .card p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.92rem;
+}
+
+.card .badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.66rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
 }
 
 /* Graph containers */
@@ -42,137 +99,69 @@ body {
   overflow: hidden;
 }
 
-/* Fullscreen helpers */
 .graph-fs {
   position: fixed !important;
   inset: 0;
   z-index: 1000;
   background: var(--background-primary);
 }
-#full-graph-container, #full-graph-page { width:100%; height:calc(100vh - 160px); min-height:420px; }
 
-/* Defensive: if a stale fullscreen class remains but no graph element exists,
-   allow the page to scroll again (JS cleanup is also added) */
-body.graph-fs-open:not(:has(.graph-fs)) {
-  overflow: auto !important;
+#full-graph-container, #full-graph-page {
+  width: 100%;
+  height: calc(100vh - 160px);
+  min-height: 420px;
 }
 
-/* Graph controls */
 .graph-controls {
-  position: relative;
-  z-index: 2;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: .75rem;
-  margin: .5rem 0 1rem;
-  font-size: .9rem;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
   color: var(--muted-text);
 }
-.graph-controls .gc-left,
-.graph-controls .gc-right { display:flex; gap:.5rem; align-items:center; }
+
+.graph-controls .gc-left, .graph-controls .gc-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
 .graph-controls .gc-search {
   width: 180px;
-  background: var(--background-secondary, #1b1b1b);
-  color: var(--text-normal, #e5e5e5);
+  background: #1b1b1b;
+  color: #e5e5e5;
   border: 1px solid var(--card-border);
   border-radius: 6px;
-  padding: .35rem .5rem;
+  padding: 0.35rem 0.5rem;
 }
 
-/* Contained section wrapper */
-.cards-wrap {
-  max-width: var(--content-max);
-  margin-inline: auto;
-  padding-inline: 1rem;
+/* Navbar color lock */
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--navbar-fg);
 }
 
-/* Grid and reset */
-.cards { list-style: none; margin: 0; padding: 0; }
-.cards.grid-2x4 {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+/* Larger headings override */
+/* h1 { font-size: 1.2rem; line-height: 1.05; margin-top: 1.0rem; margin-bottom: 0.6rem; }  */
+/* h2 { font-size: 1.5rem; line-height: 1.15; margin-top: 0.9rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.15rem; line-height: 1.2; margin-top: 0.8rem; margin-bottom: 0.45rem; }
+h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0.4rem; }  */
+/* Optional: scale down on small screens */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
 }
-.cards.grid-2x4 .card {
-  overflow: hidden;
-  word-wrap: break-word;
-  overflow-wrap: anywhere;
-}
-
-/* Cards 4x4 grid - consolidated */
-.cards { list-style: none; margin: 0; padding: 0; }
-.cards.grid-2x4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.cards.grid-2x4 .card {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
-  padding: 1rem;
-  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: transform .12s ease, box-shadow .12s ease;
-}
-.cards.grid-2x4 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 40px rgba(2,6,23,0.12);
-}
-.cards.grid-2x4 .card h3 { margin: 0 0 .5rem 0; font-size: 1.05rem; }
-.cards.grid-2x4 .card p { margin: 0.5rem 0 0 0; color: var(--muted-text); font-size: .92rem; }
-.card .badge {
-  display:inline-block; margin-left:.5rem; font-size:.66rem; padding:.15rem .45rem; border-radius:999px;
-  background: var(--accent); color:#fff;
-}
-
-/* 2x4 cards grid */
-.cards.grid-2x4 {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-}
-@media (max-width: 560px) {
-  .cards.grid-2x4 { grid-template-columns: 1fr; }
-}
-
-/* Responsive grid */
-@media (max-width:1100px) { .cards.grid-4x4 { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width:760px)  { .cards.grid-4x4 { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width:420px)  { .cards.grid-4x4 { grid-template-columns: 1fr; } }
-
-/* layout helpers */
-.page.has-sidebar { display: grid; grid-template-columns: 320px 1fr; gap: 1rem; }
-.page.no-sidebar { display: block; }
-
-/* Small adjustments for graph sidebar size */
-#link-graph { height: 260px; }
-.aside #link-graph, .sidebar #link-graph { height: 260px; }
-
-/* home hero heading override */
 .home-hero h1 {
   font-size: 2.25rem !important;
   line-height: 1.05;
   margin: 0.6rem 0;
 }
-
-/* minimal visible rule + your overrides */
-html, body { -webkit-font-smoothing: antialiased; }
-.home-hero h1 { font-size: 2.25rem !important; line-height: 1.05; margin: .6rem 0; }
-
-/* cards grid */
-.cards { list-style: none; margin: 0; padding: 0; }
-.cards.grid-4x4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
-@media (max-width:1000px){ .cards.grid-4x4{ grid-template-columns: repeat(2,1fr); } }
-@media (max-width:560px){ .cards.grid-4x4{ grid-template-columns: 1fr; } }
-html, body { overflow: auto !important; }
-
-/* Example usage hooks if your CSS doesn’t already wire these */
-.navbar { background: var(--navbar-bg); color: var(--navbar-fg); }

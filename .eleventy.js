@@ -101,7 +101,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
-  eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
+  // If you have a PNG too, copy it:
+  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
 
   eleventyConfig.addWatchTarget("src/site/styles");
   eleventyConfig.addWatchTarget("src/site/assets");
@@ -558,8 +560,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addWatchTarget("src/site/styles");
   eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
-  eleventyConfig.addPassthroughCopy("src/site/img");
-  eleventyConfig.addPassthroughCopy("src/site/scripts");
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
+  // If you have a PNG too, copy it:
+  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
+  eleventyConfig.addPassthroughCopy({ "src/site/img" : "img" });
+  eleventyConfig.addPassthroughCopy({ "src/site/scripts" : "scripts" });
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
