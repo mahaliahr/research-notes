@@ -278,4 +278,3 @@ html, body { overflow: auto !important; }
 
 /* Example usage hooks if your CSS doesn’t already wire these */
 .navbar { background: var(--navbar-bg); color: var(--navbar-fg); }
-
