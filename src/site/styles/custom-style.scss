@@ -10,8 +10,8 @@
   --content-max: 1100px;
 
   /* Navbar + graph (ForceGraph reads these) */
-  --navbar-bg: #0b0b0b;
-  --navbar-fg: #e8e8ea;
+  --navbar-bg: #f7f7f7;
+  --navbar-fg: #0b0b0b;
   --graph-main: #8b6cef;
   --graph-muted: rgba(139,108,239,.45);
 }
@@ -59,6 +59,16 @@ body {
 }
 .cards.grid-2x4 .card h3 { margin: 0; font-size: 1.05rem; }
 .cards.grid-2x4 .card p  { margin: 0; color: var(--muted-text); font-size: .92rem; }
+.card .badge {
+  display:inline-block;
+  margin-left:.5rem;
+  font-size:.66rem;
+  padding:.15rem .45rem;
+  border-radius:999px;
+  background: var(--accent);
+  color: #fff;            // contrast text so it’s visible
+  font-weight: 600;
+}
 
 /* Graph containers */
 #graph, #link-graph, #full-graph-container {
@@ -73,3 +83,23 @@ body {
 
 /* Navbar color lock */
 .navbar { background: var(--navbar-bg); color: var(--navbar-fg); }
+
+
+/* Larger headings override */
+/* h1 { font-size: 1.2rem; line-height: 1.05; margin-top: 1.0rem; margin-bottom: 0.6rem; }  */
+/* h2 { font-size: 1.5rem; line-height: 1.15; margin-top: 0.9rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.15rem; line-height: 1.2; margin-top: 0.8rem; margin-bottom: 0.45rem; }
+h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0.4rem; }  */
+
+/* Optional: scale down on small screens */
+@media (max-width: 640px) {
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+  h3 { font-size: 1.1rem; }
+}
+
+.home-hero h1 {
+  font-size: 2.25rem !important;
+  line-height: 1.05;
+  margin: 0.6rem 0;
+}
