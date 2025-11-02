@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "prebuild": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded",
+        "prebuild": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded && node src/site/get-theme.js",
         "start": "npm-run-all get-theme build:sass --parallel watch:*",
         "watch:sass": "sass --watch src/site/styles:dist/styles",
         "watch:eleventy": "cross-env ELEVENTY_ENV=dev eleventy --serve",

@@ -9,6 +9,13 @@
   --accent: #8b6cef;
   --background-primary: #0b0b0b;
   --content-max: 1100px;
+  /* navbar */
+  --navbar-bg: #0b0b0b;
+  --navbar-fg: #e8e8ea;
+
+  /* local graph */
+  --graph-main: #8b6cef;            /* nodes/links primary */
+  --graph-muted: rgba(139,108,239,.45); /* de-emphasized */
 }
 
 body {
@@ -157,4 +164,7 @@ html, body { -webkit-font-smoothing: antialiased; }
 @media (max-width:1000px){ .cards.grid-4x4{ grid-template-columns: repeat(2,1fr); } }
 @media (max-width:560px){ .cards.grid-4x4{ grid-template-columns: 1fr; } }
 html, body { overflow: auto !important; }
+
+/* Example usage hooks if your CSS doesn’t already wire these */
+.navbar { background: var(--navbar-bg); color: var(--navbar-fg); }
 
