@@ -276,3 +276,6 @@ html, body { -webkit-font-smoothing: antialiased; }
 @media (max-width:560px){ .cards.grid-4x4{ grid-template-columns: 1fr; } }
 html, body { overflow: auto !important; }
 
+/* Example usage hooks if your CSS doesn’t already wire these */
+.navbar { background: var(--navbar-bg); color: var(--navbar-fg); }
+
