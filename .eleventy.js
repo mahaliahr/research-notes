@@ -95,7 +95,6 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
-  // copy static assets into dist
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
@@ -837,13 +836,7 @@ eleventyConfig.addCollection("streamItems", (c) => {
   eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   return {
-    dir: {
-      input: "src/site",
-      includes: "_includes",
-      layouts: "_includes/layouts",
-      data: "_data",
-      output: "dist",
-    },
+    dir: { input: "src/site", includes: "_includes", layouts: "_includes/layouts", data: "_data", output: "dist" },
     templateFormats: ["njk","md","11ty.js"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",

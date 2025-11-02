@@ -1,23 +1,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
-<link rel="stylesheet" href="{{ '/styles/custom-style.css' | url }}">
-<link rel="icon" href="{{ '/favicon.svg' | url }}" type="image/svg+xml">
 
-{# <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    if (window.lucide && typeof window.lucide.createIcons === 'function') {
-      window.lucide.createIcons({ attrs: { class: ['svg-icon'] } });
-      
-    }
-  });
-</script>  #}
+<link rel="stylesheet" href="{{ '/styles/digital-garden-base.css' | url }}">
+{% if meta.themeStyle %}
+  <link rel="stylesheet" href="{{ '/styles/obsidian-base.css' | url }}">
+  <link rel="stylesheet" href="{{ meta.themeStyle | url }}">
+{% else %}
+  <link rel="stylesheet" href="{{ '/styles/style.css' | url }}">
+{% endif %}
+<link rel="stylesheet" href="{{ '/styles/custom-style.css' | url }}">
 
 <script>window.BASE_URL = "{{ '' | url }}";</script>
-
-<!-- Libraries: load in-order, defer so DOM is available when scripts run -->
 <script defer src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
-<script defer src="https://fastly.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
-<script defer src="https://fastly.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
 <script defer src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,7 +33,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async/>
 <script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
 
-<link href="/styles/digital-garden-base.css" rel="stylesheet">
+{# <link href="/styles/digital-garden-base.css" rel="stylesheet">
 {%-if meta.themeStyle%}
     <link href="/styles/obsidian-base.css" rel="stylesheet">
     <link href="{{meta.themeStyle}}" rel="stylesheet">
@@ -51,7 +46,7 @@
 <link href="{{style}}" rel="stylesheet">
 {%- endfor -%}
 
-{% favicons './src/site/favicon.svg', appleIconBgColor='#123' %}
+{% favicons './src/site/favicon.svg', appleIconBgColor='#123' %} #}
 
 {% if metatags %}
     {% for name, content in metatags %}
