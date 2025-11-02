@@ -1,12 +1,14 @@
 {
     "name": "web",
     "version": "1.0.0",
+    "private": true,
     "description": "",
     "main": "index.js",
     "scripts": {
-        "prebuild": "npx sass src/site/styles:src/site/styles --no-source-map --style=expanded",
+        "prebuild": "node src/site/get-theme.js && npx sass src/site/styles:src/site/styles --no-source-map --style=expanded",
         "build": "rm -rf dist && npx @11ty/eleventy",
-        "dev": "npm run prebuild && rm -rf dist && npx @11ty/eleventy --serve"
+        "dev": "npm run prebuild && rm -rf dist && npx @11ty/eleventy --serve",
+        "start": "npm run dev"
     },
     "engines": {
         "node": ">=18"

@@ -95,13 +95,18 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
+  // Static assets
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css"); // generated theme file
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
   eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
 
-  eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addWatchTarget("src/site/styles");
+  eleventyConfig.addWatchTarget("src/site/assets");
+  eleventyConfig.addWatchTarget("src/site/notes");
+  eleventyConfig.addWatchTarget("src/site/notes/images");
 
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
