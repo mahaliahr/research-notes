@@ -7,6 +7,7 @@ const tocPlugin = require("eleventy-plugin-nesting-toc");
 const { parse } = require("node-html-parser");
 const htmlMinifier = require("html-minifier-terser");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const fg = require("fast-glob");
 
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
 const {
@@ -94,6 +95,21 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
+  // Static assets
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css"); // generated theme file
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
+  // If you have a PNG too, copy it:
+  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
+
+  eleventyConfig.addWatchTarget("src/site/styles");
+  eleventyConfig.addWatchTarget("src/site/assets");
+  eleventyConfig.addWatchTarget("src/site/notes");
+  eleventyConfig.addWatchTarget("src/site/notes/images");
+
   eleventyConfig.setLiquidOptions({
     dynamicPartials: true,
   });
@@ -212,9 +228,10 @@ module.exports = function (eleventyConfig) {
         function (tokens, idx, options, env, self) {
           return self.renderToken(tokens, idx, options, env, self);
         };
+
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
+        // Preserve your existing width/metadata parsing from token.content
         const imageName = tokens[idx].content;
-        //"image.png|metadata?|width"
         const [fileName, ...widthAndMetaData] = imageName.split("|");
         const lastValue = widthAndMetaData[widthAndMetaData.length - 1];
         const lastValueIsNumber = !isNaN(lastValue);
@@ -224,18 +241,27 @@ module.exports = function (eleventyConfig) {
         if (widthAndMetaData.length > 1) {
           metaData = widthAndMetaData.slice(0, widthAndMetaData.length - 1).join(" ");
         }
-
         if (!lastValueIsNumber) {
           metaData += ` ${lastValue}`;
         }
-
         if (width) {
           const widthIndex = tokens[idx].attrIndex("width");
           const widthAttr = `${width}px`;
-          if (widthIndex < 0) {
-            tokens[idx].attrPush(["width", widthAttr]);
-          } else {
-            tokens[idx].attrs[widthIndex][1] = widthAttr;
+          if (widthIndex < 0) tokens[idx].attrPush(["width", widthAttr]);
+          else tokens[idx].attrs[widthIndex][1] = widthAttr;
+        }
+
+        // NEW: rewrite relative image src to public /notes/images path
+        const srcIdx = tokens[idx].attrIndex("src");
+        if (srcIdx >= 0) {
+          let src = tokens[idx].attrs[srcIdx][1] || "";
+          const isAbsolute = /^https?:\/\//i.test(src) || src.startsWith("/");
+          if (!isAbsolute) {
+            // Keep subpath if user wrote images/foo.png; else prefix images/
+            src = src.startsWith("images/")
+              ? `/notes/${src}`
+              : `/notes/images/${src}`;
+            tokens[idx].attrs[srcIdx][1] = src;
           }
         }
 
@@ -270,20 +296,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setLibrary("md", markdownLib);
 
+  // Place filters BEFORE the return (not after)
   eleventyConfig.addFilter("isoDate", function (date) {
-    return date && date.toISOString();
+    return date ? new Date(date).toISOString() : "";
   });
 
   eleventyConfig.addFilter("link", function (str) {
     return (
       str &&
       str.replace(/\[\[(.*?\|.*?)\]\]/g, function (match, p1) {
-        //Check if it is an embedded excalidraw drawing or mathjax javascript
-        if (p1.indexOf("],[") > -1 || p1.indexOf('"$"') > -1) {
-          return match;
-        }
+        if (p1.indexOf("],[") > -1 || p1.indexOf('"$"') > -1) return match;
         const [fileLink, linkTitle] = p1.split("|");
-
         return getAnchorLink(fileLink, linkTitle);
       })
     );
@@ -521,10 +544,39 @@ module.exports = function (eleventyConfig) {
     return content;
   });
 
-  eleventyConfig.addPassthroughCopy("src/site/img");
-  eleventyConfig.addPassthroughCopy({"src/site/assets": "assets"});
-  eleventyConfig.addPassthroughCopy("src/site/scripts");
+  // // Serve assets and images like the original theme
+  // eleventyConfig.addPassthroughCopy({ "src/site/assets/js": "assets" }); // expects /assets/img/...
+  // eleventyConfig.addWatchTarget("src/site/assets/js");
+
+  // Optional: if you keep attachments next to notes, also copy them
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
+  });
+  eleventyConfig.addWatchTarget("src/site/notes");
+
+  // Keep your other passthroughs
+  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  eleventyConfig.addWatchTarget("src/site/assets");
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  eleventyConfig.addWatchTarget("src/site/styles");
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
+  // If you have a PNG too, copy it:
+  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
+  eleventyConfig.addPassthroughCopy({ "src/site/img" : "img" });
+  eleventyConfig.addPassthroughCopy({ "src/site/scripts" : "scripts" });
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
+  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
+  // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
+  eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
+  eleventyConfig.addWatchTarget("src/site/notes/images");
+
+  // If you want to copy ALL images under notes (including subfolders):
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
+  });
+  eleventyConfig.addWatchTarget("src/site/notes");
+
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
     ul: true,
@@ -562,18 +614,250 @@ module.exports = function (eleventyConfig) {
     },
   });
 
-  userEleventySetup(eleventyConfig);
+  // Convert Obsidian-style image embeds ![[image.png|alt or WxH]]
+  eleventyConfig.addFilter("dgMedia", (html) => {
+    if (!html) return html;
+    const re = /!\[\[([^\]|#]+)(?:#[^\]]+)?(?:\|([^\]]+))?\]\]/g;
+
+    return html.replace(re, (_m, file, alias) => {
+      const raw = String(file || "").trim().replace(/^\.?\//, "");
+      const ext = raw.split(".").pop().toLowerCase();
+      if (!/^(png|jpe?g|gif|svg|webp|avif)$/.test(ext)) return _m;
+
+      // Alt or size (200 or 200x120)
+      const a = String(alias || "").trim();
+      let alt = a || raw, w, h;
+      const m = a.match(/^(\d+)(?:x(\d+))?$/);
+      if (m) { w = m[1]; h = m[2]; alt = raw; }
+
+      // Map to public URL under /notes; keep subpath if provided (images/foo.png)
+      const src = raw.includes("/") ? `/notes/${encodeURI(raw)}` : `/notes/images/${encodeURI(raw)}`;
+
+      const attrs = [
+        `src="${src}"`,
+        `alt="${alt.replace(/"/g, "&quot;")}"`,
+        `loading="lazy"`, `decoding="async"`,
+        w ? `width="${w}"` : "", h ? `height="${h}"` : ""
+      ].filter(Boolean).join(" ");
+
+      return `<img ${attrs}>`;
+    });
+  });
+
+  // isoDate used by blog list templates in DG
+  eleventyConfig.addFilter("isoDate", (d) => (d ? new Date(d).toISOString() : ""));
+
+  const getText = (p) => {
+  try { return fs.readFileSync(p.inputPath, "utf8"); } catch { return ""; }
+};
+const inlineField = (src, key) => {
+  if (typeof src !== "string" || !src) return null;
+  const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
+  const m = src.match(re);
+  return m ? m[1].trim() : null;
+};
+
+// Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
+const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+(.+?)\s*(?:@(\d{4}-\d{2}-\d{2}))?(?=\s|$)/gm;
+eleventyConfig.addCollection("milestones", (c) => {
+  const out = [];
+  for (const p of c.getAll()) {
+    const txt = getText(p);
+    if (!/#milestone\b/.test(txt)) continue;
+    let m;
+    while ((m = milestoneRe.exec(txt))) {
+      const [, box, title, due] = m;
+      out.push({
+        title: title.replace(/\s+#milestone\b/i, "").trim(),
+        due: due || null,
+        status: String(box).trim().toLowerCase() === "x" ? "done" : "planned",
+        area: null,
+        url: p.url,
+      });
+    }
+  }
+  return out.sort((a, b) => {
+    const ad = a.due ? new Date(a.due).getTime() : Infinity;
+    const bd = b.due ? new Date(b.due).getTime() : Infinity;
+    return ad - bd;
+  });
+});
+
+// Sessions: any note in notes/sessions/ or with "start::"
+eleventyConfig.addCollection("sessions", (c) => {
+  return c.getAll()
+    .filter(p => p.inputPath.includes("/notes/sessions/") || /(^|\n)\s*start::/i.test(getText(p)))
+    .map(p => {
+      const txt = getText(p);
+      const start = inlineField(txt, "start");
+      const end = inlineField(txt, "end");
+      const topic = inlineField(txt, "topic") || p.data.title || p.fileSlug;
+      return { start, end, topic, url: p.url };
+    })
+    .sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
+});
+
+// Stream: from daily notes or stream.md lines "- HH:MM message"
+const streamLineRe = /^\s*-\s*(\d{1,2}:\d{2})\s+(.+)$/gm;
+eleventyConfig.addCollection("streamItems", (c) => {
+  const out = [];
+  const candidates = c.getAll().filter(p => {
+    const path = p?.inputPath || "";
+    return typeof path === "string" && ( /\/notes\/daily\//i.test(path) || /\/stream\.md$/i.test(path) );
+  });
+  for (const p of candidates) {
+    const txt = getText(p);
+    if (!txt) continue;
+    const dateField = inlineField(txt, "date");
+    const fromSlug = (p.fileSlug || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const fromPath = (p.inputPath || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+    const day = dateField || fromSlug || fromPath || null;
+    const re = new RegExp(streamLineRe.source, streamLineRe.flags);
+    let m;
+    while ((m = re.exec(txt))) {
+      const [, time, message] = m;
+      out.push({ date: day ? `${day} ${time}` : time, text: message.trim(), url: p.url });
+    }
+  }
+  return out.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+});
+
+  // Digital Garden-style wikilinks filter (simple)
+  eleventyConfig.addFilter("link", (html, pages = []) => {
+    if (!html) return html;
+
+    const map = new Map();
+    for (const p of pages) {
+      if (!p?.url) continue;
+      if (p.fileSlug) map.set(p.fileSlug.toLowerCase(), p.url);
+      if (p.data?.title) map.set(slugify(p.data.title), p.url);
+    }
+    const re = /\[\[([^\]|#]+)(?:#[^\]|]+)?(?:\|([^\]]+))?\]\]/g;
+    return html.replace(re, (_m, target, alias) => {
+      const key = slugify(String(target || ""));
+      const href = map.get(key) || `/notes/${key}/`;
+      const text = alias || target;
+      return `<a class="internal-link" href="${href}">${text}</a>`;
+    });
+  });
+
+  eleventyConfig.addFilter("embedMedia", (html) => {
+    if (!html) return html;
+    return html.replace(/!\[\[([^\]|#]+)(?:#[^\]]+)?\]\]/g, (_m, file) => {
+      const fname = String(file).trim();
+      const safe = encodeURI(fname);
+      // Adjust the base to where you store images
+      const src = `/assets/img/${safe}`;
+      return `<img src="${src}" alt="${fname}">`;
+    });
+  });
+
+ // Collections used by the graph generator
+  const isMd = (p) => String(p.inputPath || "").toLowerCase().endsWith(".md");
+  const isPublished = (p) =>
+    p?.data?.["dg-publish"] === true &&
+    !p?.data?.draft &&
+    p?.data?.visibility !== "private";
+
+  eleventyConfig.addCollection("note", (api) =>
+    api.getFilteredByGlob("src/site/notes/**/*.md").filter((p) => isMd(p) && isPublished(p))
+  );
+  eleventyConfig.addCollection("notes", (api) =>
+    api.getFilteredByGlob("src/site/notes/**/*.md").filter((p) => isMd(p) && isPublished(p))
+  );
+
+  // Optional: Markdown config
+  eleventyConfig.setLibrary("md", markdownIt({ html: true, linkify: true }));
+
+  eleventyConfig.addCollection("postFeaturedFirst", (api) => {
+    const byBlogFolder = api.getFilteredByGlob("src/site/notes/blog/**/*.md");
+    const byPublishedFolder = api.getFilteredByGlob("src/site/notes/published/**/*.md");
+    const byTag = api.getFilteredByTag("post");
+
+    // De-dupe by inputPath
+    const map = new Map();
+    [...byBlogFolder, ...byPublishedFolder, ...byTag].forEach(p => map.set(p.inputPath, p));
+
+    return [...map.values()]
+      .filter(isPublished)
+      .sort((a, b) => {
+        const fa = !!a.data?.featured, fb = !!b.data?.featured;
+        if (fa !== fb) return fb - fa;               // featured first
+        return (b.date || 0) - (a.date || 0);        // newest next
+      });
+  });
+
+  eleventyConfig.on('afterBuild', async () => {
+  // Get the list of all HTML files generated
+  const files = await fg('dist/**/*.html');
+
+  // Iterate over each file and minify
+  for (const file of files) {
+    // Skip if already minified
+    if (file.endsWith('.min.html')) continue;
+
+    // Read the file
+    const content = await fs.promises.readFile(file, 'utf8');
+
+    // Minify the content
+    const minified = await htmlMinifier.minify(content, {
+      useShortDoctype: true,
+      removeComments: true,
+      collapseWhitespace: true,
+      conservativeCollapse: true,
+      preserveLineBreaks: true,
+      minifyCSS: true,
+      minifyJS: true,
+      keepClosingSlash: true,
+    });
+
+    // Write the minified content to a new file
+    await fs.promises.writeFile(file.replace('.html', '.min.html'), minified);
+  }
+});
+
+  eleventyConfig.addCollection("featuredZettels", (api) => {
+    return api.getFilteredByGlob("src/site/notes/**/*.md")
+      .filter(p => isPublished(p) && (p.data?.featured || (p.data?.tags || []).includes("gardenEntry")))
+      .sort((a, b) => {
+        const bu = b.data?.updated ? new Date(b.data.updated) : b.date;
+        const au = a.data?.updated ? new Date(a.data.updated) : a.date;
+        return bu - au;
+      });
+  });
+
+  eleventyConfig.addCollection("zettels", (api) => {
+    return api.getFilteredByGlob("src/site/notes/**/*.md")
+      .filter(p =>
+        isPublished(p) &&
+        !(p.inputPath || "").includes("/notes/blog/") &&
+        !(p.inputPath || "").includes("/notes/published/") &&
+        !p.data?.featured
+      )
+      .sort((a, b) => {
+        const bu = b.data?.updated ? new Date(b.data.updated) : b.date;
+        const au = a.data?.updated ? new Date(a.data.updated) : a.date;
+        return bu - au;
+      });
+  });
+
+  // Ensure these collections are not also added in src/helpers/userSetup.js
+  // If they are, remove one set.
+
+  // Add a limit filter for arrays
+  eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   return {
     dir: {
       input: "src/site",
+      includes: "_includes",
+      layouts: "_includes/layouts",
+      data: "_data",
       output: "dist",
-      data: `_data`,
     },
-    templateFormats: ["njk", "md", "html", "11ty.js"],
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
-    passthroughFileCopy: true,
+    templateFormats: ["njk","md","11ty.js"],
   };
+}; // <— nothing below this line
 
-};

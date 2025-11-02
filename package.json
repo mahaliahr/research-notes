@@ -1,18 +1,17 @@
 {
     "name": "web",
     "version": "1.0.0",
+    "private": true,
     "description": "",
     "main": "index.js",
     "scripts": {
-        "prebuild": "rimraf dist",
-        "start": "npm-run-all get-theme build:sass --parallel watch:*",
-        "watch:sass": "sass --watch src/site/styles:dist/styles",
-        "watch:eleventy": "cross-env ELEVENTY_ENV=dev eleventy --serve",
-        "build:eleventy": "cross-env ELEVENTY_ENV=prod NODE_OPTIONS=--max-old-space-size=4096 eleventy",
-        "build:sass": "sass src/site/styles:dist/styles --style compressed",
-        "get-theme": "node src/site/get-theme.js",
-        "update:frontmatter": "node tools/bulk-frontmatter.js",
-        "build": "npm-run-all get-theme build:*"
+        "prebuild": "node src/site/get-theme.js && npx sass src/site/styles:src/site/styles --no-source-map --style=expanded",
+        "build": "rm -rf dist && npx @11ty/eleventy",
+        "dev": "npm run prebuild && rm -rf dist && npx @11ty/eleventy --serve",
+        "start": "npm run dev"
+    },
+    "engines": {
+        "node": ">=18"
     },
     "keywords": [],
     "author": "",
@@ -23,7 +22,7 @@
         "cross-env": "^7.0.3",
         "html-minifier-terser": "^7.2.0",
         "node-html-parser": "^6.1.13",
-        "sass": "^1.49.9"
+        "sass": "^1.93.3"
     },
     "dependencies": {
         "@11ty/eleventy-img": "^4.0.2",

@@ -1,58 +1,68 @@
-(function () {
-  async function safeJson(url) {
+console.log("Live widget loaded");
+
+(async function () {
+  const base = (window.BASE_URL || "/").replace(/\/+$/, "") + "/";
+  async function fetchJson(url) {
     try {
-      const r = await fetch(url);
-      if (!r.ok) throw 0;
+      const r = await fetch(base + url.replace(/^\/+/, ""), { cache: "no-store" });
+      if (!r.ok) throw new Error(r.statusText);
       return await r.json();
-    } catch {
+    } catch (e) {
+      console.warn("live-widget: failed", url, e);
       return [];
     }
   }
-
-  function el(id) { return document.getElementById(id); }
+  function $(sel) { return document.querySelector(sel); }
 
   async function render() {
-    const [milestones, sessions, stream] = await Promise.all([
-      safeJson('/data/milestones.json'),
-      safeJson('/data/sessions.json'),
-      safeJson('/data/stream.json'),
+    const [sessions, milestones, stream] = await Promise.all([
+      fetchJson("data/sessions.json"),
+      fetchJson("data/milestones.json"),
+      fetchJson("data/stream.json")
     ]);
 
     const now = Date.now();
-    const nowEl = el('live-now');
-    const nextEl = el('live-next');
-    const streamEl = el('live-stream');
+    const parseStart = s => (s && s.start ? new Date(s.start).getTime() : 0);
 
-    const live = Array.isArray(sessions)
-      ? sessions.find(s => s && !s.end && (now - new Date(s.start).getTime()) < 2 * 60 * 60 * 1000)
-      : null;
+    const liveNowEl = $("#live-now");
+    const liveNextEl = $("#live-next");
+    const liveStreamEl = $("#live-stream");
+    if (!liveNowEl || !liveNextEl || !liveStreamEl) return; // guard
 
-    nowEl.innerHTML = live
-      ? `🔴 <strong>LIVE</strong>: <a href="${live.url}">${live.topic || 'Session'}</a>`
-      : (Array.isArray(sessions) && sessions.length
-          ? `Last session: <a href="${sessions[0].url}">${sessions[0].topic || 'Session'}</a>`
-          : `No sessions yet.`);
+    const current = (sessions || []).find(s => {
+      const st = parseStart(s);
+      const en = s?.end ? new Date(s.end).getTime() : st + 2 * 60 * 60 * 1000;
+      return st && now >= st && now <= en;
+    });
+    const upcoming = (sessions || [])
+      .filter(s => parseStart(s) > now)
+      .sort((a, b) => parseStart(a) - parseStart(b))[0];
 
-    const upcoming = (Array.isArray(milestones) ? milestones : [])
-      .filter(m => m && m.due && new Date(m.due) >= new Date())
-      .slice(0, 5);
+    if (current) {
+      liveNowEl.innerHTML =
+        `🔴 <strong>LIVE</strong>: <a href="${current.url}">${current.topic || "Session"}</a>`;
+    } else if (sessions && sessions.length) {
+      const last = [...sessions].sort((a,b) => parseStart(b) - parseStart(a))[0];
+      liveNowEl.innerHTML =
+        `Currently not live. Last session: <a href="${last.url}">${last.topic || "Session"}</a>`;
+    } else {
+      liveNowEl.innerHTML = `<em>No sessions yet.</em>`;
+    }
 
-    nextEl.innerHTML = `<h4>Next milestones</h4>` + (
-      upcoming.length
-        ? `<ul>${upcoming.map(m => `<li><a href="${m.url}">${m.title}</a> — ${m.due} <em>${m.status || 'planned'}</em></li>`).join('')}</ul>`
-        : `<p>Nothing scheduled.</p>`
-    );
+    liveNextEl.innerHTML = upcoming
+      ? `<strong>Next:</strong> ${new Date(upcoming.start).toLocaleString()} — <a href="${upcoming.url}">${upcoming.topic || "Session"}</a>`
+      : ``;
 
-    const streamList = (Array.isArray(stream) ? stream : []).slice(0, 5);
-    streamEl.innerHTML = `<h4>Stream</h4>` + (
-      streamList.length
-        ? `<ul>${streamList.map(s => `<li>${s.date || ''} — <a href="${s.url}">entry</a></li>`).join('')}</ul>`
-        : `<p>No recent entries.</p>`
-    );
+    const latest = (stream || []).slice(0, 5);
+    liveStreamEl.innerHTML = latest.length
+      ? `<ul>${latest.map(i =>
+          `<li>${i.date ? `<small>${i.date}</small> ` : ""}${i.text || ""}</li>`
+        ).join("")}</ul>`
+      : `<em>No recent stream items yet.</em>`;
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', render);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", render);
   } else {
     render();
   }

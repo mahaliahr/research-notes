@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Theories Practices Policies
+permalink: /notes/theories-practices-policies/
+visibility: public
+description: |-
+  # What I asked?
+
+  ##### **Imagination microteach**
+  Can you foster imagination within object based learning?
+  we were asked to come up with a 20 min micro teach se
+updated: '2025-10-20T22:34:14.485Z'
 ---
 # What I asked?
 

@@ -10,7 +10,7 @@
       {% include imp %}
     {% endfor %}
   </head>
-  <body class="theme-{{meta.baseTheme}} markdown-preview-view markdown-rendered markdown-preview-section {{meta.bodyClasses}}">
+  <body class="theme-{{meta.baseTheme}} {{meta.bodyClasses}}">
     {%include "components/notegrowthhistory.njk"%}
     {% if settings.dgShowFileTree !== true %}
       {%include "components/navbar.njk"%}
@@ -20,7 +20,7 @@
     {% if settings.dgEnableSearch === true %}
       {%include "components/searchContainer.njk"%}
     {% endif %}
-    <main class="content cm-s-obsidian {{contentClasses}}">
+    <main class="content cm-s-obsidian markdown-preview-view markdown-rendered markdown-preview-section {{contentClasses}}">
       <header>
       {% if settings.dgShowInlineTitle === true %}
         <h1>{{ noteTitle  }}</h1>
@@ -75,5 +75,34 @@
       {% include imp %}
     {% endfor %}
     {%include "components/lucideIcons.njk"%}
-    </body>
-  </html>
+    {% include "components/footer.njk" ignore missing %}
+
+    <script>
+      (function () {
+        function restoreScroll() {
+          try {
+            const docEl = document.documentElement;
+            const body = document.body;
+            const hasFullscreenGraph =
+              !!document.querySelector('.graph-fs') ||
+              !!document.querySelector('#full-graph-container.graph-fs');
+
+            if (!hasFullscreenGraph) {
+              body.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              docEl.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              body.style.overflow = '';
+              docEl.style.overflow = '';
+            }
+          } catch (e) {}
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', restoreScroll);
+        } else {
+          restoreScroll();
+        }
+        window.addEventListener('alpine:init', restoreScroll);
+      })();
+    </script>
+  </body>
+</html>

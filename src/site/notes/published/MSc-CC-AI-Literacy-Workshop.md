@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: Msc Cc Ai Literacy Workshop
+permalink: /notes/msc-cc-ai-literacy-workshop/
+visibility: public
+description: >-
+  This year for the new cohort of students (25/26) I want to take the
+  opportunity to introduce and 'onboard' the students to think about AI in a
+  more critical way
+updated: '2025-10-20T22:34:14.421Z'
 ---
 This year for the new cohort of students (25/26) I want to take the opportunity to introduce and 'onboard' the students to think about AI in a more critical way, understand what they know or understand AI is, and try to 'unmask' some preconceived notions about it **before** students use it blindly within their learning.
 

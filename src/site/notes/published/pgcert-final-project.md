@@ -1,5 +1,17 @@
 ---
 dg-publish: true
+title: Pgcert Final Project
+permalink: /notes/pgcert-final-project/
+visibility: public
+description: |-
+  What I asked?
+  What I did? 
+  What I found?
+  What I (don't) know?
+
+  ##### Socio-economic Factors
+  Wider socio-economic factors appear to be having as much of an influ
+updated: '2025-10-20T22:34:14.468Z'
 ---
 
 What I asked?

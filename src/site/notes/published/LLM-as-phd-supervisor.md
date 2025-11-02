@@ -1,5 +1,20 @@
 ---
 dg-publish: true
+title: Llm As Phd Supervisor
+permalink: /notes/llm-as-phd-supervisor/
+visibility: public
+description: >+
+  #structure-note 
+
+
+  Below I have highlighted the core areas from the
+  ual-description-of-a-supervisor that I need to consider for my
+  project-supervisor-bot:
+
+
+  ---
+
+updated: '2025-10-20T22:34:14.419Z'
 ---
 #structure-note 
 

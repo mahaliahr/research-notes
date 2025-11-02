@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: Definitions Of Speculative Design
+permalink: /notes/definitions-of-speculative-design/
+visibility: public
+description: >-
+  'What is speculative design from a practitioner’s point of view, really? James
+  Auger provides one useful starting point: “Speculative design proposals are
+  essen
+updated: '2025-10-20T22:34:14.438Z'
 ---
 'What is speculative design from a practitioner’s point of view, really? James Auger provides one useful starting point: “Speculative design proposals are essentially tools for questioning. Their aim is therefore not to propose implementable product solutions, nor to offer answers to the questions they pose; they are intended to act like a mirror reflecting the role a specific technology plays or may play in each of our lives, instigating contemplation and discussion.”'(Auger, 2012) p73
 

@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Black In Academia 2020 Kehinde Andrews
+permalink: /notes/black-in-academia-2020-kehinde-andrews/
+visibility: public
+description: >-
+  -bibliography
+
+
+  Black In Academia (2020) _Professor Kehinde Andrews – Surviving the Academy #
+  BlackInAcademia_. [https://www.youtube.com/watch?v=HHf7omscsIs](htt
+updated: '2025-10-20T22:35:27.440Z'
 ---
 [[-bibliography]]
 

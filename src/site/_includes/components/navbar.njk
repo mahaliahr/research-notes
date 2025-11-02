@@ -1,8 +1,11 @@
 {%if settings.dgHomeLink === true%}
     <nav class="navbar">
         <div class="navbar-inner">
-            <a href="/" style="text-decoration: none;">
+            {# <a href="/" style="text-decoration: none;">
                 <h1 style="margin: 15px !important;">{{meta.siteName}}</h1>
+            </a> #}
+            <a href="/" style="text-decoration: none;">
+                <h1 style="margin: 15px !important;">{{meta.title or "PhD-Live"}}</h1>
             </a>
         </div>
         {% if settings.dgEnableSearch === true%}
@@ -11,6 +14,7 @@
     </nav>
     {%else%}
     <div class="empty-navbar" >
+          <div id="site-brand" aria-hidden="true" style="display:none;"></div>
         {% if settings.dgEnableSearch === true%}
             {% include "components/searchButton.njk" %}
         {%endif%}

@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Ibm 2024 Ai In Education
+permalink: /notes/ibm-2024-ai-in-education/
+visibility: public
+description: >-
+  -bibliography
+
+
+  _AI in education: Safety, literacy, and predictions_, IBM (2024). Available
+  at: [https://www.youtube.com/watch?v=JSnwZmbTMXM](https://www.youtube
+updated: '2025-10-20T22:40:03.908Z'
 ---
 [[-bibliography]]
 

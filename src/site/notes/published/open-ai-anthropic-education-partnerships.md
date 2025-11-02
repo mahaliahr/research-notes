@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Open Ai Anthropic Education Partnerships
+permalink: /notes/open-ai-anthropic-education-partnerships/
+visibility: public
+description: >-
+  -bibliography
+
+
+  _Introducing Claude for education_ (2025). Available at:
+  [https://www.anthropic.com/news/introducing-claude-for-education](https://www.anthropic.
+updated: '2025-10-20T22:34:14.464Z'
 ---
 [[-bibliography]]
 

@@ -1,5 +1,14 @@
 ---
 dg-publish: true
+title: Project Cci Ual Staff Interviews
+permalink: /notes/project-cci-ual-staff-interviews/
+visibility: public
+description: >-
+  Considerations -> everyone is very busy, will people have time to contribute? 
+
+  How to design it so that people feel inclined to do it, rather than being a
+  burde
+updated: '2025-10-20T22:18:15.274Z'
 ---
 Considerations -> everyone is very busy, will people have time to contribute? 
 How to design it so that people feel inclined to do it, rather than being a burden?

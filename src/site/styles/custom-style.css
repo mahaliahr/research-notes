@@ -1,0 +1,167 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Design tokens and fallbacks (top-level, not nested) */
+:root {
+  --card-bg: #ffffff;
+  --card-border: rgba(0,0,0,0.06);
+  --muted-text: #9aa1b3;
+  --accent: #8b6cef;
+  --background-primary: #0b0b0b;
+  --content-max: 1100px;
+  /* Navbar + graph (ForceGraph reads these) */
+  --navbar-bg: #f7f7f7;
+  --navbar-fg: #0b0b0b;
+  --graph-main: #8b6cef;
+  --graph-muted: rgba(139,108,239,.45);
+}
+
+/* Base */
+html, body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: auto; /* safety: restore scroll unless a fullscreen overlay is on top */
+}
+
+body {
+  margin: 0;
+  font-family: "Overpass Mono", monospace;
+}
+
+/* Containment for wide sections */
+.cards-wrap {
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* Cards grid — 2 columns (mobile: 1) */
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards.grid-2x4 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 560px) {
+  .cards.grid-2x4 {
+    grid-template-columns: 1fr;
+  }
+}
+.cards.grid-2x4 .card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.cards.grid-2x4 .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(2, 6, 23, 0.12);
+}
+
+.cards.grid-2x4 .card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.cards.grid-2x4 .card p {
+  margin: 0;
+  color: var(--muted-text);
+  font-size: 0.92rem;
+}
+
+.card .badge {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 0.66rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Graph containers */
+#graph, #link-graph, #full-graph-container {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.graph-fs {
+  position: fixed !important;
+  inset: 0;
+  z-index: 1000;
+  background: var(--background-primary);
+}
+
+#full-graph-container, #full-graph-page {
+  width: 100%;
+  height: calc(100vh - 160px);
+  min-height: 420px;
+}
+
+.graph-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  color: var(--muted-text);
+}
+
+.graph-controls .gc-left, .graph-controls .gc-right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.graph-controls .gc-search {
+  width: 180px;
+  background: #1b1b1b;
+  color: #e5e5e5;
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+}
+
+/* Navbar color lock */
+.navbar {
+  background: var(--navbar-bg);
+  color: var(--navbar-fg);
+}
+
+/* Larger headings override */
+/* h1 { font-size: 1.2rem; line-height: 1.05; margin-top: 1.0rem; margin-bottom: 0.6rem; }  */
+/* h2 { font-size: 1.5rem; line-height: 1.15; margin-top: 0.9rem; margin-bottom: 0.5rem; }
+h3 { font-size: 1.15rem; line-height: 1.2; margin-top: 0.8rem; margin-bottom: 0.45rem; }
+h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0.4rem; }  */
+/* Optional: scale down on small screens */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  h2 {
+    font-size: 1.4rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+}
+.home-hero h1 {
+  font-size: 2.25rem !important;
+  line-height: 1.05;
+  margin: 0.6rem 0;
+}

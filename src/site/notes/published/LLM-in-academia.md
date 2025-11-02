@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Llm In Academia
+permalink: /notes/llm-in-academia/
+visibility: public
+description: >-
+  LLM inspired by this - 'academia' speak like a translator. Are people already
+  using them to achieve this to a certain extent 
+
+
+  LLM-threatening-education-systems
+updated: '2025-10-20T22:34:14.419Z'
 ---
 
 LLM inspired by this - 'academia' speak like a translator. Are people already using them to achieve this to a certain extent 

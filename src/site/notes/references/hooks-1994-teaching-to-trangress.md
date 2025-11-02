@@ -1,5 +1,19 @@
 ---
 dg-publish: true
+title: Hooks 1994 Teaching To Trangress
+permalink: /notes/hooks-1994-teaching-to-trangress/
+visibility: public
+description: |-
+  -bibliography
+
+  hooks, bell. Teaching to Transgress, 1994. 
+
+  ---
+
+  chapter 11 - Language (teaching new worlds /new words)
+
+  This quote 'This is the oppressor's lan
+updated: '2025-10-20T22:34:14.495Z'
 ---
 [[-bibliography]]
 

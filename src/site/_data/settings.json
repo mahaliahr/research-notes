@@ -1,0 +1,12 @@
+{
+  "dgHomeLink": true,
+  "dgEnableSearch": true,
+  "dgShowInlineTitle": true,
+  "dgShowTags": true,
+  "dgShowBacklinks": true,
+  "dgShowLocalGraph": true,
+  "dgExpandLocalGraph": true,
+  "dgShowToc": false,
+  "dgShowFileTree": false,
+  "dgLinkPreview": false
+}

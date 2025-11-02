@@ -1,0 +1,143 @@
+<div class="graph-title-container">
+  <div class="graph-title">Graph</div>
+  <div id="graph-controls">
+    <!-- Depth control exists in sidebar version; keep hidden here (no “current” node) -->
+    <div class="depth-control" style="display:none">
+      <label for="graph-depth">Depth</label>
+      <div class="slider">
+        <input name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth" value="1" />
+        <datalist id="depthmarkers">
+          <option value="1" label="1"></option>
+          <option value="2" label="2"></option>
+          <option value="3" label="3"></option>
+        </datalist>
+      </div>
+      <span id="depth-display">1</span>
+    </div>
+    <div class="ctrl-right">
+      <span id="fg-zoomfit" role="button" title="Fit graph"><i icon-name="maximize-2" aria-hidden="true"></i></span>
+      <span id="fg-reset" role="button" title="Reset view"><i icon-name="refresh-ccw" aria-hidden="true"></i></span>
+    </div>
+  </div>
+</div>
+
+<div id="full-graph-container"></div>
+
+<script>
+  (async function () {
+    const container = document.getElementById("full-graph-container");
+    if (!container) return;
+
+    // Ensure size similar to full-width layout
+    const ensureSize = () => {
+      const vh = Math.max(window.innerHeight || 0, 400);
+      container.style.width = "100%";
+      container.style.height = (vh - 160) + "px";
+    };
+    ensureSize();
+
+    // Fetch graph data
+    let data;
+    try {
+      const res = await fetch("{{ '/graph.json' | url }}", { cache: "no-store" });
+      data = await res.json();
+    } catch (e) {
+      console.warn("full-graph: failed to load graph.json", e);
+      return;
+    }
+    if (!data || !data.nodes) return;
+
+    // Normalize data for ForceGraph and drop hidden nodes
+    const nodes = Object.values(data.nodes).filter(n => !n.hide);
+    const hidden = new Set(Object.values(data.nodes).filter(n => n.hide).map(n => n.id));
+    const links = (data.links || []).filter(l => !hidden.has(l.source) && !hidden.has(l.target));
+
+    const css = getComputedStyle(document.documentElement);
+    const mainColor = (css.getPropertyValue("--graph-main") || "#8b6cef").trim();
+    const mutedColor = (css.getPropertyValue("--graph-muted") || "rgba(154,165,206,0.55)").trim();
+
+    let hoverNode = null;
+    const highlight = new Set();
+
+    // Init ForceGraph
+    const Graph = ForceGraph()(container)
+      .graphData({ nodes, links })
+      .nodeId("id")
+      .nodeLabel("title")
+      .linkSource("source")
+      .linkTarget("target")
+      .d3AlphaDecay(0.10)
+      .autoPauseRedraw(false)
+      .linkColor(l => {
+        if (!hoverNode) return mainColor;
+        return (l.source.id === hoverNode.id || l.target.id === hoverNode.id) ? mainColor : mutedColor;
+      })
+      .nodeCanvasObject((node, ctx) => {
+        const deg = (node.neighbors && node.neighbors.length) || 2;
+        const r = Math.min(8, Math.max(deg / 2, 2));
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, r, 0, 2 * Math.PI, false);
+        const active = (!hoverNode) || node.id === hoverNode.id || highlight.has(node.url);
+        ctx.fillStyle = active ? mainColor : mutedColor;
+        ctx.fill();
+
+        if (node.home) {
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, r + 1, 0, 2 * Math.PI, false);
+          ctx.lineWidth = 0.5;
+          ctx.strokeStyle = mainColor;
+          ctx.stroke();
+        }
+
+        const label = String(node.title || node.id || "");
+        if (label) {
+          const fontSize = 3.5;
+          ctx.font = `${fontSize}px Sans-Serif`;
+          ctx.textAlign = "center";
+          ctx.textBaseline = "top";
+          ctx.fillStyle = "#bbb";
+          ctx.fillText(label, node.x, node.y + r + 2);
+        }
+      })
+      .onNodeHover(node => {
+        highlight.clear();
+        if (node) {
+          highlight.add(node.url);
+          (node.neighbors || []).forEach(u => highlight.add(u));
+        }
+        hoverNode = node || null;
+      })
+      .onNodeClick(node => { if (node?.url) window.location = node.url; });
+
+    // Fit once
+    setTimeout(() => { try { Graph.zoomToFit(400, 60); } catch {} }, 200);
+
+    // Resize
+    const ro = new ResizeObserver(() => {
+      const w = container.clientWidth || container.offsetWidth || 1;
+      const h = container.clientHeight || container.offsetHeight || 1;
+      Graph.width(w).height(h);
+    });
+    ro.observe(container);
+    window.addEventListener("resize", () => {
+      ensureSize();
+      const w = container.clientWidth || container.offsetWidth || 1;
+      const h = container.clientHeight || container.offsetHeight || 1;
+      Graph.width(w).height(h);
+      setTimeout(() => { try { Graph.zoomToFit(300, 50); } catch {} }, 50);
+    });
+
+    // Controls wired to same-looking buttons
+    document.getElementById("fg-zoomfit")?.addEventListener("click", () => {
+      try { Graph.zoomToFit(400, 60); } catch {}
+    });
+    document.getElementById("fg-reset")?.addEventListener("click", () => {
+      try { Graph.zoom(1); Graph.centerAt(0, 0, 300); } catch {}
+    });
+
+    // Ensure lucide icons render
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+      window.lucide.createIcons({ attrs: { class: ["svg-icon"] } });
+    }
+  })();
+</script>

@@ -1,7 +1,7 @@
 <script>
-lucide.createIcons({
-            attrs: {
-                class: ["svg-icon"]
-            }
-        });
+  document.addEventListener('DOMContentLoaded', () => {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons({ attrs: { class: ['svg-icon'] } });
+    }
+  });
 </script>

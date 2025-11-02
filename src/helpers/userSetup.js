@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 function userMarkdownSetup(md) {
   // The md parameter stands for the markdown-it instance used throughout the site generator.
   // Feel free to add any plugin you want here instead of /.eleventy.js
@@ -6,43 +8,89 @@ function userEleventySetup(eleventyConfig) {
   // The eleventyConfig parameter stands for the the config instantiated in /.eleventy.js.
   // Feel free to add any plugin you want here instead of /.eleventy.js
 
-  // Helper to filter only public published notes
   const isPublic = (p) => p?.data?.["dg-publish"] && p?.data?.visibility !== "private";
+  const isMd = (p) => typeof p?.inputPath === "string" && p.inputPath.toLowerCase().endsWith(".md");
+  const byDateDesc = (a, b) => new Date(b.date || 0) - new Date(a.date || 0);
 
-  // POSTS: either explicitly type: post OR live in /posts/ (adjust if needed)
-    eleventyConfig.addCollection("post", (c) =>
-    c.getAll()
-      .filter(p => (p.data && p.data.type === "post") || p.inputPath.includes("/notes/published/"))
-      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
-  );
-  
-  // ZETTELS/NOTES: everything under /notes/ that is NOT a post
-  eleventyConfig.addCollection("zettels", (c) =>
-    c.getAll()
-      .filter(p => p.inputPath.includes("/notes/"))
-      .filter(p => !(p.data && p.data.type === "post"))
-      .sort((a,b) => new Date(b.data?.updated || b.date || 0) - new Date(a.data?.updated || a.date || 0))
-  );
+  // Add this helper (used by post collections)
+  const isPost = (p) => {
+    const tags = Array.isArray(p.data?.tags) ? p.data.tags : [];
+    return (
+      p.data?.type === "post" ||
+      /\/notes\/blog\//i.test(p.inputPath || "") ||
+      tags.includes("post")
+    );
+  };
 
-  // Entry notes for “start exploring” (tag: gardenEntry or your tag of choice)
-  eleventyConfig.addCollection("entryNotes", (c) =>
-    c.getAll()
-      .filter(p => p.inputPath.includes("/notes/"))
-      .filter(p => (p.data?.tags || []).includes("gardenEntry"))
-      .sort((a,b) => (a.data?.title || a.fileSlug).localeCompare(b.data?.title || b.fileSlug))
-  );
+  const isZettel = (p) => {
+    const url = String(p.url || "");
+    return isMd(p) && isPublic(p) && url.startsWith("/notes/") && !url.startsWith("/notes/blog/");
+  };
+  const isFeatured = (p) => {
+    const tags = Array.isArray(p.data?.tags) ? p.data.tags : [];
+    return p.data?.featured === true || tags.includes("gardenEntry"); // support both flags
+  };
+  const updatedMs = (p) => {
+    const u = p.data?.updated;
+    if (u) {
+      const d = new Date(u);
+      if (!isNaN(d)) return d.getTime();
+    }
+    return new Date(p.date || 0).getTime();
+  };
 
-  // FEATURED: tag for highlights
-    eleventyConfig.addCollection("featuredPosts", (c) =>
-    c.getFilteredByTag("featured")
-      .sort((a,b) => (new Date(b.date)) - (new Date(a.date)))
-  );
+  // Recently updated zettels
+  eleventyConfig.addCollection("zettels", (col) => {
+    return col.getAll().filter(isZettel).sort((a, b) => updatedMs(b) - updatedMs(a));
+  });
 
-  // Helper: read the raw rendered markdown (not HTML)
+  // Featured only zettels
+  eleventyConfig.addCollection("featuredZettels", (col) => {
+    return col.getAll().filter((p) => isZettel(p) && isFeatured(p)).sort((a, b) => updatedMs(b) - updatedMs(a));
+  });
+
+  // Featured-first ordering
+  eleventyConfig.addCollection("zettelsFeaturedFirst", (col) => {
+    const items = col.getAll().filter(isZettel);
+    return items.sort((a, b) => {
+      const fa = isFeatured(a), fb = isFeatured(b);
+      if (fa !== fb) return fb - fa; // featured first
+      return updatedMs(b) - updatedMs(a);
+    });
+  });
+
+  // All posts (unchanged behavior)
+  eleventyConfig.addCollection("post", (col) => {
+    return col.getAll().filter((p) => isMd(p) && isPublic(p) && isPost(p)).sort(byDateDesc);
+  });
+
+  // Featured first (featured posts float to the top, then by date)
+  eleventyConfig.addCollection("postFeaturedFirst", (col) => {
+    const items = col.getAll().filter((p) => isMd(p) && isPublic(p) && isPost(p));
+    return items.sort((a, b) => {
+      const fa = !!a.data?.featured, fb = !!b.data?.featured;
+      if (fa !== fb) return fb - fa;
+      return byDateDesc(a, b);
+    });
+  });
+
+  // Featured only (optional)
+  eleventyConfig.addCollection("featuredPosts", (col) => {
+    return col.getAll()
+      .filter((p) => isMd(p) && isPublic(p) && isPost(p) && p.data?.featured === true)
+      .sort(byDateDesc);
+  });
+
+  // ===========================
+  // BELOW: live-data parsers 
+  // ===========================
+
 const getText = (p) => {
-  if (!p) return "";
-  const raw = p.template?.inputContent ?? p.templateContent ?? "";
-  return typeof raw === "string" ? raw : String(raw ?? "");
+  try {
+    return fs.readFileSync(p.inputPath, "utf8"); // raw markdown w/ front matter stripped by gray-matter later if needed
+  } catch {
+    return "";
+  }
 };
 
   // --- MILESTONES ---
@@ -77,11 +125,10 @@ const getText = (p) => {
   // --- SESSIONS ---
   // Any note in "notes/sessions/" or that contains "start::" is a session.
   // Extract start/end/topic from inline fields.
-  function inlineField(src, key) {
-  if (src == null) return null;
-  const text = typeof src === "string" ? src : String(src);
+function inlineField(src, key) {
+  if (typeof src !== "string" || !src) return null;
   const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
-  const m = text.match(re);
+  const m = src.match(re);
   return m ? m[1].trim() : null;
 }
 
@@ -105,21 +152,29 @@ const getText = (p) => {
 
   eleventyConfig.addCollection("streamItems", (c) => {
     const out = [];
+
+    // Only markdown; only daily or stream.md
     const candidates = c.getAll().filter(p => {
-  const path = p.inputPath || "";
-  return path.endsWith(".md") && (
-    /stream\.md$/i.test(path) ||
-    path.includes("/notes/daily/")
-  );
-});
+      const path = p?.inputPath || "";
+      return isMd(p) && (
+        /\/notes\/daily\//i.test(path) || /\/stream\.md$/i.test(path)
+      );
+    });
+
     for (const p of candidates) {
       const txt = getText(p);
+      if (!txt) continue;
+
+      // find date:: inline or derive from filename (YYYY-MM-DD in fileSlug or path)
       const dateField = inlineField(txt, "date");
-      // Try to derive a date from filename if no date:: present
-      const fromName = p.inputPath.match(/(\d{4}-\d{2}-\d{2})/);
-      const day = dateField || (fromName ? fromName[1] : null);
+      const fromSlug = (p.fileSlug || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+      const fromPath = (p.inputPath || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+      const day = dateField || fromSlug || fromPath || null;
+
+      // Reset regex state for each file
+      const re = new RegExp(streamLineRe.source, streamLineRe.flags); // Changed from STREAM_LINE_RE to streamLineRe
       let m;
-      while ((m = streamLineRe.exec(txt))) {
+      while ((m = re.exec(txt))) {
         const [, time, message] = m;
         out.push({
           date: day ? `${day} ${time}` : time,
@@ -161,6 +216,12 @@ const getText = (p) => {
   // });
 }
 
-function useMarkdownSetup(md) {}
+// function useMarkdownSetup(md) {}
 exports.userMarkdownSetup = userMarkdownSetup;
 exports.userEleventySetup = userEleventySetup;
+
+module.exports.userEleventySetup = function (eleventyConfig) {
+  const isPublished = (p) => !p.data?.draft && (p.data?.["dg-publish"] !== false);
+
+  
+};

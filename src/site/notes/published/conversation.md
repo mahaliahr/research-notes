@@ -1,5 +1,10 @@
 ---
 dg-publish: true
+title: Conversation
+permalink: /notes/conversation/
+visibility: public
+description: "1. ~~input capture\n\t- ~~text based input\n\t\t- ~~shared doc\n\t\t- ~~use webhook service to capture data and send to LLM\n\t- voice based input (speech to text tools)\n"
+updated: '2025-10-20T22:34:14.436Z'
 ---
 1. ~~input capture
 	- ~~text based input

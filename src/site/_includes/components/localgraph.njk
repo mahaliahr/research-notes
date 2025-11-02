@@ -1,0 +1,12 @@
+<div
+  x-data="{ graphData: null, depth: 1, fullScreen: false }"
+  x-init="(async () => { try { const r = await fetchGraphData?.(); graphData = r?.graphData || null; } catch(e) { console.warn('graph data load failed', e); } })()"
+>
+  <div id="link-graph"
+       x-effect="
+         if (graphData && typeof ForceGraph === 'function' && $el) {
+           try { window.graph = renderLocalGraph(graphData, depth, fullScreen); } catch(e) { console.error(e); }
+         }
+       ">
+  </div>
+</div>

@@ -2,6 +2,19 @@
 dg-publish: true
 ---
 [[-bibliography]]
+dg-publish: true
+title: Manning Bozalek 2024 Refusal Of Neurotypicality
+permalink: /notes/manning-bozalek-2024-refusal-of-neurotypicality/
+visibility: public
+description: >-
+  -bibliography
+
+
+  Manning, E. and Bozalek, V.G., 2024. In conversation with Erin Manning: A
+  refusal of neurotypicality through attunements to learning otherwise. _
+updated: '2025-10-20T22:34:14.497Z'
+---
+[[-bibliography]]
 
 Manning, E. and Bozalek, V.G., 2024. In conversation with Erin Manning: A refusal of neurotypicality through attunements to learning otherwise. _Qualitative Inquiry_, p.10778004241254397.
 

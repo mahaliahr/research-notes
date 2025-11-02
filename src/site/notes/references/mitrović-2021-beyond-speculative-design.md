@@ -1,5 +1,17 @@
 ---
 dg-publish: true
+title: Mitrovi 2021 Beyond Speculative Design
+permalink: /notes/mitrovi-2021-beyond-speculative-design/
+visibility: public
+description: |-
+  -bibliography
+
+  Mitrović, I. et al. (2021) Beyond speculative design: Past, Present - Future.
+
+  ---
+
+  ~~"Good speculations 'stretch' rather that 'shatter' the co-o
+updated: '2025-10-20T22:40:13.114Z'
 ---
 [[-bibliography]]
 
@@ -39,5 +51,6 @@ demands. However remote or wicked the contexts, speculative and related designs 
 held) by the powerful few, often with the gender, race and class privileges to match; decisions about how the future will look, how our environments are designed, and how social decisions are made, have been taken by a small elite' p178
 
 [[how-to-shift-power-relations-of-speculation]]
+
 
 [[trauma-inhibiting-imagination]]

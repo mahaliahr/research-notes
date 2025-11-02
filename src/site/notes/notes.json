@@ -1,4 +1,4 @@
 {
-    "tags": "note",
-    "templateEngineOverride": "md"
+  "tags": "note",
+  "layout": "index.njk"
 }

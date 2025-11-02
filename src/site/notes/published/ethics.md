@@ -1,5 +1,14 @@
 ---
 dg-publish: true
+title: Ethics
+permalink: /notes/ethics/
+visibility: public
+description: |-
+  Ethical considerations 
+  - co-creation with students, how do the students not feel exploited? 
+  - open-source / massive platforms - ethics 
+  - positionality of par
+updated: '2025-10-20T22:34:14.443Z'
 ---
 Ethical considerations 
 - co-creation with students, how do the students not feel exploited? 

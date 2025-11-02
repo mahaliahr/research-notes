@@ -1,5 +1,13 @@
 ---
 dg-publish: true
+title: What Is Technically Possible With Ai Now And In The Future
+permalink: /notes/what-is-technically-possible-with-ai-now-and-in-the-future/
+visibility: public
+description: >-
+  I need to build up knowledge re. generative-AI currently and where it might
+  head in the future. What are plausible speculations and projections that we
+  could ma
+updated: '2025-10-20T22:34:14.490Z'
 ---
 I need to build up knowledge re. [[generative-AI]] currently and where it might head in the future. What are plausible speculations and projections that we could make about the way the AI will progress - especially considering the money that is being lost (as of Summer 2024) after all the investments that have been made recently 
 

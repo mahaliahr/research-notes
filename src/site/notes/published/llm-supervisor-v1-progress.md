@@ -1,8 +1,11 @@
 ---
-
 kanban-plugin: board
-dg-publish: 
-
+dg-publish: true
+title: Llm Supervisor V1 Progress
+permalink: /notes/llm-supervisor-v1-progress/
+visibility: public
+description: "## \U0001F4A1In Progress\n\n\n\n## Setup\n\n\n\n## Input\n\n- [ ] Store transcript with timestamp in CSV/JSON\n\n\n## Logic + Processing\n\n- [ ] Add recent messages as context (simpl"
+updated: '2025-10-20T22:34:14.458Z'
 ---
 
 ## 💡In Progress

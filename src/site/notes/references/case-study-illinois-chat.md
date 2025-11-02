@@ -1,5 +1,22 @@
 ---
 dg-publish: true
+title: Case Study Illinois Chat
+permalink: /notes/case-study-illinois-chat/
+visibility: public
+description: >-
+  -bibliography
+
+
+  _Illinois Chat_ (2025). Available at: [https://uiuc.chat/](https://uiuc.chat/)
+  (Accessed: 22 April 2025).
+
+  ___
+
+
+  https://uiuc.chat/
+
+  custom LLM use 
+updated: '2025-10-20T22:34:14.493Z'
 ---
 [[-bibliography]]
 

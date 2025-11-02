@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Imagination Power Education Relationship
+permalink: /notes/imagination-power-education-relationship/
+visibility: public
+description: >-
+  imagination/dreaming -> power <- education/learning 
+
+
+  the relationship between imagination power and learning are interrelated and
+  power seems intrinsically pre
+updated: '2025-10-20T22:34:14.452Z'
 ---
 imagination/dreaming -> [[power]] <- education/learning 
 

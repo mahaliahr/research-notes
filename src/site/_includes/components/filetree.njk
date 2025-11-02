@@ -1,4 +1,4 @@
-{% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
+{# {% macro menuItem(fileOrFolderName, fileOrFolder, step, currentPath) %}
     {%if fileOrFolder.isNote or fileOrFolder.isFolder%}
         <div x-show="isOpen" style="display:none" class="{{'filelist' if step>0}}">
             {%if fileOrFolder.isNote and not fileOrFolder.hide %}
@@ -20,9 +20,9 @@
             {% endif %}
         </div>
         {%endif%}
-    {% endmacro %}
+    {% endmacro %} #}
     
-    <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
+    {# <div x-init="isDesktop = (window.innerWidth>=1400) ? true: false;" 
             x-on:resize.window="isDesktop = (window.innerWidth>=1400) ? true : false;" 
             x-data="{isDesktop: true, showFilesMobile: false}">
 
@@ -30,7 +30,7 @@
             {%include "components/filetreeNavbar.njk"%}
         </div>
         
-        <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div>
+        <div x-show="showFilesMobile && !isDesktop" @click="showFilesMobile = false" style="display:none;" class="fullpage-overlay"></div> #}
 
       <nav class="filetree-sidebar"  x-show.important="isDesktop || showFilesMobile" style="display: none;">
         {% for imp in dynamics.filetree.beforeTitle %}
@@ -47,10 +47,10 @@
                 {% include "components/searchButton.njk" %}
             </div>
         {%endif%}
-         <div class="folder" x-data="{isOpen: true}">
+         {# <div class="folder" x-data="{isOpen: true}">
                {%- for fileOrFolderName, fileOrFolder in filetree -%}
                   {{menuItem(fileOrFolderName, fileOrFolder, 0, fileOrFolderName)}}
                {%- endfor -%}
-         </div>
+         </div> #}
       </nav>
     </div>
