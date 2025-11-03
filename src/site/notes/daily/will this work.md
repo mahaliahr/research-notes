@@ -17,4 +17,4 @@ text: "Started day plan:"      # <-- optional summary used by JSON
 start:: 11:21
 
 <!-- remove templater, Eleventy won’t process it -->
-<!-- start:: <% tp.date.now('HH:mm') %> -->
+<!-- start:: 12:46 -->
