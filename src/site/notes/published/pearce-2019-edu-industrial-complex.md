@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Pearce 2019 Edu Industrial Complex
 permalink: /notes/pearce-2019-edu-industrial-complex/
 visibility: public
@@ -11,8 +10,6 @@ description: >-
   Pearce, K. (2019) ‘The Education-Industrial Complex and 21st Century
   Learning’, _DIY Geniys_, 15 July. Available at: [https://www.diygenius.com/e
 updated: '2025-10-20T22:34:14.467Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 [[-bibliography]]
 

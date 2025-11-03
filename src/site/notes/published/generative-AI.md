@@ -1,5 +1,17 @@
 ---
 dg-publish: true
+title: Generative Ai
+permalink: /notes/generative-ai/
+visibility: public
+description: |-
+  Generative AI or GenAI is... (add definition in my own words)
+
+  ---
+
+  Here I will outline various GenAI of relevance to this research
+
+  large-language-models (LLMs
+updated: '2025-10-20T22:34:14.447Z'
 ---
 Generative AI or GenAI is... (add definition in my own words)
 

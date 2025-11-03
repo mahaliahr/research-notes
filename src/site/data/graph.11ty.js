@@ -89,4 +89,8 @@ class GraphJson {
     }
   }
 }
+<<<<<<< HEAD
 module.exports = GraphJson;
+=======
+module.exports = GraphJson;
+>>>>>>> main

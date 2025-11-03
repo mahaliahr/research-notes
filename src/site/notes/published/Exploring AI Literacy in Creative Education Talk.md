@@ -24,5 +24,4 @@ Do you think using AI for efficiency will help academics or just increase expect
 
 Question:
 
-
 Are you having any conversations about impact of AI on Digital poverty? [[AI-and-digital-poverty]]

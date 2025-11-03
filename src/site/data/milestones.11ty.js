@@ -9,4 +9,8 @@ class MilestonesJson {
     return JSON.stringify(items);
   }
 }
+<<<<<<< HEAD
 module.exports = MilestonesJson;
+=======
+module.exports = MilestonesJson;
+>>>>>>> main

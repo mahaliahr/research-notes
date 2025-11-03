@@ -14,4 +14,4 @@ This is a random side note, but in a way it feels worth mentioning. My current o
 
 Also after a conversation I had a Kaos Magi yesterday discussing my research, I realised that I need more knowledge about the technical capabilities of the genAI in my context, specifically it's limits[^1].
 
-[^1][[published/what-is-technically-possible-with-AI-now-and-in-the- future\|what-is-technically-possible-with-AI-now-and-in-the- future]] 
+[^1][[what-is-technically-possible-with-AI-now-and-in-the- future]] 

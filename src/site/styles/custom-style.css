@@ -106,6 +106,8 @@ body {
   background: var(--background-primary);
 }
 
+<<<<<<< HEAD
+=======
 .graph-fs {
   position: fixed !important;
   inset: 0;
@@ -113,6 +115,7 @@ body {
   background: var(--background-primary);
 }
 
+>>>>>>> main
 #full-graph-container, #full-graph-page {
   width: 100%;
   height: calc(100vh - 160px);
@@ -172,6 +175,8 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
   line-height: 1.05;
   margin: 0.6rem 0;
 }
+<<<<<<< HEAD
+=======
 .graph-controls button {
   background: var(--background-secondary, #1b1b1b);
   color: var(--text-normal, #e5e5e5);
@@ -208,3 +213,4 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
   line-height: 1.05;
   margin: 0.6rem 0;
 }
+>>>>>>> main

@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Pgcert Final Project
 permalink: /notes/pgcert-final-project/
 visibility: public
@@ -15,10 +14,6 @@ description: |-
 updated: '2025-10-20T22:34:14.468Z'
 ---
 
-=======
----
-
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 What I asked?
 What I did? 
 What I found?

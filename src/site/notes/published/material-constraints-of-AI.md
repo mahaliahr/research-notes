@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Material Constraints Of Ai
 permalink: /notes/material-constraints-of-ai/
 visibility: public
@@ -13,10 +12,6 @@ description: |-
 updated: '2025-10-20T22:34:14.459Z'
 ---
 
-=======
----
-
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 How much energy does using transformers (genAI) actually take? 
 
 How bad is it for the environment?

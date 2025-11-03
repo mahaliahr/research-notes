@@ -1,6 +1,10 @@
 ---
-{"dg-publish":true,"permalink":"/published/22-01-2024-where-did-i-learn-to-learn/","noteIcon":"","visibility":"public","description":"I didn't learn how to learn from school. \n\nSo where did I learn it from?\n\nSkimming through a reading published/oreilly-research-identity-threshold-concepts\\ for","updated":"2025-10-15T21:01:33.999Z","dgPassFrontmatter":true}
----
+dg-publish: true
+permalink: /published/22-01-2024-where-did-i-learn-to-learn/
+noteIcon: ''
+visibility: public
+description: >-
+  I didn't learn how to learn from school. 
 
 
   So where did I learn it from?
@@ -9,15 +13,7 @@
   Skimming through a reading
   published/oreilly-research-identity-threshold-concepts\ for
 updated: '2025-10-15T21:01:33.999Z'
----
-
-
-  So where did I learn it from?
-
-
-  Skimming through a reading
-  published/oreilly-research-identity-threshold-concepts\ for
-updated: '2025-10-15T21:01:33.999Z'
+title: 22 01 2024 Where Did I Learn To Learn
 ---
 
 I didn't learn how to learn from school. 

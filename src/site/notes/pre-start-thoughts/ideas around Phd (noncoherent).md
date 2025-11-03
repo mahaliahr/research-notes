@@ -2,7 +2,6 @@
 dg-publish: true
 permalink: /pre-start-thoughts/ideas-around-phd-noncoherent/
 noteIcon: ''
-title: Messy - different ways of communicating / existing
 visibility: public
 description: >-
   Messy - different ways of communicating / existing
@@ -14,10 +13,7 @@ description: >-
 
   1. Reality - what is re
 updated: '2025-10-15T21:01:33.999Z'
-<<<<<<< HEAD
 title: Ideas Around Phd Noncoherent
-=======
->>>>>>> 60d0c7e (Revert "Revert "fixing the mess"")
 ---
 Messy - different ways of communicating / existing
 
@@ -27,7 +23,6 @@ there are two branches of research that my masters thesis was beginning to open 
 
 2. messiness - tech is material and tangible. strive for something imperfect/malleable that allows for nuance. Messiness in interactions. Nuance/viscerality/expression. Hacking ?? Allowing for novelty* - hacking
 *agency, autonomy*
-unpredictable and unexpected.
 unpredictable and unexpected.
 
 'Messiness' more in regards to the interactions or the structure of what you are trying to enable.

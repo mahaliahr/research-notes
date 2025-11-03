@@ -86,9 +86,17 @@ function userEleventySetup(eleventyConfig) {
   // ===========================
 
 const getText = (p) => {
+<<<<<<< HEAD
+  try {
+    return fs.readFileSync(p.inputPath, "utf8"); // raw markdown w/ front matter stripped by gray-matter later if needed
+  } catch {
+    return "";
+  }
+=======
   if (!p) return "";
   const raw = p.template?.inputContent ?? p.templateContent ?? "";
   return typeof raw === "string" ? raw : String(raw ?? "");
+>>>>>>> main
 };
 
   // --- MILESTONES ---
@@ -123,11 +131,18 @@ const getText = (p) => {
   // --- SESSIONS ---
   // Any note in "notes/sessions/" or that contains "start::" is a session.
   // Extract start/end/topic from inline fields.
+<<<<<<< HEAD
+function inlineField(src, key) {
+  if (typeof src !== "string" || !src) return null;
+  const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
+  const m = src.match(re);
+=======
   function inlineField(src, key) {
   if (src == null) return null;
   const text = typeof src === "string" ? src : String(src);
   const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
   const m = text.match(re);
+>>>>>>> main
   return m ? m[1].trim() : null;
 }
 
@@ -151,6 +166,31 @@ const getText = (p) => {
 
   eleventyConfig.addCollection("streamItems", (c) => {
     const out = [];
+<<<<<<< HEAD
+
+    // Only markdown; only daily or stream.md
+    const candidates = c.getAll().filter(p => {
+      const path = p?.inputPath || "";
+      return isMd(p) && (
+        /\/notes\/daily\//i.test(path) || /\/stream\.md$/i.test(path)
+      );
+    });
+
+    for (const p of candidates) {
+      const txt = getText(p);
+      if (!txt) continue;
+
+      // find date:: inline or derive from filename (YYYY-MM-DD in fileSlug or path)
+      const dateField = inlineField(txt, "date");
+      const fromSlug = (p.fileSlug || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+      const fromPath = (p.inputPath || "").match(/\d{4}-\d{2}-\d{2}/)?.[0] || null;
+      const day = dateField || fromSlug || fromPath || null;
+
+      // Reset regex state for each file
+      const re = new RegExp(streamLineRe.source, streamLineRe.flags); // Changed from STREAM_LINE_RE to streamLineRe
+      let m;
+      while ((m = re.exec(txt))) {
+=======
     const candidates = c.getAll().filter(p => {
   const path = p.inputPath || "";
   return path.endsWith(".md") && (
@@ -166,6 +206,7 @@ const getText = (p) => {
       const day = dateField || (fromName ? fromName[1] : null);
       let m;
       while ((m = streamLineRe.exec(txt))) {
+>>>>>>> main
         const [, time, message] = m;
         out.push({
           date: day ? `${day} ${time}` : time,
@@ -207,7 +248,11 @@ const getText = (p) => {
   // });
 }
 
+<<<<<<< HEAD
+// function useMarkdownSetup(md) {}
+=======
 function useMarkdownSetup(md) {}
+>>>>>>> main
 exports.userMarkdownSetup = userMarkdownSetup;
 exports.userEleventySetup = userEleventySetup;
 

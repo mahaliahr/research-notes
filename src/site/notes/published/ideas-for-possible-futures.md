@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Ideas For Possible Futures
 permalink: /notes/ideas-for-possible-futures/
 visibility: public
@@ -17,8 +16,6 @@ description: |-
 
   AI-access-librarie
 updated: '2025-10-20T22:36:59.537Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 11-04-2024- 
 
@@ -30,8 +27,4 @@ updated: '2025-10-20T22:36:59.537Z'
 
 [[corporate university speculation]]
 
-<<<<<<< HEAD
 [[AI-access-libraries-speculation]]
-=======
-[[AI-access-libraries-speculation]]
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")

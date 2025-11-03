@@ -1,5 +1,15 @@
 ---
 dg-publish: true
+title: Imagination Practice
+permalink: /notes/imagination-practice/
+visibility: public
+description: >-
+  I like the way Filliou describes the need to ‘practice...natural imagination’
+  p20.  Imagination is not often thought of as something to practice.
+
+
+  artists-the-o
+updated: '2025-10-20T22:37:07.219Z'
 ---
 I like the way Filliou describes the need to ‘practice...natural imagination’ p20.  Imagination is not often thought of as something to practice.
 

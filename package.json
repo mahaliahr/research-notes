@@ -12,6 +12,8 @@
     },
     "engines": {
         "node": ">=18"
+<<<<<<< HEAD
+=======
     },
     "scripts": {
         "build": "rm -rf dist && npx @11ty/eleventy",
@@ -20,6 +22,7 @@
     },
     "engines": {
         "node": ">=18"
+>>>>>>> main
     },
     "keywords": [],
     "author": "",

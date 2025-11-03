@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Notes After First Supervision Discussions
 permalink: /notes/notes-after-first-supervision-discussions/
 visibility: public
@@ -11,8 +10,6 @@ description: |-
 
   Contextualise why this is important, what is not working at the moment (ie.
 updated: '2025-10-20T22:34:14.463Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 Winnie:
 

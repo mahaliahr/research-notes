@@ -13,5 +13,4 @@ I need to understand in more detail the financial model of higher education inst
 
 Though I am feeling the repercussions of economic policy within the classroom, I want to be far more clear about this in. 
 
-
 this is very related to the [[the-effects-of-neoliberalism-on-higher-education]] but here I want a broader view of policy 

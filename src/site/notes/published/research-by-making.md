@@ -1,6 +1,5 @@
 ---
 dg-publish: true
-<<<<<<< HEAD
 title: Research By Making
 permalink: /notes/research-by-making/
 visibility: public
@@ -11,8 +10,6 @@ description: >-
   'Making isn't limited to to the production of material artefacts, but can also
   refer to temporal and ephemeral forms, to lang
 updated: '2025-10-20T22:38:23.692Z'
-=======
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
 ---
 When does making become research?
 
@@ -39,9 +36,5 @@ What steps did you take and why?
 What happened and what did you learn?
 
 ---
-<<<<<<< HEAD
 
 ===_thought: in terms of my phd, my making is the [[design-interventions]] but also my [[teaching]]... anything else??_
-=======
-===_thought: in terms of my phd, my making is the [[design-interventions]] but also my [[teaching]]... anything else??_
->>>>>>> a0cd61f (Revert "Revert "fixing the mess"")
