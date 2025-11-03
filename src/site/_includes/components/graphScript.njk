@@ -1,4 +1,36 @@
 <script>
+    function adaptGraphData(raw) {
+        if (!raw || !Array.isArray(raw.nodes) || !Array.isArray(raw.links)) return null;
+
+        // Ensure ids are strings and consistent (we use url as id from /graph.json)
+        const byId = {};
+        for (const n of raw.nodes) {
+            const id = String(n.id || n.url || "");
+            byId[id] = {
+                id,
+                url: n.url || id,
+                title: n.title || id,
+                hide: !!n.hide,
+                home: !!n.home,
+                neighbors: []   // fill below
+            };
+        }
+
+        // Normalize links to string ids and build neighbor lists
+        const links = [];
+        for (const l of raw.links) {
+            const s = typeof l.source === "string" ? l.source : String(l.source?.id || l.source || "");
+            const t = typeof l.target === "string" ? l.target : String(l.target?.id || l.target || "");
+            if (byId[s] && byId[t]) {
+                links.push({ source: s, target: t });
+                byId[s].neighbors.push(t);
+                byId[t].neighbors.push(s);
+            }
+        }
+
+        return { nodes: byId, links };
+    }
+
     async function fetchGraphData() {
         const graphData = await fetch('{{ "/graph.json" | url }}', { cache: "no-store" }).then(res => res.json());
         const fullGraphData  = filterFullGraphData(graphData);
@@ -190,6 +222,57 @@
         try { fullGraph?._destructor?.(); } catch {}
         return null;
     }
+
+  // Fallback finder: current URL -> seed url -> first node
+  function safeCurrentNode(fullGraph) {
+    const trim = p => (p || '').replace(/\/+$/,'') || '/';
+    const here = trim(window.location.pathname);
+    const byUrl = fullGraph?.nodes?.find(n => trim(n.url) === here);
+    if (byUrl) return byUrl;
+
+    const seed = document.getElementById('graph-component')?.dataset?.seedUrl;
+    if (seed) {
+      const bySeed = fullGraph?.nodes?.find(n => trim(n.url) === trim(seed));
+      if (bySeed) return bySeed;
+    }
+    return fullGraph?.nodes?.[0] || null;
+  }
+
+  // Add a null-guard at the top of your existing filter function
+  function filterLocalGraphData(data, depth, currentNode) {
+    if (!data || !data.nodes || !data.links) return { nodes: [], links: [] };
+    if (!currentNode) {
+      // no current note (e.g., homepage): show full graph
+      return { nodes: Object.values(data.nodes), links: data.links };
+    }
+
+    let remaining = JSON.parse(JSON.stringify(data.nodes));
+    let links = JSON.parse(JSON.stringify(data.links));
+
+    // resolve the provided current node against our map
+    const node = remaining[currentNode.id] || Object.values(remaining).find(n => n.url === currentNode.url);
+    if (!node) return { nodes: Object.values(remaining), links };
+
+    delete remaining[node.url];
+    if (!node.home) {
+      const home = Object.values(remaining).find(v => v.home);
+      if (home) delete remaining[home.url];
+    }
+
+    node.current = true;
+    let existing = { [node.url]: node };
+    for (let i = 0; i < depth; i++) {
+      [existing, remaining] = getNextLevelNeighbours(existing, remaining);
+    }
+
+    let nodes = Object.values(existing);
+    if (!node.home) nodes = nodes.filter(n => !n.home);
+    const ids = nodes.map(n => n.id);
+    return {
+      nodes,
+      links: links.filter(con => ids.includes(con.target) && ids.includes(con.source)),
+    };
+  }
 </script>
 <div
   x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null }"
@@ -227,4 +310,8 @@
   if (window.lucide && typeof window.lucide.createIcons === 'function') {
     window.lucide.createIcons({ attrs: { class: ['svg-icon'] } });
   }
+<<<<<<< HEAD
 </script>
+=======
+</script>
+>>>>>>> main

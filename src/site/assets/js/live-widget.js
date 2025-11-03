@@ -7,12 +7,21 @@ console.log("Live widget loaded");
       const r = await fetch(base + url.replace(/^\/+/, ""), { cache: "no-store" });
       if (!r.ok) throw new Error(r.statusText);
       return await r.json();
+<<<<<<< HEAD
     } catch (e) {
       console.warn("live-widget: failed", url, e);
       return [];
     }
   }
   function $(sel) { return document.querySelector(sel); }
+=======
+    } catch {
+      return [];
+    }
+  }
+
+  function el(id) { return document.getElementById(id); }
+>>>>>>> main
 
   async function render() {
     const [sessions, milestones, stream] = await Promise.all([
@@ -22,7 +31,13 @@ console.log("Live widget loaded");
     ]);
 
     const now = Date.now();
+<<<<<<< HEAD
     const parseStart = s => (s && s.start ? new Date(s.start).getTime() : 0);
+=======
+    const nowEl = el('live-now');
+    const nextEl = el('live-next');
+    const streamEl = el('live-stream');
+>>>>>>> main
 
     const liveNowEl = $("#live-now");
     const liveNextEl = $("#live-next");
@@ -61,8 +76,13 @@ console.log("Live widget loaded");
       : `<em>No recent stream items yet.</em>`;
   }
 
+<<<<<<< HEAD
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", render);
+=======
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', render);
+>>>>>>> main
   } else {
     render();
   }

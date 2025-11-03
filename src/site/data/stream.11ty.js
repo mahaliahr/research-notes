@@ -9,4 +9,8 @@ class StreamJson {
     return JSON.stringify(items);
   }
 }
+<<<<<<< HEAD
 module.exports = StreamJson;
+=======
+module.exports = StreamJson;
+>>>>>>> main

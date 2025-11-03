@@ -9,4 +9,8 @@ class SessionsJson {
     return JSON.stringify(items);
   }
 }
+<<<<<<< HEAD
 module.exports = SessionsJson;
+=======
+module.exports = SessionsJson;
+>>>>>>> main

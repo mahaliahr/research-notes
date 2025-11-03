@@ -54,6 +54,7 @@ function toSlug(str) {
     .replace(/^-+|-+$/g, "");
 }
 
+<<<<<<< HEAD
 function prettifyFromSlug(slug = "") {
   const s = decodeURIComponent(slug)
     .replace(/[_-]+/g, " ")
@@ -69,6 +70,15 @@ function prettifyFromSlug(slug = "") {
 //   return line.replace(/^#+\s*/, "").trim();
 // }
 
+=======
+function firstH1(content) {
+  const m = content.match(/^\s*#\s+(.+?)\s*$/m);
+  if (m) return m[1].trim();
+  const line = (content.split("\n").find(x => x.trim().length) || "").trim();
+  return line.replace(/^#+\s*/, "").trim();
+}
+
+>>>>>>> main
 function iso(d) {
   try { return new Date(d).toISOString(); } catch { return null; }
 }
@@ -93,6 +103,15 @@ console.log(WRITE ? "• Mode: WRITE\n" : "• Mode: DRY-RUN\n");
 const files = walk(TARGET_DIR);
 let changed = 0;
 
+<<<<<<< HEAD
+=======
+console.log(`• Kind: ${KIND}  • Prefix: ${PREFIX}  • Dir: ${TARGET_DIR}`);
+console.log(WRITE ? "• Mode: WRITE\n" : "• Mode: DRY-RUN\n");
+
+const files = walk(TARGET_DIR);
+let changed = 0;
+
+>>>>>>> main
 for (const file of files) {
   const stat = fs.statSync(file);
   let raw = fs.readFileSync(file, "utf8");
@@ -112,7 +131,11 @@ for (const file of files) {
   const body = parsed.content || "";
 
   const slug = toSlug(path.basename(file, ".md"));
+<<<<<<< HEAD
   const computedTitle = prettifyFromSlug(slug);
+=======
+  const computedTitle = data.title || firstH1(body) || slug;
+>>>>>>> main
   const computedDate  = data.date ? iso(data.date) : iso(stat.mtime);
   const computedDesc  = data.description || summarize(body);
   const permalink     = data.permalink || `${PREFIX}/${slug}/`;

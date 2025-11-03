@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends "layouts/base.njk" %}
 
 {% block content %}
@@ -8,3 +9,57 @@
   {# {% include "components/localgraph.njk" ignore missing %} #}
 </article>
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html lang="{{ meta.mainLanguage | default('en') }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }}{% else %}{{ meta.title or "Site" }}{% endif %}</title>
+    {% include "components/pageheader.njk" ignore missing %}
+  </head>
+  <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
+    {% include "components/navbar.njk" ignore missing %}
+    {% include "components/searchContainer.njk" ignore missing %}
+
+    <div class="page {% if showSidebar !== false %}has-sidebar{% else %}no-sidebar{% endif %}">
+      {% if showSidebar !== false %}
+        {% include "components/sidebar.njk" ignore missing %}
+      {% endif %}
+      <main class="content {{ contentClasses }}">
+        {% block content %}{{ content | safe }}{% endblock %}
+      </main>
+    </div>
+
+    {% include "components/searchScript.njk" ignore missing %}
+    {% include "components/footer.njk" ignore missing %}
+
+    <script>
+      (function () {
+        function restoreScroll() {
+          try {
+            const docEl = document.documentElement;
+            const body = document.body;
+            const hasFullscreenGraph =
+              !!document.querySelector('.graph-fs') ||
+              !!document.querySelector('#full-graph-container.graph-fs');
+
+            if (!hasFullscreenGraph) {
+              body.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              docEl.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              body.style.overflow = '';
+              docEl.style.overflow = '';
+            }
+          } catch (e) {}
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', restoreScroll);
+        } else {
+          restoreScroll();
+        }
+        window.addEventListener('alpine:init', restoreScroll);
+      })();
+    </script>
+  </body>
+</html>
+>>>>>>> main

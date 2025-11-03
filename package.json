@@ -12,6 +12,17 @@
     },
     "engines": {
         "node": ">=18"
+<<<<<<< HEAD
+=======
+    },
+    "scripts": {
+        "build": "rm -rf dist && npx @11ty/eleventy",
+        "dev": "npm run prebuild && rm -rf dist && npx @11ty/eleventy --serve",
+        "start": "npm run dev"
+    },
+    "engines": {
+        "node": ">=18"
+>>>>>>> main
     },
     "keywords": [],
     "author": "",
