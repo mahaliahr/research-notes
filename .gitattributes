@@ -1,0 +1,4 @@
+src/site/notes/**/*.md merge=ours
+src/site/notes/**/*.md merge=ours
+*.png binary
+*.jpg binary
