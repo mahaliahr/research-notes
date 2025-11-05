@@ -1,0 +1,6 @@
+{# usage: {% include "components/livebar.njk" with { inline: true } %} #}
+{% set inline = inline or false %}
+<div class="livebar{% if inline %} livebar--inline{% endif %}" data-livebar>
+  <span class="dot" data-livebar-dot>●</span>
+  <span class="text" data-livebar-text>Loading…</span>
+</div>
