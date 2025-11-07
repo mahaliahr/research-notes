@@ -6,8 +6,9 @@
             </a>
         </div>
         <div class="nav-right">
-            {% set inline = true %}
-            {% include "components/livebar.njk" ignore missing %}
+            {% if settings.dgEnableSearch === true %}
+              {% include "components/searchButton.njk" %}
+            {% endif %}
         </div>
     </nav>
 {% else %}

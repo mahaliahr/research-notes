@@ -26,11 +26,11 @@ async function hydrateLiveStrip() {
       const started = new Date(live.start).getTime();
       const tick = () => {
         const mins = Math.max(0, Math.floor((Date.now()-started)/60000));
-        text.innerHTML = `LIVE for ${mins} min — <a href="${live.url||'#'}">${live.topic||'In session'}</a>`;
+        text.innerHTML = `<strong>LIVE</strong> for ${mins} min — <a href="${live.url||'#'}">${live.topic||'In session'}</a>`;
       };
       bar.dataset.state = "on";
       tick();
-      setInterval(() => { dot && dot.classList.toggle("on"); tick(); }, 1000);
+      setInterval(tick, 60_000); // update minutes only
       return;
     }
 
