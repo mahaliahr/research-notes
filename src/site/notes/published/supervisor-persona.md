@@ -28,7 +28,7 @@ Now, respond as if you just heard this in a live conversation.
 
 [[persona-prompting]]
 
-sychophantic AI -> find paper, how does this tie into this work?
+[[sychophantic-AI]] -> find paper, how does this tie into this work?
 
 [[bot-context]]
 
