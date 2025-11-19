@@ -11,6 +11,7 @@ description: >-
 updated: '2025-10-20T22:34:14.446Z'
 ---
 Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 
+
 This is something that I am thinking about a lot and I believe will be an important element within the research.
 
 tangential but perhaps useful thing that I am using at the moment to track my research that ties into the above idea:
