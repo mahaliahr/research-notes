@@ -1,0 +1,1 @@
+Bot - short for chat bot 

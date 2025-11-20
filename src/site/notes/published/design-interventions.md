@@ -16,8 +16,11 @@ description: |-
 updated: '2025-10-20T22:36:04.304Z'
 ---
 [[project-supervisor-bot]]
-[[diy-bot-creation]] 
+[[thesis-bot]]
 
+note for myself - what is the history of educational bots (is there?)
+
+[[diy-bot-creation]] 
 
 [[technical-questions-and-challenges]]
 

@@ -61,8 +61,12 @@ group based on research areas?
 
 [[bayley-2018-posthuman-pedagogies]]
 
+[[smith-nunes-offline-llms-and-the-future-private-AI]]
 
 The Auto-ethnographic turn in design
+[[autographic-turn-in-design]]  
+
+[[blackwell-et-al-2022-live-coding-user-manual]]
 
 ---
 

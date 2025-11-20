@@ -6,9 +6,8 @@ permalink: "/about/"
 ### About PhD-Live
 
 ### How it works
-PhD Live is built from my evolving collection of notes, managed locally in Obsidian
-and published automatically as a living website.The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas.
 
+PhD Live is built from my evolving collection of notes, managed locally in Obsidian and published automatically as a living website. [^1]
 I have built on this to support live tracking, session logging, and real-time reflection as part of my research workflow.
 
 Each type of note serves a different role:
@@ -44,3 +43,5 @@ Rather than presenting polished outcomes, [[PhD-Live]] foregrounds the process o
 - PhD Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
 - It’s part website, part studio, part sketchbook:
 - A place where fragments come together, connections emerge, and the process itself becomes the work.e
+
+[^1]: The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas.
