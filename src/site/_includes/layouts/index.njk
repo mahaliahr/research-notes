@@ -10,10 +10,12 @@
       {% include imp %}
     {% endfor %}
   </head>
-  <body class="theme-{{meta.baseTheme}} {{meta.bodyClasses}}">
-    {%include "components/notegrowthhistory.njk"%}
+  <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
+    {% include "components/navbar.njk" ignore missing %}
+    {% include "components/livebar.njk" ignore missing %}
+    {% include "components/notegrowthhistory.njk" ignore missing %}
     {% if settings.dgShowFileTree !== true %}
-      {%include "components/navbar.njk"%}
+      {%include "components/filetree.njk"%}
     {%else%}
       {%include "components/filetree.njk"%}
     {% endif %}
@@ -104,5 +106,6 @@
         window.addEventListener('alpine:init', restoreScroll);
       })();
     </script>
+    <script src="{{ '/assets/live.js' | url }}" defer></script>
   </body>
 </html>
