@@ -46,4 +46,6 @@ https://www.youtube.com/watch?v=CB7NNsI27ks&t=303s -->
 [[open-source-LLMs]]
 [[running-LLMs-locally]]
 
+[[LLM-use-in-my-phd-research]]
+
 [memory]

@@ -3,16 +3,8 @@ dg-publish: true
 title: Supervision Meetings Record
 permalink: /notes/supervision-meetings-record/
 visibility: public
-description: >-
-  25-26 academic year
-
-  1 supervision-261125
-
-  ///
-
-  24-25 academic year [supervisor
-  records](https://artslondon.sharepoint.com/teams/MahaliasSupervisionTeam/Shared%20D
-updated: '2025-10-20T22:34:14.480Z'
+description: Record of all Supervision Meetings
+updated: 2025-10-20T22:34:14.480Z
 ---
 25-26 academic year
 1 [[supervision-261125]]
