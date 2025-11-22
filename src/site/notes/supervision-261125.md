@@ -5,6 +5,7 @@ tags:
 ---
 ### Things we discussed in the last meeting: 
 - put time aside for contextualising/positioning work (writing)
+
 two reflections - 
 - my motivation 
 - focus on process 
