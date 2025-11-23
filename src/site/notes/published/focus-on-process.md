@@ -32,11 +32,9 @@ Additionally, as part of [[my-practice]], I am also a live-coder. Live coding as
 
 ### **Developing a platform**
 
-I have started to develop a platform here -> <www.phd.mm-hr.com> called '[[PhD-Live]]'. This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As generative AI increasingly allows shortcuts learning and in creating works, I feel that the process of making and learning becomes more important and valuable in this context - it's a way to demonstrate your journey and showcase learning in 'real-time'. 
+I have started to develop a platform here -> <www.phd.mm-hr.com> called '[[PhD-Live]]'. This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As generative AI increasingly allows shortcuts to learning and in creating works, I feel that the process of making and building knowledge becomes more important and valuable in this context. Showing your process is a way to demonstrate your journey and showcase learning in 'real-time'. 
 
-I am using this online space as the beginning of this exploration. 
-
-This platform represents a deliberate effort to demystify the PhD process - by sharing my journey openly, I hope to share the often opaque nature of the PhD process. 
+Additionally, this platform represents a deliberate effort to demystify the PhD process - by sharing my journey openly, sharing the often opaque nature of PhD research. 
 
 Historically, PhDs have been accessible primarily to a privileged few. This fact motivates my commitment to making my research process open and accessible, with the hope that the insights gained within academia, are relevant to a wider audience - I hope this space will be a place for anyone curious about the research process.
 

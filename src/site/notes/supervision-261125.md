@@ -3,12 +3,17 @@ dg-publish: true
 visibility: public
 tags:
 ---
-### Things we discussed in the last meeting: 
-- put time aside for contextualising/positioning work (writing)
+### Things that I have been doing 
 
-two reflections - 
-- my motivation 
-- focus on process 
+- building the [PhD-Live](https://phd.mm-hr.com/) site
+	- reflection and rationale behind this: [[focus-on-process]]
+- [[thesis-bot]] project collaboration on the MSc Creative Computing <!--  (might be good to do a supervisor bot and thesis bot side by side of features and differences? ) -->
+- AI Literacy Classes + Resources (teaching activity feeding into the research) https://git.arts.ac.uk/mhenryrichards/AI-Literacy-Introduction
+- Supervisor Bot Ethics  - [AI supervisor bot](https://artslondon-my.sharepoint.com/:f:/g/personal/m_henryrichards_arts_ac_uk/IgCGmsEngK2HT4CGpRTzBlz8AXp2rVJv_e7r1NEEqnLibwg?e=CqGTWp)
+
+Issues to raise:
+
+- Although I have made progress, I have struggled to find time to work on the PhD as much as I would have liked. Timelines of projects have been pushed. I am now planning to do staff interviews in the new year
 
 ### Highlight key readings and sources that I have been looking at:
 
@@ -19,10 +24,3 @@ two reflections -
 [[blackwell-et-al-2022-live-coding-user-manual]]
 
 share working progress of glossary of terms [[glossary-index]]
-
-
-### Things that I have been doing 
-
-- building the [[PhD-Live]] site
-- [[thesis-bot]] collaboration on the MSc (might be good to do a supervisor bot and thesis bot side by side of features and differences? )
-- AI Literacy Classes + Resources (teaching activity feeding into the research)

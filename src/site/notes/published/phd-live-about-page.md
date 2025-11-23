@@ -44,6 +44,7 @@ Rather than presenting polished outcomes, [[PhD-Live]] foregrounds the process o
 - It is both archive and performance - an experimental rehearsal for what scholarship might look like when it becomes live, networked, and entangled with AI.
 
 ### What it is
+
 - PhD Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
 - It’s part website, part studio, part sketchbook:
 - A place where fragments come together, connections emerge, and the process itself becomes the work.e
