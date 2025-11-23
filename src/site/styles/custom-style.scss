@@ -17,7 +17,7 @@
 }
 
 /* Base */
-html, body {
+html, body, .livebar {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: auto; /* safety: restore scroll unless a fullscreen overlay is on top */

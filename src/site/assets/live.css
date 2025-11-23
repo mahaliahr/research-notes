@@ -1,0 +1,46 @@
+/* Live block under navbar (left aligned) */
+.livebar {
+  position: fixed;
+  display: inline-flex;
+  gap: .45rem;
+  align-items: center;
+  padding: .25rem .65rem;
+  margin: 3rem 0 .5rem 1rem;
+  border-radius: 99px;
+  background: color-mix(in oklab, Canvas 94%, CanvasText 6%);
+  color: color-mix(in oklab, CanvasText 85%, #e5e7eb);
+  z-index: 10;
+}
+
+.livebar .dot {
+  width:.55rem;
+  height:.55rem;
+  border-radius:50%;
+  background:#9aa1b3;            /* idle */
+  flex-shrink:0;
+}
+
+.livebar[data-state="on"] .dot {
+  background: rgb(231,2,52);      /* live */
+  box-shadow: 0 0 0.35rem 0.05rem rgba(231,2,52,.55);
+  animation: livePulse 1.8s ease-in-out infinite;
+}
+
+/* subtle breathing pulse (remove if not wanted) */
+@keyframes livePulse {
+  0%,100% { box-shadow: 0 0 0.35rem 0.05rem rgba(231,2,52,.55); transform: scale(1); }
+  50%     { box-shadow: 0 0 0.55rem 0.12rem rgba(231,2,52,.35); transform: scale(0.92); }
+}
+
+.livebar .text a {
+  text-decoration: underline;
+  color: inherit;
+}
+
+@media (max-width:560px){
+  .livebar {
+    margin-left:.75rem;
+    margin-right:.75rem;
+    width:calc(100% - 1.5rem);
+  }
+}
