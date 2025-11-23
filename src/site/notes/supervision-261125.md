@@ -21,7 +21,6 @@ two reflections -
 share working progress of glossary of terms [[glossary-index]]
 
 
-
 ### Things that I have been doing 
 
 - building the [[PhD-Live]] site
