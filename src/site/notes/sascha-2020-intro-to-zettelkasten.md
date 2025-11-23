@@ -1,0 +1,2 @@
+[[-bibliography]]
+sascha (2020) _Introduction to the Zettelkasten Method_, _Zettelkasten Method_. Available at: [https://zettelkasten.de/introduction/](https://zettelkasten.de/introduction/) (Accessed: November 23, 2025).

@@ -1,0 +1,2 @@
+[[-bibliography]]
+A Brief History & Ethos of the Digital Garden” (2020), 14 October. Available at: [https://maggieappleton.com/garden-history](https://maggieappleton.com/garden-history) (Accessed: November 23, 2025).

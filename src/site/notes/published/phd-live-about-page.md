@@ -9,7 +9,7 @@ permalink: "/about/"
 
 [PhD-Live](https://phd.mm-hr.com/) is built from my evolving collection of notes, managed locally in Obsidian and published automatically as a living website. [^1]
 
-[^1]: The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas.
+[^1]: _The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas._
 
 ---
 The website supports live tracking, session logging, and real-time reflection as part of my research process.
