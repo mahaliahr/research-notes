@@ -1,5 +1,7 @@
 const slugify = require("@sindresorhus/slugify");
 const markdownIt = require("markdown-it");
+const markdownItAttrs = require("markdown-it-attrs");
+const markdownItAnchor = require("markdown-it-anchor");
 const fs = require("fs");
 const matter = require("gray-matter");
 const faviconsPlugin = require("eleventy-plugin-gen-favicons");
@@ -95,6 +97,25 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
+  // Configure markdown
+  const md = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true,
+  })
+    .use(markdownItAttrs)
+    .use(markdownItAnchor, {
+      permalink: markdownItAnchor.permalink.ariaHidden({ placement: "before" }),
+      slugify: s =>
+        s
+          .toLowerCase()
+          .replace(/[^\w\- ]+/g, "")
+          .trim()
+          .replace(/[\s]+/g, "-"),
+    });
+
+  eleventyConfig.setLibrary("md", md);
+
   // Static assets
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css"); // generated theme file
@@ -114,15 +135,17 @@ module.exports = function (eleventyConfig) {
     dynamicPartials: true,
   });
   let markdownLib = markdownIt({
-    breaks: true,
     html: true,
+    breaks: true,        // ← single newline = <br>
     linkify: true,
+    typographer: true,   // optional: smart quotes
   })
     .use(require("markdown-it-anchor"), {
       slugify: headerToId,
     })
     .use(require("markdown-it-mark"))
     .use(require("markdown-it-footnote"))
+    .use(markdownItAttrs)
     .use(function (md) {
       md.renderer.rules.hashtag_open = function (tokens, idx) {
         return '<a class="tag" onclick="toggleTagSearch(this)">';
@@ -136,7 +159,6 @@ module.exports = function (eleventyConfig) {
         skipHtmlTags: { "[-]": ["pre"] },
       },
     })
-    .use(require("markdown-it-attrs"))
     .use(require("markdown-it-task-checkbox"), {
       disabled: true,
       divWrap: false,
