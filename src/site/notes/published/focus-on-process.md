@@ -10,13 +10,13 @@ description: >-
   This is something t
 updated: '2025-10-20T22:34:14.446Z'
 ---
-Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 
+Now that we are in a time where generative AI can produce 'results' with ease. The **process** of what we do becomes much more important. 
 
 This is something that I am thinking about a lot and I believe will be an important element within the research.
 
 ### **Capturing Process**
 
-Two concepts that I have come across in me research so far are, that center around a showcasing of process are: 
+Two concepts that I have come across in my research so far are, that centre around a showcasing of process are: 
 
 1. [[digital-gardens]]
 
