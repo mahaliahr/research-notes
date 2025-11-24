@@ -15,9 +15,9 @@ Discussion points:
 
 - Although I have made progress, I have struggled to find time to work on the PhD as much as I would have liked. Timelines of projects have been pushed. I am now planning to do staff interviews in the new year
 
-### <!-- Highlight key readings and sources that I have been looking at:
+### <!-- Highlight key readings and sources that I have been looking at: -->
 
-[[smith-nunes-offline-llms-and-the-future-private-AI]]
+<!-- [[smith-nunes-offline-llms-and-the-future-private-AI]]
 
 [[hao-empire-of-AI-2025]]
 
