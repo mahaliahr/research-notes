@@ -16,7 +16,7 @@
 }
 
 /* Base */
-html, body {
+html, body, .livebar {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow: auto; /* safety: restore scroll unless a fullscreen overlay is on top */
@@ -143,11 +143,59 @@ body {
   color: var(--navbar-fg);
 }
 
-/* Larger headings override */
-/* h1 { font-size: 1.2rem; line-height: 1.05; margin-top: 1.0rem; margin-bottom: 0.6rem; }  */
-/* h2 { font-size: 1.5rem; line-height: 1.15; margin-top: 0.9rem; margin-bottom: 0.5rem; }
-h3 { font-size: 1.15rem; line-height: 1.2; margin-top: 0.8rem; margin-bottom: 0.45rem; }
-h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0.4rem; }  */
+/* Heading scale (restore visual hierarchy) */
+h1 {
+  font-size: clamp(2.1rem, 4.5vw, 2.8rem);
+  line-height: 1.15;
+  font-weight: 600;
+  margin: 1.4rem 0 0.9rem;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+  font-weight: 600;
+  margin: 1.3rem 0 0.8rem;
+}
+
+h3 {
+  font-size: clamp(1.35rem, 2.6vw, 1.6rem);
+  line-height: 1.25;
+  font-weight: 600;
+  margin: 1.1rem 0 0.6rem;
+}
+
+h4 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0.9rem 0 0.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.8rem 0 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+h6 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0.7rem 0 0.4rem;
+  opacity: 0.75;
+}
+
+/* Tighten spacing when headings follow each other */
+h1 + h2, h2 + h3, h3 + h4 {
+  margin-top: 0.4rem;
+}
+
+/* Preserve line breaks in note content */
+.content p {
+  white-space: pre-line;
+}
+
 /* Optional: scale down on small screens */
 @media (max-width: 640px) {
   h1 {
@@ -160,8 +208,94 @@ h4 { font-size: 1.05rem; line-height: 1.25; margin-top: 0.7rem; margin-bottom: 0
     font-size: 1.1rem;
   }
 }
-.home-hero h1 {
-  font-size: 2.25rem !important;
+#nav-title {
+  font-size: 1.2rem !important;
   line-height: 1.05;
   margin: 0.6rem 0;
+}
+
+.home-hero {
+  margin-block: 3rem 4rem;
+}
+
+.home-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  margin-bottom: 0.5rem;
+}
+
+.home-hero .tagline {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.home-hero p {
+  max-width: 42rem;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero .quick-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.home-hero .quick-links a {
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 4px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* Sections */
+section {
+  margin-block: 3.5rem;
+}
+
+section h2 {
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--card-border);
+  padding-bottom: 0.4rem;
+}
+
+section .more {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+section .more a {
+  font-weight: 600;
+}
+
+/* Panel (for zettel gateway block) */
+.panel {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.panel h3 {
+  margin-top: 0;
+}
+
+.panel .button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Live dashboard (same treatment as panel) */
+.live-dashboard {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 1.5rem;
 }
