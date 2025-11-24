@@ -21,7 +21,9 @@
     </div>
 
     {% include "components/searchScript.njk" ignore missing %}
-    {% include "components/footer.njk" ignore missing %}
+    <footer>
+      {% include "components/footer.njk" ignore missing %}
+    </footer>
 
     <script>
       (function () {
@@ -49,7 +51,6 @@
         window.addEventListener('alpine:init', restoreScroll);
       })();
     </script>
-    <!-- livebar is inline; no nav height script needed -->
     <script src="{{ '/assets/live.js' | url }}" defer></script>
   </body>
 </html>

@@ -12,10 +12,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const fg = require("fast-glob");
 
 const { headerToId, namedHeadingsFilter } = require("./src/helpers/utils");
-const {
-  userMarkdownSetup,
-  userEleventySetup,
-} = require("./src/helpers/userSetup");
+const { userMarkdownSetup, userEleventySetup } = require("./src/helpers/userSetup");
 
 const Image = require("@11ty/eleventy-img");
 function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
@@ -25,8 +22,6 @@ function transformImage(src, cls, alt, sizes, widths = ["500", "700", "auto"]) {
     outputDir: "./dist/img/optimized",
     urlPath: "/img/optimized",
   };
-
-  // generate images, while this is async we don’t wait
   Image(src, options);
   let metadata = Image.statsSync(src, options);
   return metadata;
@@ -97,52 +92,16 @@ function getAnchorAttributes(filePath, linkTitle) {
 const tagRegex = /(^|\s|\>)(#[^\s!@#$%^&*()=+\.,\[{\]};:'"?><]+)(?!([^<]*>))/g;
 
 module.exports = function (eleventyConfig) {
-  // Configure markdown
-  const md = markdownIt({
+  eleventyConfig.setLiquidOptions({ dynamicPartials: true });
+
+  // ===== ONE MARKDOWN CONFIG (remove duplicate) =====
+  let markdownLib = markdownIt({
     html: true,
     breaks: true,
     linkify: true,
+    typographer: true,
   })
-    .use(markdownItAttrs)
-    .use(markdownItAnchor, {
-      permalink: markdownItAnchor.permalink.ariaHidden({ placement: "before" }),
-      slugify: s =>
-        s
-          .toLowerCase()
-          .replace(/[^\w\- ]+/g, "")
-          .trim()
-          .replace(/[\s]+/g, "-"),
-    });
-
-  eleventyConfig.setLibrary("md", md);
-
-  // Static assets
-  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
-  eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css"); // generated theme file
-  eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/site/img": "img" });
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
-  // If you have a PNG too, copy it:
-  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
-
-  eleventyConfig.addWatchTarget("src/site/styles");
-  eleventyConfig.addWatchTarget("src/site/assets");
-  eleventyConfig.addWatchTarget("src/site/notes");
-  eleventyConfig.addWatchTarget("src/site/notes/images");
-
-  eleventyConfig.setLiquidOptions({
-    dynamicPartials: true,
-  });
-  let markdownLib = markdownIt({
-    html: true,
-    breaks: true,        // ← single newline = <br>
-    linkify: true,
-    typographer: true,   // optional: smart quotes
-  })
-    .use(require("markdown-it-anchor"), {
-      slugify: headerToId,
-    })
+    .use(require("markdown-it-anchor"), { slugify: headerToId })
     .use(require("markdown-it-mark"))
     .use(require("markdown-it-footnote"))
     .use(markdownItAttrs)
@@ -152,12 +111,8 @@ module.exports = function (eleventyConfig) {
       };
     })
     .use(require("markdown-it-mathjax3"), {
-      tex: {
-        inlineMath: [["$", "$"]],
-      },
-      options: {
-        skipHtmlTags: { "[-]": ["pre"] },
-      },
+      tex: { inlineMath: [["$", "$"]] },
+      options: { skipHtmlTags: { "[-]": ["pre"] } },
     })
     .use(require("markdown-it-task-checkbox"), {
       disabled: true,
@@ -252,7 +207,6 @@ module.exports = function (eleventyConfig) {
         };
 
       md.renderer.rules.image = (tokens, idx, options, env, self) => {
-        // Preserve your existing width/metadata parsing from token.content
         const imageName = tokens[idx].content;
         const [fileName, ...widthAndMetaData] = imageName.split("|");
         const lastValue = widthAndMetaData[widthAndMetaData.length - 1];
@@ -273,16 +227,18 @@ module.exports = function (eleventyConfig) {
           else tokens[idx].attrs[widthIndex][1] = widthAttr;
         }
 
-        // NEW: rewrite relative image src to public /notes/images path
+        // Rewrite relative image src to /notes/...
         const srcIdx = tokens[idx].attrIndex("src");
         if (srcIdx >= 0) {
           let src = tokens[idx].attrs[srcIdx][1] || "";
           const isAbsolute = /^https?:\/\//i.test(src) || src.startsWith("/");
           if (!isAbsolute) {
-            // Keep subpath if user wrote images/foo.png; else prefix images/
-            src = src.startsWith("images/")
-              ? `/notes/${src}`
-              : `/notes/images/${src}`;
+            // Always map bare filename to /notes/images/
+            if (!src.includes("/")) {
+              src = `/notes/images/${src}`;
+            } else {
+              src = `/notes/${src}`;
+            }
             tokens[idx].attrs[srcIdx][1] = src;
           }
         }
@@ -590,8 +546,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
-  eleventyConfig.addPassthroughCopy({ "src/site/notes/images": "notes/images" });
-  eleventyConfig.addWatchTarget("src/site/notes/images");
+  eleventyConfig.addPassthroughCopy("src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
+  eleventyConfig.addWatchTarget("src/site/notes");
 
   // If you want to copy ALL images under notes (including subfolders):
   eleventyConfig.addPassthroughCopy({
@@ -785,9 +741,6 @@ eleventyConfig.addCollection("streamItems", (c) => {
   eleventyConfig.addCollection("notes", (api) =>
     api.getFilteredByGlob("src/site/notes/**/*.md").filter((p) => isMd(p) && isPublished(p))
   );
-
-  // Optional: Markdown config
-  eleventyConfig.setLibrary("md", markdownIt({ html: true, linkify: true }));
 
   eleventyConfig.addCollection("postFeaturedFirst", (api) => {
     const byBlogFolder = api.getFilteredByGlob("src/site/notes/blog/**/*.md");
