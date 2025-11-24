@@ -27,6 +27,20 @@ body {
   font-family: "Overpass Mono", monospace;
 }
 
+html, body {
+  height: 100%;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+}
+
 /* Containment for wide sections */
 .cards-wrap {
   max-width: var(--content-max);
@@ -298,4 +312,31 @@ section .more a {
   border: 1px solid var(--card-border);
   border-radius: 10px;
   padding: 1.5rem;
+}
+
+/* Footer styles */
+footer {
+  background: var(--footer-bg, #f8f8f8);
+  padding: 1rem;
+}
+
+/* Wikilink styling (internal links) */
+a.internal-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid color-mix(in oklab, var(--accent) 40%, transparent);
+  transition: border-color 0.15s ease;
+}
+
+a.internal-link:hover {
+  border-bottom-color: var(--accent);
+}
+
+/* Unresolved wikilinks (dead links) */
+a.internal-link.is-unresolved {
+  color: color-mix(in oklab, var(--accent) 60%, #999);
+  font-weight: 600;
+  opacity: 0.7;
+  border-bottom-style: dashed;
 }
