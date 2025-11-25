@@ -1,7 +1,9 @@
 ---
-layout: "index.njk"
-tags: ["gardenEntry"]
-permalink: "/about/"
+layout: index.njk
+tags:
+  - gardenEntry
+permalink: /about/
+dg-publish: true
 ---
 ### About PhD-Live
 
