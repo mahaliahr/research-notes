@@ -5,13 +5,14 @@ permalink: "/about/"
 ---
 ### About PhD-Live
 
+### What it is
+
+- PhD Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
+- It’s part website, part studio, part sketchbook:
+- A place where fragments come together, connections emerge, and the process itself becomes the work.
+---
 ### How it works
 
-[PhD-Live](https://phd.mm-hr.com/) is built from my evolving collection of notes, managed locally in Obsidian and published automatically as a living website. [^1]
-
-[^1]: _The system is based on an adapted version of the open-source Digital Garden Eleventy framework - a toolkit that transforms a folder of Markdown notes into a browsable, interlinked network of ideas._
-
----
 The website supports live tracking, session logging, and real-time reflection as part of my research process.
 
 Each type of note serves a different role:
@@ -30,6 +31,12 @@ These feed into a dynamic homepage that continuously updates to show:
 The source code and content structure live in the public repository here: https://github.com/mahaliahr/phd-live
 _this site is a constant work in progress_
 
+### How it's built
+
+[PhD-Live](https://phd.mm-hr.com/) is built from my evolving collection of notes, managed locally in Obsidian and published automatically as a living website. [^1]
+
+[^1]: _The system is based on an adapted version of the open-source [Digital Garden Eleventy](https://github.com/oleeskild/obsidian-digital-garden) framework - which transforms a folder of Markdown notes into a browsable, interlinked network of ideas._
+
 ### Why it exists
 
 This website forms part of my practice-based PhD at the Creative Computing Institute, UAL.
@@ -43,9 +50,4 @@ Rather than presenting polished outcomes, [[PhD-Live]] foregrounds the process o
 - how ideas unfold, cross-pollinate, and sometimes fall apart.
 - It is both archive and performance - an experimental rehearsal for what scholarship might look like when it becomes live, networked, and entangled with AI.
 
-### What it is
-
-- PhD Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
-- It’s part website, part studio, part sketchbook:
-- A place where fragments come together, connections emerge, and the process itself becomes the work.e
 

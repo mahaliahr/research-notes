@@ -15,8 +15,6 @@ It will allow a local LLM to observe conversations and respond with helpful cont
 
 It does not aim to have an interface and won't be a fully robust usable application at this stage.
 
--
-
 [^1]see: [[supervisor-persona]]
 
 ---
