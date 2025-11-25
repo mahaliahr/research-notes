@@ -15,3 +15,5 @@ We have a two prototype interfaces working.
 In order to refine the project further and test it's effectiveness, we would need to conduct user testing from our students.
 
 My next step is to complete an ethics application as soon as possible, so we can move forward with this project in the new year.
+
+(This project sits alongside [[project-supervisor-bot]] in exploring the effectiveness of chatbot based AI systems within the learning process)
