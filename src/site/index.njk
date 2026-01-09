@@ -38,7 +38,9 @@ title: "Home"
       {% for m in ms | limit(6)%}
         <li>
           <strong>{{ m.title }}</strong>
-          {% if m.due %}<small>due {{ m.due }}</small>{% endif %}
+          {% if m.due %}
+            <small>due <time data-dt="{{ m.due }}">{{ m.due }}</time></small>
+          {% endif %}
           {% if m.url %}<a href="{{ m.url }}">view note</a>{% endif %}
         </li>
       {% endfor %}
@@ -62,7 +64,10 @@ title: "Home"
             <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
             {% if post.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
-          <small>{{ post.date | isoDate }}</small>
+          <small><time data-dt="{{ post.date | isoDate }}">
+            {{ post.date | isoDate }}
+            </time>
+          </small>
           {% set desc = post.data.description or (post.templateContent | striptags) %}
           <p>{{ desc | truncate(140) }}</p>
         </li>
@@ -80,9 +85,9 @@ title: "Home"
         <li>
           <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
           {% if n.data.updated %}
-            <small>updated {{ n.data.updated | isoDate }}</small>
+            <small>updated <time data-dt="{{ n.data.updated | isoDate }}">{{ n.data.updated | isoDate }}</time></small>
           {% else %}
-            <small>{{ n.date | isoDate }}</small>
+            <small><time data-dt="{{ n.date | isoDate }}">{{ n.date | isoDate }}</time></small>
           {% endif %}
         </li>
       {% endfor %}
@@ -104,9 +109,9 @@ title: "Home"
             {% if n.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
           {% if n.data.updated %}
-            <small>updated {{ n.data.updated | isoDate }}</small>
+            <small>updated <time data-dt="{{ n.data.updated | isoDate }}">{{ n.data.updated | isoDate }}</time></small>
           {% else %}
-            <small>{{ n.date | isoDate }}</small>
+            <small><time data-dt="{{ n.date | isoDate }}">{{ n.date | isoDate }}</time></small>
           {% endif %}
           {% set desc = n.data.description or (n.templateContent | striptags) %}
           <p>{{ desc | truncate(140) }}</p>
@@ -114,7 +119,7 @@ title: "Home"
       {% endfor %}
     </ul>
   {% else %}
-    <p>Add <code>featured: true</code> (or tag <code>gardenEntry</code>) in a note’s front matter to feature it here.</p>
+    <p>Add <code>featured: true</code> (or tag <code>gardenEntry</code>) in a note's front matter to feature it here.</p>
   {% endif %}
   </div>
 </section>
