@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Exploring Ai Literacy In Creative Education Talk
+title: exploring ai literacy in creative education talk
 permalink: /notes/exploring-ai-literacy-in-creative-education-talk/
 visibility: public
 description: "05-07-2024\nI attended a talk facilitated by UAL Teaching and Learning(**Navigating the Future: Exploring AI-literacy in Creative Education**\_with Mary Jacob -PG"

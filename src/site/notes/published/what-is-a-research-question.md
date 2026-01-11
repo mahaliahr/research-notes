@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: What Is A Research Question
+title: what is a research question
 permalink: /notes/what-is-a-research-question/
 visibility: public
 description: |-

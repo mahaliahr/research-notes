@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Classroom As Dramaturgical Site For Experimentation
+title: classroom as dramaturgical site for experimentation
 permalink: /notes/classroom-as-dramaturgical-site-for-experimentation/
 visibility: public
 description: >+

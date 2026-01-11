@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Opting Out Of Ai Learning
+title: opting out of ai learning
 permalink: /notes/opting-out-of-ai-learning/
 visibility: public
 description: |-

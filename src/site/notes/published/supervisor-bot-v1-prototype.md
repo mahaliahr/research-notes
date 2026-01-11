@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Supervisor Bot V1 Prototype
+title: supervisor bot v1 prototype
 permalink: /notes/supervisor-bot-v1-prototype/
 visibility: public
 description: >-

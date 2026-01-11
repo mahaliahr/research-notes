@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Motivation And Engagement
+title: motivation and engagement
 permalink: /notes/motivation-and-engagement/
 visibility: public
 description: >-

@@ -1,9 +1,11 @@
 ---
 dg-publish: true
-title: The Lifecycle Of Imaginaries Diagram
+title: the lifecycle of imaginaries diagram
 permalink: /notes/the-lifecycle-of-imaginaries-diagram/
 visibility: public
-description: Alternative or new configurations of the world are presented in the diagram attached across a variety of contexts. The diagram
+description: >-
+  Alternative or new configurations of the world are presented in the diagram
+  attached across a variety of contexts. The diagram
 updated: 2025-10-20T22:34:14.482Z
 ---
 

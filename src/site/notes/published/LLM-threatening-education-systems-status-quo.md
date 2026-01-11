@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Llm Threatening Education Systems Status Quo
+title: llm threatening education systems status quo
 permalink: /notes/llm-threatening-education-systems-status-quo/
 visibility: public
 description: >-

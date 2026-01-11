@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Material Constraints Of Ai
+title: material constraints of ai
 permalink: /notes/material-constraints-of-ai/
 visibility: public
 description: |-

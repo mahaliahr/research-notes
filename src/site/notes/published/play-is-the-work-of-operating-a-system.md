@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Play Is The Work Of Operating A System
+title: play is the work of operating a system
 permalink: /notes/play-is-the-work-of-operating-a-system/
 visibility: public
 description: >-

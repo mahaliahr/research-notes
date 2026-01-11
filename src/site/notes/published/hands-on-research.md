@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Hands On Research
+title: hands on research
 permalink: /notes/hands-on-research/
 visibility: public
 description: >-

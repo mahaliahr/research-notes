@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Case Study Roby
+title: case study roby
 permalink: /notes/case-study-roby/
 visibility: public
 description: >-

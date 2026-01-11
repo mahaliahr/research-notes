@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Bayley 2018 Posthuman Pedagogies
+title: bayley 2018 posthuman pedagogies
 permalink: /notes/bayley-2018-posthuman-pedagogies/
 visibility: public
 description: >-

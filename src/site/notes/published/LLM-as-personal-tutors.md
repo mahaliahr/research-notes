@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Llm As Personal Tutors
+title: llm as personal tutors
 permalink: /notes/llm-as-personal-tutors/
 visibility: public
 description: >

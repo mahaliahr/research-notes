@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Material Research
+title: material research
 permalink: /notes/material-research/
 visibility: public
 description: >-

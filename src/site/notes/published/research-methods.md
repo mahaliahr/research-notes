@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research Methods
+title: research methods
 permalink: /notes/research-methods/
 visibility: public
 description: >-

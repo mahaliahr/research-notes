@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Ideas For Possible Futures
+title: ideas for possible futures
 permalink: /notes/ideas-for-possible-futures/
 visibility: public
 description: |-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Shift From Product To Process
+title: shift from product to process
 permalink: /notes/shift-from-product-to-process/
 visibility: public
 description: >-

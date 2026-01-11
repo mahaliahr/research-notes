@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: The Model
+title: the model
 permalink: /notes/the-model/
 visibility: public
 description: >-

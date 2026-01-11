@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Persona Prompting
+title: persona prompting
 permalink: /notes/persona-prompting/
 visibility: public
 description: >-

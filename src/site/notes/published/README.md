@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Readme
+title: readme
 permalink: /notes/readme/
 visibility: public
 description: '# phd-notebook-backup'

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research Questions
+title: research questions
 permalink: /notes/research-questions/
 visibility: public
 description: "RQ1-how-will-ai-change-teaching-and-learning\n\nRQ2-socio-political-and-tech-changing-learning\n\_\nRQ3-playful-methodology-as-way-to-speculate\n\nRQ4-speculative-proc"

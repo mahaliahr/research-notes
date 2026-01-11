@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Banking System
+title: banking system
 permalink: /notes/banking-system/
 visibility: public
 description: >-

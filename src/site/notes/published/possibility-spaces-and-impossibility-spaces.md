@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Possibility Spaces And Impossibility Spaces
+title: possibility spaces and impossibility spaces
 permalink: /notes/possibility-spaces-and-impossibility-spaces/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Rq1 How Will Ai Change Teaching And Learning
+title: rq1 how will ai change teaching and learning
 permalink: /notes/rq1-how-will-ai-change-teaching-and-learning/
 visibility: public
 description: >-

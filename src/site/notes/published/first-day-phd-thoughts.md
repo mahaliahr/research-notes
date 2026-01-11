@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: First Day Phd Thoughts
+title: first day phd thoughts
 permalink: /notes/first-day-phd-thoughts/
 visibility: public
 description: |-

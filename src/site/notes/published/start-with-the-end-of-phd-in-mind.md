@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Start With The End Of Phd In Mind
+title: start with the end of phd in mind
 permalink: /notes/start-with-the-end-of-phd-in-mind/
 visibility: public
 description: |-

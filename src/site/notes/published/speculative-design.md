@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Speculative Design
+title: speculative design
 permalink: /notes/speculative-design/
 visibility: public
 description: |-

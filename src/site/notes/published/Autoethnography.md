@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Autoethnography
+title: autoethnography
 permalink: /notes/autoethnography/
 visibility: public
 description: |-

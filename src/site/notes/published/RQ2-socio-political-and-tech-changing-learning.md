@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Rq2 Socio Political And Tech Changing Learning
+title: rq2 socio political and tech changing learning
 permalink: /notes/rq2-socio-political-and-tech-changing-learning/
 visibility: public
 description: >-

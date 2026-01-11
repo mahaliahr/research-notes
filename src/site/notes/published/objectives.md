@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Objectives
+title: objectives
 permalink: /notes/objectives/
 visibility: public
 description: "Critically examine the potential implications of AI on teaching and learning.\_\n\n- Use speculative design to envision and construct scenarios that explore altern"

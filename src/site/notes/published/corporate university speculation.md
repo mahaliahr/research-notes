@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Corporate University Speculation
+title: corporate university speculation
 permalink: /notes/corporate-university-speculation/
 visibility: public
 description: >-

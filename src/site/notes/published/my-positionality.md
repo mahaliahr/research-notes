@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: My Positionality
+title: my positionality
 permalink: /notes/my-positionality/
 visibility: public
 description: >-

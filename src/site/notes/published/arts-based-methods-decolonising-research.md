@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Arts Based Methods Decolonising Research
+title: arts based methods decolonising research
 permalink: /notes/arts-based-methods-decolonising-research/
 visibility: public
 description: >-

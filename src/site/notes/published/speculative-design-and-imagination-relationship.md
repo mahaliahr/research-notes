@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Speculative Design And Imagination Relationship
+title: speculative design and imagination relationship
 permalink: /notes/speculative-design-and-imagination-relationship/
 visibility: public
 description: >-

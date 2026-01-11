@@ -1,9 +1,9 @@
 ---
 dg-publish: true
-title: Traditional Design Vs Speculative Design Diagram
+title: traditional design vs speculative design diagram
 permalink: /notes/traditional-design-vs-speculative-design-diagram/
 visibility: public
-description:
+description: null
 updated: 2025-10-20T22:34:14.486Z
 ---
 ![alt text](images/traditional-vs-speculative.png)

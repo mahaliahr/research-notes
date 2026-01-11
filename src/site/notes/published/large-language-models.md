@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Large Language Models
+title: large language models
 permalink: /notes/large-language-models/
 visibility: public
 description: |-

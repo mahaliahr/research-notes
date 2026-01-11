@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Historical Context
+title: historical context
 permalink: /notes/historical-context/
 visibility: public
 description: >-

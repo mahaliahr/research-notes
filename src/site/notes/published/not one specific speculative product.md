@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Not One Specific Speculative Product
+title: not one specific speculative product
 permalink: /notes/not-one-specific-speculative-product/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Humans And Ai Working Together And Embodiment
+title: humans and ai working together and embodiment
 permalink: /notes/humans-and-ai-working-together-and-embodiment/
 visibility: public
 description: >-

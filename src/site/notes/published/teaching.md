@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Teaching
+title: teaching
 permalink: /notes/teaching/
 visibility: public
 description: >-

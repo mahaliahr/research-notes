@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: The Riddle For Reflection
+title: the riddle for reflection
 permalink: /notes/the-riddle-for-reflection/
 visibility: public
 description: '![riddle](riddle.jpeg)'

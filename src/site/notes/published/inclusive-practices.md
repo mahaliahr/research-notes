@@ -1,6 +1,6 @@
 ---
 dg-publish: false
-title: Inclusive Practices
+title: inclusive practices
 permalink: /notes/inclusive-practices/
 visibility: public
 description: |-

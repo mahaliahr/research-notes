@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Developing Playful Methodology
+title: developing playful methodology
 permalink: /notes/developing-playful-methodology/
 visibility: public
 description: |-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Ai And Digital Poverty
+title: ai and digital poverty
 permalink: /notes/ai-and-digital-poverty/
 visibility: public
 description: >-

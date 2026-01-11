@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Ethics
+title: ethics
 permalink: /notes/ethics/
 visibility: public
 description: |-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Making Strategies
+title: making strategies
 permalink: /notes/making-strategies/
 visibility: public
 description: "Making strategies can help you get started in a concrete and productive way\_\n\nIn the early stage of making what you are doing might not feel like research. It’s"

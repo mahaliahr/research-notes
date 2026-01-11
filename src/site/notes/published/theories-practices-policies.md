@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Theories Practices Policies
+title: theories practices policies
 permalink: /notes/theories-practices-policies/
 visibility: public
 description: |-

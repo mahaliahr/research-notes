@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Focus On Process
+title: focus on process
 permalink: /notes/focus-on-process/
 visibility: public
 description: >-

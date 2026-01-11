@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Rq4 Speculative Process As Particapatory
+title: rq4 speculative process as particapatory
 permalink: /notes/rq4-speculative-process-as-particapatory/
 visibility: public
 description: "How can the speculative process be structured as a participatory activity, involving stakeholders in the generation of these future 'possibility spaces’?\_\n\n---\n"

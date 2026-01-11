@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research Of Context
+title: research of context
 permalink: /notes/research-of-context/
 visibility: public
 description: |-

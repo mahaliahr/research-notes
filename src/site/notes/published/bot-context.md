@@ -1,6 +1,6 @@
 ---
 dg-publish: false
-title: Bot Context
+title: bot context
 permalink: /notes/bot-context/
 visibility: public
 description: >-

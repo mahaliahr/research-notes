@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Contemporary Context
+title: contemporary context
 permalink: /notes/contemporary-context/
 visibility: public
 description: >-

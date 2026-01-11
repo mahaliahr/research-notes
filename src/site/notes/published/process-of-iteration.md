@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Process Of Iteration
+title: process of iteration
 permalink: /notes/process-of-iteration/
 visibility: public
 description: >-

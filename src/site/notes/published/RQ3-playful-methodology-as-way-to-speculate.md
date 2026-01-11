@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Rq3 Playful Methodology As Way To Speculate
+title: rq3 playful methodology as way to speculate
 permalink: /notes/rq3-playful-methodology-as-way-to-speculate/
 visibility: public
 description: >-

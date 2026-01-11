@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Imagination Practice
+title: imagination practice
 permalink: /notes/imagination-practice/
 visibility: public
 description: >-

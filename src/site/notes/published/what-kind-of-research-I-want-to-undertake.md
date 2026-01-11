@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: What Kind Of Research I Want To Undertake
+title: what kind of research i want to undertake
 permalink: /notes/what-kind-of-research-i-want-to-undertake/
 visibility: public
 description: |-

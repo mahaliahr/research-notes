@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Title And Subject Area
+title: title and subject area
 permalink: /notes/title-and-subject-area/
 visibility: public
 description: >-

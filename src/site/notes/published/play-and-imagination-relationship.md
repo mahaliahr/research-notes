@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Play And Imagination Relationship
+title: play and imagination relationship
 permalink: /notes/play-and-imagination-relationship/
 visibility: public
 description: >-

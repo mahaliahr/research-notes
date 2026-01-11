@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Choreography Of Experience
+title: choreography of experience
 permalink: /notes/choreography-of-experience/
 visibility: public
 description: >-

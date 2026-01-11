@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Utopia In The Margins
+title: utopia in the margins
 permalink: /notes/utopia-in-the-margins/
 visibility: public
 description: >-

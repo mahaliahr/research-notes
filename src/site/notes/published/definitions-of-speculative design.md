@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Definitions Of Speculative Design
+title: definitions of speculative design
 permalink: /notes/definitions-of-speculative-design/
 visibility: public
 description: >-

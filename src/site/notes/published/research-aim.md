@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research Aim
+title: research aim
 permalink: /notes/research-aim/
 visibility: public
 description: >-

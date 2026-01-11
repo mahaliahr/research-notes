@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Complaints About Llm Use
+title: complaints about llm use
 permalink: /notes/complaints-about-llm-use/
 visibility: public
 description: >-

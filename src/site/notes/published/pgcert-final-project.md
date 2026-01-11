@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Pgcert Final Project
+title: pgcert final project
 permalink: /notes/pgcert-final-project/
 visibility: public
 description: |-

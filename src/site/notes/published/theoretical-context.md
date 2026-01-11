@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Theoretical Context
+title: theoretical context
 permalink: /notes/theoretical-context/
 visibility: public
 description: >-

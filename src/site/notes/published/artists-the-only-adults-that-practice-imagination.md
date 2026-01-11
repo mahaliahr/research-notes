@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Artists The Only Adults That Practice Imagination
+title: artists the only adults that practice imagination
 permalink: /notes/artists-the-only-adults-that-practice-imagination/
 visibility: public
 description: >-

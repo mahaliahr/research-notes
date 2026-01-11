@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Practice Based Research
+title: practice based research
 permalink: /notes/practice-based-research/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Educational Industrial Complex
+title: educational industrial complex
 permalink: /notes/educational-industrial-complex/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Case Study Shiffbot
+title: case study shiffbot
 permalink: /notes/case-study-shiffbot/
 visibility: public
 description: 'https://shiffbot.withgoogle.com/'

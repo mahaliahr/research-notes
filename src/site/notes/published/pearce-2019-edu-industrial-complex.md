@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Pearce 2019 Edu Industrial Complex
+title: pearce 2019 edu industrial complex
 permalink: /notes/pearce-2019-edu-industrial-complex/
 visibility: public
 description: >-

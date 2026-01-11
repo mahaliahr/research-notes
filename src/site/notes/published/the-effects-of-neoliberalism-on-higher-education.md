@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: The Effects Of Neoliberalism On Higher Education
+title: the effects of neoliberalism on higher education
 permalink: /notes/the-effects-of-neoliberalism-on-higher-education/
 visibility: public
 description: >-

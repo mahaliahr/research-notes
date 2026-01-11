@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Open Ai Anthropic Education Partnerships
+title: open ai anthropic education partnerships
 permalink: /notes/open-ai-anthropic-education-partnerships/
 visibility: public
 description: >-

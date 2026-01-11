@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Project Supervisor Bot
+title: project supervisor bot
 permalink: /notes/project-supervisor-bot/
 visibility: public
 description: |-

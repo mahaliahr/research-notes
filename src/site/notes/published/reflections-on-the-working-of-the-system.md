@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Reflections On The Working Of The System
+title: reflections on the working of the system
 permalink: /notes/reflections-on-the-working-of-the-system/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Designing Practice Based Research
+title: designing practice based research
 permalink: /notes/designing-practice-based-research/
 visibility: public
 description: >-

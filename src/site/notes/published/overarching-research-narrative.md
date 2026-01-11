@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Overarching Research Narrative
+title: overarching research narrative
 permalink: /notes/overarching-research-narrative/
 visibility: public
 description: >-

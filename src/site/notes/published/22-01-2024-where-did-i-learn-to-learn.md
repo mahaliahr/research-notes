@@ -13,7 +13,7 @@ description: >-
   Skimming through a reading
   published/oreilly-research-identity-threshold-concepts\ for
 updated: '2025-10-15T21:01:33.999Z'
-title: 22 01 2024 Where Did I Learn To Learn
+title: 22 01 2024 where did i learn to learn
 ---
 
 I didn't learn how to learn from school. 

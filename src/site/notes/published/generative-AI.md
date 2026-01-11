@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Generative Ai
+title: generative ai
 permalink: /notes/generative-ai/
 visibility: public
 description: |-

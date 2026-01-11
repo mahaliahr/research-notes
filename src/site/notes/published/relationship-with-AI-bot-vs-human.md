@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Relationship With Ai Bot Vs Human
+title: relationship with ai bot vs human
 permalink: /notes/relationship-with-ai-bot-vs-human/
 visibility: public
 description: >-

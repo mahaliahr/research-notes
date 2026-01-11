@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Thoughts On Corporate Uni And Imagination
+title: thoughts on corporate uni and imagination
 permalink: /notes/thoughts-on-corporate-uni-and-imagination/
 visibility: public
 description: |-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Autoethnographic Experience As Lecturer And Student
+title: autoethnographic experience as lecturer and student
 permalink: /notes/autoethnographic-experience-as-lecturer-and-student/
 visibility: public
 description: >-

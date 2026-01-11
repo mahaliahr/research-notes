@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Critiques Of Speculative Design
+title: critiques of speculative design
 permalink: /notes/critiques-of-speculative-design/
 visibility: public
 description: >-

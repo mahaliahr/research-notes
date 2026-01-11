@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Oppression Limiting Situation To Transform
+title: oppression limiting situation to transform
 permalink: /notes/oppression-limiting-situation-to-transform/
 visibility: public
 description: >-

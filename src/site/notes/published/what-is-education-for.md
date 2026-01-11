@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: What Is Education For
+title: what is education for
 permalink: /notes/what-is-education-for/
 visibility: public
 description: |-

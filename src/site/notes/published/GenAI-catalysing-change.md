@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Genai Catalysing Change
+title: genai catalysing change
 permalink: /notes/genai-catalysing-change/
 visibility: public
 description: >-

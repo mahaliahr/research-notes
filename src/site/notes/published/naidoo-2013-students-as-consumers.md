@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Naidoo 2013 Students As Consumers
+title: naidoo 2013 students as consumers
 permalink: /notes/naidoo-2013-students-as-consumers/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: I Don T Want To Design A Pedagogical Framework
+title: i don t want to design a pedagogical framework
 permalink: /notes/i-don-t-want-to-design-a-pedagogical-framework/
 visibility: public
 description: >-

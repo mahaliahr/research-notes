@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Improv
+title: improv
 permalink: /notes/improv/
 visibility: public
 description: |-

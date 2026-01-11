@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Connection Between Education And Work
+title: connection between education and work
 permalink: /notes/connection-between-education-and-work/
 visibility: public
 description: may need to revisit the chapter from Atlas of AI - Labor

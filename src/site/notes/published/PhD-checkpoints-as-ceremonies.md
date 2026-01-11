@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Phd Checkpoints As Ceremonies
+title: phd checkpoints as ceremonies
 permalink: /notes/phd-checkpoints-as-ceremonies/
 visibility: public
 description: >-

@@ -53,7 +53,7 @@ title: "Home"
 
 
 <section class="latest-posts">
-  <h2>Latest Reflections</h2>
+  <h2>Latest Posts</h2>
   {% set posts = collections.postFeaturedFirst | default([]) %}
   {% if posts | length %}
   <div class="cards-wrap">
@@ -61,13 +61,10 @@ title: "Home"
       {% for post in posts | limit(4) %}
         <li class="card">
           <h3>
-            <a href="{{ post.url | url }}">{{ post.data.title or post.fileSlug }}</a>
+            <a href="{{ post.url | url }}">{{ (post.data.title or post.fileSlug) | lower }}</a>
             {% if post.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
-          <small><time data-dt="{{ post.date | isoDate }}">
-            {{ post.date | isoDate }}
-            </time>
-          </small>
+          <small><time data-dt="{{ post.date | isoDate }}">{{ post.date | isoDate }}</time></small>
           {% set desc = post.data.description or (post.templateContent | striptags) %}
           <p>{{ desc | truncate(140) }}</p>
         </li>
@@ -76,24 +73,24 @@ title: "Home"
   {% endif %}
 </div>
 
-  {# Recent notes #}
-  <h2>Recent Notes</h2>
-  {% set z = collections.zettels | default([]) %}
-  {% if z | length %}
-    <ul class="list">
-      {% for n in z | limit(4) %}
-        <li>
-          <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
-          {% if n.data.updated %}
-            <small>updated <time data-dt="{{ n.data.updated | isoDate }}">{{ n.data.updated | isoDate }}</time></small>
-          {% else %}
-            <small><time data-dt="{{ n.date | isoDate }}">{{ n.date | isoDate }}</time></small>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-  <p class="more"><a href="{{ '/notes/' | url }}">See all notes →</a></p>
+{# Recent notes #}
+<h2>Recent Notes</h2>
+{% set z = collections.zettels | default([]) %}
+{% if z | length %}
+  <ul class="list">
+    {% for n in z | limit(4) %}
+      <li>
+        <a href="{{ n.url | url }}">{{ (n.data.title or n.fileSlug) | lower }}</a>
+        {% if n.data.updated %}
+          <small>updated <time data-dt="{{ n.data.updated | isoDate }}">{{ n.data.updated | isoDate }}</time></small>
+        {% else %}
+          <small><time data-dt="{{ n.date | isoDate }}">{{ n.date | isoDate }}</time></small>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endif %}
+  <p class="more"><a href="{{ '/notes/' | url }}">Browse all notes →</a></p>
 </section>
 
 <section class="featured-notes">
@@ -105,7 +102,7 @@ title: "Home"
       {% for n in fz | limit(8) %}
         <li class="card">
           <h3>
-            <a href="{{ n.url | url }}">{{ n.data.title or n.fileSlug }}</a>
+            <a href="{{ n.url | url }}">{{ (n.data.title or n.fileSlug) | lower }}</a>
             {% if n.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
           {% if n.data.updated %}
@@ -118,8 +115,6 @@ title: "Home"
         </li>
       {% endfor %}
     </ul>
-  {% else %}
-    <p>Add <code>featured: true</code> (or tag <code>gardenEntry</code>) in a note's front matter to feature it here.</p>
   {% endif %}
   </div>
 </section>

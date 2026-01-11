@@ -8,7 +8,7 @@ description: >-
   with making music (algorithmically) of course connects to my musician
   background 
 updated: '2025-10-15T21:01:33.999Z'
-title: 28 07 2024 Thoughts After Kaos Magi
+title: 28 07 2024 thoughts after kaos magi
 ---
 This is a random side note, but in a way it feels worth mentioning. My current obsession with making music (algorithmically) obviously connects to my music background (orchestra + French Horn) but also is a way of expressing lots of feeling (in combination with visuals also). I believe that this is, in a way a sense world-building - I want to channel some of this joy and obsession into the 'art' ([[my-practice]]) of the PhD. I don't want the research of it to strangle the fun, play and exploration. 
 

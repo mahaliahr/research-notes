@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Notes After First Supervision Discussions
+title: notes after first supervision discussions
 permalink: /notes/notes-after-first-supervision-discussions/
 visibility: public
 description: |-

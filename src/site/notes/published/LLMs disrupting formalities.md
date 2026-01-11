@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Llms Disrupting Formalities
+title: llms disrupting formalities
 permalink: /notes/llms-disrupting-formalities/
 visibility: public
 description: >-

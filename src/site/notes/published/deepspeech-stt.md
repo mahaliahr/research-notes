@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Deepspeech Stt
+title: deepspeech stt
 permalink: /notes/deepspeech-stt/
 visibility: public
 description: |-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Connection Between Machine Learning And Human Learning
+title: connection between machine learning and human learning
 permalink: /notes/connection-between-machine-learning-and-human-learning/
 visibility: public
 description: metaphors-of-machine-learning

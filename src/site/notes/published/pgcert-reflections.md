@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Pgcert Reflections
+title: pgcert reflections
 permalink: /notes/pgcert-reflections/
 visibility: public
 description: >-

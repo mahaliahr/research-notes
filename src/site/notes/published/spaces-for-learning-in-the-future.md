@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Spaces For Learning In The Future
+title: spaces for learning in the future
 permalink: /notes/spaces-for-learning-in-the-future/
 visibility: public
 description: >-

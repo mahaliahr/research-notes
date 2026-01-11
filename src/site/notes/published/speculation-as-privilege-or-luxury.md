@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Speculation As Privilege Or Luxury
+title: speculation as privilege or luxury
 permalink: /notes/speculation-as-privilege-or-luxury/
 visibility: public
 description: >-

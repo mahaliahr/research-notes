@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research By Making
+title: research by making
 permalink: /notes/research-by-making/
 visibility: public
 description: >-

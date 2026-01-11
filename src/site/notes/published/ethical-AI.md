@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Ethical Ai
+title: ethical ai
 permalink: /notes/ethical-ai/
 visibility: public
 description: is this even possible?

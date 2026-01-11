@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Financial Model Of He
+title: financial model of he
 permalink: /notes/financial-model-of-he/
 visibility: public
 description: >-

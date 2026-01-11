@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Humans And Ai School Speculation
+title: humans and ai school speculation
 permalink: /notes/humans-and-ai-school-speculation/
 visibility: public
 description: >-

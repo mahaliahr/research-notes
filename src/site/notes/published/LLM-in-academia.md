@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Llm In Academia
+title: llm in academia
 permalink: /notes/llm-in-academia/
 visibility: public
 description: >-

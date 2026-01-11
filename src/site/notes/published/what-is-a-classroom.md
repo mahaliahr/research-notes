@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: What Is A Classroom
+title: what is a classroom
 permalink: /notes/what-is-a-classroom/
 visibility: public
 description: classroom as dramaturgical site for experimentation

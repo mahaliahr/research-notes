@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Llm As Phd Supervisor
+title: llm as phd supervisor
 permalink: /notes/llm-as-phd-supervisor/
 visibility: public
 description: >+

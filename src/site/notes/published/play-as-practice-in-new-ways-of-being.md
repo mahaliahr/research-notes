@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Play As Practice In New Ways Of Being
+title: play as practice in new ways of being
 permalink: /notes/play-as-practice-in-new-ways-of-being/
 visibility: public
 description: >-

@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: How To Shift Power Relations Of Speculation
+title: how to shift power relations of speculation
 permalink: /notes/how-to-shift-power-relations-of-speculation/
 visibility: public
 description: >-

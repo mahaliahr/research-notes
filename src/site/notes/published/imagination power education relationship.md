@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Imagination Power Education Relationship
+title: imagination power education relationship
 permalink: /notes/imagination-power-education-relationship/
 visibility: public
 description: >-

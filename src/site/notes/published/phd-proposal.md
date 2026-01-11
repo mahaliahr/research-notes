@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Phd Proposal
+title: phd proposal
 permalink: /notes/phd-proposal/
 visibility: public
 description: >-

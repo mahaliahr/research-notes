@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Research Process As Play
+title: research process as play
 permalink: /notes/research-process-as-play/
 visibility: public
 description: >-

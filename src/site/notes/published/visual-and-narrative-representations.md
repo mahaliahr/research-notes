@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Visual And Narrative Representations
+title: visual and narrative representations
 permalink: /notes/visual-and-narrative-representations/
 visibility: public
 description: >-

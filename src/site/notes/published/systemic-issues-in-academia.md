@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Systemic Issues In Academia
+title: systemic issues in academia
 permalink: /notes/systemic-issues-in-academia/
 visibility: public
 description: educational-industrial-complex

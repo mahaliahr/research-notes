@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Design Interventions
+title: design interventions
 permalink: /notes/design-interventions/
 visibility: public
 description: |-

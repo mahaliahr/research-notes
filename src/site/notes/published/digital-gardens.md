@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Digital Gardens
+title: digital gardens
 permalink: /notes/digital-gardens/
 visibility: public
 description: >-

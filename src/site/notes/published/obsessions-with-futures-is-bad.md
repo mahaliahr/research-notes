@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Obsessions With Futures Is Bad
+title: obsessions with futures is bad
 permalink: /notes/obsessions-with-futures-is-bad/
 visibility: public
 description: >-

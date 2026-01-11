@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Conversation
+title: conversation
 permalink: /notes/conversation/
 visibility: public
 description: "1. ~~input capture\n\t- ~~text based input\n\t\t- ~~shared doc\n\t\t- ~~use webhook service to capture data and send to LLM\n\t- voice based input (speech to text tools)\n"

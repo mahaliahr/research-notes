@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Supervision 010525
+title: supervision 010525
 permalink: /notes/supervision-010525/
 visibility: public
 description: >-

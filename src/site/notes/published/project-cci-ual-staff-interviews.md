@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Project Cci Ual Staff Interviews
+title: project cci ual staff interviews
 permalink: /notes/project-cci-ual-staff-interviews/
 visibility: public
 description: >-

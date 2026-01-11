@@ -12,7 +12,7 @@ description: >-
   Could some kind of model based on the idea of the library offer access to
   people who
 updated: '2025-10-15T21:01:34.000Z'
-title: Ai Access Libraries Speculation
+title: ai access libraries speculation
 ---
 (13-08-2024) Libraries are often thought of as being increasingly obsolete. 
 

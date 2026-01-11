@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: My Practice
+title: my practice
 permalink: /notes/my-practice/
 visibility: public
 description: >-

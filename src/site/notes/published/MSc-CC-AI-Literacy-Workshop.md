@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Msc Cc Ai Literacy Workshop
+title: msc cc ai literacy workshop
 permalink: /notes/msc-cc-ai-literacy-workshop/
 visibility: public
 description: >-

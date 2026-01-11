@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Types Of Systems
+title: types of systems
 permalink: /notes/types-of-systems/
 visibility: public
 description: banking-system

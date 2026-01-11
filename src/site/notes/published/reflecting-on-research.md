@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Reflecting On Research
+title: reflecting on research
 permalink: /notes/reflecting-on-research/
 visibility: public
 description: "schedule in regular moments for _articulated_ reflection\n\tMake reflection on your researc question and sub-questions a regular part of your process. You can be "

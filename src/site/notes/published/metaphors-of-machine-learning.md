@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Metaphors Of Machine Learning
+title: metaphors of machine learning
 permalink: /notes/metaphors-of-machine-learning/
 visibility: public
 description: >-

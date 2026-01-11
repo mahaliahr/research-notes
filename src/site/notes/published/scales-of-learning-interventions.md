@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Scales Of Learning Interventions
+title: scales of learning interventions
 permalink: /notes/scales-of-learning-interventions/
 visibility: public
 description: |-

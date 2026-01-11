@@ -8,7 +8,7 @@ description: >-
   published/complaints-about-LLM-use\. With a lot of focus on trying to see if
   the stude
 updated: '2025-10-15T21:01:34.000Z'
-title: Ai Eroding Trust Between Student And Teacher
+title: ai eroding trust between student and teacher
 ---
 I have noticed there seems to be a lot of panic and/or exasperation at students use of AI and [[complaints-about-LLM-use]]. With a lot of focus on trying to see if the student used it and 'catch them out'. This seems to me the wrong way to approach it, but the use of AI is very much changing the learning process so it does need to be addressed in some way. 
 

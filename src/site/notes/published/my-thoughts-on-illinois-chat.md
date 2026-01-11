@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: My Thoughts On Illinois Chat
+title: my thoughts on illinois chat
 permalink: /notes/my-thoughts-on-illinois-chat/
 visibility: public
 description: >-

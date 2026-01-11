@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Participatory Research
+title: participatory research
 permalink: /notes/participatory-research/
 visibility: public
 description: >-

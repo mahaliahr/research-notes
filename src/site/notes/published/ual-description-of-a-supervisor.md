@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Ual Description Of A Supervisor
+title: ual description of a supervisor
 permalink: /notes/ual-description-of-a-supervisor/
 visibility: public
 description: |-

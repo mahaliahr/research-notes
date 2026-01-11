@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: What Is Technically Possible With Ai Now And In The Future
+title: what is technically possible with ai now and in the future
 permalink: /notes/what-is-technically-possible-with-ai-now-and-in-the-future/
 visibility: public
 description: >-

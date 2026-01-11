@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Trauma Inhibiting Imagination
+title: trauma inhibiting imagination
 permalink: /notes/trauma-inhibiting-imagination/
 visibility: public
 description: >-

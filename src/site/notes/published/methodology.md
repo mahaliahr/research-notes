@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Methodology
+title: methodology
 permalink: /notes/methodology/
 visibility: public
 description: >-

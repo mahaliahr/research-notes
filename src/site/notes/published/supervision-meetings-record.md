@@ -1,6 +1,6 @@
 ---
 dg-publish: true
-title: Supervision Meetings Record
+title: supervision meetings record
 permalink: /notes/supervision-meetings-record/
 visibility: public
 description: Record of all Supervision Meetings
