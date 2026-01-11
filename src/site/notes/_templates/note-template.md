@@ -1,19 +1,7 @@
----
-dg-publish: true
-visibility: public
-tags: [zettel]
----
+## Concept
 
-# session-template
+### Observations
 
-**One-sentence claim / idea.**
+### Connections
 
-## Context
-Where this idea comes from; related readings.
-
-## Links
-- Builds on: [[prior-note]]
-- Leads to: [[next-note]]
-
-## Open Questions
-- …
+### Questions

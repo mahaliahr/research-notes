@@ -1,14 +1,11 @@
----
-dg-publish: true
-visibility: public
-tags: [session, worklog]
----
+## Session
 
-start:: 2025-10-22T13:34
+start:: {{time}}
 end:: 
 topic:: 
 
-## Intent
-## Notes
-## Outputs
-## Reflection
+### Intent
+
+### Log
+
+### Reflections
