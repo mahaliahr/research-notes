@@ -308,10 +308,77 @@ section .more a {
 
 /* Live dashboard (same treatment as panel) */
 .live-dashboard {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 10px;
+  margin: 2rem 0;
   padding: 1.5rem;
+  background: var(--background-secondary, #f5f5f5);
+  border-radius: 8px;
+}
+
+/* Live Widget Styles */
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.live-status.live-active {
+  background: rgba(255, 0, 0, 0.05);
+  border-left: 4px solid #ff0000;
+}
+
+.live-status.live-recent {
+  background: rgba(128, 128, 128, 0.05);
+  border-left: 4px solid #888;
+}
+
+.live-status.live-idle {
+  opacity: 0.6;
+}
+
+.status-indicator {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+.live-active .status-indicator {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.live-widget-title.live-active {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.live-next small, .live-status small {
+  color: var(--text-muted, #666);
+  margin-left: 0.5rem;
+}
+
+.stream-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+.stream-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--background-modifier-border, #ddd);
+}
+.stream-list li:last-child {
+  border-bottom: none;
+}
+.stream-list li small {
+  color: var(--text-muted, #666);
+  margin-right: 0.5rem;
 }
 
 /* Footer styles */

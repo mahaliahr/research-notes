@@ -6,14 +6,14 @@ layout: "index.njk"
 
 <h2>Upcoming</h2>
 {% set all = collections.milestones | default([]) %}
-{% set upcoming = all | rejectattr("status", "equalto", "done") | list %}
+{% set upcoming = all | rejectattr("checked") | list %}
 {% if upcoming | length %}
   <ul>
     {% for m in upcoming %}
       <li>
         <strong>{{ m.title }}</strong>
-        {% if m.due %}<small>{{ m.due }}</small>{% endif %}
-        {% if m.url %}<a href="{{ m.url }}">note</a>{% endif %}
+        {% if m.due %}<small>due <time data-dt="{{ m.due }}">{{ m.due }}</time></small>{% endif %}
+        {% if m.url %}<a href="{{ m.url }}">view note</a>{% endif %}
       </li>
     {% endfor %}
   </ul>
@@ -22,11 +22,11 @@ layout: "index.njk"
 {% endif %}
 
 <h2>Completed</h2>
-{% set done = all | selectattr("status", "equalto", "done") | list %}
+{% set done = all | selectattr("checked") | list %}
 {% if done | length %}
   <ul>
     {% for m in done %}
-      <li>✔ {{ m.title }} {% if m.due %}<small>{{ m.due }}</small>{% endif %}</li>
+      <li>✔ <s>{{ m.title }}</s> {% if m.due %}<small>{{ m.due }}</small>{% endif %}</li>
     {% endfor %}
   </ul>
 {% else %}

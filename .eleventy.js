@@ -634,30 +634,65 @@ const inlineField = (src, key) => {
 };
 
 // Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
-const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+([^#\n]+?)(?:\s*#milestone)(?:\s+@(\d{4}-\d{2}-\d{2}))?/gim;
 eleventyConfig.addCollection("milestones", (c) => {
   const out = [];
+  
   for (const p of c.getAll()) {
+    if (!p.inputPath?.endsWith('.md')) continue;
+    
     const txt = getText(p);
-    if (!/#milestone\b/.test(txt)) continue;
-    let m;
-    while ((m = milestoneRe.exec(txt))) {
-      const [, box, title, due] = m;
-      const fullTitle = title.trim(); // This now captures the FULL text before #milestone
+    if (!txt || !txt.includes('#milestone')) continue;
+    
+    // Parse line by line
+    const lines = txt.split('\n');
+    for (const line of lines) {
+      if (!line.includes('#milestone')) continue;
+      
+      console.log('RAW LINE:', line);
+      
+      // More flexible regex - captures any character between [ ]
+      const match = line.match(/^[\s-]*\[(.)\]\s+([^#]+?)\s*#milestone(?:\s+@(\d{4}-\d{2}-\d{2}))?/i);
+      if (!match) {
+        console.log('  ❌ No match');
+        continue;
+      }
+      
+      const checkboxRaw = match[1]; // Get the raw character
+      const text = match[2].trim();
+      const date = match[3] || null;
+      
+      // Check if it's actually an 'x' or 'X'
+      const isChecked = checkboxRaw === 'x' || checkboxRaw === 'X';
+      
+      console.log('  ✅ Matched:', {
+        checkboxRaw: `"${checkboxRaw}" (charCode: ${checkboxRaw.charCodeAt(0)})`,
+        isChecked,
+        text: text.substring(0, 40),
+        date
+      });
+      
       out.push({
-        title: fullTitle,
-        due: due || null,
-        status: String(box).trim().toLowerCase() === "x" ? "done" : "planned",
-        checked: String(box).trim().toLowerCase() === "x",
-        area: null,
+        title: text,
+        due: date,
+        checked: isChecked,
+        status: isChecked ? 'done' : 'planned',
         url: p.url,
+        noteTitle: p.data.title || p.fileSlug,
       });
     }
   }
+  
+  console.log(`\n📊 SUMMARY:`);
+  console.log(`Total milestones: ${out.length}`);
+  console.log(`Planned: ${out.filter(m => !m.checked).length}`);
+  console.log(`Done: ${out.filter(m => m.checked).length}\n`);
+  
   return out.sort((a, b) => {
-    const ad = a.due ? new Date(a.due).getTime() : Infinity;
-    const bd = b.due ? new Date(b.due).getTime() : Infinity;
-    return ad - bd;
+    if (a.checked !== b.checked) return a.checked ? 1 : -1;
+    if (!a.due && !b.due) return 0;
+    if (!a.due) return 1;
+    if (!b.due) return -1;
+    return new Date(a.due) - new Date(b.due);
   });
 });
 
