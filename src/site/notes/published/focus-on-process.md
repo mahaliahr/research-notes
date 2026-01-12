@@ -3,12 +3,11 @@ dg-publish: true
 title: focus on process
 permalink: /notes/focus-on-process/
 visibility: public
-description: >-
-  Now that we are in a time where generative AI can produce 'results' with
-  'ease'. The **process** of what we do becomes much more important. 
-
+description: |-
+  Now that we are in a time where generative AI can produce 'results' with 'ease'. The **process** of what we do becomes much more important. 
   This is something t
-updated: '2025-10-20T22:34:14.446Z'
+updated: 2025-10-20T22:34:14.446Z
+featured: true
 ---
 Now that we are in a time where generative AI can produce 'results' with ease. The **process** of what we do becomes much more important. 
 
