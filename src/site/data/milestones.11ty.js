@@ -11,9 +11,8 @@ class Milestones {
   render({ collections }) {
     const milestones = [];
     
-    // Regex to match task lines with #milestone and optional @date
-    // Matches: - [ ] task text #milestone @2025-01-20
-    const milestoneRegex = /^[\s]*-\s\[([ xX])\]\s+([^\n]+?)#milestone(?:\s+@(\d{4}-\d{2}-\d{2}))?/gim;
+    // Improved regex: capture everything between checkbox and #milestone
+    const milestoneRegex = /^[\s]*-\s\[([ xX])\]\s+([^#\n]+?)(?:\s*#milestone)(?:\s+@(\d{4}-\d{2}-\d{2}))?/gim;
 
     for (const note of collections.all || []) {
       if (!note.inputPath || !note.inputPath.endsWith('.md')) continue;
@@ -31,11 +30,11 @@ class Milestones {
       let match;
       while ((match = milestoneRegex.exec(content)) !== null) {
         const isChecked = match[1].toLowerCase() === 'x';
-        // Capture everything before #milestone, then clean up
+        // Get the full text, trim whitespace
         let taskText = match[2].trim();
-        // Remove any trailing date markers
-        taskText = taskText.replace(/@\d{4}-\d{2}-\d{2}.*$/g, '').trim();
         const dueDate = match[3] || null;
+        
+        console.log('Found milestone:', { taskText, dueDate, checked: isChecked, from: note.fileSlug });
         
         milestones.push({
           title: taskText,
@@ -62,6 +61,7 @@ class Milestones {
       return new Date(a.due) - new Date(b.due);
     });
 
+    console.log('Total milestones found:', milestones.length);
     return JSON.stringify(milestones, null, 2);
   }
 }

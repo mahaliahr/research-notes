@@ -634,7 +634,7 @@ const inlineField = (src, key) => {
 };
 
 // Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
-const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+(.+?)\s*(?:@(\d{4}-\d{2}-\d{2}))?(?=\s|$)/gm;
+const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+([^#\n]+?)(?:\s*#milestone)(?:\s+@(\d{4}-\d{2}-\d{2}))?/gim;
 eleventyConfig.addCollection("milestones", (c) => {
   const out = [];
   for (const p of c.getAll()) {
@@ -643,10 +643,12 @@ eleventyConfig.addCollection("milestones", (c) => {
     let m;
     while ((m = milestoneRe.exec(txt))) {
       const [, box, title, due] = m;
+      const fullTitle = title.trim(); // This now captures the FULL text before #milestone
       out.push({
-        title: title.replace(/\s+#milestone\b/i, "").trim(),
+        title: fullTitle,
         due: due || null,
         status: String(box).trim().toLowerCase() === "x" ? "done" : "planned",
+        checked: String(box).trim().toLowerCase() === "x",
         area: null,
         url: p.url,
       });
