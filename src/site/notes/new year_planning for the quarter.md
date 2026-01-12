@@ -1,7 +1,7 @@
 ---
 dg-publish: true
 visibility: public
-title: test
+title: untitled
 tags: []
 type: ""
 ---
@@ -22,6 +22,4 @@ LIVE SYSTEM TAGS:
 • session       → used for live sessions / work periods
 • daily         → daily log style notes
 -->
-
-start:: 2026-01-12T02:01:16+0000
-end:: 2026-01-12T02:05:18+0000
+start:: 2026-01-12T15:16:21+0000
