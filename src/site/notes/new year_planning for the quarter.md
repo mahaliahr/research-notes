@@ -27,6 +27,9 @@ start:: 2026-01-12T15:16:21+0000
 ---
 Today I want to sart outlining important things that I need to get done in the next few months. 
 
-- [] Find Conferences/ Forums for Public Sharing - I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
+- [ ] Find Conferences/ Forums for Public Sharing - I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist #milestone 
 
-- [x] Get ethics forms for [[project-supervisor-bot]] and [[thesis-bot]] sent off to the committee  #milestone @2026-01-14
+- [ ] Get ethics forms for [[project-supervisor-bot]] and [[thesis-bot]] sent off to the committee  #milestone @2026-01-14
+- [ ] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone 
+- [ ] plan out actual structure and content of [[project-cci-ual-staff-interviews]] #milestone 
+- [ ] draft a list of blog post / more long form writing that I want to do in the next few weeks 
