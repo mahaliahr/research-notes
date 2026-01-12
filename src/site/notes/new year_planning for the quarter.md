@@ -29,4 +29,4 @@ Today I want to sart outlining important things that I need to get done in the n
 
 Conferences/ Forums for Public Sharing - I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
 
-[ ] Get ethics forms for [[project-supervisor-bot]] and [[thesis-bot]] sent off to the committee 
+[ ] Get ethics forms for [[project-supervisor-bot]] and [[thesis-bot]] sent off to the committee #milestone
