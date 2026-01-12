@@ -22,11 +22,14 @@ LIVE SYSTEM TAGS:
 • session       → used for live sessions / work periods
 • daily         → daily log style notes
 -->
-
+<details>
+<summary>session log</summary>
 start:: 2026-01-12T15:16:21+0000
+end:: 2026-01-12T23:30:01+0000
+</details>
 
 ---
-Today I want to sart outlining important things that I need to get done in the next few months. 
+Today I want to start outlining important things that I need to get done in the next few months. 
 
 - [ ] Find Conferences/ Forums for Public Sharing #milestone I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
 - [ ] Get ethics forms for bot projects sent off to the committee  #milestone @2026-01-14
