@@ -29,11 +29,12 @@ title: "Home"
 </section>
 
 <section class="milestones">
-  <h2>Upcoming milestones</h2>
+  <h2>Upcoming Milestones</h2>
   {% set ms = collections.milestones | default([]) %}
   {% if ms | length %}
     <ul>
-      {% for m in ms | limit(6)%}
+      {% for m in ms | limit(10)%}
+        {% if not m.checked %}
         <li>
           <strong>{{ m.title }}</strong>
           {% if m.due %}
@@ -41,6 +42,7 @@ title: "Home"
           {% endif %}
           {% if m.url %}<a href="{{ m.url }}">view note</a>{% endif %}
         </li>
+        {% endif %}
       {% endfor %}
     </ul>
   {% else %}
