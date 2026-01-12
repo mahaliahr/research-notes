@@ -1,3 +1,9 @@
+---
+layout: base.njk
+title: "404 - Page Not Found"
+permalink: /404.html
+eleventyExcludeFromCollections: true
+---
 
 <!DOCTYPE html>
 <html lang="{{ meta.mainLanguage }}">
@@ -20,9 +26,63 @@
             {%-if not meta.themeStyle%}
                 <div class="font-bg"> &#x1F60E; </div>
             {%endif%}
-            <h1>There is nothing here</h1>
-            <p>If you got here from a link, this note is probably not made public</p>
-            <a href="/">Go back home</a>
+            <h2>404 - there is nothing here...</h2>
+            <p>If you got here from a link, this note is probably not made public (yet)</p>
+            <a href="#" onclick="history.back(); return false;">Go back</a>
         </div>
     </body>
 </html>
+
+<article class="error-page">
+  <section class="error-content">
+    <p>The page you're looking for might have been:</p>
+    <ul>
+      <li>Moved to a different location</li>
+      <li>Deleted or archived</li>
+      <li>Still in draft (unpublished)</li>
+      <li>A typo in the URL</li>
+    </ul>
+
+    <nav class="error-nav">
+      <h2>Where to go from here?</h2>
+      <div class="quick-links">
+        <a href="{{ '/' | url }}" class="button">← Home</a>
+        <a href="{{ '/notes/' | url }}" class="button">Browse Notes</a>
+        <a href="{{ '/blog/' | url }}" class="button">Read Posts</a>
+        <a href="{{ '/graph/' | url }}" class="button">Explore Graph</a>
+      </div>
+    </nav>
+  </section>
+</article>
+
+<style>
+  .error-page {
+    max-width: 42rem;
+    margin: 4rem auto;
+    text-align: center;
+  }
+  .error-header h1 {
+    font-size: 6rem;
+    margin: 0;
+    line-height: 1;
+  }
+  .error-content {
+    text-align: left;
+    margin-top: 2rem;
+  }
+  .error-nav {
+    margin: 3rem 0;
+  }
+  .error-nav .quick-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-top: 1rem;
+  }
+  .error-search {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border, #ddd);
+  }
+</style>
