@@ -1,7 +1,7 @@
 ---
 dg-publish: true
 visibility: public
-title: untitled
+title: new year_planning for the quarter
 tags: []
 type: ""
 ---
