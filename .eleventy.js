@@ -633,7 +633,7 @@ const inlineField = (src, key) => {
   return m ? m[1].trim() : null;
 };
 
-// Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
+// ===== SIMPLIFIED MILESTONES COLLECTION =====
 eleventyConfig.addCollection("milestones", (c) => {
   const out = [];
   
@@ -643,50 +643,29 @@ eleventyConfig.addCollection("milestones", (c) => {
     const txt = getText(p);
     if (!txt || !txt.includes('#milestone')) continue;
     
-    // Parse line by line
+    // Simple line-by-line parsing
     const lines = txt.split('\n');
     for (const line of lines) {
-      if (!line.includes('#milestone')) continue;
+      // Match: - [ ] or - [x] ... #milestone ... @2025-01-20
+      const match = line.match(/^[\s-]*\[([x\s])\]\s+(.+?)\s+#milestone(?:\s+@(\d{4}-\d{2}-\d{2}))?/i);
+      if (!match) continue;
       
-      console.log('RAW LINE:', line);
-      
-      // More flexible regex - captures any character between [ ]
-      const match = line.match(/^[\s-]*\[(.)\]\s+([^#]+?)\s*#milestone(?:\s+@(\d{4}-\d{2}-\d{2}))?/i);
-      if (!match) {
-        console.log('  ❌ No match');
-        continue;
-      }
-      
-      const checkboxRaw = match[1]; // Get the raw character
+      const checkbox = match[1].toLowerCase();
       const text = match[2].trim();
       const date = match[3] || null;
-      
-      // Check if it's actually an 'x' or 'X'
-      const isChecked = checkboxRaw === 'x' || checkboxRaw === 'X';
-      
-      console.log('  ✅ Matched:', {
-        checkboxRaw: `"${checkboxRaw}" (charCode: ${checkboxRaw.charCodeAt(0)})`,
-        isChecked,
-        text: text.substring(0, 40),
-        date
-      });
       
       out.push({
         title: text,
         due: date,
-        checked: isChecked,
-        status: isChecked ? 'done' : 'planned',
+        checked: checkbox === 'x',
+        status: checkbox === 'x' ? 'done' : 'planned',
         url: p.url,
         noteTitle: p.data.title || p.fileSlug,
       });
     }
   }
   
-  console.log(`\n📊 SUMMARY:`);
-  console.log(`Total milestones: ${out.length}`);
-  console.log(`Planned: ${out.filter(m => !m.checked).length}`);
-  console.log(`Done: ${out.filter(m => m.checked).length}\n`);
-  
+  // Sort: incomplete first (by date), then complete (by date)
   return out.sort((a, b) => {
     if (a.checked !== b.checked) return a.checked ? 1 : -1;
     if (!a.due && !b.due) return 0;
