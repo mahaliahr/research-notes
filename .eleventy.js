@@ -633,31 +633,45 @@ const inlineField = (src, key) => {
   return m ? m[1].trim() : null;
 };
 
-// Milestones: lines like "- [ ] Title #milestone @YYYY-MM-DD"
-const milestoneRe = /^\s*-\s*\[( |x|X)\]\s+([^#\n]+?)(?:\s*#milestone)(?:\s+@(\d{4}-\d{2}-\d{2}))?/gim;
+// ===== SIMPLIFIED MILESTONES COLLECTION =====
 eleventyConfig.addCollection("milestones", (c) => {
   const out = [];
+  
   for (const p of c.getAll()) {
+    if (!p.inputPath?.endsWith('.md')) continue;
+    
     const txt = getText(p);
-    if (!/#milestone\b/.test(txt)) continue;
-    let m;
-    while ((m = milestoneRe.exec(txt))) {
-      const [, box, title, due] = m;
-      const fullTitle = title.trim(); // This now captures the FULL text before #milestone
+    if (!txt || !txt.includes('#milestone')) continue;
+    
+    // Simple line-by-line parsing
+    const lines = txt.split('\n');
+    for (const line of lines) {
+      // Match: - [ ] or - [x] ... #milestone ... @2025-01-20
+      const match = line.match(/^[\s-]*\[([x\s])\]\s+(.+?)\s+#milestone(?:\s+@(\d{4}-\d{2}-\d{2}))?/i);
+      if (!match) continue;
+      
+      const checkbox = match[1].toLowerCase();
+      const text = match[2].trim();
+      const date = match[3] || null;
+      
       out.push({
-        title: fullTitle,
-        due: due || null,
-        status: String(box).trim().toLowerCase() === "x" ? "done" : "planned",
-        checked: String(box).trim().toLowerCase() === "x",
-        area: null,
+        title: text,
+        due: date,
+        checked: checkbox === 'x',
+        status: checkbox === 'x' ? 'done' : 'planned',
         url: p.url,
+        noteTitle: p.data.title || p.fileSlug,
       });
     }
   }
+  
+  // Sort: incomplete first (by date), then complete (by date)
   return out.sort((a, b) => {
-    const ad = a.due ? new Date(a.due).getTime() : Infinity;
-    const bd = b.due ? new Date(b.due).getTime() : Infinity;
-    return ad - bd;
+    if (a.checked !== b.checked) return a.checked ? 1 : -1;
+    if (!a.due && !b.due) return 0;
+    if (!a.due) return 1;
+    if (!b.due) return -1;
+    return new Date(a.due) - new Date(b.due);
   });
 });
 
