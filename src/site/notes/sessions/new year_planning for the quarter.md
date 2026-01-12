@@ -22,14 +22,14 @@ LIVE SYSTEM TAGS:
 • session       → used for live sessions / work periods
 • daily         → daily log style notes
 -->
+
 start:: 2026-01-12T15:16:21+0000
 
 ---
 Today I want to sart outlining important things that I need to get done in the next few months. 
 
-- [ ] Find Conferences/ Forums for Public Sharing - I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist #milestone 
-
-- [ ] Get ethics forms for [[project-supervisor-bot]] and [[thesis-bot]] sent off to the committee  #milestone @2026-01-14
-- [ ] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone 
+- [ ] Find Conferences/ Forums for Public Sharing #milestone I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
+- [ ] Get ethics forms for bot projects sent off to the committee  #milestone @2026-01-14
+- [ ] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone @2026-01-14
 - [ ] plan out actual structure and content of [[project-cci-ual-staff-interviews]] #milestone 
-- [ ] draft a list of blog post / more long form writing that I want to do in the next few weeks 
+- [ ] draft a list of blog posts / more long form [[writing-plan]] that I want to work in the next few weeks 

@@ -6,11 +6,23 @@ title: "Home"
 <header class="home-hero">
   <h1>PhD-Live</h1>
   <p class="tagline"><strong>*Process as everything</strong> -- an evolving research environment documenting my doctoral process in real time.</p>
+  {# <p>PhD-Live is an evolving research environment documenting my doctoral process in real time.</p> #}
+  <p><i>Note: This site publishes my PhD research as it unfolds, including incomplete thoughts, experiments, and revisions. 
+    Expect some incoherencies, typos, and errors along the way.</i></p>
+  <nav class="quick-links">
+    <a href="{{ '/about/'  | url }}">About/</a>
+    <a href="{{ '/blog/'  | url }}">Posts/</a>
+    <a href="{{ '/notes/' | url }}">Notes/</a>
+    <a href="{{ '/graph/' | url }}">Graph/</a>
+    <a href="{{ 'https://www.notion.so/1e7d4b0df71d80f2995bf3e009ffb571?v=1e7d4b0df71d8128a2aa000c8f41d3f2&source=copy_link' | url }}">*Reading List/</a>
+    <a href="{{ 'https://www.notion.so/PhD-Planning-Overview-1d8d4b0df71d80799030cbb90f2fa664?source=copy_link' | url }}">*PhD Planning/</a>
+    {# {% if settings.dgEnableSearch %}<a href="{{ '/search/' | url }}">Search</a>{% endif %} #}
+  </nav>
 </header>
 
 <section class="live-dashboard">
   <h2 id="live-widget-title">Most Recent Updates</h2>
-  <p class="section-intro">Real-time updates from my research sessions, experiments, and working notes.</p>
+  <p class="section-intro"><i>The latest from my research sessions and developing notes.</i></p>
   <div id="live-widget">
     <div id="live-now"></div>
     <div id="live-next"></div>
