@@ -129,16 +129,14 @@ title: "Home"
 </section>
 
 <section class="zettel-gateway">
-  <h2>Explore the Garden</h2>
-  <p>Navigate through interconnected ideas and research notes.</p>
-  <div class="gateway-links">
-    <a href="{{ '/notes/' | url }}" class="gateway-card">
-      <strong>All Notes</strong>
-      <span>Browse the complete collection</span>
-    </a>
-    <a href="{{ '/graph/' | url }}" class="gateway-card">
-      <strong>Knowledge Graph</strong>
-      <span>Visualize connections</span>
-    </a>
+  <h2>Explore the Digital Garden</h2>
+  <div class="panel">
+    <h3>Search</h3>
+    <p>All notes connect through the 'digital garden', which maps ideas, reflections, and experiments across my PhD research.</p>
+    {% if settings and settings.dgEnableSearch %}
+      <p><a class="button" href="{{ '/graph/' | url }}">Search the garden →</a></p>
+    {% else %}
+      <p><em>Search is disabled. Enable <code>dgEnableSearch</code> in <code>_data/settings.json</code>.</em></p>
+    {% endif %}
   </div>
 </section>
