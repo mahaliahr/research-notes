@@ -37,6 +37,21 @@
   color: inherit;
 }
 
+/* Hide livebar on mobile */
+@media (max-width: 768px) {
+  .livebar,
+  [data-livebar] {
+    display: none !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .livebar {
+    margin-left:.75rem;
+    margin-right:.75rem;
+  }
+}
+
 @media (max-width:560px){
   .livebar {
     margin-left:.75rem;

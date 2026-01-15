@@ -407,3 +407,14 @@ a.internal-link.is-unresolved {
   opacity: 0.7;
   border-bottom-style: dashed;
 }
+
+/* Hide livebar on mobile - more specific selectors */
+@media (max-width: 768px) {
+  [data-livebar],
+  .livebar,
+  div[data-livebar],
+  nav.livebar {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
