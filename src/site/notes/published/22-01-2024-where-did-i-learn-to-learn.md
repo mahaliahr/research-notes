@@ -20,7 +20,7 @@ I didn't learn how to learn from school.
 
 So where did I learn it from?
 
-Skimming through the reading [[oreilly-research-identity-threshold-concepts]] for my pgcert I was struck about the process of learning/development on a phd and was thinking what if all learning took a shape more like this? More of a self-led with journey with mentors (supervisors) to guide you on your way. As a lot of people, my main educational path was in school and I wonder how successful that 'knowledge forward' (not really a term, but I mean more the 'learn and remember all the knowledge and take the exam' mode of education) model actually is? I certainly didn't gain a love of learning from this - it started before, at home and generated through play. 
+Skimming through the reading [[oreilly-research-identity-threshold-concepts]] for my pgcert I started thinking about the process of learning/development on a phd and was wondering about what it might be like if all learning took a shape more like this? More of a self-led with journey with mentors (supervisors) to guide you on your way. As many other people, my main educational path was in school and I wonder how successful that 'knowledge forward' (that's not really a term, but I mean the more 'learn and remember all the knowledge and take the exam' mode of education) model actually is? I certainly didn't gain a love of learning from this - it started before, at home and generated through play. 
 
 An 'ecology of learning' as laid out by O'Reilly in his paper [[oreilly-research-identity-threshold-concepts]] is an interesting way to look at learning.
 
