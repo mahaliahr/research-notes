@@ -37,4 +37,4 @@ Additionally, this platform represents a deliberate effort to demystify the PhD 
 
 Historically, PhDs have been accessible primarily to a privileged few. This fact motivates my commitment to making my research process open and accessible, with the hope that the insights gained within academia, are relevant to a wider audience - I hope this space will be a place for anyone curious about the research process.
 
-I have scaffolded a system that works between my local obsidian system and the site the builds and displays all of this. More details here: [[phd-live-about-page]]
+I have scaffolded a system that works between my local obsidian system and the site the builds and displays all of this. More details here: [[About PhD-Live]]

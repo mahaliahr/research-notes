@@ -2,9 +2,8 @@
 
 {% block content %}
 <article class="note">
-  <h1>{{ title or page.fileSlug }}</h1>
+  <h1>{{ title | formatDailyTitle | default(page.fileSlug) }}</h1>
+  
   {{ content | link | dgMedia | safe }}
-  {# remove local graph to keep original UI in the sidebar #}
-  {# {% include "components/localgraph.njk" ignore missing %} #}
 </article>
 {% endblock %}

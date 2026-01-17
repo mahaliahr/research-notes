@@ -836,6 +836,74 @@ eleventyConfig.addCollection("streamItems", (c) => {
   // Add a limit filter for arrays
   eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
+  eleventyConfig.addFilter("formatDailyTitle", function(title) {
+    console.log("formatDailyTitle called with:", title, "Type:", typeof title);
+    
+    // Handle Date objects
+    if (title instanceof Date) {
+      const result = title.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'UTC'
+      });
+      console.log("Formatted Date object to:", result);
+      return result;
+    }
+    
+    // Handle string representation of Date objects
+    if (title && typeof title === 'string' && title.includes('GMT')) {
+      const date = new Date(title);
+      if (!isNaN(date.getTime())) {
+        const result = date.toLocaleDateString('en-US', { 
+          weekday: 'long',
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric',
+          timeZone: 'UTC'
+        });
+        console.log("Formatted Date string to:", result);
+        return result;
+      }
+    }
+    
+    // Handle YYYY-MM-DD strings
+    if (title && typeof title === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(title)) {
+      const [year, month, day] = title.split('-');
+      const date = new Date(Date.UTC(year, month - 1, day));
+      const result = date.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'UTC'
+      });
+      console.log("Formatted YYYY-MM-DD to:", result);
+      return result;
+    }
+    
+    console.log("Returning title as-is");
+    return title;
+  });
+
+  eleventyConfig.addFilter("date", function(date, format) {
+    if (!date) return "";
+    const d = date instanceof Date ? date : new Date(date);
+    
+    if (format === 'dddd, MMMM D, YYYY') {
+      return d.toLocaleDateString('en-US', { 
+        weekday: 'long',
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric',
+        timeZone: 'UTC'
+      });
+    }
+    
+    return d.toISOString();
+  });
+
   return {
     dir: {
       input: "src/site",

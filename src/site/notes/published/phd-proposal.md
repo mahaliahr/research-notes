@@ -1,7 +1,7 @@
 ---
 dg-publish: true
 title: phd proposal
-permalink: /notes/phd-proposal/
+permalink: /phd-proposal/
 visibility: public
 description: |-
   as of June 2024 for the AfR (Application for Registration)
@@ -12,7 +12,6 @@ description: |-
   glossary
 updated: 2025-10-20T22:34:14.469Z
 tags:
-  - gardenEntry
 ---
 as of June 2024 for the AfR (Application for Registration)
 

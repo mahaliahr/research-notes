@@ -1,6 +1,7 @@
 ---
 layout: "index.njk"
 title: "Home"
+tags: "gardenEntry"
 ---
 
 <header class="home-hero">
@@ -87,7 +88,7 @@ title: "Home"
   <ul class="list">
     {% for n in z | limit(4) %}
       <li>
-        <a href="{{ n.url | url }}">{{ (n.data.title or n.fileSlug) | lower }}</a>
+        <a href="{{ n.url | url }}">{{ (n.data.title | formatDailyTitle) or n.fileSlug | lower }}</a>
         {% if n.data.updated %}
           <small>updated <time data-dt="{{ n.data.updated | isoDate }}">{{ n.data.updated | isoDate }}</time></small>
         {% else %}
@@ -109,7 +110,7 @@ title: "Home"
       {% for n in fz | limit(8) %}
         <li class="card">
           <h3>
-            <a href="{{ n.url | url }}">{{ (n.data.title or n.fileSlug) | lower }}</a>
+            <a href="{{ n.url | url }}">{{ (n.data.title | formatDailyTitle) or n.fileSlug | lower }}</a>
             {% if n.data.featured %}<span class="badge">Featured</span>{% endif %}
           </h3>
           {% if n.data.updated %}

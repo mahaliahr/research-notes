@@ -41,6 +41,14 @@ html, body {
   flex: 1; 
 }
 
+/* Force text selection to work */
+.content, .content * {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+  -moz-user-select: text !important;
+  -ms-user-select: text !important;
+}
+
 /* Containment for wide sections */
 .cards-wrap {
   max-width: var(--content-max);

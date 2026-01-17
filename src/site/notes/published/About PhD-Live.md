@@ -1,12 +1,9 @@
 ---
 layout: index.njk
 tags:
-  - gardenEntry
 permalink: /about/
 dg-publish: true
 ---
-### About PhD-Live
-
 ### What it is
 
 - PhD-Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.

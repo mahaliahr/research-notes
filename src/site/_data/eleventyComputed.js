@@ -6,6 +6,7 @@ module.exports = {
     if (!Array.isArray(notes) || !notes.length) return null;
     try { return getGraph(data); } catch { return null; }
   },
+  
   date: (data) => {
     const d = data.date;
     if (d == null) return d;
