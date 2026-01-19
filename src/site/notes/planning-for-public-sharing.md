@@ -23,7 +23,7 @@ LIVE SYSTEM TAGS:
 • daily         → daily log style notes
 -->
 <details><summary>Session Log</summary>
-start::2026-01-19T16:59:33+0000 
+start:: 2026-01-19T16:59:33+0000 
 end:: 
 topic::
 </details>
