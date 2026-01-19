@@ -12,6 +12,7 @@ description: |-
   glossary
 updated: 2025-10-20T22:34:14.469Z
 tags:
+featured: true
 ---
 as of June 2024 for the AfR (Application for Registration)
 

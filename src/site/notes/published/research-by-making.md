@@ -15,7 +15,7 @@ When does making become research?
 
 'Making isn't limited to to the production of material artefacts, but can also refer to temporal and ephemeral forms, to language and writing, and to social and embodied practice' p6
 
-===_thoughts: making can teaching.. making can be pedagogical 
+<mark style="background: #FFB8EBA6;">_thoughts: making can teaching.. making can be pedagogical</mark>
  
 'Making becomes research when it is part of an articulated and shared process' p6
 
