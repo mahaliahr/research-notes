@@ -35,4 +35,4 @@ Today I want to start outlining important things that I need to get done in the 
 - [ ] Get ethics forms for bot projects sent off to the committee  #milestone @2026-01-14
 - [ ] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone @2026-01-14
 - [ ] plan out actual structure and content of [[project-cci-ual-staff-interviews]] #milestone 
-- [ ] draft a list of blog posts / more long form [[writing-plan]] that I want to work in the next few weeks 
+- [x] draft a list of blog posts / more long form [[writing-plan]] that I want to work in the next few weeks 

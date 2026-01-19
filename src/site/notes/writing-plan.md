@@ -34,3 +34,4 @@ end::2026-01-12T23:27:45+0000
 - exploring my personal vantage point on all this, my positionality and get clearer on how I hope to employ an autoethnographic practice within this research -> [[my-positionality]]
 - reflection on supervisor bot v1 prototype
 - explore existing educational models and making the case that phd learning is more in common with early learning in schools than we might imagine(?)
+- how do I define possibility spaces for the purposes of this research? (as outlined in my phd proposal [[title-and-subject-area]]) this I feel can feed into the development of [[PhD-Live]] as a type of platform (and space) ?
