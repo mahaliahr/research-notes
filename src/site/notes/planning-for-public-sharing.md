@@ -23,9 +23,10 @@ LIVE SYSTEM TAGS:
 • daily         → daily log style notes
 -->
 <details><summary>Session Log</summary>
-start:: 2026-01-19T16:59:33+0000 
-end:: 
-topic::
+
+start:: 2026-01-19T17:21:14+0000
+
 </details>
 
-brainstorming and planning for how to frame my research in a public sphere - it's highligthing where I need to do some work in clarifying thought/ writing
+
+brainstorming and planning for how to frame my research in a public sphere - it's highlighting where I need to do some work in clarifying thought/ writing
