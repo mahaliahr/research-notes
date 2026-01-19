@@ -1,7 +1,7 @@
 ---
 dg-publish: true
 visibility: public
-title: untitled
+title: planning-for-public-sharing
 tags: []
 type: ""
 ---
