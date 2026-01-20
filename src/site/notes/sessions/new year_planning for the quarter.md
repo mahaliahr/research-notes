@@ -31,8 +31,8 @@ end:: 2026-01-12T23:30:01+0000
 ---
 Today I want to start outlining important things that I need to get done in the next few months. 
 
-- [ ] Find Conferences/ Forums for Public Sharing #milestone I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
-- [ ] Get ethics forms for bot projects sent off to the committee  #milestone @2026-01-14
-- [ ] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone @2026-01-14
+- [x] Find Conferences/ Forums for Public Sharing #milestone I need to take part in the UAL Doctoral School Symposium  (Summer?), but also want to other opportunities that may exist
+- [ ] Get ethics forms for bot projects sent off to the committee  #milestone @2026-01-23
+- [x] plan out schedule for [[project-cci-ual-staff-interviews]] #milestone @2026-01-14
 - [ ] plan out actual structure and content of [[project-cci-ual-staff-interviews]] #milestone 
 - [x] draft a list of blog posts / more long form [[writing-plan]] that I want to work in the next few weeks 
