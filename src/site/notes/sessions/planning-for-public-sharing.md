@@ -38,6 +38,8 @@ shortlist of conferences:
 2. https://cc.acm.org/2026/
 3. https://amps-research.com/conference/pedagogy-madrid/
 
+compulsory - UAL Doctoral Symposium 
+
 ~~https://eimad.ipcb.pt/call-for-papers/#AREAS-SUBMISSION~~
 -->
 

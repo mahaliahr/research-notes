@@ -13,11 +13,16 @@ updated: '2025-10-20T22:18:15.274Z'
 Considerations -> everyone is very busy, will people have time to contribute? 
 How to design it so that people feel inclined to do it, rather than being a burden?
 
-### **things to find out:**
+### **what do I want to find out?**
 
 How are we across CCI, teaching AI literacy? What position are we taking?
-How are we talking about AI to students? 
-When do we talk about it first in the pedagogical process?
+
+should CCI take a defining and innovative stance on how we teach with AI
+
+How is AI talked about/ introduced to students? 
+
+When do we talk about it first in the pedagogical process? (probably key differences in teaching postgraduate vs undergraduate)
+
 Opinions on AI integration in learning - positive or negative, if negative ask why
 As educators do we have a responsibility to prepare students for this landscape
 
@@ -25,6 +30,7 @@ focus groups?
 questionnaire?
 ~~observations~~ ethics form doesn't account for this, so will need to submit another for this/ work out if it's valuable or useful
 
+what do I want the findings from this to feed into?
 ---
 ### 1 - recruit / scope (questionnaire)
 
