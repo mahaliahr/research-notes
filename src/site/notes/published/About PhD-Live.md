@@ -1,6 +1,7 @@
 ---
 layout: index.njk
 tags:
+  - gardenEntry
 permalink: /about/
 dg-publish: true
 featured: true
