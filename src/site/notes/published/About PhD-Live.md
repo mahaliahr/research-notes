@@ -3,6 +3,7 @@ layout: index.njk
 tags:
 permalink: /about/
 dg-publish: true
+featured: true
 ---
 ### What it is
 
