@@ -7,11 +7,25 @@ tags:
   - stream
 ---
 
-## Daily Log
-- <% tp.date.now('HH:mm') %> 
+<!--
+Daily note template (PhD-Live)
 
-### Focus
+Stream line syntax:
+- HH:MM something you did
 
-### Notes
+Embedded session syntax (widget detects start:: anywhere):
+start:: YYYY-MM-DD HH:MM
+end:: YYYY-MM-DD HH:MM
+topic:: short title
 
-### Tomorrow
+Milestone syntax (anywhere in any note):
+- [ ] Do the thing #milestone @YYYY-MM-DD
+- [x] Done thing #milestone @YYYY-MM-DD
+-->
+
+- <% tp.date.now("HH:mm") %> Started day
+
+#### Session 
+start:: <% tp.date.now("YYYY-MM-DD HH:mm") %>
+topic:: 
+end:: 

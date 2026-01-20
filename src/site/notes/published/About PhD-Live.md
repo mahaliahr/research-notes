@@ -7,7 +7,7 @@ title:
 ---
 ### What it is
 
-- PhD-Live is a public digital garden of my doctoral research, an ongoing, transparent performance of thought.
+- PhD-Live is a public showcasing of my doctoral research - an ongoing, transparent performance of thought.
 - It’s part website, part studio, part sketchbook
 - A place where thinking comes together, connections emerge, and the process itself becomes the work.
 ---
@@ -15,20 +15,21 @@ title:
 
 The website supports live tracking, session logging, and real-time reflections of my work as the research develops.
 
-Each type of note serves a different role:
-- **Notes** – timestamped fragments that capture spontaneous thoughts or actions
-- **Sessions** – focused working periods marked by start and end times
-- **Posts** – developed reflections or essays, often synthesised from earlier notes
-- **Milestones** – project checkpoints and turning points along the PhD journey
+The site is organised around three kinds of notes:
+
+- **Daily notes** - where most thinking happens: quick ideas, questions, experiments, and reflections.
+- **General notes** - short, focused notes that capture a single idea and link to related notes, forming a network of connected thoughts rather than a linear notebook. (This approach is inspired by the [[zettelkasten]] method, a way of thinking through writing by building connections between ideas over time).
+- **Posts** - more developed pieces of writing, often shaped from earlier notes.
 
 These feed into the homepage that continuously updates to show:
-- What’s happening live now or today
-- The most recent posts and reflections
-- An interactive graph showing conceptual links between notes
+
+- What I am working on live or today.
+- My most recent reflections.
+- A visual graph of how ideas connect across the project.
 
  Unlike a traditional blog, this site does not present finished work, but instead showcases a ecosystem of evolving thoughts and ideas.
-
-**_This site is a constant work in progress._**
+ 
+**This site is a constant work in progress.**
 
 ### How it's built
 
