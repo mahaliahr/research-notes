@@ -532,28 +532,31 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addWatchTarget("src/site/notes");
 
-  // Keep your other passthroughs
+  // ===== IMAGE PASSTHROUGH =====
+  // Copy images from the images folder
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/images": "notes/images"
+  });
+
+  // Copy images from subdirectories (daily, sessions, etc) to notes/images
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/daily/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/sessions/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/blog/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/published/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+  });
+
+  eleventyConfig.addWatchTarget("src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
+
+  // Copy other assets
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addWatchTarget("src/site/styles");
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
-  // If you have a PNG too, copy it:
-  // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
   eleventyConfig.addPassthroughCopy({ "src/site/img" : "img" });
   eleventyConfig.addPassthroughCopy({ "src/site/scripts" : "scripts" });
-  eleventyConfig.addPassthroughCopy("src/site/styles/_theme.*.css");
-  eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
-  // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
-  eleventyConfig.addPassthroughCopy("src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
-  eleventyConfig.addWatchTarget("src/site/notes");
-
-  // If you want to copy ALL images under notes (including subfolders):
-  eleventyConfig.addPassthroughCopy({
-    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
-  });
-  eleventyConfig.addWatchTarget("src/site/notes");
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" });
 
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
   eleventyConfig.addPlugin(tocPlugin, {
@@ -606,14 +609,25 @@ module.exports = function (eleventyConfig) {
       const m = a.match(/^(\d+)(?:x(\d+))?$/);
       if (m) { w = m[1]; h = m[2]; alt = raw; }
 
-      // Map to public URL under /notes; keep subpath if provided (images/foo.png)
-      const src = raw.includes("/") ? `/notes/${encodeURI(raw)}` : `/notes/images/${encodeURI(raw)}`;
+      // Build the correct path:
+      // - If raw includes a folder path (images/foo.png), preserve it
+      // - Otherwise, assume it's in /notes/images/
+      let src;
+      if (raw.includes('/')) {
+        // Has path, use as-is under /notes/
+        src = `/notes/${encodeURI(raw)}`;
+      } else {
+        // Bare filename, default to images folder
+        src = `/notes/images/${encodeURI(raw)}`;
+      }
 
       const attrs = [
         `src="${src}"`,
         `alt="${alt.replace(/"/g, "&quot;")}"`,
-        `loading="lazy"`, `decoding="async"`,
-        w ? `width="${w}"` : "", h ? `height="${h}"` : ""
+        `loading="lazy"`, 
+        `decoding="async"`,
+        w ? `width="${w}"` : "", 
+        h ? `height="${h}"` : ""
       ].filter(Boolean).join(" ");
 
       return `<img ${attrs}>`;
