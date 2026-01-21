@@ -678,14 +678,28 @@ eleventyConfig.addCollection("milestones", (c) => {
 // Sessions: any note in notes/sessions/ or with "start::"
 eleventyConfig.addCollection("sessions", (c) => {
   return c.getAll()
-    .filter(p => p.inputPath.includes("/notes/sessions/") || /(^|\n)\s*start::/i.test(getText(p)))
+    .filter(p => {
+      if (!p.inputPath || !p.inputPath.endsWith('.md')) return false;
+      const txt = getText(p);
+      // Check for sessions folder OR daily folder with start:: field
+      return p.inputPath.includes("/notes/sessions/") || 
+             (p.inputPath.includes("/notes/daily/") && /(^|\n)\s*start::/i.test(txt)) ||
+             /(^|\n)\s*start::/i.test(txt);
+    })
     .map(p => {
       const txt = getText(p);
       const start = inlineField(txt, "start");
       const end = inlineField(txt, "end");
       const topic = inlineField(txt, "topic") || p.data.title || p.fileSlug;
-      return { start, end, topic, url: p.url };
+      return { 
+        start, 
+        end, 
+        topic, 
+        url: p.url,
+        title: p.data.title || p.fileSlug 
+      };
     })
+    .filter(s => s.start) // Only include if it has a start time
     .sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
 });
 
