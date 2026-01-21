@@ -25,9 +25,12 @@ LIVE SYSTEM TAGS:
 
 early thoughts:
 
-As mentioned in [[focus-on-process]] 
+As mentioned in [[focus-on-process]] live coding was an inspiration for this idea of showcasing the emergin nature of the PhD
 
 ![[images/PhD_2.jpeg]]
 
+my initial idea is to create a central hub of major workspaces that I am generating work on - github, obsidian, notion, youtube(?). 
+
+I am also curious about leaning more into the liveness and perhaps doing broadcasts (livestreams) or something? Need further thought about what that would actually be, but I am really interested in exploring this.
 
 ![[images/PhD_6.jpeg]]
