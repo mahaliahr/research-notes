@@ -31,12 +31,14 @@ These feed into the homepage that continuously updates to show:
  
 **This site is a constant work in progress.**
 
+---
 ### How it's built
 
 [PhD-Live](https://github.com/mahaliahr/phd-live) is built from my evolving collection of notes, managed locally in Obsidian and published as a living website. [^1]
 
 [^1]: _The system is based on an adapted version of the open-source [Digital Garden Eleventy](https://github.com/oleeskild/obsidian-digital-garden) framework - which transforms a folder of Markdown notes into a browsable, interlinked network of ideas._
 
+---
 ### Why it exists
 
 This website forms part of my practice-based PhD at the Creative Computing Institute, UAL.

@@ -43,7 +43,7 @@ compulsory - UAL Doctoral Symposium
 ~~https://eimad.ipcb.pt/call-for-papers/#AREAS-SUBMISSION~~
 -->
 
-what feels (reasonably) ready to share with the world is the [[PhD-Live]] platform and what it is trying to signal and bring to life about the learning process. I can talk about future plans and additions to the platform that I am to do. Particularly around targeted and specific implementations of LLM's alongside my research tracking. 
+what feels (reasonably) ready to share with the world is the [[project-phd-live-platform]] platform and what it is trying to signal and bring to life about the learning process. I can talk about future plans and additions to the platform that I am to do. Particularly around targeted and specific implementations of LLM's alongside my research tracking. 
 
 what I do need to do very soon, is get clear about what the adjacent and relevant works are to PhD-Live, and to situate this work (this is been happening in the background, but haven't put aside time to flesh this out)
 

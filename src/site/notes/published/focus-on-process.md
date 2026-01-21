@@ -8,8 +8,9 @@ description: |-
   This is something t
 updated: 2025-10-20T22:34:14.446Z
 featured: true
+type: post
 ---
-Now that we are in a time where generative AI can produce 'results' with ease. The **process** of what we do becomes much more important. 
+Now that we are existing in a time where generative AI can produce finished and resolved outcomes with 'ease'[^1]. I think that the **process** of what we do becomes much more important. 
 
 This is something that I am thinking about a lot and I believe will be an important element within the research.
 
@@ -31,10 +32,13 @@ Additionally, as part of [[my-practice]], I am also a live-coder. Live coding as
 
 ### **Developing a platform**
 
-I have started to develop a platform here -> <www.phd.mm-hr.com> called '[[published/PhD-Live]]'. This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As generative AI increasingly allows shortcuts to learning and in creating works, I feel that the process of making and building knowledge becomes more important and valuable in this context. Showing your process is a way to demonstrate your journey and showcase learning in 'real-time'. 
+I have started to develop a platform here called 'PhD-Live' (ongoing developing thoughts here:[[project-phd-live-platform]]). This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As generative AI increasingly allows shortcuts to learning and in creating works, I feel that the process of making and building knowledge becomes more important and valuable in this context. Showing your process is a way to demonstrate your journey and showcase learning in 'real-time'. 
 
 Additionally, this platform represents a deliberate effort to demystify the PhD process - by sharing my journey openly, sharing the often opaque nature of PhD research. 
 
 Historically, PhDs have been accessible primarily to a privileged few. This fact motivates my commitment to making my research process open and accessible, with the hope that the insights gained within academia, are relevant to a wider audience - I hope this space will be a place for anyone curious about the research process.
 
 I have scaffolded a system that works between my local obsidian system and the site the builds and displays all of this. More details here: [[About PhD-Live]]
+
+---
+[^1]: I say ease in quotes, because that supposed ease comes at a wider social and environmental cost and impact, that is very much not easy.
