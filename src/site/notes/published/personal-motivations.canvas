@@ -18,10 +18,10 @@
 		{"id":"799980762d073b64","type":"text","text":"#### the role of the institution shifts in this context","x":924,"y":-63,"width":250,"height":103},
 		{"id":"7247b9ee5ccd4efd","type":"text","text":"#### the role of a teacher shifts in this context","x":925,"y":-274,"width":250,"height":82},
 		{"id":"8252d14d84cfd592","type":"text","text":"my positionality underpins these sentiments ","x":1381,"y":-304,"width":250,"height":60},
-		{"id":"687b78366ce0bdd6","type":"text","text":"this could move in varying ways, some more postive, some more negative","x":1381,"y":-157,"width":250,"height":109},
 		{"id":"a541a5c67b4b7783","type":"text","text":"#### **generative AI disrupting the historic power of HE teaching institutions (?)**","x":920,"y":-573,"width":260,"height":168},
 		{"id":"2e772e66c0f97c84","type":"text","text":" In this context I very much like the idea of disruption (the status quo has never really served me and one size fits all approch always means that some people are left behind)","x":1381,"y":-597,"width":250,"height":216},
-		{"id":"23520df6b9b5c2ad","type":"file","file":"published/22-01-2024-where-did-i-learn-to-learn.md","x":1880,"y":-597,"width":400,"height":646}
+		{"id":"23520df6b9b5c2ad","type":"file","file":"published/22-01-2024-where-did-i-learn-to-learn.md","x":1880,"y":-597,"width":400,"height":646},
+		{"id":"687b78366ce0bdd6","type":"text","text":"this could move in varying ways, some more postive, some more negative","x":1381,"y":-133,"width":250,"height":109}
 	],
 	"edges":[
 		{"id":"eb111284c6b1c5e0","fromNode":"c56a8fba89a6cde8","fromSide":"bottom","toNode":"7f2cc99108899293","toSide":"top"},

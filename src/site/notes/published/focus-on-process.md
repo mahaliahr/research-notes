@@ -27,16 +27,16 @@ a digital garden is a publicly accessible, evolving space for personal knowledge
 
 The Zettelkasten Method is a system of note-taking and thinking in which each note ('Zettel') has a unique address, contains a single idea or concept, and links (or references) other notes. This means the collection isn’t just a linear archive, but a web of thoughts, where each note connects to others via addresses and references, enabling non-linear navigation and emergent insight. ([[sascha-2020-intro-to-zettelkasten]])
 
-Additionally, as part of [[my-practice]], I am also a live-coder. Live coding as a practice is very much about the practice of sharing your process as it is forming. This led me to think about the idea - what if I could 'live code my PhD' - how and what would that look like?
+Additionally, as part of [[my-practice]], I am a live-coder. Live coding as a practice is very much about the practice of sharing your process as it is forming, as it's developing. This led me to think about the idea - what if I could 'live code my PhD'? How and what would that look like?
 ### **Developing a platform**
 
-I have started to develop a platform here called 'PhD-Live' (ongoing developing thoughts here:[[project-phd-live-platform]]). This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As generative AI increasingly allows shortcuts to learning and in creating works, I feel that the process of making and building knowledge becomes more important and valuable in this context. Showing your process is a way to demonstrate your journey and showcase learning in 'real-time'. 
+I have started to develop a platform (based directly off of my obsidian notes) called 'PhD-Live' (ongoing developing ideation can be found here: [[project-phd-live-platform]] and more details of how the site is structure here: [[About PhD-Live]]). 
 
-Additionally, this platform represents a deliberate effort to demystify the PhD process - by sharing my journey openly, sharing the often opaque nature of PhD research. 
+This will act as a central hub tracking my work and progress, showcasing the journey and process of my learning throughout the PhD. As many commercial generative AI systems allow shortcuts to learning and in the creation of works, I feel that the painstaking nature of process - of making and building knowledge -  becomes more important and valuable to witness. Showing your process is a way to demonstrate your journey and showcase learning in 'real-time'. 
 
-Historically, PhDs have been accessible primarily to a privileged few. This fact motivates my commitment to making my research process open and accessible, with the hope that the insights gained within academia, are relevant to a wider audience - I hope this space will be a place for anyone curious about the research process.
+Additionally, this platform represents a deliberate effort to demystify the PhD process - by sharing my journey openly and sharing the often opaque nature of PhD research. 
 
-I have scaffolded a system that works between my local obsidian system and the site the builds and displays all of this. More details here: [[About PhD-Live]]
+Historically, PhDs have been primarily accessible to a privileged few. This fact also motivates in my attempts to open up my research process, with the hope that my insights gained within academia, are relevant to a wider audience - I hope this space will be a place for anyone curious about the research process.
 
----
+
 [^1]: I say ease in quotes, because that supposed ease comes at a wider social and environmental cost and impact, that is very much not easy.

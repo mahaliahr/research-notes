@@ -34,3 +34,5 @@ my initial idea is to create a central hub of major workspaces that I am generat
 I am also curious about leaning more into the liveness and perhaps doing broadcasts (livestreams) or something? Need further thought about what that would actually be, but I am really interested in exploring this.
 
 ![[images/PhD_6.jpeg]]
+
+![[PhD_7.jpeg]]![[PhD_8.jpeg]]
