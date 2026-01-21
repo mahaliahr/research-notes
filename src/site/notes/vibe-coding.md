@@ -21,3 +21,4 @@ LIVE SYSTEM TAGS:
 • session       → used for live sessions / work periods
 • daily         → daily log style notes
 -->
+https://www.downgraf.com/web-development/vibe-coding-software-3-0-evolution-2026/

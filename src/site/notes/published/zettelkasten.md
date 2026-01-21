@@ -17,3 +17,4 @@ https://vhbelvadi.com/zettelkasten
 
 [[sascha-2020-intro-to-zettelkasten]]
 
+https://www.soenkeahrens.de/en/takesmartnotes
