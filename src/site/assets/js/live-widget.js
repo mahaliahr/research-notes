@@ -117,6 +117,46 @@ console.log("Live widget loaded");
           `<li>${i.date ? `<small>${relativeTime(i.date)}</small> ` : ""}${i.text || ""}</li>`
         ).join("")}</ul>`
       : ``;
+
+    // Render sessions
+    await renderSessions(sessions);
+  }
+
+  async function renderSessions(sessions) {
+    if (!sessions?.length) return;
+    const ongoing = sessions.filter(s => s.start && !s.end); // Sessions without end time
+    const completed = sessions.filter(s => s.start && s.end);
+    
+    const items = [];
+    
+    // Show ongoing sessions first with "In Progress" indicator
+    for (const s of ongoing.slice(0, 2)) {
+      items.push(`
+        <div class="session-item ongoing">
+          <span class="session-topic">${s.topic || 'Working...'}</span>
+          <span class="session-status">In Progress</span>
+          <time>${relativeTime(s.start)}</time>
+        </div>
+      `);
+    }
+    
+    // Then show completed sessions
+    for (const s of completed.slice(0, 3)) {
+      const duration = s.end ? 
+        Math.round((new Date(s.end) - new Date(s.start)) / 60000) + ' min' : 
+        '';
+      items.push(`
+        <div class="session-item">
+          <span class="session-topic">${s.topic || 'Session'}</span>
+          ${duration ? `<span class="session-duration">${duration}</span>` : ''}
+          <time>${relativeTime(s.start)}</time>
+        </div>
+      `);
+    }
+    
+    if (items.length) {
+      $("#live-sessions").innerHTML = items.join('');
+    }
   }
 
   if (document.readyState === "loading") {
