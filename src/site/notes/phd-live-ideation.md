@@ -36,3 +36,7 @@ I am also curious about leaning more into the liveness and perhaps doing broadca
 ![[images/PhD_6.jpeg]]
 
 ![[PhD_7.jpeg]]![[PhD_8.jpeg]]
+
+currently the platform has two 'layers' the note layer and the live layer. I would like to incorporate a third layer being the AI layer - this is where I would implement specific LLM tools tools within the process. 
+
+high level thoughts at the moment are, what would it be like to have the LLM synthesising and perhaps finding different meanings to myself in the process, and how can I surface its contributions in a clear way ?
