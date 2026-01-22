@@ -16,7 +16,7 @@ module.exports = {
       return d.page.date;
     },
 
-    permalink: d => d.permalink || `/blog/${d.page.fileSlug}/`,
+    permalink: d => d.permalink || `notes/blog/${d.page.fileSlug}/`,
     "dg-publish": d =>
       typeof d["dg-publish"] === "boolean" ? d["dg-publish"] : true,
     visibility: d => d.visibility || "public",

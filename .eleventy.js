@@ -817,6 +817,25 @@ eleventyConfig.addCollection("streamItems", (c) => {
       });
   });
 
+  // Add this with your other collections (after the notes collection):
+eleventyConfig.addCollection("posts", (c) => {
+  return c.getAll()
+    .filter(p => {
+      if (!p.data) return false;
+      // Check for type: post OR tags including 'post'
+      const hasPostType = p.data.type === "post";
+      const hasPostTag = Array.isArray(p.data.tags) && p.data.tags.includes("post");
+      const isPublished = p.data["dg-publish"] !== false;
+      
+      return (hasPostType || hasPostTag) && isPublished;
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.data.date || a.date);
+      const dateB = new Date(b.data.date || b.date);
+      return dateB - dateA; // newest first
+    });
+});
+
   eleventyConfig.on('afterBuild', async () => {
   // Get the list of all HTML files generated
   const files = await fg('dist/**/*.html');

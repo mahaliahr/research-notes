@@ -58,7 +58,7 @@ title: "Home"
 
 <section class="latest-posts">
   <h2>Latest Posts</h2>
-  {% set posts = collections.blog | default([]) %}
+  {% set posts = collections.posts | default([]) %}
   {% if posts | length %}
   <div class="cards-wrap">
     <ul class="cards grid-2x4">

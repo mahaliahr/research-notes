@@ -340,7 +340,6 @@ section .more a { font-weight: 600; }
 .stream-item:hover .stream-link {
   opacity: 1;
 }
-
 .stream-link:hover {
   text-decoration: underline;
 }
@@ -353,6 +352,83 @@ section .more a { font-weight: 600; }
   text-align: center;
   background: var(--background-primary);
   border-radius: 4px;
+}
+
+/* Posts list styling (for blog index) */
+.posts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.posts-list > li {
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 2rem;
+}
+
+.posts-list > li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.post-preview h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.post-preview h2 a {
+  text-decoration: none;
+  color: var(--text-normal);
+  transition: color 0.2s;
+}
+
+.post-preview h2 a:hover {
+  color: var(--accent);
+}
+
+.post-preview time {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+}
+
+.post-preview p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Notes index styling (keep existing simple style) */
+.notes-index {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notes-index li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.notes-index li:last-child {
+  border-bottom: none;
+}
+
+.notes-index a {
+  text-decoration: none;
+  color: var(--text-normal);
+  transition: color 0.2s;
+}
+
+.notes-index a:hover {
+  color: var(--accent);
 }
 
 /* Responsive */
