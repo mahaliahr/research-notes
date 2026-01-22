@@ -13,14 +13,10 @@ Daily note template (PhD-Live)
 Stream line syntax:
 - HH:MM something you did
 
-Embedded session syntax (widget detects start:: anywhere):
-start:: YYYY-MM-DD HH:MM
-end:: YYYY-MM-DD HH:MM
-topic:: short title
+Quick syntax:
+Session: start:: YYYY-MM-DD HH:MM | end:: ... | topic:: ...
+Milestone: - [ ] Thing #milestone @YYYY-MM-DD
 
-Milestone syntax (anywhere in any note):
-- [ ] Do the thing #milestone @YYYY-MM-DD
-- [x] Done thing #milestone @YYYY-MM-DD
 -->
 
 - <% tp.date.now("HH:mm") %> Started day

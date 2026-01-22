@@ -628,9 +628,25 @@ module.exports = function (eleventyConfig) {
 };
 const inlineField = (src, key) => {
   if (typeof src !== "string" || !src) return null;
-  const re = new RegExp(`^\\s*${key}\\s*::\\s*(.+)$`, "mi");
-  const m = src.match(re);
-  return m ? m[1].trim() : null;
+  
+  // Try multiple patterns:
+  // 1. Standard: key:: value
+  // 2. With whitespace variations
+  const patterns = [
+    new RegExp(`^\\s*${key}\\s*::\\s*(.+?)\\s*$`, "mi"),
+    new RegExp(`\\n\\s*${key}\\s*::\\s*(.+?)\\s*(?:\\n|$)`, "gi"),
+  ];
+  
+  for (const re of patterns) {
+    const m = src.match(re);
+    if (m && m[1]) {
+      const value = m[1].trim();
+      // console.log(`   Found ${key}:: ${value}`);
+      return value;
+    }
+  }
+  
+  return null;
 };
 
 // ===== SIMPLIFIED MILESTONES COLLECTION =====
@@ -677,20 +693,22 @@ eleventyConfig.addCollection("milestones", (c) => {
 
 // Sessions: any note in notes/sessions/ or with "start::"
 eleventyConfig.addCollection("sessions", (c) => {
-  return c.getAll()
+  const result = c.getAll()
     .filter(p => {
       if (!p.inputPath || !p.inputPath.endsWith('.md')) return false;
       const txt = getText(p);
-      // Check for sessions folder OR daily folder with start:: field
-      return p.inputPath.includes("/notes/sessions/") || 
-             (p.inputPath.includes("/notes/daily/") && /(^|\n)\s*start::/i.test(txt)) ||
-             /(^|\n)\s*start::/i.test(txt);
+      const hasStart = /(^|\n)\s*start::/i.test(txt);
+      const inSessions = p.inputPath.includes("/notes/sessions/");
+      const inDaily = p.inputPath.includes("/notes/daily/");
+      
+      return inSessions || (inDaily && hasStart) || hasStart;
     })
     .map(p => {
       const txt = getText(p);
       const start = inlineField(txt, "start");
       const end = inlineField(txt, "end");
       const topic = inlineField(txt, "topic") || p.data.title || p.fileSlug;
+      
       return { 
         start, 
         end, 
@@ -699,8 +717,17 @@ eleventyConfig.addCollection("sessions", (c) => {
         title: p.data.title || p.fileSlug 
       };
     })
-    .filter(s => s.start) // Only include if it has a start time
+    .filter(s => {
+      // Reject template placeholders and invalid dates
+      if (!s.start) return false;
+      if (s.start.includes('YYYY') || s.start.includes('HH:MM')) return false;
+      
+      const date = new Date(s.start);
+      return !isNaN(date.getTime());
+    })
     .sort((a, b) => new Date(b.start || 0) - new Date(a.start || 0));
+  
+  return result;
 });
 
 // Stream: from daily notes or stream.md lines "- HH:MM message"
@@ -851,7 +878,7 @@ eleventyConfig.addCollection("streamItems", (c) => {
   eleventyConfig.addFilter("limit", (arr, n) => (Array.isArray(arr) ? arr.slice(0, n) : []));
 
   eleventyConfig.addFilter("formatDailyTitle", function(title) {
-    console.log("formatDailyTitle called with:", title, "Type:", typeof title);
+    // console.log("formatDailyTitle called with:", title, "Type:", typeof title);
     
     // Handle Date objects
     if (title instanceof Date) {
@@ -877,7 +904,7 @@ eleventyConfig.addCollection("streamItems", (c) => {
           day: 'numeric',
           timeZone: 'UTC'
         });
-        console.log("Formatted Date string to:", result);
+        // console.log("Formatted Date string to:", result);
         return result;
       }
     }
@@ -893,12 +920,10 @@ eleventyConfig.addCollection("streamItems", (c) => {
         day: 'numeric',
         timeZone: 'UTC'
       });
-      console.log("Formatted YYYY-MM-DD to:", result);
+      // console.log("Formatted YYYY-MM-DD to:", result);
       return result;
     }
-    
-    console.log("Returning title as-is");
-    return title;
+        return title;
   });
 
   eleventyConfig.addFilter("date", function(date, format) {

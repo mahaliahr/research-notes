@@ -2,22 +2,49 @@ console.log("Live widget loaded");
 
 (async function () {
   const base = (window.BASE_URL || "/").replace(/\/+$/, "") + "/";
+  
   async function fetchJson(url) {
     try {
-      const r = await fetch(base + url.replace(/^\/+/, ""), { cache: "no-store" });
-      if (!r.ok) return [];
-      return await r.json();
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      return await res.json();
     } catch (e) {
-      console.warn("live-widget: failed", url, e);
-      return [];
+      console.error("Failed to fetch", url, e);
+      return null;
     }
   }
+  
   function $(sel) { return document.querySelector(sel); }
+
+  // Process wikilinks in text
+  function processWikilinks(text) {
+    if (!text) return text;
+    
+    // Match [[link]] or [[link|alias]]
+    return text.replace(/\[\[([^\]|#]+)(?:#[^\]]+)?(?:\|([^\]]+))?\]\]/g, (match, link, alias) => {
+      const displayText = alias || link;
+      const slug = link.toLowerCase()
+        .trim()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]/g, '');
+      
+      const url = `/notes/${slug}/`;
+      return `<a href="${url}" class="internal-link">${displayText}</a>`;
+    });
+  }
 
   // Relative time formatter
   const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
   function relativeTime(date) {
-    const ms = new Date(date).getTime() - Date.now();
+    if (!date) return "unknown time";
+    
+    const d = new Date(date);
+    if (isNaN(d.getTime())) {
+      console.error("Invalid date:", date);
+      return "invalid date";
+    }
+    
+    const ms = d.getTime() - Date.now();
     const sec = Math.round(ms / 1000);
     const min = Math.round(sec / 60);
     const hr = Math.round(min / 60);
@@ -30,133 +57,132 @@ console.log("Live widget loaded");
   }
 
   async function render() {
-    const [sessions, milestones, stream] = await Promise.all([
-      fetchJson("data/sessions.json"),
-      fetchJson("data/milestones.json"),
-      fetchJson("data/stream.json")
-    ]);
+    const sessions = await fetchJson(`${base}data/sessions.json`);
+    const stream = await fetchJson(`${base}data/stream.json`);
+    
+    console.log("Loaded sessions:", sessions);
+    console.log("Loaded stream:", stream);
 
-    const now = Date.now();
-    const parseStart = s => (s && s.start ? new Date(s.start).getTime() : 0);
-
-    const liveNowEl = $("#live-now");
-    const liveNextEl = $("#live-next");
-    const liveStreamEl = $("#live-stream");
-    const widgetTitleEl = $("#live-widget-title");
-    if (!liveNowEl || !liveNextEl || !liveStreamEl) return;
-
-    // Find current session
-    const current = (sessions || []).find(s => {
-      const st = parseStart(s);
-      const en = s?.end ? new Date(s.end).getTime() : st + 2 * 60 * 60 * 1000;
-      return st && now >= st && now <= en;
-    });
-
-    // Find upcoming session
-    const upcoming = (sessions || [])
-      .filter(s => parseStart(s) > now)
-      .sort((a, b) => parseStart(a) - parseStart(b))[0];
-
-    // Find most recent past session
-    const recent = (sessions || [])
-      .filter(s => {
-        const st = parseStart(s);
-        const en = s?.end ? new Date(s.end).getTime() : st + 2 * 60 * 60 * 1000;
-        return en < now;
-      })
-      .sort((a, b) => parseStart(b) - parseStart(a))[0];
-
-    // Update widget title based on live status
-    if (widgetTitleEl) {
-      if (current) {
-        widgetTitleEl.innerHTML = '🔴 Live';
-        widgetTitleEl.className = 'live-widget-title live-active';
-      } else {
-        widgetTitleEl.innerHTML = 'Most Recent Updates';
-        widgetTitleEl.className = 'live-widget-title';
-      }
-    }
-
-    // Render current or recent session
-    if (current) {
-      liveNowEl.innerHTML = `
-        <div class="live-status live-active">
-          <strong>Happening now:</strong> 
-          <a href="${current.url}">${current.topic || "Session"}</a>
-          <small>started ${relativeTime(current.start)}</small>
-        </div>
-      `;
-    } else if (recent) {
-      liveNowEl.innerHTML = `
-        <div class="live-status live-recent">
-          <span>Most recent session: <a href="${recent.url}">${recent.topic || "Session"}</a></span>
-          <small>ended ${relativeTime(recent.end || recent.start)}</small>
-        </div>
-      `;
-    } else {
-      liveNowEl.innerHTML = `
-        <div class="live-status live-idle">
-          <em>No recent sessions recorded yet.</em>
-        </div>
-      `;
-    }
-
-    // Render next session
-    liveNextEl.innerHTML = upcoming
-      ? `<div class="live-next">
-          <strong>Next session:</strong> 
-          <a href="${upcoming.url}">${upcoming.topic || "Session"}</a>
-          <small>${relativeTime(upcoming.start)}</small>
-         </div>`
-      : ``;
-
-    // Render stream
-    const latest = (stream || []).slice(0, 5);
-    liveStreamEl.innerHTML = latest.length
-      ? `<ul class="stream-list">${latest.map(i =>
-          `<li>${i.date ? `<small>${relativeTime(i.date)}</small> ` : ""}${i.text || ""}</li>`
-        ).join("")}</ul>`
-      : ``;
-
-    // Render sessions
-    await renderSessions(sessions);
+    if (sessions) await renderSessions(sessions);
+    if (stream) await renderStream(stream);
   }
 
   async function renderSessions(sessions) {
-    if (!sessions?.length) return;
-    const ongoing = sessions.filter(s => s.start && !s.end); // Sessions without end time
-    const completed = sessions.filter(s => s.start && s.end);
+    const nowContainer = $("#live-now");
+    const nextContainer = $("#live-next");
     
-    const items = [];
+    if (!nowContainer || !nextContainer) {
+      console.warn("Missing #live-now or #live-next containers");
+      return;
+    }
+
+    if (!sessions || sessions.length === 0) {
+      nowContainer.innerHTML = '<p class="no-data">No sessions yet</p>';
+      nextContainer.innerHTML = '';
+      return;
+    }
+
+    const now = Date.now();
+    let currentSession = null;
+    let nextSession = null;
     
-    // Show ongoing sessions first with "In Progress" indicator
-    for (const s of ongoing.slice(0, 2)) {
-      items.push(`
-        <div class="session-item ongoing">
-          <span class="session-topic">${s.topic || 'Working...'}</span>
-          <span class="session-status">In Progress</span>
-          <time>${relativeTime(s.start)}</time>
+    for (const s of sessions) {
+      const start = new Date(s.start);
+      const end = s.end ? new Date(s.end) : null;
+      
+      if (start.getTime() <= now && (!end || end.getTime() >= now)) {
+        currentSession = s;
+        break;
+      }
+    }
+    
+    for (const s of sessions) {
+      const start = new Date(s.start);
+      if (start.getTime() > now) {
+        nextSession = s;
+        break;
+      }
+    }
+    
+    if (!currentSession && sessions.length > 0) {
+      currentSession = sessions[0];
+    }
+
+    if (currentSession) {
+      const s = currentSession;
+      const start = new Date(s.start);
+      const end = s.end ? new Date(s.end) : null;
+      const isActive = start.getTime() <= now && (!end || end.getTime() >= now);
+      
+      const status = isActive ? 
+        '<span class="status active">● Live now</span>' : 
+        `<span class="status">Ended ${relativeTime(end || start)}</span>`;
+      
+      // Process wikilinks in topic
+      const processedTopic = processWikilinks(s.topic || "Session");
+      
+      nowContainer.innerHTML = `
+        <div class="session-card ${isActive ? 'active' : ''}">
+          <div class="session-header">
+            <h3>${processedTopic}</h3>
+            ${status}
+          </div>
+          <div class="session-meta">
+            <span>Started ${relativeTime(start)}</span>
+          </div>
+          ${s.url ? `<a href="${s.url}" class="session-link">View note →</a>` : ''}
         </div>
-      `);
+      `;
+    } else {
+      nowContainer.innerHTML = '<p class="no-data">No recent sessions</p>';
     }
-    
-    // Then show completed sessions
-    for (const s of completed.slice(0, 3)) {
-      const duration = s.end ? 
-        Math.round((new Date(s.end) - new Date(s.start)) / 60000) + ' min' : 
-        '';
-      items.push(`
-        <div class="session-item">
-          <span class="session-topic">${s.topic || 'Session'}</span>
-          ${duration ? `<span class="session-duration">${duration}</span>` : ''}
-          <time>${relativeTime(s.start)}</time>
+
+    if (nextSession) {
+      const s = nextSession;
+      const start = new Date(s.start);
+      const processedTopic = processWikilinks(s.topic || "Upcoming session");
+      
+      nextContainer.innerHTML = `
+        <div class="session-card upcoming">
+          <div class="session-header">
+            <h3>${processedTopic}</h3>
+            <span class="status">Starting ${relativeTime(start)}</span>
+          </div>
+          ${s.url ? `<a href="${s.url}" class="session-link">View note →</a>` : ''}
         </div>
-      `);
+      `;
+    } else {
+      nextContainer.innerHTML = '';
     }
-    
-    if (items.length) {
-      $("#live-sessions").innerHTML = items.join('');
+  }
+
+  async function renderStream(items) {
+    const container = $("#live-stream");
+    if (!container) {
+      console.warn("No #live-stream container found");
+      return;
     }
+
+    if (!items || items.length === 0) {
+      container.innerHTML = '<p class="no-data">No stream updates yet</p>';
+      return;
+    }
+
+    const html = items.slice(0, 5).map(item => {
+      const time = relativeTime(item.date);
+      // Process wikilinks in stream text
+      const processedText = processWikilinks(item.text);
+      
+      return `
+        <div class="stream-item">
+          <span class="stream-time">${time}</span>
+          <span class="stream-text">${processedText}</span>
+          ${item.noteUrl ? `<a href="${item.noteUrl}" class="stream-link">→</a>` : ''}
+        </div>
+      `;
+    }).join('');
+
+    container.innerHTML = `<div class="stream-list">${html}</div>`;
   }
 
   if (document.readyState === "loading") {
@@ -165,6 +191,5 @@ console.log("Live widget loaded");
     render();
   }
 
-  // Update every 30 seconds
   setInterval(render, 30000);
 })();
