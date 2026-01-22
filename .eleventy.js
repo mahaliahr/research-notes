@@ -532,13 +532,32 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addWatchTarget("src/site/notes");
 
-  // Keep your other passthroughs
+  // ===== IMAGE PASSTHROUGH =====
+  // Copy images from the images folder
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/images": "notes/images"
+  });
+
+  // Copy images from subdirectories (daily, sessions, etc) to notes/images
+  eleventyConfig.addPassthroughCopy({
+    "src/site/notes/daily/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/sessions/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/blog/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+    "src/site/notes/published/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes/images",
+  });
+
+  eleventyConfig.addWatchTarget("src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
+
+
+  // Copy other assets
   eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addWatchTarget("src/site/assets");
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   eleventyConfig.addWatchTarget("src/site/styles");
+  eleventyConfig.addPassthroughCopy({ "src/site/img" : "img" });
+  eleventyConfig.addPassthroughCopy({ "src/site/scripts" : "scripts" });
   eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.svg" });
-  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" }); // quiets /favicon.ico
+  eleventyConfig.addPassthroughCopy({ "src/site/favicon.svg": "favicon.ico" });
   // If you have a PNG too, copy it:
   // eleventyConfig.addPassthroughCopy({ "src/site/img/favicon-32.png": "favicon.png" });
   eleventyConfig.addPassthroughCopy({ "src/site/img" : "img" });
@@ -547,12 +566,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/site/styles": "styles" });
   // eleventyConfig.addPassthroughCopy({ "src/site/assets": "assets" });
   eleventyConfig.addPassthroughCopy("src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}");
-  eleventyConfig.addWatchTarget("src/site/notes");
-
-  // If you want to copy ALL images under notes (including subfolders):
-  eleventyConfig.addPassthroughCopy({
-    "src/site/notes/**/*.{png,jpg,jpeg,gif,svg,webp,avif}": "notes",
-  });
   eleventyConfig.addWatchTarget("src/site/notes");
 
   eleventyConfig.addPlugin(faviconsPlugin, { outputDir: "dist" });
