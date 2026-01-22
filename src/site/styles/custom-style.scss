@@ -14,6 +14,16 @@
   --navbar-fg: #0b0b0b;
   --graph-main: #8b6cef;
   --graph-muted: rgba(139,108,239,.45);
+  
+  /* Live widget colors */
+  --background-secondary: #f5f5f5;
+  --background-primary-alt: #fafafa;
+  --background-modifier-border: rgba(0,0,0,0.1);
+  --text-normal: #0b0b0b;
+  --text-muted: #6b7280;
+  --interactive-accent: #8b6cef;
+  --live-active: #22c55e; /* green for live */
+  --live-inactive: #ef4444; /* red for offline */
 }
 
 /* Base */
@@ -193,22 +203,24 @@ section .more a { font-weight: 600; }
 
 /* Session Cards */
 .session-card {
-  background: var(--background-primary);
-  border: 1px solid var(--background-modifier-border);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
   border-radius: 6px;
   padding: 1rem;
   margin-bottom: 1rem;
   transition: all 0.2s ease;
+  position: relative;
 }
 
 .session-card:hover {
-  border-color: var(--interactive-accent);
+  border-color: var(--accent);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .session-card.active {
-  border-color: var(--interactive-accent);
-  background: var(--background-primary-alt);
+  border-color: var(--live-active);
+  background: #f0fdf4; /* light green tint */
+  border-width: 2px;
 }
 
 .session-card.active::before {
@@ -217,8 +229,8 @@ section .more a { font-weight: 600; }
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: var(--interactive-accent);
+  width: 4px;
+  background: var(--live-active);
   border-radius: 6px 0 0 6px;
 }
 
@@ -243,11 +255,22 @@ section .more a { font-weight: 600; }
   font-size: 0.85rem;
   color: var(--text-muted);
   white-space: nowrap;
+  font-weight: 500;
 }
 
 .status.active {
-  color: var(--interactive-accent);
-  font-weight: 500;
+  color: var(--live-active);
+  font-weight: 600;
+}
+
+.status.active::before {
+  content: '● ';
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
 
 .session-meta {

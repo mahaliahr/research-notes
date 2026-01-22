@@ -77,7 +77,7 @@ console.log("Live widget loaded");
     }
 
     if (!sessions || sessions.length === 0) {
-      nowContainer.innerHTML = '<p class="no-data">No sessions yet</p>';
+      nowContainer.innerHTML = '<p class="no-data">No work sessions tracked yet</p>';
       nextContainer.innerHTML = '';
       return;
     }
@@ -114,27 +114,37 @@ console.log("Live widget loaded");
       const end = s.end ? new Date(s.end) : null;
       const isActive = start.getTime() <= now && (!end || end.getTime() >= now);
       
-      const status = isActive ? 
-        '<span class="status active">● Live now</span>' : 
-        `<span class="status">Ended ${relativeTime(end || start)}</span>`;
+      // Clear status text - either LIVE NOW or Most Recent
+      const statusLabel = isActive ? 
+        '<span class="status active">LIVE NOW</span>' : 
+        '<span class="status">Most Recent</span>';
       
-      // Process wikilinks in topic
       const processedTopic = processWikilinks(s.topic || "Session");
+      
+      let duration = '';
+      if (start && end) {
+        const durationMs = end.getTime() - start.getTime();
+        const hours = Math.floor(durationMs / (1000 * 60 * 60));
+        const mins = Math.floor((durationMs % (1000 * 60 * 60)) / (1000 * 60));
+        duration = `<span class="session-duration">${hours}h ${mins}m</span>`;
+      }
       
       nowContainer.innerHTML = `
         <div class="session-card ${isActive ? 'active' : ''}">
           <div class="session-header">
             <h3>${processedTopic}</h3>
-            ${status}
+            ${statusLabel}
           </div>
           <div class="session-meta">
             <span>Started ${relativeTime(start)}</span>
+            ${duration}
+            ${!isActive && end ? `<span style="margin-left: 1rem;">Ended ${relativeTime(end)}</span>` : ''}
           </div>
-          ${s.url ? `<a href="${s.url}" class="session-link">View note →</a>` : ''}
+          ${s.url ? `<a href="${s.url}" class="session-link">View full session →</a>` : ''}
         </div>
       `;
     } else {
-      nowContainer.innerHTML = '<p class="no-data">No recent sessions</p>';
+      nowContainer.innerHTML = '<p class="no-data">No recent work sessions</p>';
     }
 
     if (nextSession) {
@@ -146,9 +156,9 @@ console.log("Live widget loaded");
         <div class="session-card upcoming">
           <div class="session-header">
             <h3>${processedTopic}</h3>
-            <span class="status">Starting ${relativeTime(start)}</span>
+            <span class="status">Scheduled ${relativeTime(start)}</span>
           </div>
-          ${s.url ? `<a href="${s.url}" class="session-link">View note →</a>` : ''}
+          ${s.url ? `<a href="${s.url}" class="session-link">View details →</a>` : ''}
         </div>
       `;
     } else {
