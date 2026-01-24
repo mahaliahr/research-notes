@@ -19,9 +19,10 @@ Milestone: - [ ] Thing #milestone @YYYY-MM-DD
 
 -->
 
-- <% tp.date.now("HH:mm") %> Started day
+- <% tp.date.now("HH:mm") %> 
 
-#### Session 
+<details>
+<summary>Session</summary>
 start:: <% tp.date.now("YYYY-MM-DD HH:mm") %>
 topic:: 
-end:: 
+</details>
