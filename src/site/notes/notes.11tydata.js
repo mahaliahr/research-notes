@@ -7,6 +7,10 @@ module.exports = {
   layout: "note.njk",
   eleventyComputed: {
     layout: (data) => {
+      if (data.page?.inputPath?.includes('/notes/blog/') &&
+          (data.page.fileSlug === 'index' || data.page.fileSlug === 'blog-index')) {
+        return data.layout || "layouts/index.njk";
+      }
       const tags = Array.isArray(data.tags) ? data.tags : [];
       return tags.includes("gardenEntry") ? "index.njk" : "note.njk";
     },
@@ -25,6 +29,7 @@ module.exports = {
       for (const setting of allSettings) {
         const noteSetting = data[setting];
         const globalSetting = process.env[setting];
+        
         noteSettings[setting] =
           typeof noteSetting !== "undefined"
             ? noteSetting
@@ -38,14 +43,11 @@ module.exports = {
 
     visibility: (d) => d.visibility || "public",
 
-    // IMPORTANT: Keep title as a string, don't let it become a Date
     title: d => {
       const rawTitle = d.title;
-      // If it's already a Date object, convert back to string
       if (rawTitle instanceof Date) {
         return rawTitle.toISOString().split('T')[0];
       }
-      // Otherwise return as-is
       return rawTitle || d.page.fileSlug;
     },
     
