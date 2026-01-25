@@ -40,3 +40,5 @@ I am also curious about leaning more into the liveness and perhaps doing broadca
 currently the platform has two 'layers' the note layer and the live layer. I would like to incorporate a third layer being the AI layer - this is where I would implement specific LLM tools tools within the process. 
 
 high level thoughts at the moment are, what would it be like to have the LLM synthesising and perhaps finding different meanings to myself in the process, and how can I surface its contributions in a clear way ?
+
+any LLM intergration with PhD-Live will **not** be a chatbot. I want to keep any those observations clearly in the domain of [[project-supervisor-bot]]. But also because I want to explore useful cases of LLM integration that moves away from the chat interface and more surfaces/reshapes my own thoughts 
