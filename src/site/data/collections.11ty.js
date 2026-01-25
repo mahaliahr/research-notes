@@ -16,3 +16,7 @@ class CollectionsDebug {
   }
 }
 module.exports = CollectionsDebug;
+
+module.exports.posts = (collectionApi) => {
+  return collectionApi.getFilteredByGlob('src/site/notes/blog/*.md');
+};

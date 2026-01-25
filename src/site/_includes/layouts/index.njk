@@ -2,111 +2,56 @@
 <html lang="{{ meta.mainLanguage }}">
   <head>
     <title>{% if title %}{{ title }}{% else %}{{ page.fileSlug }}{% endif %}</title>
-    {%include "components/pageheader.njk"%}
-    {% for imp in dynamics.common.head %}
-      {% include imp %}
-    {% endfor %}
-    {% for imp in dynamics.index.head %}
-      {% include imp %}
-    {% endfor %}
+    {% include "components/pageheader.njk" %}
+    {% for imp in dynamics.common.head %}{% include imp %}{% endfor %}
+    {% for imp in dynamics.index.head %}{% include imp %}{% endfor %}
   </head>
   <body class="theme-{{ meta.baseTheme }} {{ meta.bodyClasses }}">
+    {% include "components/pageheader.njk" %}
     {% include "components/navbar.njk" ignore missing %}
     {% include "components/livebar.njk" ignore missing %}
     {% include "components/notegrowthhistory.njk" ignore missing %}
-    {% if settings.dgShowFileTree !== true %}
-      {%include "components/filetree.njk"%}
-    {%else%}
-      {%include "components/filetree.njk"%}
-    {% endif %}
+    {% include "components/filetree.njk" ignore missing %}
     {% if settings.dgEnableSearch === true %}
-      {%include "components/searchContainer.njk"%}
+      {% include "components/searchContainer.njk" %}
     {% endif %}
-    <main class="content cm-s-obsidian markdown-preview-view markdown-rendered markdown-preview-section {{contentClasses}}">
-      <header>
-      {% if settings.dgShowInlineTitle === true %}
-        <h1>{{ noteTitle  }}</h1>
-      {% endif %}
 
-      <div class="header-meta">
-        {% if settings.dgShowTags === true and tags %}
-          <div class="header-tags">
-            {% for tag in tags %}
-              {% if tag != 'gardenEntry' and tag !='note' %}
-                <a class="tag" onclick="toggleTagSearch(this)">
-                  #{{tag}}
-                </a>
-              {% endif %}
-            {% endfor %}
+    <div class="page has-sidebar">
+      <main class="content cm-s-obsidian markdown-preview-view markdown-rendered markdown-preview-section {{contentClasses}}">
+        <header>
+          {% if settings.dgShowInlineTitle === true %}
+            <h1>{{ noteTitle }}</h1>
+          {% endif %}
+          <div class="header-meta">
+            {% if settings.dgShowTags === true and tags %}
+              <div class="header-tags">
+                {% for tag in tags %}
+                  {% if tag != 'gardenEntry' and tag != 'note' %}
+                    <a class="tag" onclick="toggleTagSearch(this)">#{{ tag }}</a>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {% endif %}
           </div>
-        {% endif %}
-      </div>
-      {% for imp in dynamics.common.header %}
-        {% include imp %}
-      {% endfor %}
-      {% for imp in dynamics.index.header %}
-        {% include imp %}
-      {% endfor %}
-      </header>
-      {% for imp in dynamics.common.beforeContent %}
-        {% include imp %}
-      {% endfor %}
-      {% for imp in dynamics.index.beforeContent %}
-        {% include imp %}
-      {% endfor %}
-      {{ content | hideDataview | taggify | link | safe}}
-      {% for imp in dynamics.common.afterContent %}
-        {% include imp %}
-      {% endfor %}
-      {% for imp in dynamics.index.afterContent %}
-        {% include imp %}
-      {% endfor %}
-    </main>
+          {% for imp in dynamics.common.header %}{% include imp %}{% endfor %}
+          {% for imp in dynamics.index.header %}{% include imp %}{% endfor %}
+        </header>
 
-    {% if settings.dgShowBacklinks === true or settings.dgShowLocalGraph === true or settings.dgShowToc === true%}
-      {%include "components/sidebar.njk" %}
-    {%endif%}
+        {{ content | hideDataview | taggify | link | safe }}
+      </main>
+    </div>
 
+    {# {% include "components/sidebar.njk" %} #}
     {% if settings.dgLinkPreview === true %}
-      {%include "components/linkPreview.njk"%}
+      {% include "components/linkPreview.njk" %}
     {% endif %}
-    {% for imp in dynamics.common.footer %}
-      {% include imp %}
-    {% endfor %}
-    {% for imp in dynamics.index.footer %}
-      {% include imp %}
-    {% endfor %}
-    {%include "components/lucideIcons.njk"%}
+    {% for imp in dynamics.common.footer %}{% include imp %}{% endfor %}
+    {% for imp in dynamics.index.footer %}{% include imp %}{% endfor %}
+    {% include "components/lucideIcons.njk" %}
     {% include "components/footer.njk" ignore missing %}
 
-    <script>
-      (function () {
-        function restoreScroll() {
-          try {
-            const docEl = document.documentElement;
-            const body = document.body;
-            const hasFullscreenGraph =
-              !!document.querySelector('.graph-fs') ||
-              !!document.querySelector('#full-graph-container.graph-fs');
-
-            if (!hasFullscreenGraph) {
-              body.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
-              docEl.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
-              body.style.overflow = '';
-              docEl.style.overflow = '';
-            }
-          } catch (e) {}
-        }
-
-        if (document.readyState === 'loading') {
-          document.addEventListener('DOMContentLoaded', restoreScroll);
-        } else {
-          restoreScroll();
-        }
-        window.addEventListener('alpine:init', restoreScroll);
-      })();
-    </script>
     <script src="{{ '/assets/js/relative-time.js' | url }}" defer></script>
     <script src="{{ '/assets/live.js' | url }}" defer></script>
   </body>
 </html>
+

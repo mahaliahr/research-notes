@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/styles/digital-garden-base.css">
+<link rel="stylesheet" href="/styles/obsidian-base.css">
+
+
+  <link rel="stylesheet" href="/styles/_theme.82f819db.css">
+
+<link rel="stylesheet" href="/styles/custom-style.css">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.png" type="image/png" sizes="32x32">
+
+<script>window.BASE_URL = ".";</script>
+<script defer src="https://fastly.jsdelivr.net/npm/force-graph@1.43.0/dist/force-graph.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.11.1/dist/cdn.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.11.1/dist/cdn.min.js"></script>
+<script defer src="https://unpkg.com/lucide@0.451.0/dist/umd/lucide.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+</script>
+
+<script async src="https://cdn.jsdelivr.net/npm/lucide@0.115.0/dist/umd/lucide.min.js"></script>
+<script>
+    // Create callout icons
+    window.addEventListener("load", () => {
+        document.querySelectorAll(".callout").forEach((elem) => {
+            const icon = getComputedStyle(elem).getPropertyValue('--callout-icon');
+            const iconName = icon && icon.trim().replace(/^lucide-/, "");
+
+            if (iconName) {
+                const calloutTitle = elem.querySelector(".callout-title");
+
+                if (calloutTitle) {
+                    const calloutIconContainer = document.createElement("div");
+                    const calloutIcon = document.createElement("i");
+
+                    calloutIconContainer.appendChild(calloutIcon);
+                    calloutIcon.setAttribute("icon-name", iconName);
+                    calloutIconContainer.setAttribute("class", "callout-icon");
+                    calloutTitle.insertBefore(calloutIconContainer, calloutTitle.firstChild);
+                }
+            }
+        });
+
+        lucide.createIcons();
+
+        // Collapse callouts
+        Array.from(document.querySelectorAll(".callout.is-collapsible")).forEach((elem) => {
+            elem.querySelector('.callout-title').addEventListener("click", (event) => {
+                if (elem.classList.contains("is-collapsed")) {
+                    elem.classList.remove("is-collapsed");
+                } else {
+                    elem.classList.add("is-collapsed");
+                }
+            });
+        });
+    });
+</script>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" referrerpolicy="no-referrer" async>
+<script src="https://fastly.jsdelivr.net/npm/whatwg-fetch@3.6.2/dist/fetch.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer" async></script>
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/assets/live.css">
+
+  <script type="module" integrity="sha512-7Y25+FX/kRUbZEHtQBOSLffzofBxz8ABQErLAVpGkfzactkpJU5wtTmhIfIZeTw7VHg1JeTIC5kHkzPq7LqR1w==" src="/.11ty/reload-client.js"></script></head>
+  <body class="theme-light filetree-note-icon">
+    
+    <nav class="navbar">
+        <div class="navbar-inner">
+            <a href="/" style="text-decoration: none;">
+                <h1 id="nav-title" style="margin: 15px !important;">PhD-Live</h1>
+            </a>
+        </div>
+        <div class="nav-right">
+            
+              <div class="search-button align-icon" onclick="toggleSearch()">
+    <span class="search-icon">
+        <i icon-name="search" ></i>
+    </span>
+    <span class="search-text">
+        <span>Search</span>
+        <span style="font-size: 0.6rem; padding: 2px 2px 0 6px; text-align:center; transform: translateY(4px);" class="search-keys">
+            CTRL + K
+        </span>
+    </span>
+</div>
+            
+        </div>
+    </nav>
+
+    
+
+<div class="livebar" data-livebar>
+  <span class="dot" data-livebar-dot></span>
+  <span class="text" data-livebar-text>Loading…</span>
+</div>
+    <div class="search-container" id="globalsearch" onclick="toggleSearch()">
+    <div class="search-box">
+        <input type="search" id="term" placeholder="Start typing...">
+        <div id="search-results"></div>
+        <footer class="search-box-footer">
+            <div class="navigation-hint">
+                <span>Enter to select</span>
+            </div>
+
+            <div class="navigation-hint align-icon">
+                <i  icon-name="arrow-up" aria-hidden="true"></i>
+                <i  icon-name="arrow-down" aria-hidden="true"></i>
+                <span>to navigate</span>
+            </div>
+
+            <div class="navigation-hint">
+                <span>ESC to close</span>
+            </div>
+
+        </footer>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>
+  // Guard the optional init function
+  if (typeof window.init === "function") {
+    document.addEventListener('DOMContentLoaded', window.init, false);
+  }
+
+  // Keep this, it exists below in this file
+  document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
+
+  // Avoid const redeclaration across duplicate includes
+  if (!window.loadingSvg) {
+    window.loadingSvg = `
+    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="1.5s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="1.5s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="1.5s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="3s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="3s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="3s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="8">
+              <animate attributeName="r"
+                   begin="0s" dur="1.5s"
+                   values="6;1;2;3;4;5;6"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+      </g>
+  </svg>`;
+  }
+    window.toggleSearch = function () {
+        if (document.getElementById('globalsearch').classList.contains('active')) {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .remove('active');
+        } else {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .add('active');
+            document
+                .getElementById('term')
+                .focus();
+        }
+    }
+
+    window.toggleTagSearch = function (evt) {
+        console.log(evt.textContent);
+        const term = evt.textContent;
+        if (term) {
+            window
+                .document
+                .getElementById('term')
+                .value = term.trim();
+            window.toggleSearch();
+            window.search();
+        }
+    }
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) 
+                    func.apply(context, args);
+                };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) 
+                func.apply(context, args);
+            };
+    };
+
+    function setCorrectShortcut() {
+        if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+            document
+                .querySelectorAll(".search-keys")
+                .forEach(x => x.innerHTML = "⌘ + K");
+        }
+    }
+
+    function createIndex(posts) {
+        const encoder = (str) => str
+            .toLowerCase()
+            .split(/([^a-z]|[^\x00-\x7F])/)
+        const contentIndex = new FlexSearch.Document({
+            cache: true,
+            charset: "latin:extra",
+            optimize: true,
+            index: [
+                {
+                    field: "content",
+                    tokenize: "reverse",
+                    encode: encoder
+                }, {
+                    field: "title",
+                    tokenize: "forward",
+                    encode: encoder
+                }, {
+                    field: "tags",
+                    tokenize: "forward",
+                    encode: encoder
+                }
+            ]
+        })
+        posts.forEach((p, idx) => {
+            contentIndex.add({
+                id: idx, title: p.title, content: p.content, tags: p.tags //Change to removeHTML
+            })
+        });
+        return contentIndex;
+    }
+
+    async function init() {
+        //init offline search index
+
+        const searchIndexDate = '2026-01-24T22:14:24.081Z';
+        let shouldFetch = true;
+        if(localStorage.getItem("searchIndex")) {
+            let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
+            if(date === searchIndexDate){
+                shouldFetch = false;
+                let index = createIndex(docs);
+                window.docs = docs
+                window.index = index;
+            }        
+        }
+        if(shouldFetch){
+            let docs = await(await fetch('/searchIndex.json?v=2026-01-24T22:14:24.081Z')).json();
+            let index = createIndex(docs);
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2026-01-24T22:14:24.081Z', docs}));
+            window.docs = docs
+            window.index = index;
+        }
+
+        //open searchmodal when ctrl + k is pressed, cmd + k on mac
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleSearch();
+            }
+            if (e.key === 'Escape') {
+                document
+                    .getElementById('globalsearch')
+                    .classList
+                    .remove('active');
+            }
+
+            //navigate search results with arrow keys
+            if (document.getElementById('globalsearch').classList.contains('active')) {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.nextElementSibling) {
+                            active
+                                .nextElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelector('.searchresult')
+                                .classList
+                                .add('active');
+                        }
+                    } else {
+                        document
+                            .querySelector('.searchresult')
+                            .classList
+                            .add('active');
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.previousElementSibling) {
+                            active
+                                .previousElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelectorAll('.searchresult')
+                                .forEach((el) => {
+                                    if (!el.nextElementSibling) {
+                                        el
+                                            .classList
+                                            .add('active');
+                                    }
+                                });
+                        }
+                    } else {
+                        document
+                            .querySelectorAll('.searchresult')
+                            .forEach((el) => {
+                                if (el.nextElementSibling) {
+                                    el
+                                        .classList
+                                        .add('active');
+                                }
+                            });
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        window.location.href = active
+                            .querySelector("a")
+                            .href;
+                    }
+                }
+            }
+        });
+
+        const debouncedSearch = debounce(search, 200, false);
+        field = document.querySelector('#term');
+        field.addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
+                debouncedSearch();
+            }
+        });
+        resultsDiv = document.querySelector('#search-results');
+
+        const params = new URL(location.href).searchParams;
+        if (params.get('q')) {
+            field.setAttribute('value', params.get('q'));
+            toggleSearch();
+            search();
+        }
+    }
+    window.lastSearch = '';
+    async function search() {
+        let search = field
+            .value
+            .trim();
+        if (!search) 
+            return;
+        if (search == lastSearch) 
+            return;
+        console.log(`search for ${search}`);
+        window.lastSearch = search;
+
+        resultsDiv.innerHTML = window.loadingSvg;
+        //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
+        //let results = await searchRequest.json();
+        let results = offlineSearch(search);
+        let resultsHTML = '';
+        if (!results.length) {
+            let resultParagraph = document.createElement("p");
+            resultParagraph.innerText = `No results for "${search}"`;
+            resultsDiv.innerHTML = '';
+            resultsDiv.appendChild(resultParagraph);
+            return;
+        }
+        resultsHTML += '<div style="max-width:100%;">';
+        // we need to add title, url from ref
+        results.forEach(r => {
+            if(r.tags && r.tags.length > 0){
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        <div class="header-meta">
+                            <div class="header-tags">
+                                ${r.tags.map(tag=>'<a class="tag" href="JavaScript:Void(0);">#'+tag+'</a>').join("")}
+                            </div>
+                        </div>
+                        ${r.content}
+                    </div>
+                </div>`;
+            } else {
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        ${r.content}
+                    </div>
+                </div>`;
+            }
+        });
+        resultsHTML += '</div>';
+        resultsDiv.innerHTML = resultsHTML;
+    }
+
+    function truncate(str, size) {
+        //first, remove HTML
+        str = str.replaceAll(/<[^>]*>/g, '');
+        if (str.length < size) 
+            return str;
+        return str.substring(0, size - 3) + '...';
+    }
+
+    function offlineSearch(searchQuery) {
+        let data = window.docs;
+
+        let isTagSearch = searchQuery[0] === "#" && searchQuery.length > 1;
+
+        let searchResults = isTagSearch
+            ? index.search(searchQuery.substring(1), [
+                {
+                    field: "tags"
+                }
+            ])
+            : index.search(searchQuery, [
+                {
+                    field: "title",
+                    limit: 5
+                }, {
+                    field: "content",
+                    weight: 10
+                }
+            ]);
+
+        const getByField = (field) => {
+            const results = searchResults.filter((x) => x.field === field)
+            if (results.length === 0) {
+                return []
+            } else {
+                return [...results[0].result]
+            }
+        }
+        const allIds = new Set([
+            ...getByField("title"),
+            ...getByField("content"),
+            ...getByField("tags")
+        ])
+        const dataIds = [...allIds];
+        const finalResults = dataIds.map((id) => {
+            let result = data[id];
+            result.content = truncate(result.content, 400);
+            result.tags = result
+                .tags
+                .filter((x) => x != "gardenEntry" && x != "note"); //Note is automatically added by 11ty. GardenEntry is used internally to mark the home page
+
+            return result;
+        })
+        return finalResults;
+
+    }
+</script>
+
+
+    <div class="page has-sidebar">
+      
+        <aside class="sidebar">
+  <div class="sidebar-container">
+    
+      <details class="sidebar-block graph-block" open>
+        <summary>Graph</summary>
+        <script>
+    async function fetchGraphData() {
+        const graphData = await fetch('/graph.json', { cache: "no-store" }).then(res => res.json());
+        const fullGraphData  = filterFullGraphData(graphData);
+        return {graphData, fullGraphData}
+    }
+
+    function untilSized(el, cb, tries = 30) {
+      const tick = () => {
+        const w = el.offsetWidth, h = el.offsetHeight;
+        if (w > 0 && h > 0) return cb(w, h);
+        if (tries <= 0) return cb(Math.max(1, w), Math.max(1, h));
+        tries--;
+        requestAnimationFrame(tick);
+      };
+      tick();
+    }
+
+    // Return [existing, remaining] and use destructuring at call site
+    function getNextLevelNeighbours(existing, remaining) {
+        const keys = Object.values(existing).map((n) => n.neighbors).flat();
+        const n_remaining = Object.keys(remaining).reduce((acc, key) => {
+            if (keys.indexOf(key) != -1) {
+                if (!remaining[key].hide) existing[key] = remaining[key];
+            } else {
+                acc[key] = remaining[key];
+            }
+            return acc;
+        }, {});
+        return [existing, n_remaining];
+    }
+
+    function filterLocalGraphData(graphData, depth) {
+      if (!graphData) return null;
+      let remaining = JSON.parse(JSON.stringify(graphData.nodes));
+      let links = JSON.parse(JSON.stringify(graphData.links));
+      const currentLink = decodeURI(window.location.pathname);
+
+      // Try current page, then homeAlias, then any node
+      let currentNode =
+        remaining[currentLink] ||
+        (graphData.homeAlias && remaining[graphData.homeAlias]) ||
+        Object.values(remaining)[0];
+
+      if (!currentNode) return null;
+
+      delete remaining[currentNode.url];
+      if (!currentNode.home && graphData.homeAlias && remaining[graphData.homeAlias]) {
+        delete remaining[graphData.homeAlias];
+      }
+      currentNode.current = true;
+
+      let existing = { [currentNode.url]: currentNode };
+      for (let i = 0; i < depth; i++) {
+        [existing, remaining] = getNextLevelNeighbours(existing, remaining);
+      }
+      let nodes = Object.values(existing);
+      if (!currentNode.home && graphData.homeAlias && graphData.homeAlias !== currentNode.url) {
+        nodes = nodes.filter(n => !n.home);
+      }
+      const ids = new Set(nodes.map(n => n.id));
+      return { nodes, links: links.filter(con => ids.has(con.source) && ids.has(con.target)) };
+    }
+
+    function getCssVar(variable) { return getComputedStyle(document.body).getPropertyValue(variable) }
+    function htmlDecode(input) { const doc = new DOMParser().parseFromString(input, "text/html"); return doc.documentElement.textContent; }
+
+    function renderGraph(graphData, id, delay, fullScreen) {
+        if (!graphData) return;
+        const el = document.getElementById(id);
+        if (!el) return;
+        if (typeof ForceGraph !== 'function') return;
+
+        let Graph = null;
+
+        const createOrResize = () => {
+          const w = Math.max(1, el.offsetWidth);
+          const h = Math.max(1, el.offsetHeight);
+          const color = getCssVar("--graph-main") || "#7aa2f7";
+          const mutedColor = getCssVar("--graph-muted") || "rgba(154,165,206,0.55)";
+          const highlightNodes = new Set();
+          let hoverNode = null;
+
+          if (!Graph) {
+            Graph = ForceGraph()(el)
+              .graphData(graphData)
+              .nodeId('id')
+              .nodeLabel('title')
+              .linkSource('source')
+              .linkTarget('target')
+              .d3AlphaDecay(0.10)
+              .autoPauseRedraw(false)
+              .width(w).height(h)
+              .linkColor((link) => {
+                  if (!hoverNode) return color;
+                  return (link.source.id === hoverNode.id || link.target.id === hoverNode.id) ? color : mutedColor;
+              })
+              .nodeCanvasObject((node, ctx) => {
+                  const numberOfNeighbours = (node.neighbors && node.neighbors.length) || 2;
+                  const nodeR = Math.min(7, Math.max(numberOfNeighbours / 2, 2));
+                  ctx.beginPath();
+                  ctx.arc(node.x, node.y, nodeR, 0, 2 * Math.PI, false);
+                  const active = (!hoverNode) || node.id === hoverNode.id || highlightNodes.has(node.url);
+                  ctx.fillStyle = active ? color : mutedColor;
+                  ctx.fill();
+
+                  if (node.current) {
+                      ctx.beginPath();
+                      ctx.arc(node.x, node.y, nodeR + 1, 0, 2 * Math.PI, false);
+                      ctx.lineWidth = 0.5;
+                      ctx.strokeStyle = color;
+                      ctx.stroke();
+                  }
+                  const label = htmlDecode(node.title);
+                  const fontSize = 3.5;
+                  ctx.font = `${fontSize}px Sans-Serif`;
+                  ctx.textAlign = 'center';
+                  ctx.textBaseline = 'top';
+                  ctx.fillText(label, node.x, node.y + nodeR + 2);
+              })
+              .onNodeClick(node => { if (node?.url) window.location = node.url; })
+              .onNodeHover(node => {
+                  highlightNodes.clear();
+                  if (node) {
+                      // Add URLs, not node objects
+                      highlightNodes.add(node.url);
+                      (node.neighbors || []).forEach(neighborUrl => highlightNodes.add(neighborUrl));
+                  }
+                  hoverNode = node || null;
+              });
+
+            // Resize on element size changes
+            try {
+              const ro = new ResizeObserver(() => {
+                const nw = Math.max(1, el.offsetWidth);
+                const nh = Math.max(1, el.offsetHeight);
+                if (nw && nh) { Graph.width(nw).height(nh); }
+              });
+              ro.observe(el);
+            } catch {}
+          } else {
+            Graph.width(w).height(h);
+          }
+
+          // Fit after a tick
+          setTimeout(() => { try { Graph.zoomToFit(200, 40); } catch {} }, delay ?? 200);
+        };
+
+        // Wait until visible/sized
+        untilSized(el, () => createOrResize());
+
+        // Refit when the wrapping <details> opens/closes
+        const details = el.closest('details');
+        if (details && !details.__graphResizeBound) {
+          details.__graphResizeBound = true;
+          details.addEventListener('toggle', () => setTimeout(createOrResize, 50));
+        }
+
+        return Graph;
+    }
+
+    function renderLocalGraph(graphData, depth, fullScreen) {
+        if (!graphData) return null;
+        if (typeof ForceGraph !== 'function') return null;
+        if (!document.getElementById('link-graph')) return null;
+        const data = filterLocalGraphData(graphData, depth);
+        if (!data) return null;
+        // Keep a single instance; renderGraph handles resize/fits
+        return renderGraph(data, 'link-graph', null, fullScreen);
+    }
+
+    function filterFullGraphData(graphData) {
+        if (!graphData) return null;
+        const copy = JSON.parse(JSON.stringify(graphData));
+        const hiddens = Object.values(copy.nodes).filter(n => n.hide).map(n => n.id);
+        return {
+            links: copy.links.filter(l => !hiddens.includes(l.source) && !hiddens.includes(l.target)),
+            nodes: Object.values(copy.nodes).filter(n => !n.hide)
+        };
+    }
+
+    function openFullGraph(fullGraphData) {
+        if (window.lucide?.createIcons) {
+            window.lucide.createIcons({ attrs: { class: ["svg-icon"] } });
+        }
+        return renderGraph(fullGraphData, "full-graph-container", 200, false);
+    }
+
+    function closefullGraph(fullGraph) {
+        try { fullGraph?._destructor?.(); } catch {}
+        return null;
+    }
+</script>
+<div   x-data="{ graphData: null, depth: 1, graph: null, fullGraph: null, showFullGraph: false, fullScreen: false, fullGraphData: null }"
+  x-init="(async () => { const r = await fetchGraphData(); graphData = r.graphData; fullGraphData = r.fullGraphData; })()"
+  id="graph-component"
+  x-bind:class="fullScreen ? 'graph graph-fs' : 'graph'">
+    <div class="graph-title-container">
+        <div class="graph-title">Connected Pages</div>
+        <div id="graph-controls">
+            <div class="depth-control">
+                <label for="graph-depth">Depth</label>
+                <div class="slider">
+                    <input x-model.number="depth" name="graph-depth" list="depthmarkers" type="range" step="1" min="1" max="3" id="graph-depth">
+                    <datalist id="depthmarkers">
+                        <option value="1" label="1"></option>
+                        <option value="2" label="2"></option>
+                        <option value="3" label="3"></option>
+                    </datalist>
+                </div>
+                <span id="depth-display" x-text="depth"></span>
+            </div>
+            <div class="ctrl-right">
+                <span id="global-graph-btn" x-on:click="showFullGraph = true; setTimeout(() => { fullGraph = openFullGraph(fullGraphData) }, 100)"><i icon-name="globe" aria-hidden="true"></i></span>
+                <span id="graph-fs-btn" x-on:click="fullScreen = !fullScreen"><i icon-name="expand" aria-hidden="true"></i></span>
+            </div>
+        </div>
+    </div>
+    <div x-effect="if (graphData && typeof ForceGraph === 'function' && document.getElementById('link-graph')) { window.graph = renderLocalGraph(graphData, depth, fullScreen); }" id="link-graph"></div>
+    <div x-show="showFullGraph" id="full-graph" class="show" style="display:none;">
+        <span id="full-graph-close" x-on:click="fullGraph = closefullGraph(fullGraph); showFullGraph = false;"><i icon-name="x" aria-hidden="true"></i></span>
+        <div id="full-graph-container"></div>
+    </div>
+</div>
+<script>
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons({ attrs: { class: ['svg-icon'] } });
+  }
+</script>
+      </details>
+    
+  </div>
+</aside>
+      
+      <main class="content ">
+        
+<article class="note">
+  <h1>Notes</h1>
+  
+  
+<ul class="notes-index">
+  
+    <li><a href="/notes/classroom-as-dramaturgical-site/">Classroom As Dramaturgical Site</a></li>
+  
+    <li><a href="/notes/model/">Model</a></li>
+  
+    <li><a href="/daily/2025-11-03/">Monday, November 3, 2025</a></li>
+  
+    <li><a href="/pre-start-thoughts/end-of-december-2023-phd-thoughts/">End Of December 2023 Phd Thoughts</a></li>
+  
+    <li><a href="/pre-start-thoughts/july-2023-thoughts/">July 2023 Thoughts</a></li>
+  
+    <li><a href="/pre-start-thoughts/algorithms-as-world-ph-d-rough-ideas/">Algorithms As World Phd Rough Ideas</a></li>
+  
+    <li><a href="/notes/benjamin-2024-imagination/">Benjamin 2024 Imagination</a></li>
+  
+    <li><a href="/notes/benjamin-noah-2025-rip-dei/">Benjamin Noah 2025 Rip Dei</a></li>
+  
+    <li><a href="/notes/bogost-2016-play-anything/">Bogost 2016 Play Anything</a></li>
+  
+    <li><a href="/notes/case-study-illinois-chat/">Case Study Illinois Chat</a></li>
+  
+    <li><a href="/notes/case-study-shell-game/">Case Study Shell Game</a></li>
+  
+    <li><a href="/notes/czerniewicz-cronin-2023-higher-education-for-good/">Czerniewicz Cronin 2023 Higher Education For Good</a></li>
+  
+    <li><a href="/notes/de-koven-2020-the-infinite-playground/">De Koven 2020 The Infinite Playground</a></li>
+  
+    <li><a href="/notes/filliou-1970-teaching-and-learning-as-performance-arts/">Filliou 1970 Teaching And Learning As Performance Arts</a></li>
+  
+    <li><a href="/notes/freire-1970-pedagogy-of-the-oppressed/">Freire 1970 Pedagogy Of The Oppressed</a></li>
+  
+    <li><a href="/notes/garrett-2024-imagined-futures-of-racialised-phds/">Garrett 2024 Imagined Futures Of Racialised Phds</a></li>
+  
+    <li><a href="/notes/hooks-1994-teaching-to-trangress/">Hooks 1994 Teaching To Trangress</a></li>
+  
+    <li><a href="/notes/ibm-2024-ai-in-education/">Ibm 2024 Ai In Education</a></li>
+  
+    <li><a href="/notes/khan-2024-brave-new-words/">Khan 2024 Brave New Words</a></li>
+  
+    <li><a href="/notes/manning-bozalek-2024-refusal-of-neurotypicality/">Manning Bozalek 2024 Refusal Of Neurotypicality</a></li>
+  
+    <li><a href="/notes/mitrovi-2021-beyond-speculative-design/">Mitrovi 2021 Beyond Speculative Design</a></li>
+  
+    <li><a href="/notes/sicart-play-matters/">Sicart Play Matters</a></li>
+  
+    <li><a href="/notes/bot/">bot</a></li>
+  
+    <li><a href="/pre-start-thoughts/28-11-2023-notes/">28 11 2023 Notes</a></li>
+  
+    <li><a href="/pre-start-thoughts/2-11-2023-notes/">2 11 2023 Notes</a></li>
+  
+    <li><a href="/pre-start-thoughts/ideas-around-phd-noncoherent/">Ideas Around Phd Noncoherent</a></li>
+  
+    <li><a href="/notes/LLM-use-in-my-phd-research/">LLM-use-in-my-phd-research</a></li>
+  
+    <li><a href="/notes/PhD-Live Project Workflow Reference/">PhD-Live Project Workflow Reference</a></li>
+  
+    <li><a href="/notes/learning-as-an-adult/">learning-as-an-adult</a></li>
+  
+    <li><a href="/notes/sychophantic-AI/">sychophantic-AI</a></li>
+  
+    <li><a href="/notes/bibliography/">Bibliography</a></li>
+  
+    <li><a href="/notes/adams-2025-AI-eroding-ability-to-study/">adams-2025-AI-eroding-ability-to-study</a></li>
+  
+    <li><a href="/notes/autographic-turn-in-design/">Autographic Turn In Design</a></li>
+  
+    <li><a href="/notes/black-in-academia-2020-kehinde-andrews/">Black In Academia 2020 Kehinde Andrews</a></li>
+  
+    <li><a href="/notes/carroll-speculative-whiteness/">Carroll Speculative Whiteness</a></li>
+  
+    <li><a href="/notes/cheng-et-al-sychophantic-AI-promotes-dependency/">cheng-et-al-sychophantic-AI-promotes-dependency</a></li>
+  
+    <li><a href="/notes/khasnabish-haiven-radical-imagination/">Khasnabish Haiven Radical Imagination</a></li>
+  
+    <li><a href="/notes/le-guin-1982-non-euclidean-view/">Le Guin 1982 Non Euclidean View</a></li>
+  
+    <li><a href="/notes/malmqvist-sychophancy-llm-causes-and-mitigation/">malmqvist-sychophancy-llm-causes-and-mitigation</a></li>
+  
+    <li><a href="/notes/manning-2018-me-lo-dijo/">Manning 2018 Me Lo Dijo</a></li>
+  
+    <li><a href="/notes/mickel-performance-practice-as-research-learning-teaching/">Mickel Performance Practice As Research Learning Teaching</a></li>
+  
+    <li><a href="/notes/oreilly-research-identity-threshold-concepts/">Oreilly Research Identity Threshold Concepts</a></li>
+  
+    <li><a href="/daily/2026-01-15/">Thursday, January 15, 2026</a></li>
+  
+    <li><a href="/daily/2026-01-19/">Monday, January 19, 2026</a></li>
+  
+    <li><a href="/daily/2026-01-20/">Tuesday, January 20, 2026</a></li>
+  
+    <li><a href="/published/22-01-2024-where-did-i-learn-to-learn/">22 01 2024 where did i learn to learn</a></li>
+  
+    <li><a href="/published/ai-and-digital-poverty/">ai and digital poverty</a></li>
+  
+    <li><a href="/published/ai-eroding-trust-between-student-and-teacher/">ai eroding trust between student and teacher</a></li>
+  
+    <li><a href="/published/ai-access-libraries-speculation/">ai access libraries speculation</a></li>
+  
+    <li><a href="/notes/ai-and-digital-poverty/">ai and digital poverty</a></li>
+  
+    <li><a href="/published/ai-literacy/">ai literacy</a></li>
+  
+    <li><a href="/about/">About PhD-Live</a></li>
+  
+    <li><a href="/published/af-r-as-rehearsal/">afr as rehearsal</a></li>
+  
+    <li><a href="/notes/exploring-ai-literacy-in-creative-education-talk/">exploring ai literacy in creative education talk</a></li>
+  
+    <li><a href="/notes/genai-catalysing-change/">genai catalysing change</a></li>
+  
+    <li><a href="/notes/i-don-t-want-to-design-a-pedagogical-framework/">i don t want to design a pedagogical framework</a></li>
+  
+    <li><a href="/notes/llm-as-personal-tutors/">llm as personal tutors</a></li>
+  
+    <li><a href="/notes/llm-as-phd-supervisor/">llm as phd supervisor</a></li>
+  
+    <li><a href="/notes/llm-in-academia/">llm in academia</a></li>
+  
+    <li><a href="/notes/llm-threatening-education-systems-status-quo/">llm threatening education systems status quo</a></li>
+  
+    <li><a href="/notes/llms-disrupting-formalities/">llms disrupting formalities</a></li>
+  
+    <li><a href="/notes/msc-cc-ai-literacy-workshop/">msc cc ai literacy workshop</a></li>
+  
+    <li><a href="/notes/openai/">Openai</a></li>
+  
+    <li><a href="/notes/phd-checkpoints-as-ceremonies/">phd checkpoints as ceremonies</a></li>
+  
+    <li><a href="/notes/project-phd-live-platform/">project-phd-live-platform</a></li>
+  
+    <li><a href="/notes/rq1-how-will-ai-change-teaching-and-learning/">rq1 how will ai change teaching and learning</a></li>
+  
+    <li><a href="/notes/rq2-socio-political-and-tech-changing-learning/">rq2 socio political and tech changing learning</a></li>
+  
+    <li><a href="/notes/rq3-playful-methodology-as-way-to-speculate/">rq3 playful methodology as way to speculate</a></li>
+  
+    <li><a href="/notes/rq4-speculative-process-as-particapatory/">rq4 speculative process as particapatory</a></li>
+  
+    <li><a href="/published/annotated-bib-guidance/">annotated bib guidance</a></li>
+  
+    <li><a href="/notes/artists-the-only-adults-that-practice-imagination/">artists the only adults that practice imagination</a></li>
+  
+    <li><a href="/notes/arts-based-methods-decolonising-research/">arts based methods decolonising research</a></li>
+  
+    <li><a href="/notes/autoethnographic-experience-as-lecturer-and-student/">autoethnographic experience as lecturer and student</a></li>
+  
+    <li><a href="/notes/banking-system/">banking system</a></li>
+  
+    <li><a href="/notes/bayley-2018-posthuman-pedagogies/">bayley 2018 posthuman pedagogies</a></li>
+  
+    <li><a href="/notes/case-study-roby/">case study roby</a></li>
+  
+    <li><a href="/notes/case-study-shiffbot/">case study shiffbot</a></li>
+  
+    <li><a href="/notes/choreography-of-experience/">choreography of experience</a></li>
+  
+    <li><a href="/notes/classroom-as-dramaturgical-site-for-experimentation/">classroom as dramaturgical site for experimentation</a></li>
+  
+    <li><a href="/notes/complaints-about-llm-use/">complaints about llm use</a></li>
+  
+    <li><a href="/notes/connection-between-education-and-work/">connection between education and work</a></li>
+  
+    <li><a href="/notes/connection-between-machine-learning-and-human-learning/">connection between machine learning and human learning</a></li>
+  
+    <li><a href="/notes/contemporary-context/">contemporary context</a></li>
+  
+    <li><a href="/notes/conversation/">conversation</a></li>
+  
+    <li><a href="/notes/corporate-university-speculation/">corporate university speculation</a></li>
+  
+    <li><a href="/notes/critiques-of-speculative-design/">critiques of speculative design</a></li>
+  
+    <li><a href="/notes/definitions-of-speculative-design/">definitions of speculative design</a></li>
+  
+    <li><a href="/notes/design-interventions/">design interventions</a></li>
+  
+    <li><a href="/notes/designing-practice-based-research/">designing practice based research</a></li>
+  
+    <li><a href="/notes/developing-playful-methodology/">developing playful methodology</a></li>
+  
+    <li><a href="/notes/digital-gardens/">digital gardens</a></li>
+  
+    <li><a href="/notes/diy-bot-creation/">diy bot creation</a></li>
+  
+    <li><a href="/notes/documenting-research/">documenting research</a></li>
+  
+    <li><a href="/notes/educational-industrial-complex/">educational industrial complex</a></li>
+  
+    <li><a href="/notes/ethical-ai/">ethical ai</a></li>
+  
+    <li><a href="/notes/ethics/">ethics</a></li>
+  
+    <li><a href="/notes/field-notes/">field notes</a></li>
+  
+    <li><a href="/notes/financial-model-of-he/">financial model of he</a></li>
+  
+    <li><a href="/notes/first-day-phd-thoughts/">first day phd thoughts</a></li>
+  
+    <li><a href="/notes/focus-on-process/">focus on process</a></li>
+  
+    <li><a href="/notes/functionality-and-behaviour/">functionality and behaviour</a></li>
+  
+    <li><a href="/notes/gemini-google-ai-education/">gemini google ai education</a></li>
+  
+    <li><a href="/notes/generative-ai/">generative ai</a></li>
+  
+    <li><a href="/notes/glossary-index/">Glossary Index</a></li>
+  
+    <li><a href="/notes/hands-on-research/">hands on research</a></li>
+  
+    <li><a href="/notes/historical-context/">historical context</a></li>
+  
+    <li><a href="/notes/history-of-improv/">history of improv</a></li>
+  
+    <li><a href="/notes/how-to-shift-power-relations-of-speculation/">how to shift power relations of speculation</a></li>
+  
+    <li><a href="/notes/humans-and-ai-school-speculation/">humans and ai school speculation</a></li>
+  
+    <li><a href="/notes/humans-and-ai-working-together-and-embodiment/">humans and ai working together and embodiment</a></li>
+  
+    <li><a href="/notes/ideas-for-possible-futures/">ideas for possible futures</a></li>
+  
+    <li><a href="/notes/imagination-power-education-relationship/">imagination power education relationship</a></li>
+  
+    <li><a href="/notes/imagination-practice/">imagination practice</a></li>
+  
+    <li><a href="/notes/improv/">improv</a></li>
+  
+    <li><a href="/notes/large-language-models/">large language models</a></li>
+  
+    <li><a href="/notes/lit-review-guidance/">lit review guidance</a></li>
+  
+    <li><a href="/notes/llm-supervisor-v1-progress/">llm supervisor v1 progress</a></li>
+  
+    <li><a href="/notes/making-public/">making public</a></li>
+  
+    <li><a href="/notes/making-strategies/">making strategies</a></li>
+  
+    <li><a href="/notes/material-constraints-of-ai/">material constraints of ai</a></li>
+  
+    <li><a href="/notes/material-research/">material research</a></li>
+  
+    <li><a href="/notes/metaphors-of-machine-learning/">metaphors of machine learning</a></li>
+  
+    <li><a href="/notes/methodology/">methodology</a></li>
+  
+    <li><a href="/notes/motivation-and-engagement/">motivation and engagement</a></li>
+  
+    <li><a href="/notes/my-positionality/">my positionality</a></li>
+  
+    <li><a href="/notes/my-practice/">my practice</a></li>
+  
+    <li><a href="/notes/my-thoughts-on-illinois-chat/">my thoughts on illinois chat</a></li>
+  
+    <li><a href="/notes/naidoo-2013-students-as-consumers/">naidoo 2013 students as consumers</a></li>
+  
+    <li><a href="/notes/not-one-specific-speculative-product/">not one specific speculative product</a></li>
+  
+    <li><a href="/notes/notes-after-first-supervision-discussions/">notes after first supervision discussions</a></li>
+  
+    <li><a href="/notes/objectives/">objectives</a></li>
+  
+    <li><a href="/notes/obsessions-with-futures-is-bad/">obsessions with futures is bad</a></li>
+  
+    <li><a href="/notes/open-ai-anthropic-education-partnerships/">open ai anthropic education partnerships</a></li>
+  
+    <li><a href="/notes/open-source-llms/">open source llms</a></li>
+  
+    <li><a href="/notes/oppression-limiting-situation-to-transform/">oppression limiting situation to transform</a></li>
+  
+    <li><a href="/notes/opting-out-of-ai-learning/">opting out of ai learning</a></li>
+  
+    <li><a href="/notes/overarching-research-narrative/">overarching research narrative</a></li>
+  
+    <li><a href="/notes/participatory-research/">participatory research</a></li>
+  
+    <li><a href="/notes/pearce-2019-edu-industrial-complex/">pearce 2019 edu industrial complex</a></li>
+  
+    <li><a href="/notes/persona-prompting/">persona prompting</a></li>
+  
+    <li><a href="/notes/pgcert-final-project/">pgcert final project</a></li>
+  
+    <li><a href="/notes/pgcert-reflections/">pgcert reflections</a></li>
+  
+    <li><a href="/phd-proposal/">phd proposal</a></li>
+  
+    <li><a href="/notes/play-and-imagination-relationship/">play and imagination relationship</a></li>
+  
+    <li><a href="/notes/play-as-practice-in-new-ways-of-being/">play as practice in new ways of being</a></li>
+  
+    <li><a href="/notes/play-is-the-work-of-operating-a-system/">play is the work of operating a system</a></li>
+  
+    <li><a href="/notes/possibility-spaces-and-impossibility-spaces/">possibility spaces and impossibility spaces</a></li>
+  
+    <li><a href="/notes/power/">Power</a></li>
+  
+    <li><a href="/notes/practice-based-research/">practice based research</a></li>
+  
+    <li><a href="/notes/process-of-iteration/">process of iteration</a></li>
+  
+    <li><a href="/notes/project-cci-ual-staff-interviews/">project cci ual staff interviews</a></li>
+  
+    <li><a href="/notes/project-supervisor-bot/">project supervisor bot</a></li>
+  
+    <li><a href="/notes/reflecting-on-research/">reflecting on research</a></li>
+  
+    <li><a href="/notes/reflections-on-the-working-of-the-system/">reflections on the working of the system</a></li>
+  
+    <li><a href="/notes/relationship-with-ai-bot-vs-human/">relationship with ai bot vs human</a></li>
+  
+    <li><a href="/notes/research-process-as-play/">research process as play</a></li>
+  
+    <li><a href="/notes/research-aim/">research aim</a></li>
+  
+    <li><a href="/notes/research-by-making/">research by making</a></li>
+  
+    <li><a href="/notes/research-methods/">research methods</a></li>
+  
+    <li><a href="/notes/research-of-context/">research of context</a></li>
+  
+    <li><a href="/notes/research-questions/">research questions</a></li>
+  
+    <li><a href="/notes/research-window/">phd-live</a></li>
+  
+    <li><a href="/notes/running-llms-locally/">Running Llms Locally</a></li>
+  
+    <li><a href="/notes/scales-of-learning-interventions/">scales of learning interventions</a></li>
+  
+    <li><a href="/notes/shift-from-product-to-process/">shift from product to process</a></li>
+  
+    <li><a href="/notes/spaces-for-learning-in-the-future/">spaces for learning in the future</a></li>
+  
+    <li><a href="/notes/spatial-ai/">Spatial Ai</a></li>
+  
+    <li><a href="/notes/speculation-as-privilege-or-luxury/">speculation as privilege or luxury</a></li>
+  
+    <li><a href="/notes/speculative-design-and-imagination-relationship/">speculative design and imagination relationship</a></li>
+  
+    <li><a href="/notes/speculative-design/">speculative design</a></li>
+  
+    <li><a href="/notes/start-with-the-end-of-phd-in-mind/">start with the end of phd in mind</a></li>
+  
+    <li><a href="/notes/supervision-010525/">supervision 010525</a></li>
+  
+    <li><a href="/notes/supervision-110225/">supervision 110225</a></li>
+  
+    <li><a href="/notes/supervision-110925/">supervision 110925</a></li>
+  
+    <li><a href="/notes/supervision-120625/">supervision 120625</a></li>
+  
+    <li><a href="/notes/supervision-261125/">supervision-261125</a></li>
+  
+    <li><a href="/notes/supervision-meetings-record/">supervision meetings record</a></li>
+  
+    <li><a href="/notes/supervisor-bot-v1-prototype/">supervisor bot v1 prototype</a></li>
+  
+    <li><a href="/notes/supervisor-bot-v2-prototype/">supervisor bot v2 prototype</a></li>
+  
+    <li><a href="/notes/supervisor-persona/">supervisor persona</a></li>
+  
+    <li><a href="/notes/systemic-issues-in-academia/">systemic issues in academia</a></li>
+  
+    <li><a href="/notes/teaching/">teaching</a></li>
+  
+    <li><a href="/notes/the-lifecycle-of-imaginaries-diagram/">the lifecycle of imaginaries diagram</a></li>
+  
+    <li><a href="/notes/the-effects-of-neoliberalism-on-higher-education/">the effects of neoliberalism on higher education</a></li>
+  
+    <li><a href="/notes/the-model/">the model</a></li>
+  
+    <li><a href="/notes/the-riddle-for-reflection/">the riddle for reflection</a></li>
+  
+    <li><a href="/notes/theoretical-context/">theoretical context</a></li>
+  
+    <li><a href="/notes/theories-practices-policies/">theories practices policies</a></li>
+  
+    <li><a href="/notes/thesis-bot/">thesis-bot</a></li>
+  
+    <li><a href="/notes/thoughts-on-corporate-uni-and-imagination/">thoughts on corporate uni and imagination</a></li>
+  
+    <li><a href="/notes/title-and-subject-area/">title and subject area</a></li>
+  
+    <li><a href="/notes/traditional-design-vs-speculative-design-diagram/">traditional design vs speculative design diagram</a></li>
+  
+    <li><a href="/notes/trauma-inhibiting-imagination/">trauma inhibiting imagination</a></li>
+  
+    <li><a href="/notes/types-of-systems/">types of systems</a></li>
+  
+    <li><a href="/notes/ual-description-of-a-supervisor/">ual description of a supervisor</a></li>
+  
+    <li><a href="/notes/utopia-in-the-margins/">utopia in the margins</a></li>
+  
+    <li><a href="/notes/visual-and-narrative-representations/">visual and narrative representations</a></li>
+  
+    <li><a href="/notes/voice-activity-detection/">Voice Activity Detection</a></li>
+  
+    <li><a href="/notes/what-is-a-classroom/">what is a classroom</a></li>
+  
+    <li><a href="/notes/what-is-a-research-question/">what is a research question</a></li>
+  
+    <li><a href="/pre-start-thoughts/what-is-a-supervisor/">what is a supervisor</a></li>
+  
+    <li><a href="/notes/what-is-education-for/">what is education for</a></li>
+  
+    <li><a href="/notes/what-is-technically-possible-with-ai-now-and-in-the-future/">what is technically possible with ai now and in the future</a></li>
+  
+    <li><a href="/notes/what-kind-of-research-i-want-to-undertake/">what kind of research i want to undertake</a></li>
+  
+    <li><a href="/notes/zettelkasten/">Zettelkasten</a></li>
+  
+    <li><a href="/notes/appleton-2020-brief-history-of-digital-gardens/">appleton-2020-brief-history-of-digital-gardens</a></li>
+  
+    <li><a href="/notes/blackwell-et-al-2022-live-coding-user-manual/">blackwell-et-al-2022-live-coding-user-manual</a></li>
+  
+    <li><a href="/notes/hao-empire-of-AI-2025/">hao-empire-of-AI-2025</a></li>
+  
+    <li><a href="/notes/sascha-2020-intro-to-zettelkasten/">sascha-2020-intro-to-zettelkasten</a></li>
+  
+    <li><a href="/notes/smith-nunes-offline-llms-and-the-future-private-AI/">smith-nunes-offline-llms-and-the-future-private-AI</a></li>
+  
+    <li><a href="/notes/new year_planning for the quarter/">new year_planning for the quarter</a></li>
+  
+    <li><a href="/notes/planning-for-public-sharing/">planning-for-public-sharing</a></li>
+  
+    <li><a href="/notes/teaching-bots/">teaching-bots</a></li>
+  
+    <li><a href="/notes/vibe-coding/">vibe-coding</a></li>
+  
+    <li><a href="/notes/writing-plan/">writing-plan</a></li>
+  
+    <li><a href="/daily/2026-01-21/">Wednesday, January 21, 2026</a></li>
+  
+    <li><a href="/notes/phd-live-ideation/">phd-live-ideation</a></li>
+  
+    <li><a href="/notes/live test/">live test</a></li>
+  
+    <li><a href="/daily/2026-01-24/">Saturday, January 24, 2026</a></li>
+  
+</ul>
+
+</article>
+
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.21/dist/flexsearch.bundle.js"></script>
+<script>
+  // Guard the optional init function
+  if (typeof window.init === "function") {
+    document.addEventListener('DOMContentLoaded', window.init, false);
+  }
+
+  // Keep this, it exists below in this file
+  document.addEventListener('DOMContentLoaded', setCorrectShortcut, false);
+
+  // Avoid const redeclaration across duplicate includes
+  if (!window.loadingSvg) {
+    window.loadingSvg = `
+    <svg width="100" height="100" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg" stroke="#fff">
+      <g fill="none" fill-rule="evenodd" transform="translate(1 1)" stroke-width="2">
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="1.5s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="1.5s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="1.5s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="6" stroke-opacity="0">
+              <animate attributeName="r"
+                   begin="3s" dur="3s"
+                   values="6;22"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-opacity"
+                   begin="3s" dur="3s"
+                   values="1;0" calcMode="linear"
+                   repeatCount="indefinite" />
+              <animate attributeName="stroke-width"
+                   begin="3s" dur="3s"
+                   values="2;0" calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+          <circle cx="22" cy="22" r="8">
+              <animate attributeName="r"
+                   begin="0s" dur="1.5s"
+                   values="6;1;2;3;4;5;6"
+                   calcMode="linear"
+                   repeatCount="indefinite" />
+          </circle>
+      </g>
+  </svg>`;
+  }
+    window.toggleSearch = function () {
+        if (document.getElementById('globalsearch').classList.contains('active')) {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .remove('active');
+        } else {
+            document
+                .getElementById('globalsearch')
+                .classList
+                .add('active');
+            document
+                .getElementById('term')
+                .focus();
+        }
+    }
+
+    window.toggleTagSearch = function (evt) {
+        console.log(evt.textContent);
+        const term = evt.textContent;
+        if (term) {
+            window
+                .document
+                .getElementById('term')
+                .value = term.trim();
+            window.toggleSearch();
+            window.search();
+        }
+    }
+
+    function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this,
+                args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) 
+                    func.apply(context, args);
+                };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) 
+                func.apply(context, args);
+            };
+    };
+
+    function setCorrectShortcut() {
+        if (navigator.platform.toUpperCase().indexOf('MAC') >= 0) {
+            document
+                .querySelectorAll(".search-keys")
+                .forEach(x => x.innerHTML = "⌘ + K");
+        }
+    }
+
+    function createIndex(posts) {
+        const encoder = (str) => str
+            .toLowerCase()
+            .split(/([^a-z]|[^\x00-\x7F])/)
+        const contentIndex = new FlexSearch.Document({
+            cache: true,
+            charset: "latin:extra",
+            optimize: true,
+            index: [
+                {
+                    field: "content",
+                    tokenize: "reverse",
+                    encode: encoder
+                }, {
+                    field: "title",
+                    tokenize: "forward",
+                    encode: encoder
+                }, {
+                    field: "tags",
+                    tokenize: "forward",
+                    encode: encoder
+                }
+            ]
+        })
+        posts.forEach((p, idx) => {
+            contentIndex.add({
+                id: idx, title: p.title, content: p.content, tags: p.tags //Change to removeHTML
+            })
+        });
+        return contentIndex;
+    }
+
+    async function init() {
+        //init offline search index
+
+        const searchIndexDate = '2026-01-24T22:14:24.081Z';
+        let shouldFetch = true;
+        if(localStorage.getItem("searchIndex")) {
+            let {date, docs}= JSON.parse(localStorage.getItem('searchIndex'));
+            if(date === searchIndexDate){
+                shouldFetch = false;
+                let index = createIndex(docs);
+                window.docs = docs
+                window.index = index;
+            }        
+        }
+        if(shouldFetch){
+            let docs = await(await fetch('/searchIndex.json?v=2026-01-24T22:14:24.081Z')).json();
+            let index = createIndex(docs);
+            localStorage.setItem("searchIndex", JSON.stringify({date: '2026-01-24T22:14:24.081Z', docs}));
+            window.docs = docs
+            window.index = index;
+        }
+
+        //open searchmodal when ctrl + k is pressed, cmd + k on mac
+        document.addEventListener('keydown', (e) => {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                e.preventDefault();
+                toggleSearch();
+            }
+            if (e.key === 'Escape') {
+                document
+                    .getElementById('globalsearch')
+                    .classList
+                    .remove('active');
+            }
+
+            //navigate search results with arrow keys
+            if (document.getElementById('globalsearch').classList.contains('active')) {
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.nextElementSibling) {
+                            active
+                                .nextElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelector('.searchresult')
+                                .classList
+                                .add('active');
+                        }
+                    } else {
+                        document
+                            .querySelector('.searchresult')
+                            .classList
+                            .add('active');
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+                }
+                if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        active
+                            .classList
+                            .remove('active');
+                        if (active.previousElementSibling) {
+                            active
+                                .previousElementSibling
+                                .classList
+                                .add('active');
+                        } else {
+                            document
+                                .querySelectorAll('.searchresult')
+                                .forEach((el) => {
+                                    if (!el.nextElementSibling) {
+                                        el
+                                            .classList
+                                            .add('active');
+                                    }
+                                });
+                        }
+                    } else {
+                        document
+                            .querySelectorAll('.searchresult')
+                            .forEach((el) => {
+                                if (el.nextElementSibling) {
+                                    el
+                                        .classList
+                                        .add('active');
+                                }
+                            });
+                    }
+
+                    let currentActive = document.querySelector('.searchresult.active');
+                    if (currentActive) {
+                        currentActive.scrollIntoView({behavior: 'smooth', block: 'nearest', inline: 'start'});
+                    }
+
+                }
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    let active = document.querySelector('.searchresult.active');
+                    if (active) {
+                        window.location.href = active
+                            .querySelector("a")
+                            .href;
+                    }
+                }
+            }
+        });
+
+        const debouncedSearch = debounce(search, 200, false);
+        field = document.querySelector('#term');
+        field.addEventListener('keydown', (e) => {
+            if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') {
+                debouncedSearch();
+            }
+        });
+        resultsDiv = document.querySelector('#search-results');
+
+        const params = new URL(location.href).searchParams;
+        if (params.get('q')) {
+            field.setAttribute('value', params.get('q'));
+            toggleSearch();
+            search();
+        }
+    }
+    window.lastSearch = '';
+    async function search() {
+        let search = field
+            .value
+            .trim();
+        if (!search) 
+            return;
+        if (search == lastSearch) 
+            return;
+        console.log(`search for ${search}`);
+        window.lastSearch = search;
+
+        resultsDiv.innerHTML = window.loadingSvg;
+        //let searchRequest = await fetch(`/api/search?term=${encodeURIComponent(search)}`);
+        //let results = await searchRequest.json();
+        let results = offlineSearch(search);
+        let resultsHTML = '';
+        if (!results.length) {
+            let resultParagraph = document.createElement("p");
+            resultParagraph.innerText = `No results for "${search}"`;
+            resultsDiv.innerHTML = '';
+            resultsDiv.appendChild(resultParagraph);
+            return;
+        }
+        resultsHTML += '<div style="max-width:100%;">';
+        // we need to add title, url from ref
+        results.forEach(r => {
+            if(r.tags && r.tags.length > 0){
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        <div class="header-meta">
+                            <div class="header-tags">
+                                ${r.tags.map(tag=>'<a class="tag" href="JavaScript:Void(0);">#'+tag+'</a>').join("")}
+                            </div>
+                        </div>
+                        ${r.content}
+                    </div>
+                </div>`;
+            } else {
+                resultsHTML += `<div class="searchresult">
+                    <a class="search-link" href="${r.url}">${r.title}</a>
+                    <div onclick="window.location='${r.url}'">
+                        ${r.content}
+                    </div>
+                </div>`;
+            }
+        });
+        resultsHTML += '</div>';
+        resultsDiv.innerHTML = resultsHTML;
+    }
+
+    function truncate(str, size) {
+        //first, remove HTML
+        str = str.replaceAll(/<[^>]*>/g, '');
+        if (str.length < size) 
+            return str;
+        return str.substring(0, size - 3) + '...';
+    }
+
+    function offlineSearch(searchQuery) {
+        let data = window.docs;
+
+        let isTagSearch = searchQuery[0] === "#" && searchQuery.length > 1;
+
+        let searchResults = isTagSearch
+            ? index.search(searchQuery.substring(1), [
+                {
+                    field: "tags"
+                }
+            ])
+            : index.search(searchQuery, [
+                {
+                    field: "title",
+                    limit: 5
+                }, {
+                    field: "content",
+                    weight: 10
+                }
+            ]);
+
+        const getByField = (field) => {
+            const results = searchResults.filter((x) => x.field === field)
+            if (results.length === 0) {
+                return []
+            } else {
+                return [...results[0].result]
+            }
+        }
+        const allIds = new Set([
+            ...getByField("title"),
+            ...getByField("content"),
+            ...getByField("tags")
+        ])
+        const dataIds = [...allIds];
+        const finalResults = dataIds.map((id) => {
+            let result = data[id];
+            result.content = truncate(result.content, 400);
+            result.tags = result
+                .tags
+                .filter((x) => x != "gardenEntry" && x != "note"); //Note is automatically added by 11ty. GardenEntry is used internally to mark the home page
+
+            return result;
+        })
+        return finalResults;
+
+    }
+</script>
+
+    <footer>
+      
+
+<footer class="site-footer">
+  <p>
+    © 2026 Mahalia Henry-Richards
+  </p>
+</footer>
+    </footer>
+
+    <script>
+      (function () {
+        function restoreScroll() {
+          try {
+            const docEl = document.documentElement;
+            const body = document.body;
+            const hasFullscreenGraph =
+              !!document.querySelector('.graph-fs') ||
+              !!document.querySelector('#full-graph-container.graph-fs');
+
+            if (!hasFullscreenGraph) {
+              body.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              docEl.classList.remove('graph-fs-open','graph-fs','no-scroll','overflow-hidden');
+              body.style.overflow = '';
+              docEl.style.overflow = '';
+            }
+          } catch (e) {}
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', restoreScroll);
+        } else {
+          restoreScroll();
+        }
+        window.addEventListener('alpine:init', restoreScroll);
+      })();
+    </script>
+    <script src="/assets/live.js" defer></script>
+  </body>
+</html>

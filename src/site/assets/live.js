@@ -54,7 +54,7 @@ if (document.readyState !== "loading") hydrateLiveStrip();
 else document.addEventListener("DOMContentLoaded", hydrateLiveStrip);
 
 (function() {
-  const base = (window.BASE_URL || '/').replace(/\/+$/, '') + '/';
+  const base = (window.BASE_URL || "/").replace(/\/+$/, "") + "/";
   
   // Process wikilinks
   function processWikilinks(text) {

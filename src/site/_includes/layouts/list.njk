@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="page has-sidebar">
+  <main class="content">
+    <article class="note">
+      {{ content | safe }}
+    </article>
+  </main>
+</div>
+{% endblock %}
