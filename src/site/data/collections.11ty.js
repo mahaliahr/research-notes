@@ -18,7 +18,10 @@ class CollectionsDebug {
 module.exports = CollectionsDebug;
 
 module.exports.posts = (collectionApi) => {
-  return collectionApi.getFilteredByGlob('src/site/notes/blog/*.md');
+  return collectionApi
+    .getFilteredByGlob("src/site/blog/*.md")
+    .filter(item => !item.data.draft)
+    .sort((a, b) => (new Date(b.data.date || b.date)) - (new Date(a.data.date || a.date)));
 };
 
 module.exports.zettels = (collectionApi) => {
