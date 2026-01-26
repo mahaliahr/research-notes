@@ -1,9 +1,14 @@
 {% extends "layouts/base.njk" %}
 
+{% block head %}
+{{ super() }}
+{% block customStyles %}{% endblock %}
+{% endblock %}
+
 {% block content %}
 <article class="note">
   <h1>{{ title | formatDailyTitle | default(page.fileSlug) }}</h1>
   
-  {{ content | link | dgMedia | safe }}
+  {{ content | hideDataview | taggify | link | safe }}
 </article>
 {% endblock %}

@@ -1,11 +1,17 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<div class="page has-sidebar">
-  <main class="content">
-    <article class="note">
+<div class="content-wrapper">
+  <article class="note blog-list">
+    {% if title %}
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    {% endif %}
+    
+    <div class="note-content">
       {{ content | safe }}
-    </article>
-  </main>
+    </div>
+  </article>
 </div>
 {% endblock %}
