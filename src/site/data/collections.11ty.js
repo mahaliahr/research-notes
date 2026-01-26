@@ -16,3 +16,21 @@ class CollectionsDebug {
   }
 }
 module.exports = CollectionsDebug;
+
+module.exports.posts = (collectionApi) => {
+  return collectionApi
+    .getFilteredByGlob("src/site/blog/*.md")
+    .filter(item => !item.data.draft)
+    .sort((a, b) => (new Date(b.data.date || b.date)) - (new Date(a.data.date || a.date)));
+};
+
+module.exports.zettels = (collectionApi) => {
+  return collectionApi
+    .getFilteredByGlob('src/site/notes/**/*.md')
+    .filter(item => item.data['dg-publish'] !== false)
+    .sort((a, b) => {
+      const ad = new Date(a.data.updated || a.date);
+      const bd = new Date(b.data.updated || b.date);
+      return bd - ad; // newest first
+    });
+};

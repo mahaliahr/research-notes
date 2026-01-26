@@ -62,8 +62,15 @@
       return { nodes, links: links.filter(con => ids.has(con.source) && ids.has(con.target)) };
     }
 
-    function getCssVar(variable) { return getComputedStyle(document.body).getPropertyValue(variable) }
     function htmlDecode(input) { const doc = new DOMParser().parseFromString(input, "text/html"); return doc.documentElement.textContent; }
+
+    function getCssVar(variable) {
+      // Try body first, then :root (documentElement)
+      const bodyVal = getComputedStyle(document.body).getPropertyValue(variable).trim();
+      if (bodyVal) return bodyVal;
+      const rootVal = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+      return rootVal;
+    }
 
     function renderGraph(graphData, id, delay, fullScreen) {
         if (!graphData) return;
@@ -76,8 +83,8 @@
         const createOrResize = () => {
           const w = Math.max(1, el.offsetWidth);
           const h = Math.max(1, el.offsetHeight);
-          const color = getCssVar("--graph-main") || "#7aa2f7";
-          const mutedColor = getCssVar("--graph-muted") || "rgba(154,165,206,0.55)";
+          const color = getCssVar("--graph-main") || "#8b6cef";      // your custom color
+          const mutedColor = getCssVar("--graph-muted") || "rgba(139,108,239,.45)";
           const highlightNodes = new Set();
           let hoverNode = null;
 
