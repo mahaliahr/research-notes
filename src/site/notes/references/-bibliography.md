@@ -66,7 +66,9 @@ group based on research areas?
 The Auto-ethnographic turn in design
 [[autographic-turn-in-design]]  
 
-[[blackwell-et-al-2022-live-coding-user-manual]]
+[[blackwell-et-al-2022-live-coding-user-manual]] <mark style="background: #ADCCFFA6;">READING</mark>
+
+[[tanimoto-2013-evolution-of-live-programming]]
 
 ---
 
